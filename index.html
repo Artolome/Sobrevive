@@ -180,6 +180,21 @@ button:focus-visible,#cardWrap:focus-visible{outline:3px solid var(--gold); outl
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important; transition-duration:.01ms!important}}
 @media (max-height:720px){footer{display:none}.choice::before{display:none}.choice{min-height:52px}}
 @media (max-height:660px){.med{width:38px; height:38px}#gauges{padding-top:6px}#app{gap:6px}}
+/* écrans bas et larges (téléphone à l'horizontale, petite fenêtre) : carte à gauche, texte et choix à droite */
+@media (max-height:560px) and (min-aspect-ratio:11/10){
+  #app{max-width:900px; display:grid; grid-template-columns:minmax(140px,36%) 1fr; grid-template-rows:auto auto 1fr auto; column-gap:20px; row-gap:6px}
+  #stage{grid-column:1; grid-row:1 / 5; min-height:0}
+  header{grid-column:2; grid-row:1}
+  #gauges{grid-column:2; grid-row:2; padding-top:8px}
+  #speechBox{grid-column:2; grid-row:3; min-height:0; font-size:clamp(15px,2.5vw,19px)}
+  #choices{grid-column:2; grid-row:4}
+  #quitBox{left:auto; width:min(62%,430px)}
+}
+/* écrans bas et étroits */
+@media (max-height:560px) and (max-aspect-ratio:11/10){
+  #speechBox{min-height:calc(1.32em * 3); font-size:16px}
+  .stack .under{display:none}
+}
 </style>
 
 <div id="app" hidden>
@@ -585,7 +600,7 @@ function fit(){
   if(!st||$("#app").hidden)return;
   const r=st.getBoundingClientRect();
   if(!r.width||!r.height)return;
-  const cw=Math.max(104,Math.min(r.width*0.78,300,(r.height-22)/1.62));
+  const cw=Math.max(84,Math.min(r.width*0.8,300,(r.height-22)/1.62));
   $("#app").style.setProperty("--cw",cw.toFixed(1)+"px");
 }
 window.addEventListener("resize",fit);

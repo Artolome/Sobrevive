@@ -38,6 +38,7 @@ const kitSrc = fs.readFileSync(path.join(__dirname, "tarot-kit.js"), "utf8");
 const LS = new RegExp("[" + String.fromCharCode(0x2028) + String.fromCharCode(0x2029) + "]", "g");
 const data = JSON.stringify({ decks, art }).split("</").join("<" + String.fromCharCode(92) + "/").replace(LS, "");
 src = src.replace("<!--KIT-->", () => "<script>\n" + kitSrc + "\n</script>").replace("<!--DATA-->", () => "<script>window.__SV=" + data + ";</script>");
+src = require("./classroom/build-extra.js")(src);
 const out = path.join(__dirname, "index.html");
 fs.writeFileSync(out, src, "utf8");
 console.log(report.join("\n"));

@@ -1,0 +1,1800 @@
+{
+ "id": "cole",
+ "name": "El cole",
+ "emoji": "🎒",
+ "tagline": "¡Sobrevive hasta junio!",
+ "sub": "Tu es élève au Colegio Cervantes : tiens jusqu'au 20 juin",
+ "intro_fr": "Tu es élève au Colegio Cervantes, en Espagne. Profs, copains, cantine, devoirs et argent de poche : une année scolaire entière à survivre, du 15 septembre au 20 juin.",
+ "time": {
+  "mode": "date"
+ },
+ "places": [
+  [
+   0,
+   "Colegio Cervantes"
+  ]
+ ],
+ "gauges": [
+  {
+   "key": "notas",
+   "icon": "📚",
+   "label": "Notas"
+  },
+  {
+   "key": "amigos",
+   "icon": "😊",
+   "label": "Amigos"
+  },
+  {
+   "key": "energia",
+   "icon": "⚡",
+   "label": "Energía"
+  },
+  {
+   "key": "dinero",
+   "icon": "💶",
+   "label": "Dinero"
+  }
+ ],
+ "tiers": [
+  {
+   "id": 1,
+   "cond": {
+    "cards": 12
+   },
+   "es": "Sobrevive 12 cartas",
+   "fr": "Survis à 12 cartes"
+  },
+  {
+   "id": 2,
+   "cond": {
+    "win": 1
+   },
+   "es": "Termina el curso",
+   "fr": "Termine l'année scolaire"
+  }
+ ],
+ "chars": {
+  "mama": {
+   "emoji": "👩",
+   "name": "Mamá",
+   "tier": 0
+  },
+  "abuela": {
+   "emoji": "👵🏻",
+   "name": "La abuela",
+   "tier": 0
+  },
+  "hermana": {
+   "emoji": "👧🏽",
+   "name": "Vera, tu hermana",
+   "tier": 0
+  },
+  "garcia": {
+   "emoji": "👨‍🏫",
+   "name": "Señor García · mates",
+   "tier": 0
+  },
+  "pons": {
+   "emoji": "👩‍🏫",
+   "name": "Señora Pons · lengua",
+   "tier": 0
+  },
+  "edfisica": {
+   "emoji": "🏃",
+   "name": "Profe de Educación Física",
+   "tier": 0
+  },
+  "musica": {
+   "emoji": "🎵",
+   "name": "Profe de música",
+   "tier": 0
+  },
+  "ruiz": {
+   "emoji": "🕴️",
+   "name": "El director Ruiz",
+   "tier": 0
+  },
+  "carmen": {
+   "emoji": "👵",
+   "name": "Doña Carmen · comedor",
+   "tier": 0
+  },
+  "biblio": {
+   "emoji": "📖",
+   "name": "La bibliotecaria",
+   "tier": 0
+  },
+  "pablo": {
+   "emoji": "👦",
+   "name": "Pablo",
+   "tier": 0
+  },
+  "lucia": {
+   "emoji": "👧",
+   "name": "Lucía",
+   "tier": 0
+  },
+  "hugo": {
+   "emoji": "🧒",
+   "name": "Hugo",
+   "tier": 0
+  },
+  "alex": {
+   "emoji": "🕶️",
+   "name": "Alex",
+   "tier": 0
+  },
+  "gato": {
+   "emoji": "🐱",
+   "name": "Garfio, el gato del cole",
+   "tier": 0
+  },
+  "bus": {
+   "emoji": "🚌",
+   "name": "El bus del cole",
+   "tier": 0
+  },
+  "kiosco": {
+   "emoji": "🏪",
+   "name": "El kiosco de la esquina",
+   "tier": 0
+  },
+  "consola": {
+   "emoji": "🎮",
+   "name": "Tu consola",
+   "tier": 0
+  },
+  "vecino": {
+   "emoji": "🐕",
+   "name": "El perro del vecino",
+   "tier": 0
+  },
+  "cole": {
+   "emoji": "🏫",
+   "name": "El cole",
+   "tier": 0
+  },
+  "finde": {
+   "emoji": "🛋️",
+   "name": "El fin de semana",
+   "tier": 0
+  },
+  "paco": {
+   "emoji": "🔑",
+   "name": "Paco, el conserje",
+   "tier": 1
+  },
+  "lefevre": {
+   "emoji": "🥖",
+   "name": "Monsieur Lefèvre · francés",
+   "tier": 1
+  },
+  "guia": {
+   "emoji": "🖼️",
+   "name": "Marta, la guía del Prado",
+   "tier": 2
+  },
+  "albergue": {
+   "emoji": "🛏️",
+   "name": "El albergue de Madrid",
+   "tier": 2
+  }
+ },
+ "start": "intro",
+ "cards": [
+  {
+   "id": "intro",
+   "ch": "pons",
+   "tier": 0,
+   "once": true,
+   "t": "Primer día de clase. —¡Hola! Tú eres… ¿cómo te llamas?",
+   "f": "Premier jour de classe. — Salut ! Tu es… comment tu t'appelles ?",
+   "l": {
+    "es": "(Dices tu nombre muy bajito.)",
+    "fr": "(Tu dis ton prénom tout bas.)",
+    "fx": {
+     "amigos": -8,
+     "energia": 4
+    }
+   },
+   "r": {
+    "es": "¡Buenos días! Me llamo…",
+    "fr": "Bonjour ! Je m'appelle…",
+    "fx": {
+     "amigos": 6,
+     "energia": -3
+    }
+   }
+  },
+  {
+   "id": "mama1",
+   "ch": "mama",
+   "tier": 0,
+   "t": "¡Buenos días! Son las siete. ¿Te levantas?",
+   "f": "Bonjour ! Il est 7 heures. Tu te lèves ?",
+   "l": {
+    "es": "Cinco minutos más…",
+    "fr": "Cinq minutes de plus…",
+    "fx": {
+     "energia": 11,
+     "notas": -10
+    }
+   },
+   "r": {
+    "es": "¡Ya voy, mamá!",
+    "fr": "J'arrive, maman !",
+    "fx": {
+     "notas": 7,
+     "energia": -6
+    }
+   }
+  },
+  {
+   "id": "mama2",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Hay tortilla para cenar. ¿Pones la mesa?",
+   "f": "Il y a de la tortilla pour le dîner. Tu mets la table ?",
+   "l": {
+    "es": "No puedo, tengo deberes.",
+    "fr": "Je ne peux pas, j'ai des devoirs.",
+    "fx": {
+     "notas": 8,
+     "energia": -4
+    }
+   },
+   "r": {
+    "es": "¡Claro!",
+    "fr": "Bien sûr !",
+    "fx": {
+     "energia": 10,
+     "notas": -6
+    }
+   }
+  },
+  {
+   "id": "hermana",
+   "ch": "hermana",
+   "tier": 0,
+   "t": "Vera (seis años): —¿Juegas conmigo a los Legos?",
+   "f": "Vera (six ans) : — Tu joues aux Legos avec moi ?",
+   "l": {
+    "es": "Ahora no, Vera.",
+    "fr": "Pas maintenant, Vera.",
+    "fx": {
+     "energia": 7,
+     "amigos": -8
+    }
+   },
+   "r": {
+    "es": "Vale, cinco minutos.",
+    "fr": "D'accord, cinq minutes.",
+    "fx": {
+     "amigos": 6,
+     "energia": -6
+    }
+   }
+  },
+  {
+   "id": "mama3",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Tu habitación es un desastre. ¡Ordena!",
+   "f": "Ta chambre est un désastre. Range !",
+   "l": {
+    "es": "Mañana, mamá…",
+    "fr": "Demain, maman…",
+    "fx": {
+     "energia": 7,
+     "dinero": -10
+    }
+   },
+   "r": {
+    "es": "Vale, vale…",
+    "fr": "D'accord, d'accord…",
+    "fx": {
+     "dinero": 10,
+     "energia": -7
+    }
+   }
+  },
+  {
+   "id": "abuela",
+   "ch": "abuela",
+   "tier": 0,
+   "t": "Toma, diez euros. Es un secreto. 🤫",
+   "f": "Tiens, dix euros. C'est un secret. 🤫",
+   "l": {
+    "es": "¡Gracias, abuela!",
+    "fr": "Merci, mamie !",
+    "fx": {
+     "dinero": 10,
+     "amigos": 4
+    }
+   },
+   "r": {
+    "es": "¿Solo diez? 😏",
+    "fr": "Seulement dix ? 😏",
+    "fx": {
+     "dinero": 12,
+     "amigos": -10
+    }
+   }
+  },
+  {
+   "id": "bus",
+   "ch": "bus",
+   "tier": 0,
+   "t": "El conductor: —Son dos euros, por favor.",
+   "f": "Le chauffeur : — C'est deux euros, s'il te plaît.",
+   "l": {
+    "es": "(Pagas.)",
+    "fr": "(Tu paies. Pablo y va à pied, tout seul.)",
+    "fx": {
+     "dinero": -8,
+     "amigos": -4
+    }
+   },
+   "r": {
+    "es": "(Vas andando con Pablo.)",
+    "fr": "(Tu y vas à pied avec Pablo.)",
+    "fx": {
+     "energia": -10,
+     "amigos": 4
+    }
+   }
+  },
+  {
+   "id": "garcia1",
+   "ch": "garcia",
+   "tier": 0,
+   "t": "¿Quién sale a la pizarra?",
+   "f": "Qui vient au tableau ?",
+   "l": {
+    "es": "(Te escondes detrás del libro.)",
+    "fr": "(Tu te caches derrière ton livre.)",
+    "fx": {
+     "notas": -7,
+     "energia": 6
+    }
+   },
+   "r": {
+    "es": "¡Yo!",
+    "fr": "Moi !",
+    "fx": {
+     "notas": 11,
+     "energia": -10
+    }
+   }
+  },
+  {
+   "id": "pons2",
+   "ch": "pons",
+   "tier": 0,
+   "t": "Hay examen el viernes. ¿Estudias esta noche?",
+   "f": "Il y a un contrôle vendredi. Tu révises ce soir ?",
+   "l": {
+    "es": "No… hay fútbol en la tele.",
+    "fr": "Non… il y a du foot à la télé.",
+    "fx": {
+     "energia": 8,
+     "notas": -12
+    }
+   },
+   "r": {
+    "es": "Sí, dos horas.",
+    "fr": "Oui, deux heures.",
+    "fx": {
+     "notas": 11,
+     "energia": -11
+    }
+   }
+  },
+  {
+   "id": "edfisica",
+   "ch": "edfisica",
+   "tier": 0,
+   "t": "¡Hoy: cross de cinco kilómetros!",
+   "f": "Aujourd'hui : cross de cinq kilomètres !",
+   "l": {
+    "es": "Me duele la pierna… 🤕",
+    "fr": "J'ai mal à la jambe… 🤕",
+    "fx": {
+     "energia": 8,
+     "notas": -8
+    }
+   },
+   "r": {
+    "es": "¡Vamos!",
+    "fr": "Allez, on y va !",
+    "fx": {
+     "energia": -12,
+     "amigos": 4,
+     "notas": 3
+    }
+   }
+  },
+  {
+   "id": "garcia2",
+   "ch": "garcia",
+   "tier": 0,
+   "t": "Tu examen de mates: un 4,5. Casi…",
+   "f": "Ton contrôle de maths : 4,5 (sur 10). Presque…",
+   "l": {
+    "es": "¿Puedo repetirlo, por favor?",
+    "fr": "Je peux le repasser, s'il vous plaît ?",
+    "fx": {
+     "notas": 10,
+     "energia": -7
+    }
+   },
+   "r": {
+    "es": "Casi aprobado es… ¿aprobado?",
+    "fr": "Presque la moyenne, c'est… la moyenne ?",
+    "fx": {
+     "notas": -8,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "hugo1",
+   "ch": "hugo",
+   "tier": 0,
+   "t": "Psst… ¿la respuesta de la pregunta tres?",
+   "f": "Psst… la réponse de la question trois ?",
+   "l": {
+    "es": "(Le pasas la respuesta.)",
+    "fr": "(Tu lui passes la réponse.)",
+    "fx": {
+     "amigos": 6,
+     "notas": -10
+    }
+   },
+   "r": {
+    "es": "(No dices nada.)",
+    "fr": "(Tu ne dis rien.)",
+    "fx": {
+     "notas": 7,
+     "amigos": -10
+    }
+   }
+  },
+  {
+   "id": "pons3",
+   "ch": "pons",
+   "tier": 0,
+   "t": "Lee tu poema delante de la clase, por favor.",
+   "f": "Lis ton poème devant la classe, s'il te plaît.",
+   "l": {
+    "es": "(Lees muy, muy bajito.)",
+    "fr": "(Tu lis tout, tout bas.)",
+    "fx": {
+     "notas": -7,
+     "energia": 4
+    }
+   },
+   "r": {
+    "es": "(Lees con mucho teatro. 🎭)",
+    "fr": "(Tu lis de façon très théâtrale. 🎭)",
+    "fx": {
+     "notas": 8,
+     "amigos": 6,
+     "energia": -7
+    }
+   }
+  },
+  {
+   "id": "carmen1",
+   "ch": "carmen",
+   "tier": 0,
+   "t": "Hoy hay lentejas o pescado.",
+   "f": "Aujourd'hui, il y a lentilles ou poisson.",
+   "l": {
+    "es": "Lentejas, por favor.",
+    "fr": "Des lentilles, s'il vous plaît.",
+    "fx": {
+     "energia": 11
+    }
+   },
+   "r": {
+    "es": "¿No hay pizza? 😭",
+    "fr": "Il n'y a pas de pizza ? 😭",
+    "fx": {
+     "energia": -6,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "pablo1",
+   "ch": "pablo",
+   "tier": 0,
+   "t": "¡Partido de fútbol en el patio! ¿Juegas?",
+   "f": "Match de foot dans la cour ! Tu joues ?",
+   "l": {
+    "es": "No, voy a la biblioteca.",
+    "fr": "Non, je vais à la bibliothèque.",
+    "fx": {
+     "notas": 8,
+     "amigos": -10
+    }
+   },
+   "r": {
+    "es": "¡Claro!",
+    "fr": "Évidemment !",
+    "fx": {
+     "amigos": 7,
+     "energia": -8
+    }
+   }
+  },
+  {
+   "id": "kiosco",
+   "ch": "kiosco",
+   "tier": 0,
+   "t": "Chicles, cromos, gusanitos…",
+   "f": "Chewing-gums, cartes à collectionner, chips soufflées…",
+   "l": {
+    "es": "Un paquete de cromos.",
+    "fr": "Un paquet de cartes.",
+    "fx": {
+     "dinero": -10,
+     "amigos": 4
+    }
+   },
+   "r": {
+    "es": "Hoy no, gracias.",
+    "fr": "Pas aujourd'hui, merci.",
+    "fx": {
+     "dinero": 4,
+     "amigos": -7
+    }
+   }
+  },
+  {
+   "id": "lucia1",
+   "ch": "lucia",
+   "tier": 0,
+   "t": "Te cambio dos cromos de Mbappé por tu bocadillo.",
+   "f": "Je t'échange deux cartes Mbappé contre ton sandwich.",
+   "l": {
+    "es": "¡Trato hecho!",
+    "fr": "Marché conclu !",
+    "fx": {
+     "amigos": 7,
+     "energia": -10
+    }
+   },
+   "r": {
+    "es": "Mi bocadillo es sagrado.",
+    "fr": "Mon sandwich est sacré.",
+    "fx": {
+     "energia": 8,
+     "amigos": -7
+    }
+   }
+  },
+  {
+   "id": "gato",
+   "ch": "gato",
+   "tier": 0,
+   "t": "—Miau. (Garfio mira tu bocadillo con ojos tristes.)",
+   "f": "— Miaou. (Garfio regarde ton sandwich avec des yeux tristes.)",
+   "l": {
+    "es": "Toma un trocito, gatito.",
+    "fr": "Tiens, un petit bout, minou.",
+    "fx": {
+     "amigos": 7,
+     "energia": -6
+    }
+   },
+   "r": {
+    "es": "¡No! ¡Es mi jamón!",
+    "fr": "Non ! C'est mon jambon !",
+    "fx": {
+     "energia": 8,
+     "amigos": -7
+    }
+   }
+  },
+  {
+   "id": "fiesta0",
+   "ch": "lucia",
+   "tier": 0,
+   "once": true,
+   "t": "Es mi cumpleaños el sábado. ¿Vienes a mi fiesta?",
+   "f": "C'est mon anniversaire samedi. Tu viens à ma fête ?",
+   "l": {
+    "es": "No puedo… examen el lunes.",
+    "fr": "Je ne peux pas… contrôle lundi.",
+    "fx": {
+     "notas": 8,
+     "amigos": -11
+    },
+    "set": {
+     "fiesta": "no"
+    }
+   },
+   "r": {
+    "es": "¡Claro que sí! 🎉",
+    "fr": "Bien sûr que oui ! 🎉",
+    "fx": {
+     "amigos": 8
+    },
+    "set": {
+     "fiesta": "si"
+    }
+   }
+  },
+  {
+   "id": "fiestaSi",
+   "ch": "finde",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "fiesta": "si"
+   },
+   "t": "La fiesta de Lucía: música, tarta y karaoke.",
+   "f": "La fête de Lucía : musique, gâteau et karaoké.",
+   "l": {
+    "es": "(Cantas «Despacito». Mal.)",
+    "fr": "(Tu chantes « Despacito ». Mal.)",
+    "fx": {
+     "amigos": 7,
+     "energia": -10
+    }
+   },
+   "r": {
+    "es": "(Tarta en el sofá. Sin hablar.)",
+    "fr": "(Gâteau sur le canapé. Sans parler à personne.)",
+    "fx": {
+     "energia": 8,
+     "amigos": -6
+    }
+   }
+  },
+  {
+   "id": "fiestaNo",
+   "ch": "lucia",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "fiesta": "no"
+   },
+   "t": "El lunes, Lucía no te habla…",
+   "f": "Lundi, Lucía ne te parle plus…",
+   "l": {
+    "es": "Lo siento, Lucía.",
+    "fr": "Je suis désolé·e, Lucía.",
+    "fx": {
+     "amigos": 6,
+     "energia": -3
+    }
+   },
+   "r": {
+    "es": "(Le regalas un cromo de Mbappé.)",
+    "fr": "(Tu lui offres une carte Mbappé.)",
+    "fx": {
+     "amigos": 7,
+     "dinero": -7
+    }
+   }
+  },
+  {
+   "id": "pablo2",
+   "ch": "pablo",
+   "tier": 0,
+   "t": "Mi perro se ha comido mis deberes. ¡De verdad! ¿Me ayudas?",
+   "f": "Mon chien a mangé mes devoirs. Je te jure ! Tu m'aides ?",
+   "l": {
+    "es": "Jajaja. No.",
+    "fr": "Hahaha. Non.",
+    "fx": {
+     "energia": 6,
+     "amigos": -11
+    }
+   },
+   "r": {
+    "es": "(Haces los deberes con él.)",
+    "fr": "(Tu fais les devoirs avec lui.)",
+    "fx": {
+     "amigos": 7,
+     "notas": 3,
+     "energia": -10
+    }
+   }
+  },
+  {
+   "id": "alex1",
+   "ch": "alex",
+   "tier": 0,
+   "once": true,
+   "t": "Hola, soy Alex. Soy nuevo. ¿Está libre esta silla?",
+   "f": "Salut, moi c'est Alex. Je suis nouveau. Cette chaise est libre ?",
+   "l": {
+    "es": "Está ocupada.",
+    "fr": "Elle est prise.",
+    "fx": {
+     "amigos": -8
+    },
+    "set": {
+     "alex": "no"
+    }
+   },
+   "r": {
+    "es": "¡Claro! ¿De dónde eres?",
+    "fr": "Bien sûr ! Tu viens d'où ?",
+    "fx": {
+     "amigos": 7
+    },
+    "set": {
+     "alex": "si"
+    }
+   }
+  },
+  {
+   "id": "alex2",
+   "ch": "alex",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "alex": "si"
+   },
+   "t": "¿Sabes guardar un secreto? Tengo un canal de vídeos… ¡con un millón de seguidores!",
+   "f": "Tu sais garder un secret ? J'ai une chaîne de vidéos… avec un million d'abonnés !",
+   "l": {
+    "es": "¡¿QUÉ?! ¡Cuéntamelo todo!",
+    "fr": "QUOI ?! Raconte-moi tout !",
+    "fx": {
+     "amigos": 4,
+     "energia": -4
+    },
+    "set": {
+     "alex2": "si"
+    }
+   },
+   "r": {
+    "es": "(Guardas el secreto. 🤫)",
+    "fr": "(Tu gardes le secret. 🤫)",
+    "fx": {
+     "amigos": 7,
+     "notas": 3
+    },
+    "set": {
+     "alex2": "si"
+    }
+   }
+  },
+  {
+   "id": "alex3",
+   "ch": "alex",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "alex2": "si"
+   },
+   "t": "¿Sales en mi próximo vídeo? Es sobre el cole.",
+   "f": "Tu veux apparaître dans ma prochaine vidéo ? C'est sur le collège.",
+   "l": {
+    "es": "¡Sí! ¡Vamos a ser famosos!",
+    "fr": "Oui ! On va être célèbres !",
+    "fx": {
+     "amigos": 7,
+     "notas": -8,
+     "dinero": 10
+    }
+   },
+   "r": {
+    "es": "No sé… ¿y el director?",
+    "fr": "Je ne sais pas… et le directeur ?",
+    "fx": {
+     "notas": 6,
+     "amigos": -8
+    }
+   }
+  },
+  {
+   "id": "ruiz1",
+   "ch": "ruiz",
+   "tier": 0,
+   "t": "¡No se corre en los pasillos!",
+   "f": "On ne court pas dans les couloirs !",
+   "l": {
+    "es": "No era yo, señor Ruiz.",
+    "fr": "Ce n'était pas moi, monsieur Ruiz.",
+    "fx": {
+     "notas": -8,
+     "energia": 4
+    }
+   },
+   "r": {
+    "es": "Perdón, señor Ruiz.",
+    "fr": "Pardon, monsieur Ruiz.",
+    "fx": {
+     "notas": 6,
+     "energia": -3
+    }
+   }
+  },
+  {
+   "id": "ruiz2",
+   "ch": "ruiz",
+   "tier": 0,
+   "t": "Buscamos voluntarios para limpiar el patio el sábado.",
+   "f": "Nous cherchons des volontaires pour nettoyer la cour samedi.",
+   "l": {
+    "es": "(Miras al techo. 🙄)",
+    "fr": "(Tu regardes le plafond. 🙄)",
+    "fx": {
+     "energia": 6,
+     "notas": -7
+    }
+   },
+   "r": {
+    "es": "Yo, señor.",
+    "fr": "Moi, monsieur.",
+    "fx": {
+     "notas": 7,
+     "amigos": 3,
+     "energia": -11
+    }
+   }
+  },
+  {
+   "id": "musica",
+   "ch": "musica",
+   "tier": 0,
+   "t": "Audición para el festival. ¿Tocas algún instrumento?",
+   "f": "Audition pour le festival. Tu joues d'un instrument ?",
+   "l": {
+    "es": "El triángulo. Nivel experto.",
+    "fr": "Le triangle. Niveau expert.",
+    "fx": {
+     "amigos": 4,
+     "notas": 3
+    }
+   },
+   "r": {
+    "es": "Yo solo canto en la ducha.",
+    "fr": "Moi, je chante seulement sous la douche.",
+    "fx": {
+     "energia": 6,
+     "amigos": -7
+    }
+   }
+  },
+  {
+   "id": "mama4",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Tus notas… ¿Qué es este tres en historia?",
+   "f": "Tes notes… C'est quoi, ce trois en histoire ?",
+   "l": {
+    "es": "El profe me odia, mamá.",
+    "fr": "Le prof me déteste, maman.",
+    "fx": {
+     "notas": -8,
+     "energia": 6
+    }
+   },
+   "r": {
+    "es": "Voy a estudiar más.",
+    "fr": "Je vais travailler plus.",
+    "fx": {
+     "notas": 8,
+     "energia": -7
+    }
+   }
+  },
+  {
+   "id": "consola",
+   "ch": "consola",
+   "tier": 0,
+   "t": "—Una partida más… solo una más…",
+   "f": "— Encore une partie… juste une…",
+   "l": {
+    "es": "(Juegas hasta las dos de la mañana.)",
+    "fr": "(Tu joues jusqu'à 2 h du matin.)",
+    "fx": {
+     "energia": -12,
+     "amigos": 4,
+     "notas": -8
+    }
+   },
+   "r": {
+    "es": "(La apagas. Eres una leyenda.)",
+    "fr": "(Tu l'éteins. Tu es une légende.)",
+    "fx": {
+     "notas": 7,
+     "energia": 6
+    }
+   }
+  },
+  {
+   "id": "vecino",
+   "ch": "vecino",
+   "tier": 0,
+   "t": "¡Guau! El vecino ofrece tres euros por pasear a su perro.",
+   "f": "Wouf ! Le voisin offre trois euros pour promener son chien.",
+   "l": {
+    "es": "¡Trato hecho!",
+    "fr": "Marché conclu !",
+    "fx": {
+     "dinero": 12,
+     "energia": -8
+    }
+   },
+   "r": {
+    "es": "Hoy no puedo.",
+    "fr": "Aujourd'hui je ne peux pas.",
+    "fx": {
+     "energia": 6,
+     "amigos": -7
+    }
+   }
+  },
+  {
+   "id": "historia",
+   "ch": "cole",
+   "tier": 0,
+   "t": "Deberes: tres páginas sobre los Reyes Católicos. Para mañana.",
+   "f": "Devoirs : trois pages sur les Rois Catholiques. Pour demain.",
+   "l": {
+    "es": "(Copias de internet.)",
+    "fr": "(Tu copies sur internet.)",
+    "fx": {
+     "energia": 7,
+     "notas": -11
+    }
+   },
+   "r": {
+    "es": "(Lo escribes tú, con dibujos.)",
+    "fr": "(Tu l'écris toi-même, avec des dessins.)",
+    "fx": {
+     "notas": 11,
+     "energia": -11
+    }
+   }
+  },
+  {
+   "id": "mama5",
+   "ch": "mama",
+   "tier": 0,
+   "t": "¿Yogur o galletas para merendar?",
+   "f": "Yaourt ou biscuits pour le goûter ?",
+   "l": {
+    "es": "Galletas. Obvio.",
+    "fr": "Biscuits. Évidemment.",
+    "fx": {
+     "energia": 8
+    }
+   },
+   "r": {
+    "es": "Yogur, porfa.",
+    "fr": "Yaourt, s'te plaît.",
+    "fx": {
+     "energia": 4,
+     "notas": 3
+    }
+   }
+  },
+  {
+   "id": "paga",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Toma tu paga: cinco euros. ¿Qué vas a hacer?",
+   "f": "Tiens, ton argent de poche : cinq euros. Tu vas en faire quoi ?",
+   "l": {
+    "es": "Ahorrar. 💰",
+    "fr": "Économiser. 💰 (tes copains attendaient des bonbons…)",
+    "fx": {
+     "dinero": 12,
+     "amigos": -6
+    }
+   },
+   "r": {
+    "es": "¡Invitar a mis amigos a chuches!",
+    "fr": "Payer des bonbons à mes copains !",
+    "fx": {
+     "amigos": 7,
+     "dinero": -6
+    }
+   }
+  },
+  {
+   "id": "quiz1",
+   "ch": "garcia",
+   "tier": 0,
+   "t": "Rápido: ¿siete por ocho?",
+   "f": "Vite : sept fois huit ?",
+   "l": {
+    "es": "¡Cincuenta y seis!",
+    "fr": "Cinquante-six !",
+    "fx": {
+     "notas": 10
+    }
+   },
+   "r": {
+    "es": "¿…Sesenta y cinco?",
+    "fr": "…Soixante-cinq ?",
+    "fx": {
+     "notas": -8,
+     "energia": 3
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "quiz2",
+   "ch": "pons",
+   "tier": 0,
+   "t": "¿Cómo se dice «bibliothèque» en español?",
+   "f": "Comment dit-on « bibliothèque » en espagnol ?",
+   "l": {
+    "es": "La biblioteca.",
+    "fr": "La biblioteca. ✔",
+    "fx": {
+     "notas": 10
+    }
+   },
+   "r": {
+    "es": "La librería.",
+    "fr": "La librería (piège : c'est la boutique de livres !)",
+    "fx": {
+     "notas": -8,
+     "amigos": 3
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "quiz3",
+   "ch": "pons",
+   "tier": 0,
+   "t": "Conjuga: «Nosotros ___ amigos.»",
+   "f": "Conjugue : « Nous ___ amis. » (verbe SER)",
+   "l": {
+    "es": "somos",
+    "fr": "somos ✔ (nosotros somos)",
+    "fx": {
+     "notas": 10
+    }
+   },
+   "r": {
+    "es": "sois",
+    "fr": "sois (ça, c'est vosotros !)",
+    "fx": {
+     "notas": -8,
+     "energia": 3
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "pablo3",
+   "ch": "pablo",
+   "tier": 0,
+   "t": "¿Vamos al cine el domingo? Ponen una de superhéroes.",
+   "f": "On va au ciné dimanche ? Ils passent un film de super-héros.",
+   "l": {
+    "es": "Vale. ¡Palomitas a medias!",
+    "fr": "OK. Pop-corn moitié-moitié !",
+    "fx": {
+     "amigos": 7,
+     "dinero": -12,
+     "energia": 4
+    }
+   },
+   "r": {
+    "es": "No tengo dinero…",
+    "fr": "Je n'ai pas d'argent…",
+    "fx": {
+     "amigos": -8,
+     "dinero": 4
+    }
+   }
+  },
+  {
+   "id": "lluvia",
+   "ch": "cole",
+   "tier": 0,
+   "t": "Llueve muchísimo. Recreo dentro de la clase…",
+   "f": "Il pleut très fort. Récré à l'intérieur de la classe…",
+   "l": {
+    "es": "(Duermes sobre la mesa.)",
+    "fr": "(Tu dors sur la table.)",
+    "fx": {
+     "energia": 11,
+     "amigos": -7
+    }
+   },
+   "r": {
+    "es": "(Organizas un torneo de pulsos.)",
+    "fr": "(Tu organises un tournoi de bras de fer.)",
+    "fx": {
+     "amigos": 7,
+     "energia": -7
+    }
+   }
+  },
+  {
+   "id": "movil",
+   "ch": "cole",
+   "tier": 0,
+   "t": "Tu móvil suena EN CLASE. Todo el mundo te mira.",
+   "f": "Ton portable sonne EN CLASSE. Tout le monde te regarde.",
+   "l": {
+    "es": "Perdón… es mi abuela.",
+    "fr": "Pardon… c'est ma grand-mère.",
+    "fx": {
+     "amigos": 3,
+     "notas": -10
+    }
+   },
+   "r": {
+    "es": "(Lo apagas rápido. Qué vergüenza.)",
+    "fr": "(Tu l'éteins vite. Quelle honte.)",
+    "fx": {
+     "notas": -4,
+     "energia": -4
+    }
+   }
+  },
+  {
+   "id": "biblio",
+   "ch": "biblio",
+   "tier": 0,
+   "t": "—Este libro es muy fácil y muy divertido.",
+   "f": "— Ce livre est très facile et très drôle.",
+   "l": {
+    "es": "(Lo lees… ¡y entiendes casi todo!)",
+    "fr": "(Tu le lis… et tu comprends presque tout !)",
+    "fx": {
+     "notas": 10,
+     "energia": -4
+    }
+   },
+   "r": {
+    "es": "¿Tiene la versión en vídeo?",
+    "fr": "Vous avez la version en vidéo ?",
+    "fx": {
+     "amigos": 3,
+     "notas": -8
+    }
+   }
+  },
+  {
+   "id": "hugo2",
+   "ch": "hugo",
+   "tier": 0,
+   "t": "Vendo mi colección de cromos. ¡Diez euros todo!",
+   "f": "Je vends ma collection de cartes. Dix euros le tout !",
+   "l": {
+    "es": "¡La compro!",
+    "fr": "J'achète !",
+    "fx": {
+     "dinero": -12,
+     "amigos": 6
+    }
+   },
+   "r": {
+    "es": "No, gracias.",
+    "fr": "Non, merci.",
+    "fx": {
+     "dinero": 4,
+     "amigos": -6
+    }
+   }
+  },
+  {
+   "id": "basket",
+   "ch": "edfisica",
+   "tier": 0,
+   "t": "Torneo de baloncesto el jueves. ¿Te apuntas?",
+   "f": "Tournoi de basket jeudi. Tu t'inscris ?",
+   "l": {
+    "es": "¡Sí! ¡A ganar!",
+    "fr": "Oui ! On va gagner !",
+    "fx": {
+     "amigos": 6,
+     "energia": -11
+    }
+   },
+   "r": {
+    "es": "Yo prefiero mirar.",
+    "fr": "Je préfère regarder.",
+    "fx": {
+     "energia": 7,
+     "amigos": -8
+    }
+   }
+  },
+  {
+   "id": "carmen2",
+   "ch": "carmen",
+   "tier": 0,
+   "t": "De postre: fruta… o natillas. 😋",
+   "f": "En dessert : un fruit… ou de la crème dessert. 😋",
+   "l": {
+    "es": "Una manzana.",
+    "fr": "Une pomme.",
+    "fx": {
+     "energia": 4,
+     "notas": 3
+    }
+   },
+   "r": {
+    "es": "¡Natillas! ¡Dos!",
+    "fr": "La crème ! Deux !",
+    "fx": {
+     "energia": 10
+    }
+   }
+  },
+  {
+   "id": "garcia3",
+   "ch": "garcia",
+   "tier": 0,
+   "t": "Mañana, control sorpresa de tablas de multiplicar.",
+   "f": "Demain, interro surprise de tables de multiplication.",
+   "l": {
+    "es": "(Repasas en el bus.)",
+    "fr": "(Tu révises dans le bus.)",
+    "fx": {
+     "notas": 8,
+     "energia": -6
+    }
+   },
+   "r": {
+    "es": "(Cruzas los dedos. 🤞)",
+    "fr": "(Tu croises les doigts. 🤞)",
+    "fx": {
+     "energia": 6,
+     "notas": -10
+    }
+   }
+  },
+  {
+   "id": "halloween",
+   "ch": "cole",
+   "tier": 0,
+   "once": true,
+   "month": 10,
+   "t": "Fiesta de Halloween en el cole. ¿Tu disfraz?",
+   "f": "Fête de Halloween au collège. Ton déguisement ?",
+   "l": {
+    "es": "Fantasma: una sábana y ya.",
+    "fr": "Fantôme : un drap et c'est tout.",
+    "fx": {
+     "dinero": 4,
+     "amigos": -7
+    }
+   },
+   "r": {
+    "es": "De vampiro profesional. 🧛",
+    "fr": "En vampire professionnel. 🧛",
+    "fx": {
+     "dinero": -11,
+     "amigos": 8
+    }
+   }
+  },
+  {
+   "id": "navidad",
+   "ch": "cole",
+   "tier": 0,
+   "once": true,
+   "month": 12,
+   "t": "Amigo invisible: te toca… ¡el señor García!",
+   "f": "Père Noël secret : tu tires au sort… monsieur García !",
+   "l": {
+    "es": "Una calculadora. Jaja.",
+    "fr": "Une calculatrice. Haha.",
+    "fx": {
+     "dinero": -7,
+     "amigos": 4,
+     "notas": 4
+    }
+   },
+   "r": {
+    "es": "Calcetines de renos.",
+    "fr": "Des chaussettes à rennes.",
+    "fx": {
+     "dinero": -6,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "reyes",
+   "ch": "finde",
+   "tier": 0,
+   "once": true,
+   "month": 1,
+   "t": "¡Seis de enero! Hay un regalo… y carbón dulce.",
+   "f": "Le 6 janvier (les Rois mages) ! Il y a un cadeau… et du charbon en sucre.",
+   "l": {
+    "es": "(Comes el carbón. Está rico.)",
+    "fr": "(Tu manges le charbon. C'est bon.)",
+    "fx": {
+     "energia": 8
+    }
+   },
+   "r": {
+    "es": "¿Por qué hay carbón?",
+    "fr": "Pourquoi il y a du charbon ?",
+    "fx": {
+     "notas": 6
+    }
+   }
+  },
+  {
+   "id": "valentin",
+   "ch": "cole",
+   "tier": 0,
+   "once": true,
+   "month": 2,
+   "t": "Una carta anónima en tu mochila: «Me gustas.»",
+   "f": "Une lettre anonyme dans ton sac : « Tu me plais. »",
+   "l": {
+    "es": "(La guardas en secreto. ❤️)",
+    "fr": "(Tu la gardes en secret. ❤️)",
+    "fx": {
+     "energia": 7,
+     "amigos": 3
+    }
+   },
+   "r": {
+    "es": "(La enseñas a toda la clase.)",
+    "fr": "(Tu la montres à toute la classe.)",
+    "fx": {
+     "amigos": -11,
+     "energia": 4
+    }
+   }
+  },
+  {
+   "id": "libro",
+   "ch": "pons",
+   "tier": 0,
+   "once": true,
+   "month": 4,
+   "t": "Día del Libro: la profe te regala un cómic en español.",
+   "f": "Journée du livre : la prof t'offre une BD en espagnol.",
+   "l": {
+    "es": "(Lo lees en una tarde.)",
+    "fr": "(Tu la lis en un après-midi.)",
+    "fx": {
+     "notas": 10,
+     "energia": -4
+    }
+   },
+   "r": {
+    "es": "Gracias… (Lo usas de posavasos.)",
+    "fr": "Merci… (Tu t'en sers comme dessous de verre.)",
+    "fx": {
+     "notas": -8,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "acuatico",
+   "ch": "cole",
+   "tier": 0,
+   "once": true,
+   "month": 6,
+   "t": "¡Viaje de fin de curso: parque acuático!",
+   "f": "Voyage de fin d'année : parc aquatique !",
+   "l": {
+    "es": "¡El tobogán gigante!",
+    "fr": "Le toboggan géant !",
+    "fx": {
+     "amigos": 8,
+     "energia": -10
+    }
+   },
+   "r": {
+    "es": "(Flotas tranquilamente. 😎)",
+    "fr": "(Tu flottes tranquillement. 😎)",
+    "fx": {
+     "energia": 11,
+     "amigos": -6
+    }
+   }
+  },
+  {
+   "id": "paco1",
+   "ch": "paco",
+   "tier": 1,
+   "t": "—¿La pelota en el tejado otra vez? Vale… pero el sábado me ayudas a pintar la valla.",
+   "f": "— Le ballon sur le toit, encore ? D'accord… mais samedi, tu m'aides à peindre la clôture.",
+   "l": {
+    "es": "(Pintas. Paco te da cinco euros.)",
+    "fr": "(Tu peins. Paco te donne cinq euros.)",
+    "fx": {
+     "dinero": 10,
+     "energia": -10
+    }
+   },
+   "r": {
+    "es": "(Dices que sí… y desapareces.)",
+    "fr": "(Tu dis oui… et tu disparais.)",
+    "fx": {
+     "energia": 7,
+     "amigos": -8
+    }
+   }
+  },
+  {
+   "id": "paco2",
+   "ch": "paco",
+   "tier": 1,
+   "t": "Paco lo sabe TODO. —Psst… hoy hay control sorpresa de lengua. 🤫",
+   "f": "Paco sait TOUT. — Psst… aujourd'hui, interro surprise de « lengua » (l'espagnol). 🤫",
+   "l": {
+    "es": "(Repasas rápido en el pasillo.)",
+    "fr": "(Tu révises vite dans le couloir.)",
+    "fx": {
+     "notas": 7,
+     "energia": -6
+    }
+   },
+   "r": {
+    "es": "¡Gracias! (Avisas a la clase.)",
+    "fr": "Merci ! (Tu préviens la classe.)",
+    "fx": {
+     "amigos": 6,
+     "notas": -7
+    }
+   }
+  },
+  {
+   "id": "paco3",
+   "ch": "paco",
+   "tier": 1,
+   "t": "Objetos perdidos: tres bufandas, un balón, un zapato… ¡y tu chaqueta!",
+   "f": "Objets trouvés : trois écharpes, un ballon, une chaussure… et ta veste !",
+   "l": {
+    "es": "¡Mi chaqueta! ¡Gracias, Paco!",
+    "fr": "Ma veste ! Merci, Paco ! (tes copains se moquent un peu : elle est vraiment moche)",
+    "fx": {
+     "dinero": 8,
+     "amigos": -3
+    }
+   },
+   "r": {
+    "es": "Esa no es mía. ¡Es muy fea!",
+    "fr": "Elle n'est pas à moi. Elle est trop moche ! (c'était bien la tienne… il faut en racheter une, mais toute la classe rit)",
+    "fx": {
+     "dinero": -8,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "lefevre1",
+   "ch": "lefevre",
+   "tier": 1,
+   "t": "Monsieur Lefèvre: —Bonjour, clase. ¿Cómo se dice «bocadillo» en francés?",
+   "f": "Monsieur Lefèvre : — Bonjour, la classe. Comment dit-on « bocadillo » en français ?",
+   "l": {
+    "es": "«Un sandwich». ¡Fácil!",
+    "fr": "« Un sandwich ». Facile ! ✔ (la classe te trouve un peu trop fort·e)",
+    "fx": {
+     "notas": 7,
+     "amigos": -6
+    }
+   },
+   "r": {
+    "es": "Un… ¿bocadillou?",
+    "fr": "Un… « bocadillou » ? (ce n'est pas du français, mais toute la classe rit)",
+    "fx": {
+     "notas": -7,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "lefevre2",
+   "ch": "lefevre",
+   "tier": 1,
+   "t": "—Hoy cantamos «Frère Jacques». ¡Todos de pie! Dormez-vous?",
+   "f": "— Aujourd'hui, on chante « Frère Jacques ». Tous debout ! Dormez-vous ?",
+   "l": {
+    "es": "(Cantas fuerte y con acento. 🎶)",
+    "fr": "(Tu chantes fort, avec l'accent. 🎶)",
+    "fx": {
+     "notas": 7,
+     "energia": -6
+    }
+   },
+   "r": {
+    "es": "(Mueves los labios. Sin sonido.)",
+    "fr": "(Tu bouges les lèvres. Sans le son.)",
+    "fx": {
+     "energia": 6,
+     "notas": -10
+    }
+   }
+  },
+  {
+   "id": "lefevre3",
+   "ch": "lefevre",
+   "tier": 1,
+   "t": "Intercambio con un colegio de Cayena, en la Guayana Francesa. Escribe a tu «correspondant».",
+   "f": "Échange avec un collège de Cayenne, en Guyane. Écris à ton correspondant.",
+   "l": {
+    "es": "(Tres páginas, con dibujos.)",
+    "fr": "(Trois pages, avec des dessins.)",
+    "fx": {
+     "notas": 7,
+     "energia": -7
+    }
+   },
+   "r": {
+    "es": "«Salut. Ça va? Bye.»",
+    "fr": "« Salut. Ça va ? Bye. » (trois mots… ton correspondant est un peu déçu)",
+    "fx": {
+     "energia": 6,
+     "notas": -7,
+     "amigos": -6
+    }
+   }
+  },
+  {
+   "id": "lab",
+   "ch": "cole",
+   "tier": 1,
+   "t": "Laboratorio de ciencias. El profe: —No toquéis NADA.",
+   "f": "Labo de sciences. Le prof : — Ne touchez à RIEN.",
+   "l": {
+    "es": "(Tocas. Humo verde. 💨)",
+    "fr": "(Tu touches. Fumée verte. 💨)",
+    "fx": {
+     "amigos": 6,
+     "notas": -10
+    }
+   },
+   "r": {
+    "es": "(Miras y tomas notas.)",
+    "fr": "(Tu regardes et tu prends des notes.)",
+    "fx": {
+     "notas": 7,
+     "energia": -4
+    }
+   }
+  },
+  {
+   "id": "enfermeria",
+   "ch": "cole",
+   "tier": 1,
+   "t": "Te duele la tripa en clase de mates. El profe: —¿Vas a la enfermería?",
+   "f": "Tu as mal au ventre en cours de maths. Le prof : — Tu vas à l'infirmerie ?",
+   "l": {
+    "es": "Sí… (Una hora en la camita. 😌)",
+    "fr": "Oui… (Une heure sur le petit lit. 😌)",
+    "fx": {
+     "energia": 10,
+     "notas": -8
+    }
+   },
+   "r": {
+    "es": "No. Aguanto. Es solo mates.",
+    "fr": "Non. Je tiens bon. C'est juste les maths.",
+    "fx": {
+     "notas": 6,
+     "energia": -6
+    }
+   }
+  },
+  {
+   "id": "viaje1",
+   "ch": "cole",
+   "tier": 2,
+   "once": true,
+   "month": 5,
+   "t": "¡Viaje de clase a Madrid! Tres días. ¿Qué metes en la mochila?",
+   "f": "Voyage de classe à Madrid ! Trois jours. Qu'est-ce que tu mets dans ton sac ?",
+   "l": {
+    "es": "Gusanitos para todo el bus.",
+    "fr": "Des chips soufflées pour tout le bus.",
+    "fx": {
+     "dinero": -8,
+     "amigos": 7
+    }
+   },
+   "r": {
+    "es": "Un libro, un paraguas y un mapa.",
+    "fr": "Un livre, un parapluie et une carte.",
+    "fx": {
+     "notas": 4,
+     "amigos": -7,
+     "energia": 4
+    }
+   }
+  },
+  {
+   "id": "viajebus",
+   "ch": "bus",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Seis horas de autobús hasta Madrid. Pablo canta. Mal.",
+   "f": "Six heures de bus jusqu'à Madrid. Pablo chante. Mal.",
+   "l": {
+    "es": "(Cantas con él. ¡Todos cantan!)",
+    "fr": "(Tu chantes avec lui. Tout le monde chante !)",
+    "fx": {
+     "amigos": 7,
+     "energia": -8
+    }
+   },
+   "r": {
+    "es": "(Auriculares y a dormir.)",
+    "fr": "(Écouteurs, et dodo.)",
+    "fx": {
+     "energia": 10,
+     "amigos": -8
+    }
+   }
+  },
+  {
+   "id": "albergue1",
+   "ch": "albergue",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Albergue, once de la noche. La señora Pons grita: —¡A DORMIR!",
+   "f": "Auberge de jeunesse, onze heures du soir. Madame Pons crie : — AU LIT !",
+   "l": {
+    "es": "(¡Guerra de almohadas! 💥)",
+    "fr": "(Bataille de polochons ! 💥)",
+    "fx": {
+     "amigos": 7,
+     "energia": -11
+    }
+   },
+   "r": {
+    "es": "(Duermes. Mañana, el Prado.)",
+    "fr": "(Tu dors. Demain, le Prado.)",
+    "fx": {
+     "energia": 10,
+     "amigos": -8
+    }
+   }
+  },
+  {
+   "id": "prado1",
+   "ch": "guia",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Museo del Prado. —¿Quién es el pintor de «Las Meninas»?",
+   "f": "Musée du Prado. — Qui est le peintre des « Ménines » ?",
+   "l": {
+    "es": "Velázquez.",
+    "fr": "Velázquez ✔ (en 1656 ; il s'est peint lui-même dans le tableau !)",
+    "fx": {
+     "notas": 8
+    }
+   },
+   "r": {
+    "es": "¡Picasso!",
+    "fr": "Picasso (piège : il en a peint 58 versions en 1957… mais l'original est de Velázquez)",
+    "fx": {
+     "notas": -7,
+     "amigos": 3
+    }
+   }
+  },
+  {
+   "id": "prado2",
+   "ch": "guia",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Sala de Goya. Un perro pequeño, solo, mira al cielo. —Es «El perro», de Goya.",
+   "f": "Salle Goya. Un petit chien, seul, regarde le ciel. — C'est « Le Chien », de Goya. (Goya… ça te dit quelque chose ?)",
+   "l": {
+    "es": "Es triste… y muy bonito.",
+    "fr": "C'est triste… et très beau.",
+    "fx": {
+     "notas": 7,
+     "energia": -4
+    }
+   },
+   "r": {
+    "es": "¡Mi hermana pinta mejor!",
+    "fr": "Ma sœur peint mieux ! (La guide soupire. Tes copains aussi.)",
+    "fx": {
+     "energia": 6,
+     "notas": -7,
+     "amigos": -3
+    }
+   }
+  },
+  {
+   "id": "sol",
+   "ch": "cole",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Tarde libre en la Puerta del Sol. El Oso y el Madroño te miran.",
+   "f": "Après-midi libre sur la Puerta del Sol. L'Ours et l'Arbousier (la statue symbole de Madrid) te regardent.",
+   "l": {
+    "es": "Churros con chocolate para todos.",
+    "fr": "Churros au chocolat pour tout le monde.",
+    "fx": {
+     "dinero": -10,
+     "amigos": 8
+    }
+   },
+   "r": {
+    "es": "Yo no. Ahorro para la abuela.",
+    "fr": "Pas moi. J'économise pour un souvenir pour mamie.",
+    "fx": {
+     "dinero": 8,
+     "amigos": -7
+    }
+   }
+  }
+ ],
+ "deaths": {
+  "notas": {
+   "lo": {
+    "m": "📉",
+    "es": "Suspendes TODO. Hasta educación física. Tus padres confiscan tu móvil, tu consola… y el sofá.",
+    "fr": "Tu rates TOUT. Même l'EPS. Tes parents confisquent ton portable, ta console… et le canapé."
+   },
+   "hi": {
+    "m": "🤓",
+    "es": "Eres una máquina de sobresalientes. Una escuela de genios te recluta. Adiós, amigos…",
+    "fr": "Tu es une machine à 10/10. Une école de génies te recrute. Adieu, les copains…"
+   }
+  },
+  "amigos": {
+   "lo": {
+    "m": "🥪",
+    "es": "Comes tu bocadillo en el baño del gimnasio. Hasta el gato Garfio te evita.",
+    "fr": "Tu manges ton sandwich dans les toilettes du gymnase. Même le chat Garfio t'évite."
+   },
+   "hi": {
+    "m": "🤩",
+    "es": "Demasiada popularidad: no puedes ni caminar por el pasillo. Te mudas a una isla secreta.",
+    "fr": "Trop de popularité : tu ne peux plus marcher dans le couloir. Tu déménages sur une île secrète."
+   }
+  },
+  "energia": {
+   "lo": {
+    "m": "😴",
+    "es": "Te duermes en clase de mates… y despiertas en junio. El curso ha terminado sin ti.",
+    "fr": "Tu t'endors en cours de maths… et tu te réveilles en juin. L'année est finie sans toi."
+   },
+   "hi": {
+    "m": "🤸",
+    "es": "Corres por los pasillos, saltas las mesas, haces el pino en el comedor. El director dice: BASTA.",
+    "fr": "Tu cours dans les couloirs, tu sautes sur les tables, tu fais le poirier à la cantine. Le directeur dit : ÇA SUFFIT."
+   }
+  },
+  "dinero": {
+   "lo": {
+    "m": "💸",
+    "es": "Ni un céntimo: ni bus, ni bocadillo, ni cromos. Tu estómago hace GRRRR.",
+    "fr": "Plus un centime : ni bus, ni sandwich, ni cartes. Ton estomac fait GRRRR."
+   },
+   "hi": {
+    "m": "🤑",
+    "es": "¿CIEN euros? El director quiere saber de dónde sale tanto dinero. La reunión es… incómoda.",
+    "fr": "CENT euros ?! Le directeur veut savoir d'où sort tout cet argent. La réunion est… gênante."
+   }
+  }
+ },
+ "win": {
+  "m": "🎉",
+  "es": "¡Has sobrevivido al año escolar! Vacaciones, playa y cero deberes… hasta septiembre.",
+  "fr": "Tu as survécu à l'année scolaire ! Vacances, plage et zéro devoir… jusqu'en septembre."
+ }
+}

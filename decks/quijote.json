@@ -1,0 +1,1199 @@
+{
+ "id": "quijote",
+ "name": "Don Quijote",
+ "emoji": "🐴",
+ "tagline": "¡Gigantes! Digo… molinos.",
+ "sub": "Tu es Don Quichotte : moulins, géants et chevalerie en Castille",
+ "intro_fr": "Tu es Alonso Quijano, un hidalgo de La Mancha qui a lu beaucoup trop de romans de chevalerie. Vers 1605, tu décides de devenir le chevalier Don Quichotte et de partir à l'aventure avec ton écuyer Sancho Panza. Objectif : vivre assez d'aventures pour qu'un jour on écrive un livre sur toi.",
+ "time": {
+  "mode": "chapter",
+  "total": 26
+ },
+ "places": [
+  [
+   0,
+   "La Mancha"
+  ],
+  [
+   0.75,
+   "Barcelona"
+  ]
+ ],
+ "gauges": [
+  {
+   "key": "valor",
+   "icon": "⚔️",
+   "label": "Valor"
+  },
+  {
+   "key": "locura",
+   "icon": "🌀",
+   "label": "Locura"
+  },
+  {
+   "key": "fuerzas",
+   "icon": "🍗",
+   "label": "Fuerzas"
+  },
+  {
+   "key": "sancho",
+   "icon": "🤝",
+   "label": "Sancho"
+  }
+ ],
+ "tiers": [
+  {
+   "id": 1,
+   "cond": {
+    "cards": 12
+   },
+   "es": "Sobrevive 12 capítulos",
+   "fr": "Survis à 12 chapitres"
+  },
+  {
+   "id": 2,
+   "cond": {
+    "win": 1
+   },
+   "es": "Termina la aventura",
+   "fr": "Termine l'aventure"
+  }
+ ],
+ "chars": {
+  "sancho": {
+   "emoji": "🧔",
+   "name": "Sancho Panza, tu escudero",
+   "tier": 0
+  },
+  "rocinante": {
+   "emoji": "🐴",
+   "name": "Rocinante, tu caballo",
+   "tier": 0
+  },
+  "ventero": {
+   "emoji": "🧑‍🍳",
+   "name": "El ventero",
+   "tier": 0
+  },
+  "barbero": {
+   "emoji": "💈",
+   "name": "El barbero",
+   "tier": 0
+  },
+  "cura": {
+   "emoji": "⛪",
+   "name": "El cura del pueblo",
+   "tier": 0
+  },
+  "molinos": {
+   "emoji": "🌬️",
+   "name": "Los molinos de viento",
+   "tier": 0
+  },
+  "dulcinea": {
+   "emoji": "👩‍🌾",
+   "name": "Dulcinea (Aldonza Lorenzo)",
+   "tier": 0
+  },
+  "encantador": {
+   "emoji": "🧙",
+   "name": "Frestón, el encantador",
+   "tier": 0
+  },
+  "duques": {
+   "emoji": "👑",
+   "name": "Los duques",
+   "tier": 1
+  },
+  "sanson": {
+   "emoji": "🎓",
+   "name": "Sansón Carrasco, el bachiller",
+   "tier": 1
+  },
+  "blancaluna": {
+   "emoji": "🌙",
+   "name": "El Caballero de la Blanca Luna",
+   "tier": 2
+  },
+  "roque": {
+   "emoji": "🗡️",
+   "name": "Roque Guinart, el bandolero",
+   "tier": 2
+  },
+  "imprenta": {
+   "emoji": "📖",
+   "name": "La imprenta de Barcelona",
+   "tier": 2
+  }
+ },
+ "start": "salida",
+ "cards": [
+  {
+   "id": "salida",
+   "ch": "rocinante",
+   "tier": 0,
+   "once": true,
+   "t": "Has leído mil libros de caballerías. Decides ser caballero andante. Tu caballo flaco pide un nombre.",
+   "f": "Tu as lu mille livres de chevalerie. Tu décides de devenir chevalier errant. Ton cheval maigre demande un nom.",
+   "l": {
+    "es": "¡Rocinante! Y mi dama, Dulcinea.",
+    "fr": "Rossinante ! Et ma dame : Dulcinée.",
+    "fx": {
+     "valor": 10,
+     "locura": 6
+    }
+   },
+   "r": {
+    "es": "(Piensas el nombre cuatro días.)",
+    "fr": "(Tu réfléchis au nom pendant quatre jours.) (authentique !)",
+    "fx": {
+     "locura": 5,
+     "fuerzas": -6,
+     "valor": -3
+    }
+   }
+  },
+  {
+   "id": "molinos",
+   "ch": "molinos",
+   "tier": 0,
+   "once": true,
+   "t": "Somos treinta. Giramos con el viento y tenemos brazos largos. Sancho grita: «¡Son molinos, señor!»",
+   "f": "Nous sommes trente. Nous tournons avec le vent et nous avons de longs bras. Sancho crie : « Ce sont des moulins, monsieur ! »",
+   "l": {
+    "es": "¡Gigantes! ¡A la carga!",
+    "fr": "Des géants ! À l'attaque !",
+    "fx": {
+     "valor": 12,
+     "locura": 10,
+     "fuerzas": -11
+    },
+    "set": {
+     "molinos": "ataque"
+    }
+   },
+   "r": {
+    "es": "(Miras bien… Son molinos.)",
+    "fr": "(Tu regardes bien… Ce sont des moulins.)",
+    "fx": {
+     "valor": -10,
+     "locura": -11,
+     "sancho": 6
+    },
+    "set": {
+     "molinos": "no"
+    }
+   }
+  },
+  {
+   "id": "freston",
+   "ch": "encantador",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "molinos": "ataque"
+   },
+   "t": "(En el suelo. Una voz.) —Soy Frestón, el encantador. He cambiado tus gigantes por molinos. ¡Ja!",
+   "f": "(Par terre. Une voix.) « Je suis Frestón, l'enchanteur. J'ai changé tes géants en moulins. Ha ! »",
+   "l": {
+    "es": "¡Lo sabía! ¡Encantador envidioso!",
+    "fr": "Je le savais ! Enchanteur jaloux !",
+    "fx": {
+     "locura": 11,
+     "valor": 3
+    }
+   },
+   "r": {
+    "es": "(No oyes voces. Te duele todo.)",
+    "fr": "(Tu n'entends pas de voix. Tu as mal partout.)",
+    "fx": {
+     "locura": -10,
+     "sancho": 5,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "venta",
+   "ch": "ventero",
+   "tier": 0,
+   "t": "Bienvenido a mi venta, señor. ¿Castillo? Vale, castillo. Soy el señor del castillo. ¿Cena o cama?",
+   "f": "Bienvenue dans mon auberge, monsieur. Un château ? D'accord, château. Je suis le seigneur du château. Dîner ou lit ?",
+   "l": {
+    "es": "¡Ármame caballero, noble señor!",
+    "fr": "Armez-moi chevalier, noble seigneur !",
+    "fx": {
+     "valor": 8,
+     "locura": 8,
+     "fuerzas": -5
+    }
+   },
+   "r": {
+    "es": "Cena, por favor. Y cama.",
+    "fr": "Le dîner, s'il vous plaît. Et un lit.",
+    "fx": {
+     "fuerzas": 11,
+     "locura": -8,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "velar",
+   "ch": "ventero",
+   "tier": 0,
+   "t": "Vela tus armas esta noche junto al pozo. Mañana te armo caballero… ¡y te vas! Y no pegues a nadie.",
+   "f": "Veille tes armes cette nuit près du puits. Demain je t'arme chevalier… et tu pars ! Et ne frappe personne.",
+   "l": {
+    "es": "(Velas de pie toda la noche.)",
+    "fr": "(Tu veilles debout toute la nuit.)",
+    "fx": {
+     "valor": 11,
+     "fuerzas": -11
+    }
+   },
+   "r": {
+    "es": "(Velas sentado. También cuenta.)",
+    "fr": "(Tu veilles assis. Ça compte aussi.)",
+    "fx": {
+     "fuerzas": 8,
+     "valor": -11
+    }
+   }
+  },
+  {
+   "id": "quizcaballo",
+   "ch": "ventero",
+   "tier": 0,
+   "t": "Para el libro del castillo, caballero: nombre del caballo. Rápido, que tengo clientes.",
+   "f": "Pour le registre du château, chevalier : le nom du cheval. Vite, j'ai des clients.",
+   "l": {
+    "es": "Rocinante.",
+    "fr": "Rossinante. (correct !)",
+    "fx": {
+     "sancho": 6,
+     "fuerzas": 5
+    }
+   },
+   "r": {
+    "es": "Babieca.",
+    "fr": "Babieca. (piège : c'est le cheval du Cid !)",
+    "fx": {
+     "locura": 6,
+     "sancho": -6
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "escudero",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "Soy tu escudero, señor, y tú me has prometido una ínsula. ¿Cuándo la gobierno? Una grande.",
+   "f": "Je suis ton écuyer, monsieur, et tu m'as promis une île. Quand est-ce que je la gouverne ? Une grande.",
+   "l": {
+    "es": "¡Pronto! Palabra de caballero.",
+    "fr": "Bientôt ! Parole de chevalier.",
+    "fx": {
+     "sancho": 11,
+     "locura": 6
+    }
+   },
+   "r": {
+    "es": "Las ínsulas se ganan. A trabajar.",
+    "fr": "Les îles, ça se gagne. Au travail.",
+    "fx": {
+     "sancho": -11,
+     "locura": -5
+    }
+   }
+  },
+  {
+   "id": "cartamal",
+   "ch": "sancho",
+   "tier": 0,
+   "once": true,
+   "t": "Señor, tu carta para Dulcinea… está en tu libreta. Pero la sé de memoria: «Alta y sobajada señora…»",
+   "f": "Monsieur, ta lettre pour Dulcinée… elle est restée dans ton carnet. Mais je la sais par cœur : « Haute et chiffonnée dame… » (il voulait dire « souveraine »)",
+   "l": {
+    "es": "(Te ríes. Sancho es un tesoro.)",
+    "fr": "(Tu ris. Sancho est un trésor.)",
+    "fx": {
+     "sancho": 8,
+     "locura": -6
+    }
+   },
+   "r": {
+    "es": "¡Soberana! ¡Insultas a mi dama!",
+    "fr": "Souveraine ! Tu insultes ma dame !",
+    "fx": {
+     "sancho": -11,
+     "locura": 8
+    }
+   }
+  },
+  {
+   "id": "dulcinea",
+   "ch": "dulcinea",
+   "tier": 0,
+   "t": "(En tu cabeza.) Soy Dulcinea del Toboso, la más bella del mundo. ¿Qué has hecho hoy por mí?",
+   "f": "(Dans ta tête.) Je suis Dulcinée du Toboso, la plus belle du monde. Qu'as-tu fait pour moi aujourd'hui ?",
+   "l": {
+    "es": "He vencido a treinta gigantes.",
+    "fr": "J'ai vaincu trente géants.",
+    "fx": {
+     "locura": 10,
+     "valor": 5
+    }
+   },
+   "r": {
+    "es": "Nada. Pero he comido muy bien.",
+    "fr": "Rien. Mais j'ai très bien mangé.",
+    "fx": {
+     "fuerzas": 8,
+     "locura": -11,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "ajo",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "Señor, Dulcinea es Aldonza, la hija de Lorenzo Corchuelo. Huele a ajo y grita más que un pastor.",
+   "f": "Monsieur, Dulcinée c'est Aldonza, la fille de Lorenzo Corchuelo. Elle sent l'ail et elle crie plus fort qu'un berger.",
+   "l": {
+    "es": "¡Es la dama más bella del mundo!",
+    "fr": "C'est la plus belle dame du monde !",
+    "fx": {
+     "locura": 10,
+     "sancho": -8
+    }
+   },
+   "r": {
+    "es": "(Suspiras.) Ya lo sé, Sancho…",
+    "fr": "(Tu soupires.) Je sais, Sancho…",
+    "fx": {
+     "locura": -11,
+     "sancho": 8,
+     "valor": -3
+    }
+   }
+  },
+  {
+   "id": "yelmo",
+   "ch": "barbero",
+   "tier": 0,
+   "t": "(Llueve.) Llevo mi bacía de latón en la cabeza para no mojarme. ¿Por qué me miras así, señor?",
+   "f": "(Il pleut.) Je porte mon plat à barbe en laiton sur la tête pour ne pas me mouiller. Pourquoi tu me regardes comme ça, monsieur ?",
+   "l": {
+    "es": "¡El yelmo de Mambrino! ¡Dámelo!",
+    "fr": "Le heaume de Mambrin ! Donne-le-moi !",
+    "fx": {
+     "valor": 10,
+     "locura": 10,
+     "sancho": -5
+    }
+   },
+   "r": {
+    "es": "Perdón. Bonita bacía. Buen viaje.",
+    "fr": "Pardon. Joli plat à barbe. Bon voyage.",
+    "fx": {
+     "locura": -11,
+     "valor": -6
+    }
+   }
+  },
+  {
+   "id": "ovejas",
+   "ch": "encantador",
+   "tier": 0,
+   "t": "(Una voz.) Dos nubes de polvo. Son los ejércitos de Alifanfarón y Pentapolín. ¡Gloria para ti!",
+   "f": "(Une voix.) Deux nuages de poussière. Ce sont les armées d'Alifanfarón et de Pentapolín. Gloire à toi !",
+   "l": {
+    "es": "(Cargas contra las… ovejas.)",
+    "fr": "(Tu charges les… moutons.) (authentique : les bergers lui cassent des dents à coups de pierres)",
+    "fx": {
+     "valor": 11,
+     "locura": 10,
+     "fuerzas": -11
+    }
+   },
+   "r": {
+    "es": "Beee. Son ovejas, Frestón.",
+    "fr": "Bêêê. Ce sont des moutons, Frestón.",
+    "fx": {
+     "locura": -10,
+     "sancho": 5,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "balsamo",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "¿Tu bálsamo de Fierabrás cura todas las heridas? Huele a aceite viejo y romero. ¿Quién lo prueba?",
+   "f": "Ton baume de Fierabras guérit toutes les blessures ? Ça sent la vieille huile et le romarin. Qui le goûte ?",
+   "l": {
+    "es": "(Lo bebes. Vomitas. ¡Como nuevo!)",
+    "fr": "(Tu le bois. Tu vomis. Comme neuf !)",
+    "fx": {
+     "fuerzas": 6,
+     "locura": 6
+    }
+   },
+   "r": {
+    "es": "¡Bebe tú, Sancho! Por la ciencia.",
+    "fr": "Bois, toi, Sancho ! Pour la science. (authentique : Sancho est très, très malade)",
+    "fx": {
+     "sancho": -12,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "galeotes",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "Doce hombres encadenados van a las galeras del rey. Dime con quién andas y te diré quién eres.",
+   "f": "Douze hommes enchaînés partent aux galères du roi. Dis-moi qui tu fréquentes et je te dirai qui tu es.",
+   "l": {
+    "es": "(Los liberas. Te tiran piedras.)",
+    "fr": "(Tu les libères. Ils te jettent des pierres.) (authentique)",
+    "fx": {
+     "valor": 11,
+     "locura": 8,
+     "fuerzas": -11
+    }
+   },
+   "r": {
+    "es": "(Dejas pasar a la justicia.)",
+    "fr": "(Tu laisses passer la justice.)",
+    "fx": {
+     "valor": -10,
+     "sancho": 8
+    }
+   }
+  },
+  {
+   "id": "libros",
+   "ch": "cura",
+   "tier": 0,
+   "t": "Alonso, tus libros de caballerías te han vuelto loco. El barbero y yo los quemamos. Por tu bien.",
+   "f": "Alonso, tes livres de chevalerie t'ont rendu fou. Le barbier et moi, nous les brûlons. Pour ton bien.",
+   "l": {
+    "es": "¡Fuera de mi biblioteca!",
+    "fr": "Hors de ma bibliothèque !",
+    "fx": {
+     "locura": 10,
+     "valor": 6
+    }
+   },
+   "r": {
+    "es": "Vale. Pero guardad el Amadís.",
+    "fr": "D'accord. Mais gardez l'Amadis. (authentique : ils sauvent l'Amadis de Gaule)",
+    "fx": {
+     "locura": -11,
+     "fuerzas": 5,
+     "valor": -6
+    }
+   }
+  },
+  {
+   "id": "batanes",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "¡Pum! ¡Pum! Noche negra y golpes terribles. Tiemblo. He atado las patas de Rocinante: ¡no vas!",
+   "f": "Boum ! Boum ! Nuit noire et coups terribles. Je tremble. J'ai attaché les pattes de Rossinante : tu n'y vas pas !",
+   "l": {
+    "es": "¡Adelante! ¡Al monstruo!",
+    "fr": "En avant ! Sus au monstre ! (authentique : ce sont six moulins à foulon qui tapent la laine)",
+    "fx": {
+     "valor": 11,
+     "fuerzas": -8,
+     "sancho": -6
+    }
+   },
+   "r": {
+    "es": "(Amanece. Son seis batanes.)",
+    "fr": "(Le jour se lève. Ce sont six moulins à foulon.)",
+    "fx": {
+     "valor": -8,
+     "sancho": 8,
+     "locura": -6
+    }
+   }
+  },
+  {
+   "id": "hambre",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "¿Cenamos? Tengo pan, queso y cebolla. ¿Y tú no comes nada? Los caballeros no comen, ¿o qué?",
+   "f": "On dîne ? J'ai du pain, du fromage et de l'oignon. Et toi, tu ne manges rien ? Les chevaliers ne mangent pas, ou quoi ?",
+   "l": {
+    "es": "Un caballero vive de sus hazañas.",
+    "fr": "Un chevalier vit de ses exploits.",
+    "fx": {
+     "valor": 5,
+     "locura": 5,
+     "fuerzas": -11
+    }
+   },
+   "r": {
+    "es": "(Comes. Y repites.)",
+    "fr": "(Tu manges. Et tu te ressers.)",
+    "fx": {
+     "fuerzas": 12,
+     "locura": -8
+    }
+   }
+  },
+  {
+   "id": "cansado",
+   "ch": "rocinante",
+   "tier": 0,
+   "t": "(Relincho triste.) Llevo tres días sin hierba. Mis costillas se ven desde lejos, señor.",
+   "f": "(Hennissement triste.) Ça fait trois jours sans herbe. On voit mes côtes de loin, monsieur.",
+   "l": {
+    "es": "Descansa, amigo. Te lo mereces.",
+    "fr": "Repose-toi, mon ami. Tu le mérites.",
+    "fx": {
+     "fuerzas": 10,
+     "valor": -10
+    }
+   },
+   "r": {
+    "es": "¡Un caballo de héroe no se para!",
+    "fr": "Un cheval de héros ne s'arrête pas !",
+    "fx": {
+     "valor": 6,
+     "fuerzas": -10
+    }
+   }
+  },
+  {
+   "id": "quizmolinos",
+   "ch": "molinos",
+   "tier": 0,
+   "t": "Prueba de vista, caballero. Tenemos aspas y hacemos harina con el trigo. ¿Qué somos?",
+   "f": "Test de vue, chevalier. Nous avons des ailes et nous faisons de la farine avec le blé. Que sommes-nous ?",
+   "l": {
+    "es": "Molinos de viento.",
+    "fr": "Des moulins à vent. (correct… mais quel ennui !)",
+    "fx": {
+     "sancho": 8,
+     "locura": -5
+    }
+   },
+   "r": {
+    "es": "¡Gigantes del mago Frestón!",
+    "fr": "Des géants du magicien Frestón ! (faux : tu charges, tu tombes… mais Don Quichotte approuve)",
+    "fx": {
+     "locura": 8,
+     "fuerzas": -6
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "vuelve",
+   "ch": "barbero",
+   "tier": 0,
+   "t": "Vuelve al pueblo, Alonso. Tu sobrina llora y tu ama prepara cocido. Un cocido enorme.",
+   "f": "Rentre au village, Alonso. Ta nièce pleure et ta gouvernante prépare un « cocido ». Un énorme pot-au-feu.",
+   "l": {
+    "es": "¡Soy don Quijote, no Alonso!",
+    "fr": "Je suis Don Quichotte, pas Alonso !",
+    "fx": {
+     "locura": 10,
+     "valor": 5,
+     "fuerzas": -5
+    }
+   },
+   "r": {
+    "es": "¿Cocido…? Vale, una semana.",
+    "fr": "Du cocido… ? D'accord, une semaine.",
+    "fx": {
+     "fuerzas": 11,
+     "locura": -11,
+     "valor": -6
+    }
+   }
+  },
+  {
+   "id": "micomicona",
+   "ch": "cura",
+   "tier": 0,
+   "t": "Te presento a la princesa Micomicona. Un gigante le ha robado el reino. (Es Dorotea disfrazada.)",
+   "f": "Je te présente la princesse Micomicona. Un géant lui a volé son royaume. (C'est Dorotea déguisée : une ruse pour te ramener chez toi.)",
+   "l": {
+    "es": "¡Princesa! ¡Mi lanza es vuestra!",
+    "fr": "Princesse ! Ma lance est à vous !",
+    "fx": {
+     "valor": 10,
+     "locura": 8
+    }
+   },
+   "r": {
+    "es": "¿Micomicona? Suena a inventado.",
+    "fr": "Micomicona ? On dirait un nom inventé.",
+    "fx": {
+     "locura": -10,
+     "sancho": 5,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "yeguas",
+   "ch": "rocinante",
+   "tier": 0,
+   "t": "(Relincho alegre.) Hay unas yeguas simpáticas en el prado. Sus dueños, los yangüeses, no sonríen.",
+   "f": "(Hennissement joyeux.) Il y a des juments sympathiques dans le pré. Leurs maîtres, les Yangois, ne sourient pas.",
+   "l": {
+    "es": "(Defiendes a tu caballo. Palos.)",
+    "fr": "(Tu défends ton cheval. Coups de bâton.)",
+    "fx": {
+     "valor": 10,
+     "fuerzas": -11
+    }
+   },
+   "r": {
+    "es": "Perdón. ¡Rocinante, vámonos!",
+    "fr": "Pardon. Rossinante, on s'en va !",
+    "fx": {
+     "valor": -10,
+     "fuerzas": 5,
+     "sancho": 5
+    }
+   }
+  },
+  {
+   "id": "pajaro",
+   "ch": "sancho",
+   "tier": 0,
+   "t": "Señor, la venta está aquí y la aventura, lejos. Más vale pájaro en mano que ciento volando.",
+   "f": "Monsieur, l'auberge est ici et l'aventure, loin. Un tiens vaut mieux que deux tu l'auras.",
+   "l": {
+    "es": "¡Basta de refranes, Sancho!",
+    "fr": "Assez de proverbes, Sancho !",
+    "fx": {
+     "sancho": -11,
+     "valor": 6
+    }
+   },
+   "r": {
+    "es": "Tienes razón. A la venta.",
+    "fr": "Tu as raison. À l'auberge.",
+    "fx": {
+     "sancho": 6,
+     "fuerzas": 8,
+     "valor": -6
+    }
+   }
+  },
+  {
+   "id": "sanson",
+   "ch": "sanson",
+   "tier": 1,
+   "once": true,
+   "t": "Soy Sansón Carrasco, bachiller de Salamanca. ¡Tu historia ya está en un libro! Doce mil copias.",
+   "f": "Je suis Sansón Carrasco, bachelier de Salamanque. Ton histoire est déjà dans un livre ! Douze mille exemplaires. (authentique : la première partie a eu un énorme succès)",
+   "l": {
+    "es": "¡Un libro! ¡A por más aventuras!",
+    "fr": "Un livre ! En route pour d'autres aventures !",
+    "fx": {
+     "valor": 3,
+     "locura": 8
+    }
+   },
+   "r": {
+    "es": "¿Y dicen que yo estoy loco?",
+    "fr": "Et on dit que c'est moi, le fou ?",
+    "fx": {
+     "locura": -8,
+     "fuerzas": 5
+    }
+   }
+  },
+  {
+   "id": "duques",
+   "ch": "duques",
+   "tier": 1,
+   "once": true,
+   "t": "Don Quijote, te conocemos del libro. Ven a nuestro palacio: fiestas, cena… y una ínsula para Sancho.",
+   "f": "Don Quichotte, nous te connaissons par le livre. Viens dans notre palais : fêtes, dîner… et une île pour Sancho.",
+   "l": {
+    "es": "¡Acepto! Sancho será gobernador.",
+    "fr": "J'accepte ! Sancho sera gouverneur.",
+    "fx": {
+     "sancho": 10,
+     "locura": 6,
+     "fuerzas": 5
+    },
+    "set": {
+     "insula": "si"
+    }
+   },
+   "r": {
+    "es": "Un caballero no vive en palacios.",
+    "fr": "Un chevalier ne vit pas dans les palais.",
+    "fx": {
+     "sancho": -11,
+     "fuerzas": -5
+    },
+    "set": {
+     "insula": "no"
+    }
+   }
+  },
+  {
+   "id": "barataria",
+   "ch": "sancho",
+   "tier": 1,
+   "once": true,
+   "cond": {
+    "insula": "si"
+   },
+   "t": "¡Gobierno la ínsula Barataria! He juzgado como Salomón. Pero el médico me prohíbe comer. ¡Todo!",
+   "f": "Je gouverne l'île Barataria ! J'ai jugé comme Salomon. Mais le médecin m'interdit de manger. Tout ! (authentique : le docteur Pedro Recio)",
+   "l": {
+    "es": "¡Enhorabuena, gobernador Panza!",
+    "fr": "Félicitations, gouverneur Panza !",
+    "fx": {
+     "sancho": 11,
+     "valor": -5
+    }
+   },
+   "r": {
+    "es": "Deja la ínsula. Vuelve conmigo.",
+    "fr": "Laisse l'île. Reviens avec moi.",
+    "fx": {
+     "sancho": -10,
+     "fuerzas": 6
+    }
+   }
+  },
+  {
+   "id": "sininsula",
+   "ch": "sancho",
+   "tier": 1,
+   "once": true,
+   "cond": {
+    "insula": "no"
+   },
+   "t": "Los duques tienen una ínsula para mí… y tú has dicho que no. Hace tres días que no te hablo.",
+   "f": "Les ducs ont une île pour moi… et tu as dit non. Ça fait trois jours que je ne te parle pas.",
+   "l": {
+    "es": "Perdón. Te subo el salario.",
+    "fr": "Pardon. J'augmente ton salaire. (authentique : Sancho réclame souvent un salaire, ce qu'un chevalier errant ne donne jamais)",
+    "fx": {
+     "sancho": 10,
+     "valor": -5
+    }
+   },
+   "r": {
+    "es": "Una ínsula se gana con la espada.",
+    "fr": "Une île, ça se gagne avec l'épée.",
+    "fx": {
+     "valor": 5,
+     "sancho": -11
+    }
+   }
+  },
+  {
+   "id": "clavileno",
+   "ch": "duques",
+   "tier": 1,
+   "t": "Clavileño, el caballo de madera, vuela hasta el reino de Candaya. Ojos vendados, por favor.",
+   "f": "Clavilègne, le cheval de bois, vole jusqu'au royaume de Candaya. Les yeux bandés, s'il vous plaît. (authentique : c'est une farce des ducs, le cheval ne bouge pas !)",
+   "l": {
+    "es": "(Subes con Sancho. ¡Volamos!)",
+    "fr": "(Tu montes avec Sancho. On vole !)",
+    "fx": {
+     "valor": 6,
+     "locura": 10,
+     "fuerzas": -6
+    }
+   },
+   "r": {
+    "es": "¿Un caballo que vuela? Ja, ja.",
+    "fr": "Un cheval qui vole ? Ha, ha.",
+    "fx": {
+     "locura": -11,
+     "valor": -8
+    }
+   }
+  },
+  {
+   "id": "retablo",
+   "ch": "sancho",
+   "tier": 1,
+   "t": "Mira, señor: el retablo de maese Pedro. Los moros persiguen a don Gaiferos. ¡Son títeres de cartón!",
+   "f": "Regarde, monsieur : le théâtre de maître Pierre. Les Maures poursuivent don Gaiferos. Ce sont des marionnettes en carton !",
+   "l": {
+    "es": "(Sacas la espada. ¡Fuera moros!)",
+    "fr": "(Tu sors l'épée. Dehors, les Maures !) (authentique : il casse tout et paie les dégâts)",
+    "fx": {
+     "valor": 5,
+     "locura": 11,
+     "fuerzas": -6
+    }
+   },
+   "r": {
+    "es": "(Aplaudes y pagas la entrada.)",
+    "fr": "(Tu applaudis et tu paies l'entrée.)",
+    "fx": {
+     "locura": -10,
+     "valor": -6
+    }
+   }
+  },
+  {
+   "id": "montesinos",
+   "ch": "sancho",
+   "tier": 1,
+   "t": "Señor, has estado una hora en la cueva de Montesinos. ¿Tres días? ¿Y Dulcinea te pide seis reales?",
+   "f": "Monsieur, tu es resté une heure dans la grotte de Montesinos. Trois jours ? Et Dulcinée te demande six réaux ?",
+   "l": {
+    "es": "¡Es verdad! He visto maravillas.",
+    "fr": "C'est vrai ! J'ai vu des merveilles.",
+    "fx": {
+     "locura": 10,
+     "sancho": -6
+    }
+   },
+   "r": {
+    "es": "Quizá… lo he soñado.",
+    "fr": "Peut-être… que j'ai rêvé.",
+    "fx": {
+     "locura": -12,
+     "sancho": 6
+    }
+   }
+  },
+  {
+   "id": "barco",
+   "ch": "rocinante",
+   "tier": 1,
+   "t": "(Relincho.) Me dejas atado en la orilla del Ebro y subes a un barco sin remos. ¿En serio, señor?",
+   "f": "(Hennissement.) Tu me laisses attaché au bord de l'Èbre et tu montes dans une barque sans rames. Sérieusement, monsieur ?",
+   "l": {
+    "es": "¡Es un barco encantado! ¡Subo!",
+    "fr": "C'est une barque enchantée ! Je monte ! (authentique : elle finit dans les moulins à eau)",
+    "fx": {
+     "locura": 10,
+     "fuerzas": -10
+    }
+   },
+   "r": {
+    "es": "(Te quedas con Rocinante.)",
+    "fr": "(Tu restes avec Rossinante.)",
+    "fx": {
+     "locura": -8,
+     "fuerzas": 6,
+     "valor": -5
+    }
+   }
+  },
+  {
+   "id": "leon",
+   "ch": "sancho",
+   "tier": 1,
+   "t": "Un carro con dos leones del rey. Señor, NO. Repito: NO. El leonero dice que tienen hambre.",
+   "f": "Une charrette avec deux lions du roi. Monsieur, NON. Je répète : NON. Le gardien dit qu'ils ont faim.",
+   "l": {
+    "es": "¡Abre la jaula, leonero!",
+    "fr": "Ouvre la cage, gardien ! (authentique : le lion bâille et se rendort ; tu deviens le Chevalier des Lions)",
+    "fx": {
+     "valor": 12,
+     "sancho": -8
+    }
+   },
+   "r": {
+    "es": "(Pasas de largo. El león bosteza.)",
+    "fr": "(Tu passes ton chemin. Le lion bâille.)",
+    "fx": {
+     "valor": -11,
+     "sancho": 8,
+     "locura": -5
+    }
+   }
+  },
+  {
+   "id": "encantada",
+   "ch": "dulcinea",
+   "tier": 1,
+   "t": "(Una campesina en un burro.) —¿Qué miras? Sancho dice que soy Dulcinea. ¡Aparta, que tengo prisa!",
+   "f": "(Une paysanne sur un âne.) « Qu'est-ce que tu regardes ? Sancho dit que je suis Dulcinée. Pousse-toi, je suis pressée ! »",
+   "l": {
+    "es": "¡Mi dama, encantada! ¡Qué dolor!",
+    "fr": "Ma dame, ensorcelée ! Quelle douleur !",
+    "fx": {
+     "locura": 10,
+     "valor": -5
+    }
+   },
+   "r": {
+    "es": "Sancho… ¿me estás engañando?",
+    "fr": "Sancho… tu te moques de moi ?",
+    "fx": {
+     "locura": -10,
+     "sancho": -10
+    }
+   }
+  },
+  {
+   "id": "roque",
+   "ch": "roque",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy Roque Guinart, bandolero catalán. Robo a los ricos… con buenos modales. Te llevo a Barcelona.",
+   "f": "Je suis Roque Guinart, bandit catalan. Je vole les riches… avec de bonnes manières. Je t'emmène à Barcelone. (authentique : un vrai bandit catalan de l'époque)",
+   "l": {
+    "es": "(Vas con él. Roque es amable.)",
+    "fr": "(Tu pars avec lui. Roque est aimable.)",
+    "fx": {
+     "sancho": 5,
+     "fuerzas": 5,
+     "valor": -5
+    }
+   },
+   "r": {
+    "es": "¡Yo no viajo con bandidos!",
+    "fr": "Je ne voyage pas avec des bandits !",
+    "fx": {
+     "valor": 5,
+     "sancho": -8
+    }
+   }
+  },
+  {
+   "id": "mar",
+   "ch": "sancho",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "¡Señor! ¡Mira! ¡El mar! Es enorme y… ¡se mueve! Más grande que todas las lagunas de Ruidera.",
+   "f": "Monsieur ! Regarde ! La mer ! Elle est immense et… elle bouge ! Plus grande que toutes les lagunes de Ruidera.",
+   "l": {
+    "es": "(Silencio. Es inmenso.)",
+    "fr": "(Silence. C'est immense.)",
+    "fx": {
+     "sancho": 5,
+     "locura": -10,
+     "fuerzas": 5
+    }
+   },
+   "r": {
+    "es": "¡Reto al mar a un duelo!",
+    "fr": "Je provoque la mer en duel !",
+    "fx": {
+     "valor": 6,
+     "locura": 10,
+     "sancho": -5
+    }
+   }
+  },
+  {
+   "id": "imprenta",
+   "ch": "imprenta",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Clac, clac. Soy la imprenta de Barcelona. Imprimo un libro: «Don Quijote de la Mancha». ¿Lo conoces?",
+   "f": "Clac, clac. Je suis l'imprimerie de Barcelone. J'imprime un livre : « Don Quichotte de la Manche ». Tu connais ?",
+   "l": {
+    "es": "¡Soy yo! ¡Soy famoso!",
+    "fr": "C'est moi ! Je suis célèbre !",
+    "fx": {
+     "locura": 8,
+     "valor": 3
+    }
+   },
+   "r": {
+    "es": "(Lees. ¡Es un Quijote falso!)",
+    "fr": "(Tu lis. C'est un faux Don Quichotte !) (authentique : un certain Avellaneda a publié une fausse deuxième partie)",
+    "fx": {
+     "locura": -10,
+     "valor": -6,
+     "fuerzas": 5
+    }
+   }
+  },
+  {
+   "id": "blancaluna",
+   "ch": "blancaluna",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy el Caballero de la Blanca Luna. Mi dama es más bella que Dulcinea. Si pierdes, un año en casa.",
+   "f": "Je suis le Chevalier de la Blanche Lune. Ma dame est plus belle que Dulcinée. Si tu perds : un an à la maison.",
+   "l": {
+    "es": "(Duelo en la playa. Pierdes.)",
+    "fr": "(Duel sur la plage. Tu perds.) (authentique : la défaite de Barcelone)",
+    "fx": {
+     "valor": 10,
+     "fuerzas": -8,
+     "locura": -10
+    },
+    "set": {
+     "duelo": "perdido"
+    }
+   },
+   "r": {
+    "es": "Dulcinea no necesita pruebas.",
+    "fr": "Dulcinée n'a pas besoin de preuves.",
+    "fx": {
+     "valor": -11,
+     "locura": 5,
+     "sancho": 5
+    },
+    "set": {
+     "duelo": "no"
+    }
+   }
+  },
+  {
+   "id": "cerdos",
+   "ch": "rocinante",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "(Noche.) Seiscientos cerdos pasan por encima de nosotros. Oink, oink. ¡Qué humillación, señor!",
+   "f": "(Nuit.) Six cents cochons nous passent dessus. Groin, groin. Quelle humiliation, monsieur ! (authentique !)",
+   "l": {
+    "es": "(Te ríes. Castigo del cielo.)",
+    "fr": "(Tu ris. Punition du ciel.)",
+    "fx": {
+     "locura": -8,
+     "sancho": 6,
+     "fuerzas": 5
+    }
+   },
+   "r": {
+    "es": "(Atacas a los cerdos. Con honor.)",
+    "fr": "(Tu attaques les cochons. Avec honneur.)",
+    "fx": {
+     "valor": 5,
+     "locura": 8,
+     "fuerzas": -6
+    }
+   }
+  },
+  {
+   "id": "camino",
+   "ch": "sancho",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "t": "Volvemos a casa. No hay mal que por bien no venga: ¡en casa se come bien! ¿Y si somos pastores?",
+   "f": "On rentre à la maison. À quelque chose malheur est bon : à la maison, on mange bien ! Et si on devenait bergers ?",
+   "l": {
+    "es": "¡Sí! Yo, Quijotiz; tú, Pancino.",
+    "fr": "Oui ! Moi, Quijotiz ; toi, Pancino. (authentique : ce sont les noms qu'il invente)",
+    "fx": {
+     "sancho": 8,
+     "locura": 6,
+     "valor": -6
+    }
+   },
+   "r": {
+    "es": "(Caminas en silencio. A casa.)",
+    "fr": "(Tu marches en silence. À la maison.)",
+    "fx": {
+     "locura": -10,
+     "fuerzas": 8,
+     "sancho": -5
+    }
+   }
+  },
+  {
+   "id": "revelacion",
+   "ch": "sanson",
+   "tier": 2,
+   "once": true,
+   "after": 0.7,
+   "cond": {
+    "duelo": "perdido"
+   },
+   "t": "Don Quijote… el Caballero de la Blanca Luna soy yo. Lo he hecho por ti: tienes que volver a casa.",
+   "f": "Don Quichotte… le Chevalier de la Blanche Lune, c'est moi. Je l'ai fait pour toi : tu dois rentrer chez toi. (authentique, mais dans le livre il l'avoue à un ami, pas à Don Quichotte)",
+   "l": {
+    "es": "Gracias, Sansón. Estoy cansado.",
+    "fr": "Merci, Sansón. Je suis fatigué.",
+    "fx": {
+     "locura": -11,
+     "fuerzas": 6,
+     "valor": -5
+    }
+   },
+   "r": {
+    "es": "¡Tú también eres un encantador!",
+    "fr": "Toi aussi, tu es un enchanteur !",
+    "fx": {
+     "locura": 12,
+     "valor": 6,
+     "sancho": -8
+    }
+   }
+  }
+ ],
+ "deaths": {
+  "valor": {
+   "lo": {
+    "m": "🐔",
+    "es": "Un gato te asusta y huyes. Un caballero sin valor… vuelve a casa a leer.",
+    "fr": "Un chat te fait peur et tu fuis. Un chevalier sans courage… rentre lire chez lui."
+   },
+   "hi": {
+    "m": "⚔️",
+    "es": "Retas a duelo al rey, al mar y a tu propia sombra. Te encierran «por tu bien».",
+    "fr": "Tu provoques en duel le roi, la mer et ta propre ombre. On t'enferme « pour ton bien »."
+   }
+  },
+  "locura": {
+   "lo": {
+    "m": "🌅",
+    "es": "Recuperas la razón: solo ves molinos. Alonso Quijano vuelve a casa. Fin de la aventura.",
+    "fr": "Tu retrouves la raison : tu ne vois plus que des moulins. Alonso Quijano rentre chez lui. Fin de l'aventure. (comme dans le vrai livre)"
+   },
+   "hi": {
+    "m": "🪵",
+    "es": "Atacas a Sancho: ¡crees que es un encantador! Te llevan a casa en una jaula de madera.",
+    "fr": "Tu attaques Sancho : tu crois que c'est un enchanteur ! On te ramène chez toi dans une cage en bois. (la vraie fin de la première partie)"
+   }
+  },
+  "fuerzas": {
+   "lo": {
+    "m": "🍞",
+    "es": "Sin pan, sin queso, sin dormir: te caes de Rocinante al primer trote. Fin.",
+    "fr": "Sans pain, sans fromage, sans sommeil : tu tombes de Rossinante au premier trot. Fin."
+   },
+   "hi": {
+    "m": "🍖",
+    "es": "Demasiadas cenas en las ventas: la armadura ya no cierra. Caballero… jubilado.",
+    "fr": "Trop de dîners dans les auberges : l'armure ne ferme plus. Chevalier… à la retraite."
+   }
+  },
+  "sancho": {
+   "lo": {
+    "m": "🫏",
+    "es": "Sancho se va con su burro: «¡Mi señor está loco y no paga!». Sin escudero, vuelves a casa.",
+    "fr": "Sancho s'en va avec son âne : « Mon maître est fou et il ne paie pas ! ». Sans écuyer, tu rentres chez toi."
+   },
+   "hi": {
+    "m": "🏝️",
+    "es": "Sancho se queda para siempre gobernando su ínsula. Tú te quedas más solo que la una.",
+    "fr": "Sancho reste gouverner son île pour toujours. Toi, tu te retrouves plus seul que jamais."
+   }
+  }
+ },
+ "win": {
+  "m": "📖",
+  "es": "Vuelves a casa con mil historias. Un tal Cervantes las escribe… y naces para siempre.",
+  "fr": "Tu rentres chez toi avec mille histoires. Un certain Cervantès les écrit… et te rend immortel."
+ }
+}

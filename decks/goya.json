@@ -1,0 +1,1197 @@
+{
+ "id": "goya",
+ "name": "Goya",
+ "emoji": "🎨",
+ "tagline": "Pinta al rey. Pinta monstruos. Sobrevive.",
+ "sub": "Tu es Goya : rois, majas et monstres dans le Madrid de 1800",
+ "intro_fr": "Tu es Francisco de Goya, peintre à Madrid en 1786. Tu veux plaire au roi sans perdre ton génie, ton argent ni ta santé. Tiens bon jusqu'à Bordeaux : les peintres du futur t'attendent.",
+ "time": {
+  "mode": "year",
+  "start": 1786,
+  "end": 1827
+ },
+ "places": [
+  [
+   0,
+   "Madrid"
+  ],
+  [
+   0.8,
+   "Burdeos"
+  ]
+ ],
+ "gauges": [
+  {
+   "key": "corte",
+   "icon": "👑",
+   "label": "Corte"
+  },
+  {
+   "key": "genio",
+   "icon": "🎨",
+   "label": "Genio"
+  },
+  {
+   "key": "dinero",
+   "icon": "💰",
+   "label": "Dinero"
+  },
+  {
+   "key": "salud",
+   "icon": "❤️",
+   "label": "Salud"
+  }
+ ],
+ "tiers": [
+  {
+   "id": 1,
+   "cond": {
+    "cards": 12
+   },
+   "es": "Sobrevive 12 cartas",
+   "fr": "Survis à 12 cartes"
+  },
+  {
+   "id": 2,
+   "cond": {
+    "win": 1
+   },
+   "es": "Llega a Burdeos",
+   "fr": "Arrive à Bordeaux"
+  }
+ ],
+ "chars": {
+  "rey": {
+   "emoji": "👑",
+   "name": "Carlos IV, el rey",
+   "tier": 0
+  },
+  "reina": {
+   "emoji": "👸",
+   "name": "María Luisa, la reina",
+   "tier": 0
+  },
+  "inquisidor": {
+   "emoji": "🕯️",
+   "name": "Un inquisidor",
+   "tier": 0
+  },
+  "aprendiz": {
+   "emoji": "🧑‍🎨",
+   "name": "Tu aprendiz",
+   "tier": 0
+  },
+  "majos": {
+   "emoji": "💃",
+   "name": "Los majos de Madrid",
+   "tier": 0
+  },
+  "medico": {
+   "emoji": "🩺",
+   "name": "Tu médico",
+   "tier": 0
+  },
+  "lienzo": {
+   "emoji": "🖼️",
+   "name": "Un lienzo en blanco",
+   "tier": 0
+  },
+  "buho": {
+   "emoji": "🦉",
+   "name": "El búho de tus pesadillas",
+   "tier": 0
+  },
+  "soldado": {
+   "emoji": "🪖",
+   "name": "Un soldado francés",
+   "tier": 1
+  },
+  "fernando": {
+   "emoji": "🤴",
+   "name": "Fernando VII, el rey nuevo",
+   "tier": 1
+  },
+  "quinta": {
+   "emoji": "🏚️",
+   "name": "La Quinta del Sordo, tu casa",
+   "tier": 2
+  },
+  "lechera": {
+   "emoji": "🥛",
+   "name": "La lechera de Burdeos",
+   "tier": 2
+  }
+ },
+ "start": "salida",
+ "cards": [
+  {
+   "id": "salida",
+   "ch": "lienzo",
+   "tier": 0,
+   "once": true,
+   "t": "Madrid. La Real Fábrica de Tapices quiere dibujos alegres: juegos, meriendas, cometas. ¿Empiezas?",
+   "f": "Madrid. La Manufacture royale de tapisseries veut des dessins joyeux : jeux, goûters, cerfs-volants. Tu commences ?",
+   "l": {
+    "es": "(Pintas una merienda al sol.)",
+    "fr": "(Tu peins un goûter au soleil.)",
+    "fx": {
+     "corte": 8,
+     "dinero": 6,
+     "genio": -6
+    }
+   },
+   "r": {
+    "es": "(Una cometa… y un cielo raro.)",
+    "fr": "(Un cerf-volant… et un ciel bizarre.)",
+    "fx": {
+     "genio": 8,
+     "corte": -5
+    }
+   }
+  },
+  {
+   "id": "gallina",
+   "ch": "majos",
+   "tier": 0,
+   "t": "¡Jugamos a la gallina ciega en el campo! Ven, Paco, ponte la venda.",
+   "f": "On joue à colin-maillard dans la campagne ! Viens, Paco, mets le bandeau. (authentique : « La gallina ciega », carton de tapisserie de 1788)",
+   "l": {
+    "es": "(Juegas. Chocas con un árbol.)",
+    "fr": "(Tu joues. Tu te cognes à un arbre.)",
+    "fx": {
+     "genio": 8,
+     "salud": -8
+    }
+   },
+   "r": {
+    "es": "(No juegas. Dibujas. Cobras.)",
+    "fr": "(Tu ne joues pas. Tu dessines. Tu es payé.)",
+    "fx": {
+     "dinero": 6,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "quitasol",
+   "ch": "aprendiz",
+   "tier": 0,
+   "t": "Maestro, la joven de «El quitasol» dice que su perrito está feo en el cuadro.",
+   "f": "Maître, la jeune femme du tableau « El quitasol » (l'Ombrelle) dit que son petit chien est moche sur le tableau. (authentique : elle tient un petit chien sur ses genoux)",
+   "l": {
+    "es": "Lo cambio. El cliente manda.",
+    "fr": "Je le change. Le client est roi.",
+    "fx": {
+     "dinero": 6,
+     "genio": -8
+    }
+   },
+   "r": {
+    "es": "El perro se queda. Es mi cuadro.",
+    "fr": "Le chien reste. C'est mon tableau.",
+    "fx": {
+     "genio": 8,
+     "corte": -5
+    }
+   }
+  },
+  {
+   "id": "cometa",
+   "ch": "majos",
+   "tier": 0,
+   "t": "¡La cometa vuela sobre Madrid! El viento la lleva hacia el palacio…",
+   "f": "Le cerf-volant vole au-dessus de Madrid ! Le vent l'emporte vers le palais… (authentique : « La cometa », carton de tapisserie)",
+   "l": {
+    "es": "(La pintas desde aquí.)",
+    "fr": "(Tu la peins d'ici.)",
+    "fx": {
+     "genio": 6,
+     "dinero": 5,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Corres detrás. Mucho.)",
+    "fr": "(Tu cours derrière. Beaucoup.)",
+    "fx": {
+     "salud": 8,
+     "dinero": -8,
+     "genio": -5
+    }
+   }
+  },
+  {
+   "id": "pelele",
+   "ch": "majos",
+   "tier": 0,
+   "t": "Cuatro majas lanzan un pelele al aire con una manta. —¡Ahora tú, pintor!",
+   "f": "Quatre majas lancent un pantin de paille en l'air avec une couverture. — À toi, peintre ! (authentique : « El pelele », 1791)",
+   "l": {
+    "es": "(Subes a la manta. ¡Vuelas!)",
+    "fr": "(Tu montes sur la couverture. Tu voles !)",
+    "fx": {
+     "genio": 10,
+     "salud": -10
+    }
+   },
+   "r": {
+    "es": "No, gracias. (Pintas el pelele.)",
+    "fr": "Non, merci. (Tu peins le pantin.)",
+    "fx": {
+     "dinero": 8,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "camara",
+   "ch": "rey",
+   "tier": 0,
+   "once": true,
+   "before": 0.5,
+   "t": "Goya, me gustan tus tapices. Te nombro pintor de cámara. ¿Qué dices?",
+   "f": "Goya, j'aime tes tapisseries. Je te nomme peintre de la Chambre du roi. Qu'en dis-tu ? (authentique : 1789)",
+   "l": {
+    "es": "¡Gracias, Majestad! (Reverencia.)",
+    "fr": "Merci, Majesté ! (Révérence.)",
+    "fx": {
+     "corte": 12,
+     "genio": -8,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "Gracias. ¿Y el sueldo, Majestad?",
+    "fr": "Merci. Et le salaire, Majesté ?",
+    "fx": {
+     "dinero": 10,
+     "corte": -6
+    }
+   }
+  },
+  {
+   "id": "familia",
+   "ch": "rey",
+   "tier": 0,
+   "once": true,
+   "after": 0.2,
+   "t": "Pinta a mi familia. Toda. Trece personas, la reina en el centro… y tú detrás, si quieres.",
+   "f": "Peins ma famille. Toute. Treize personnes, la reine au centre… et toi derrière, si tu veux. (authentique : Goya s'est peint dans l'ombre, comme Vélasquez)",
+   "l": {
+    "es": "(Los pintas tal y como son.)",
+    "fr": "(Tu les peins tels qu'ils sont.) (authentique : la famille a adoré le tableau !)",
+    "fx": {
+     "genio": 11,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Los pintas más guapos y altos.)",
+    "fr": "(Tu les peins plus beaux et plus grands.)",
+    "fx": {
+     "corte": 11,
+     "genio": -11
+    }
+   }
+  },
+  {
+   "id": "caza",
+   "ch": "rey",
+   "tier": 0,
+   "t": "¿Me pintas cazando? Con mi perro, mi escopeta y mi reloj nuevo. ¡Tic, tac!",
+   "f": "Tu me peins à la chasse ? Avec mon chien, mon fusil et ma montre neuve. Tic, tac ! (authentique : Charles IV adorait la chasse et les horloges)",
+   "l": {
+    "es": "Claro. ¡Qué perro tan guapo!",
+    "fr": "Bien sûr. Quel beau chien !",
+    "fx": {
+     "corte": 10,
+     "genio": -8,
+     "dinero": 5
+    }
+   },
+   "r": {
+    "es": "(El perro primero. Con cariño.)",
+    "fr": "(Le chien d'abord. Avec amour.)",
+    "fx": {
+     "genio": 6,
+     "corte": -8
+    }
+   }
+  },
+  {
+   "id": "enfermedad",
+   "ch": "medico",
+   "tier": 0,
+   "once": true,
+   "after": 0.1,
+   "before": 0.5,
+   "t": "La fiebre pasa, Francisco, pero ya no oyes. El mundo es silencio.",
+   "f": "La fièvre passe, Francisco, mais tu n'entends plus. Le monde est silence. (authentique : Goya devient sourd en 1793)",
+   "l": {
+    "es": "Silencio… pero los colores gritan.",
+    "fr": "Silence… mais les couleurs crient.",
+    "fx": {
+     "genio": 11,
+     "salud": -6
+    },
+    "set": {
+     "sordo": "si"
+    }
+   },
+   "r": {
+    "es": "(Descansas. Lees los labios.)",
+    "fr": "(Tu te reposes. Tu lis sur les lèvres.)",
+    "fx": {
+     "salud": 10,
+     "dinero": -8,
+     "genio": -6
+    },
+    "set": {
+     "sordo": "si"
+    }
+   }
+  },
+  {
+   "id": "manos",
+   "ch": "aprendiz",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "sordo": "si"
+   },
+   "t": "Maestro, ¿me oye? ¡MAESTRO! …No me oye. ¿Cómo hablamos ahora?",
+   "f": "Maître, vous m'entendez ? MAÎTRE ! …Il ne m'entend pas. Comment on se parle, maintenant ?",
+   "l": {
+    "es": "(Hablas con las manos. Aprende.)",
+    "fr": "(Tu parles avec les mains. Il apprend.) (authentique : Goya utilisait l'alphabet des signes)",
+    "fx": {
+     "salud": 8,
+     "genio": 3,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Señalas el lienzo: «Trabaja».)",
+    "fr": "(Tu montres la toile : « Travaille ».)",
+    "fx": {
+     "dinero": 8,
+     "salud": -5
+    }
+   }
+  },
+  {
+   "id": "sueno",
+   "ch": "buho",
+   "tier": 0,
+   "once": true,
+   "after": 0.2,
+   "t": "¡Uhú! Murciélagos, búhos, monstruos… y tú dormido sobre la mesa. ¿Nos dibujas?",
+   "f": "Hou hou ! Chauves-souris, hiboux, monstres… et toi, endormi sur la table. Tu nous dessines ?",
+   "l": {
+    "es": "(Dibujas «El sueño de la razón».)",
+    "fr": "(Tu dessines « Le Sommeil de la raison ».) (authentique : gravure n° 43 des Caprices, 1799)",
+    "fx": {
+     "genio": 12,
+     "corte": -5,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Despiertas. Café. Sin monstruos.)",
+    "fr": "(Tu te réveilles. Café. Pas de monstres.)",
+    "fx": {
+     "salud": 8,
+     "genio": -11
+    }
+   }
+  },
+  {
+   "id": "caprichos",
+   "ch": "aprendiz",
+   "tier": 0,
+   "once": true,
+   "after": 0.25,
+   "t": "Los Caprichos ya se venden… en una tienda de perfumes de la calle Desengaño. ¡Ochenta grabados!",
+   "f": "Les Caprices sont en vente… dans une boutique de parfums de la rue Desengaño. Quatre-vingts gravures ! (authentique)",
+   "l": {
+    "es": "(Los vendes. Son la verdad.)",
+    "fr": "(Tu les vends. C'est la vérité.)",
+    "fx": {
+     "dinero": 10,
+     "corte": -11,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Los retiras. Prudencia.)",
+    "fr": "(Tu les retires. Prudence.) (authentique : Goya les a retirés de la vente après quelques jours)",
+    "fx": {
+     "corte": 10,
+     "dinero": -6,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "quiz_sueno",
+   "ch": "inquisidor",
+   "tier": 0,
+   "once": true,
+   "after": 0.25,
+   "t": "Una pregunta, señor Goya: ¿qué produce el sueño de la razón?",
+   "f": "Une question, monsieur Goya : que produit le sommeil de la raison ?",
+   "l": {
+    "es": "Monstruos, señor.",
+    "fr": "Des monstres, monsieur. (exact : c'est le titre du Caprice n° 43)",
+    "fx": {
+     "genio": 10
+    }
+   },
+   "r": {
+    "es": "Mariposas, señor.",
+    "fr": "Des papillons, monsieur. (piège : la gravure célèbre dit « monstres »)",
+    "fx": {
+     "genio": -8,
+     "corte": 5
+    }
+   }
+  },
+  {
+   "id": "maja",
+   "ch": "inquisidor",
+   "tier": 0,
+   "once": true,
+   "after": 0.25,
+   "t": "Señor Goya, hay un cuadro de una maja… sin ropa. ¿Quién es?",
+   "f": "Monsieur Goya, il y a un tableau d'une maja… sans vêtements. Qui est-ce ?",
+   "l": {
+    "es": "Nadie, señor. Es una idea.",
+    "fr": "Personne, monsieur. C'est une idée. (authentique : on ne sait toujours pas qui c'est)",
+    "fx": {
+     "genio": 10,
+     "corte": -8,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "¿Y si le pinto a usted, señor?",
+    "fr": "Et si je faisais votre portrait, monsieur ?",
+    "fx": {
+     "corte": 8,
+     "genio": -8,
+     "dinero": 5
+    }
+   }
+  },
+  {
+   "id": "brujas",
+   "ch": "inquisidor",
+   "tier": 0,
+   "t": "Señor Goya, sus dibujos tienen brujas, burros con libros y un burro médico. Hmm.",
+   "f": "Monsieur Goya, vos dessins ont des sorcières, des ânes avec des livres et un âne médecin. Hmm. (authentique : Caprices n° 39 et 40)",
+   "l": {
+    "es": "Son sueños, señor. Solo sueños.",
+    "fr": "Ce sont des rêves, monsieur. Juste des rêves.",
+    "fx": {
+     "corte": 6,
+     "genio": -8
+    }
+   },
+   "r": {
+    "es": "Es Madrid, señor. Mire bien.",
+    "fr": "C'est Madrid, monsieur. Regardez bien.",
+    "fx": {
+     "genio": 10,
+     "corte": -10,
+     "salud": -5
+    }
+   }
+  },
+  {
+   "id": "celos",
+   "ch": "reina",
+   "tier": 0,
+   "t": "¿OTRO retrato de la duquesa de Alba? Píntame a mí. Más alta. Más joven.",
+   "f": "ENCORE un portrait de la duchesse d'Albe ? Peins-moi, moi. Plus grande. Plus jeune.",
+   "l": {
+    "es": "Sí, Majestad. (Quitas diez años.)",
+    "fr": "Oui, Majesté. (Tu enlèves dix ans.)",
+    "fx": {
+     "corte": 11,
+     "genio": -10,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "La duquesa paga bien, Majestad.",
+    "fr": "La duchesse paie bien, Majesté.",
+    "fx": {
+     "dinero": 10,
+     "corte": -11
+    }
+   }
+  },
+  {
+   "id": "duquesa",
+   "ch": "aprendiz",
+   "tier": 0,
+   "t": "Maestro, la duquesa de Alba quiere otro retrato. Y otro. Y otro.",
+   "f": "Maître, la duchesse d'Albe veut un autre portrait. Et un autre. Et un autre.",
+   "l": {
+    "es": "(Firmas «Solo Goya» en la arena.)",
+    "fr": "(Tu signes « Solo Goya » dans le sable.) (authentique : à ses pieds, sur le portrait de 1797)",
+    "fx": {
+     "genio": 10,
+     "corte": -6
+    }
+   },
+   "r": {
+    "es": "Hoy no. Hoy pinto para el rey.",
+    "fr": "Pas aujourd'hui. Aujourd'hui, je peins pour le roi.",
+    "fx": {
+     "corte": 8,
+     "dinero": -8,
+     "genio": -6
+    }
+   }
+  },
+  {
+   "id": "isidro",
+   "ch": "majos",
+   "tier": 0,
+   "t": "¡Fiesta de San Isidro! Merienda en la pradera, música y baile. ¿Vienes, Paco?",
+   "f": "Fête de la San Isidro ! Goûter dans la prairie, musique et danse. Tu viens, Paco ?",
+   "l": {
+    "es": "(Vas. Bailas. Pintas la pradera.)",
+    "fr": "(Tu y vas. Tu danses. Tu peins la prairie.) (authentique : « La Prairie de San Isidro », 1788)",
+    "fx": {
+     "salud": 8,
+     "genio": 6,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Trabajas. Miras por la ventana.)",
+    "fr": "(Tu travailles. Tu regardes par la fenêtre.)",
+    "fx": {
+     "dinero": 6,
+     "salud": -6,
+     "genio": -6
+    }
+   }
+  },
+  {
+   "id": "marques",
+   "ch": "aprendiz",
+   "tier": 0,
+   "t": "Un marqués quiere su retrato. Paga mucho… pero quiere parecer un ángel.",
+   "f": "Un marquis veut son portrait. Il paie beaucoup… mais il veut ressembler à un ange.",
+   "l": {
+    "es": "(Alas, luz, sonrisa. Cobras.)",
+    "fr": "(Ailes, lumière, sourire. Tu encaisses.)",
+    "fx": {
+     "dinero": 11,
+     "genio": -11
+    }
+   },
+   "r": {
+    "es": "(Lo pintas como es: nariz grande.)",
+    "fr": "(Tu le peins comme il est : grand nez.)",
+    "fx": {
+     "genio": 10,
+     "dinero": -8
+    }
+   }
+  },
+  {
+   "id": "reposo",
+   "ch": "medico",
+   "tier": 0,
+   "t": "Pintas día y noche. Te receto descanso, sopa y paseos. Sin pinceles.",
+   "f": "Tu peins jour et nuit. Je te prescris du repos, de la soupe et des promenades. Sans pinceaux.",
+   "l": {
+    "es": "(Obedeces. Una semana sin pintar.)",
+    "fr": "(Tu obéis. Une semaine sans peindre.)",
+    "fx": {
+     "salud": 11,
+     "genio": -8,
+     "dinero": -8
+    }
+   },
+   "r": {
+    "es": "(Escondes un pincel en la cama.)",
+    "fr": "(Tu caches un pinceau dans le lit.)",
+    "fx": {
+     "genio": 8,
+     "salud": -10
+    }
+   }
+  },
+  {
+   "id": "blanco",
+   "ch": "lienzo",
+   "tier": 0,
+   "t": "Estoy blanco. Vacío. Hace tres días que me miras. ¿Y bien?",
+   "f": "Je suis blanc. Vide. Ça fait trois jours que tu me regardes. Alors ?",
+   "l": {
+    "es": "(Pintas lo que ves: tu sombrero.)",
+    "fr": "(Tu peins ce que tu vois : ton chapeau.)",
+    "fx": {
+     "genio": 8,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Esperas la idea perfecta.)",
+    "fr": "(Tu attends l'idée parfaite.)",
+    "fx": {
+     "genio": -8,
+     "salud": 8,
+     "dinero": -5
+    }
+   }
+  },
+  {
+   "id": "prisa",
+   "ch": "lienzo",
+   "tier": 0,
+   "t": "Un cliente me quiere terminado en tres días. Soy enorme. Y tú estás solo.",
+   "f": "Un client me veut fini en trois jours. Je suis énorme. Et toi, tu es tout seul.",
+   "l": {
+    "es": "(Pintas sin dormir.)",
+    "fr": "(Tu peins sans dormir.)",
+    "fx": {
+     "dinero": 10,
+     "salud": -11,
+     "genio": -6
+    }
+   },
+   "r": {
+    "es": "Tres semanas, o nada.",
+    "fr": "Trois semaines, ou rien.",
+    "fx": {
+     "salud": 5,
+     "dinero": -8,
+     "genio": 5
+    }
+   }
+  },
+  {
+   "id": "caballo",
+   "ch": "reina",
+   "tier": 0,
+   "t": "Quiero un retrato a caballo. Como un general. Con un caballo muy grande.",
+   "f": "Je veux un portrait à cheval. Comme un général. Avec un très grand cheval.",
+   "l": {
+    "es": "(La pintas en un caballo enorme.)",
+    "fr": "(Tu la peins sur un cheval énorme.) (authentique : « La reine Marie-Louise à cheval », 1799)",
+    "fx": {
+     "corte": 11,
+     "genio": -8,
+     "dinero": 5
+    }
+   },
+   "r": {
+    "es": "(Pintas al caballo con cariño.)",
+    "fr": "(Tu peins le cheval avec amour.)",
+    "fx": {
+     "genio": 8,
+     "corte": -6,
+     "dinero": -5
+    }
+   }
+  },
+  {
+   "id": "aquelarre",
+   "ch": "buho",
+   "tier": 0,
+   "t": "Uhú. ¿Pintas el aquelarre? Brujas, luna llena y una cabra gigante con cuernos.",
+   "f": "Hou hou. Tu peins le sabbat des sorcières ? Sorcières, pleine lune et une chèvre géante à cornes.",
+   "l": {
+    "es": "(Sí. Para la duquesa de Osuna.)",
+    "fr": "(Oui. Pour la duchesse d'Osuna.) (authentique : « Le Sabbat des sorcières », 1798)",
+    "fx": {
+     "genio": 10,
+     "dinero": 6,
+     "corte": -6
+    }
+   },
+   "r": {
+    "es": "Hoy no, búho. Hoy pinto flores.",
+    "fr": "Pas aujourd'hui, hibou. Aujourd'hui, je peins des fleurs.",
+    "fx": {
+     "corte": 6,
+     "genio": -10
+    }
+   }
+  },
+  {
+   "id": "quiz_quitasol",
+   "ch": "aprendiz",
+   "tier": 0,
+   "once": true,
+   "t": "Maestro, una duda: ¿qué es un «quitasol»?",
+   "f": "Maître, une question : qu'est-ce qu'un « quitasol » ?",
+   "l": {
+    "es": "Una sombrilla. Quita el sol.",
+    "fr": "Une ombrelle. Elle « enlève le soleil ». (exact : quitar = enlever, sol = soleil)",
+    "fx": {
+     "genio": 10
+    }
+   },
+   "r": {
+    "es": "Un sombrero muy grande.",
+    "fr": "Un très grand chapeau. (piège : c'est une ombrelle, comme dans le tableau « El quitasol »)",
+    "fx": {
+     "genio": -8,
+     "salud": 3
+    }
+   }
+  },
+  {
+   "id": "dosmayo",
+   "ch": "soldado",
+   "tier": 1,
+   "once": true,
+   "after": 0.45,
+   "t": "¡Por orden del emperador! Madrid es nuestra. Quédate en casa, pintor.",
+   "f": "Par ordre de l'empereur ! Madrid est à nous. Reste chez toi, peintre. (authentique : les troupes de Napoléon occupent Madrid en 1808)",
+   "l": {
+    "es": "(Cierras las ventanas. Esperas.)",
+    "fr": "(Tu fermes les fenêtres. Tu attends.)",
+    "fx": {
+     "salud": 6,
+     "genio": -8,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Miras. Dibujas todo lo que ves.)",
+    "fr": "(Tu regardes. Tu dessines tout ce que tu vois.)",
+    "fx": {
+     "genio": 11,
+     "salud": -6,
+     "corte": -5
+    }
+   }
+  },
+  {
+   "id": "puerta_sol",
+   "ch": "majos",
+   "tier": 1,
+   "once": true,
+   "after": 0.45,
+   "t": "¡Dos de mayo! Luchamos en la Puerta del Sol contra los mamelucos. ¡Píntalo! Así nadie olvida.",
+   "f": "Deux mai ! On se bat à la Puerta del Sol contre les mamelouks. Peins-le ! Comme ça, personne n'oublie.",
+   "l": {
+    "es": "(Lo pintas: miedo y valor.)",
+    "fr": "(Tu le peins : peur et courage.) (authentique : « Le Deux Mai 1808 », peint en 1814)",
+    "fx": {
+     "genio": 11,
+     "corte": -6
+    }
+   },
+   "r": {
+    "es": "Ahora no. Es peligroso.",
+    "fr": "Pas maintenant. C'est dangereux.",
+    "fx": {
+     "salud": 6,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "tresmayo",
+   "ch": "lienzo",
+   "tier": 1,
+   "once": true,
+   "after": 0.5,
+   "t": "Pintas la noche del tres de mayo. Sin héroes de cartón. El hombre de la camisa blanca…",
+   "f": "Tu peins la nuit du trois mai. Sans héros de carton. L'homme à la chemise blanche…",
+   "l": {
+    "es": "(Gigante, iluminado como una vela.)",
+    "fr": "(Géant, éclairé comme une bougie.) (authentique : « Tres de mayo », 1814)",
+    "fx": {
+     "genio": 12,
+     "corte": -5,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "(Pintas un general con medallas.)",
+    "fr": "(Tu peins un général avec des médailles.)",
+    "fx": {
+     "corte": 10,
+     "genio": -10,
+     "dinero": 5
+    }
+   }
+  },
+  {
+   "id": "berenjena",
+   "ch": "soldado",
+   "tier": 1,
+   "once": true,
+   "after": 0.5,
+   "t": "El rey José Bonaparte te da una medalla. El pueblo la llama «la berenjena».",
+   "f": "Le roi Joseph Bonaparte te donne une médaille. Le peuple l'appelle « l'aubergine ». (authentique !)",
+   "l": {
+    "es": "(La guardas en un cajón. Hondo.)",
+    "fr": "(Tu la ranges dans un tiroir. Au fond.)",
+    "fx": {
+     "corte": 6,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(La llevas y pintas al rey José.)",
+    "fr": "(Tu la portes et tu peins le roi Joseph.)",
+    "fx": {
+     "dinero": 8,
+     "corte": -10,
+     "genio": -6
+    }
+   }
+  },
+  {
+   "id": "nuevo",
+   "ch": "fernando",
+   "tier": 1,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy Fernando, el rey nuevo. Sé que has pintado para el francés. No sonrío, Goya.",
+   "f": "Je suis Ferdinand, le nouveau roi. Je sais que tu as peint pour le Français. Je ne souris pas, Goya.",
+   "l": {
+    "es": "Pinto España, Majestad. Siempre.",
+    "fr": "Je peins l'Espagne, Majesté. Toujours.",
+    "fx": {
+     "corte": 10,
+     "genio": -8
+    }
+   },
+   "r": {
+    "es": "(Silencio. Ser sordo es útil hoy.)",
+    "fr": "(Silence. Être sourd est utile, aujourd'hui.)",
+    "fx": {
+     "salud": 6,
+     "corte": -8,
+     "dinero": -5
+    }
+   }
+  },
+  {
+   "id": "retrato_fernando",
+   "ch": "fernando",
+   "tier": 1,
+   "once": true,
+   "after": 0.6,
+   "t": "Pinta mi retrato. Con mucho oro. Y con una sonrisa… mía, no tuya.",
+   "f": "Peins mon portrait. Avec beaucoup d'or. Et avec un sourire… le mien, pas le tien.",
+   "l": {
+    "es": "(Mucho oro. Cara seria. Cobras.)",
+    "fr": "(Beaucoup d'or. Visage sérieux. Tu encaisses.)",
+    "fx": {
+     "corte": 8,
+     "dinero": 6,
+     "genio": -10
+    }
+   },
+   "r": {
+    "es": "(Lo pintas tal y como es.)",
+    "fr": "(Tu le peins tel qu'il est.)",
+    "fx": {
+     "genio": 10,
+     "corte": -11,
+     "salud": -5
+    }
+   }
+  },
+  {
+   "id": "desastres",
+   "ch": "buho",
+   "tier": 1,
+   "once": true,
+   "after": 0.5,
+   "t": "Uhú. Grabas «Los desastres de la guerra»: más de ochenta láminas. Nadie las ve… todavía.",
+   "f": "Hou hou. Tu graves « Les Désastres de la guerre » : plus de quatre-vingts planches. Personne ne les voit… pas encore. (authentique : publiées en 1863)",
+   "l": {
+    "es": "(Las guardas en un cajón.)",
+    "fr": "(Tu les ranges dans un tiroir.)",
+    "fx": {
+     "corte": 8,
+     "dinero": -6,
+     "genio": -6
+    }
+   },
+   "r": {
+    "es": "(Las vendes ahora. Es la verdad.)",
+    "fr": "(Tu les vends maintenant. C'est la vérité.)",
+    "fx": {
+     "dinero": 8,
+     "corte": -12,
+     "genio": 5
+    }
+   }
+  },
+  {
+   "id": "policia",
+   "ch": "aprendiz",
+   "tier": 1,
+   "once": true,
+   "after": 0.6,
+   "t": "Maestro, la policía del rey nuevo pregunta por usted. ¿Qué digo?",
+   "f": "Maître, la police du nouveau roi vous demande. Qu'est-ce que je dis ?",
+   "l": {
+    "es": "Que estoy enfermo. En la cama.",
+    "fr": "Que je suis malade. Au lit.",
+    "fx": {
+     "corte": 6,
+     "dinero": -6,
+     "genio": -5
+    }
+   },
+   "r": {
+    "es": "(Sales tú. Con tu mejor sombrero.)",
+    "fr": "(Tu sors toi-même. Avec ton plus beau chapeau.)",
+    "fx": {
+     "corte": -8,
+     "genio": 6,
+     "salud": -5
+    }
+   }
+  },
+  {
+   "id": "hambre",
+   "ch": "medico",
+   "tier": 1,
+   "once": true,
+   "after": 0.5,
+   "t": "Otra vez con fiebre, Francisco. La guerra, el hambre… Come algo, por favor.",
+   "f": "Encore de la fièvre, Francisco. La guerre, la faim… Mange quelque chose, s'il te plaît.",
+   "l": {
+    "es": "(Comes. Sopa, pan y silencio.)",
+    "fr": "(Tu manges. Soupe, pain et silence.)",
+    "fx": {
+     "salud": 10,
+     "dinero": -8
+    }
+   },
+   "r": {
+    "es": "(Dibujas la sopa. Luego la comes.)",
+    "fr": "(Tu dessines la soupe. Puis tu la manges.)",
+    "fx": {
+     "genio": 6,
+     "salud": -5
+    }
+   }
+  },
+  {
+   "id": "quinta_paredes",
+   "ch": "quinta",
+   "tier": 2,
+   "once": true,
+   "after": 0.65,
+   "t": "Soy tu casa nueva, lejos del palacio. Me llaman la Quinta del Sordo. Mis paredes están blancas…",
+   "f": "Je suis ta nouvelle maison, loin du palais. On m'appelle la Quinta del Sordo (la Villa du Sourd). Mes murs sont blancs… (authentique : le nom vient d'un ancien propriétaire, sourd lui aussi !)",
+   "l": {
+    "es": "(Pintas las paredes. Mucho negro.)",
+    "fr": "(Tu peins sur les murs. Beaucoup de noir.) (authentique : les « Peintures noires », 1819-1823)",
+    "fx": {
+     "genio": 12,
+     "corte": -6,
+     "dinero": -6
+    }
+   },
+   "r": {
+    "es": "(Pintas un paisaje bonito.)",
+    "fr": "(Tu peins un joli paysage.)",
+    "fx": {
+     "corte": 6,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "saturno",
+   "ch": "quinta",
+   "tier": 2,
+   "once": true,
+   "after": 0.65,
+   "t": "En el comedor pintas a Saturno. Mejor no decir qué come. ¿Dónde cenas hoy?",
+   "f": "Dans la salle à manger, tu peins Saturne. Mieux vaut ne pas dire ce qu'il mange. Tu dînes où, ce soir ?",
+   "l": {
+    "es": "(Delante de él. Buen provecho.)",
+    "fr": "(Devant lui. Bon appétit.)",
+    "fx": {
+     "genio": 8,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "(En la cocina. Puerta cerrada.)",
+    "fr": "(Dans la cuisine. Porte fermée.)",
+    "fx": {
+     "salud": 8,
+     "genio": -6
+    }
+   }
+  },
+  {
+   "id": "perro",
+   "ch": "quinta",
+   "tier": 2,
+   "once": true,
+   "after": 0.65,
+   "t": "En una pared, un perro pequeño con la cabeza fuera de la arena. Mira al cielo. ¿Qué espera?",
+   "f": "Sur un mur, un petit chien, la tête hors du sable. Il regarde le ciel. Qu'est-ce qu'il attend ?",
+   "l": {
+    "es": "No lo sé. Por eso lo pinto.",
+    "fr": "Je ne sais pas. C'est pour ça que je le peins. (authentique : « Le Chien », le tableau le plus mystérieux de Goya)",
+    "fx": {
+     "genio": 11,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Le pintas un hueso. Pobre perro.)",
+    "fr": "(Tu lui peins un os. Pauvre chien.)",
+    "fx": {
+     "salud": 6,
+     "genio": -10
+    }
+   }
+  },
+  {
+   "id": "aguas",
+   "ch": "fernando",
+   "tier": 2,
+   "once": true,
+   "after": 0.72,
+   "t": "¿Permiso para ir a Francia «a tomar las aguas»? Hmm. Vale, Goya. Pero vuelve.",
+   "f": "La permission d'aller en France « prendre les eaux » ? Hmm. D'accord, Goya. Mais reviens. (authentique : c'est l'excuse de Goya pour partir en 1824)",
+   "l": {
+    "es": "(Haces la maleta. ¡Burdeos!)",
+    "fr": "(Tu fais ta valise. Bordeaux !)",
+    "fx": {
+     "salud": 8,
+     "genio": 6,
+     "dinero": -8
+    }
+   },
+   "r": {
+    "es": "(Dudas. Madrid es tu casa.)",
+    "fr": "(Tu hésites. Madrid est ta maison.)",
+    "fx": {
+     "corte": 6,
+     "genio": -8
+    }
+   }
+  },
+  {
+   "id": "lechera",
+   "ch": "lechera",
+   "tier": 2,
+   "once": true,
+   "after": 0.8,
+   "t": "Burdeos. Cada mañana paso con mi leche. Tú tienes más de ochenta años y un pincel.",
+   "f": "Bordeaux. Chaque matin, je passe avec mon lait. Tu as plus de quatre-vingts ans et un pinceau.",
+   "l": {
+    "es": "(La pintas en azul y gris suaves.)",
+    "fr": "(Tu la peins en bleu et gris doux.) (authentique : « La Laitière de Bordeaux », 1827)",
+    "fx": {
+     "genio": 11,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Compras leche. Hoy, descanso.)",
+    "fr": "(Tu achètes du lait. Aujourd'hui, repos.)",
+    "fx": {
+     "salud": 8,
+     "dinero": -8,
+     "genio": -6
+    }
+   }
+  },
+  {
+   "id": "toros",
+   "ch": "lechera",
+   "tier": 2,
+   "once": true,
+   "after": 0.8,
+   "t": "¿Dibujas toros en una piedra? ¿Con casi ochenta años? ¡Y de pie!",
+   "f": "Tu dessines des taureaux sur une pierre ? À presque quatre-vingts ans ? Et debout ! (authentique : les lithographies « Les Taureaux de Bordeaux », 1825)",
+   "l": {
+    "es": "La piedra es nueva. Yo también.",
+    "fr": "La pierre est nouvelle. Moi aussi.",
+    "fx": {
+     "genio": 11,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "(Te sientas. Un poquito.)",
+    "fr": "(Tu t'assois. Un petit peu.)",
+    "fx": {
+     "salud": 8,
+     "genio": -8
+    }
+   }
+  }
+ ],
+ "deaths": {
+  "corte": {
+   "lo": {
+    "m": "🕯️",
+    "es": "La Inquisición llama a tu puerta con MUCHAS preguntas sobre tus dibujos. Exilio inmediato. Adiós, Madrid.",
+    "fr": "L'Inquisition frappe à ta porte avec BEAUCOUP de questions sur tes dessins. Exil immédiat. Adieu, Madrid."
+   },
+   "hi": {
+    "m": "🐩",
+    "es": "Solo pintas lo que quiere el palacio: perritos, flores, sonrisas. Tu arte muere de aburrimiento.",
+    "fr": "Tu ne peins plus que ce que veut le palais : petits chiens, fleurs, sourires. Ton art meurt d'ennui."
+   }
+  },
+  "genio": {
+   "lo": {
+    "m": "🥱",
+    "es": "Sin ideas. Copias a otros pintores, cuadro tras cuadro. Madrid bosteza.",
+    "fr": "Plus d'idées. Tu copies d'autres peintres, tableau après tableau. Madrid bâille."
+   },
+   "hi": {
+    "m": "👹",
+    "es": "Pintas monstruos en todas las paredes de tu casa… y en las del vecino. El vecino no está contento.",
+    "fr": "Tu peins des monstres sur tous les murs de ta maison… et sur ceux du voisin. Le voisin n'est pas content."
+   }
+  },
+  "dinero": {
+   "lo": {
+    "m": "☕",
+    "es": "Ni para pinceles. Pintas con café en servilletas. Bonito… pero nadie compra servilletas.",
+    "fr": "Même pas de quoi acheter des pinceaux. Tu peins au café sur des serviettes. Joli… mais personne n'achète des serviettes."
+   },
+   "hi": {
+    "m": "💰",
+    "es": "El rey pregunta por qué Goya tiene más oro que él. Conversación incómoda. Muy, muy incómoda.",
+    "fr": "Le roi demande pourquoi Goya a plus d'or que lui. Conversation gênante. Très, très gênante."
+   }
+  },
+  "salud": {
+   "lo": {
+    "m": "🛏️",
+    "es": "Los médicos ordenan un año entero en la cama. Sin pintar. Ni un dibujo. Ni uno.",
+    "fr": "Les médecins ordonnent une année entière au lit. Sans peindre. Pas un dessin. Pas un seul."
+   },
+   "hi": {
+    "m": "🎉",
+    "es": "Te sientes tan bien que vas a todas las fiestas de Madrid. ¿Pintar? Mañana. Siempre mañana.",
+    "fr": "Tu te sens si bien que tu vas à toutes les fêtes de Madrid. Peindre ? Demain. Toujours demain."
+   }
+  }
+ },
+ "win": {
+  "m": "🎨",
+  "es": "Burdeos, 1828. Has pintado reyes, guerras, sueños y monstruos. Los pintores del futuro aprenden de ti: el arte moderno empieza contigo.",
+  "fr": "Bordeaux, 1828. Tu as peint des rois, des guerres, des rêves et des monstres. Les peintres du futur apprennent de toi : l'art moderne commence avec toi."
+ }
+}

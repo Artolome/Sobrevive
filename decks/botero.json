@@ -1,0 +1,1178 @@
+{
+ "id": "botero",
+ "name": "Botero",
+ "emoji": "🎈",
+ "tagline": "¡No están gordas: tienen volumen!",
+ "sub": "Tu es Fernando Botero : de Medellín à Paris, tout en rondeur",
+ "intro_fr": "Tu es Fernando Botero, un jeune dessinateur de Medellín, en Colombie. Nous sommes en 1948 : tu vends tes dessins de taureaux et tu rêves de peindre. Trouve ton style, conquiers le monde… sans oublier tes montagnes.",
+ "time": {
+  "mode": "year",
+  "start": 1948,
+  "end": 1991
+ },
+ "places": [
+  [
+   0,
+   "Medellín"
+  ],
+  [
+   0.3,
+   "Nueva York"
+  ],
+  [
+   0.6,
+   "París"
+  ]
+ ],
+ "gauges": [
+  {
+   "key": "estilo",
+   "icon": "🎈",
+   "label": "Estilo"
+  },
+  {
+   "key": "fama",
+   "icon": "🌍",
+   "label": "Fama"
+  },
+  {
+   "key": "dinero",
+   "icon": "💰",
+   "label": "Dinero"
+  },
+  {
+   "key": "raices",
+   "icon": "🏔️",
+   "label": "Raíces"
+  }
+ ],
+ "tiers": [
+  {
+   "id": 1,
+   "cond": {
+    "cards": 12
+   },
+   "es": "Sobrevive 12 cartas",
+   "fr": "Survis à 12 cartes"
+  },
+  {
+   "id": 2,
+   "cond": {
+    "win": 1
+   },
+   "es": "Llega a los Campos Elíseos",
+   "fr": "Arrive aux Champs-Élysées"
+  }
+ ],
+ "chars": {
+  "tio": {
+   "emoji": "🤠",
+   "name": "Tu tío",
+   "tier": 0
+  },
+  "profesor": {
+   "emoji": "👨‍🏫",
+   "name": "El profesor de la academia",
+   "tier": 0
+  },
+  "mama": {
+   "emoji": "👩",
+   "name": "Tu mamá, la costurera",
+   "tier": 0
+  },
+  "critico": {
+   "emoji": "🧐",
+   "name": "Un crítico de arte",
+   "tier": 0
+  },
+  "naranja": {
+   "emoji": "🍊",
+   "name": "Una naranja (gigante)",
+   "tier": 0
+  },
+  "circo": {
+   "emoji": "🎪",
+   "name": "El circo",
+   "tier": 0
+  },
+  "montanas": {
+   "emoji": "🏔️",
+   "name": "Las montañas de Medellín",
+   "tier": 0
+  },
+  "toro": {
+   "emoji": "🐂",
+   "name": "El toro",
+   "tier": 0
+  },
+  "galerista": {
+   "emoji": "🗽",
+   "name": "El galerista de Nueva York",
+   "tier": 1
+  },
+  "monalisa": {
+   "emoji": "🖼️",
+   "name": "La Mona Lisa niña",
+   "tier": 1
+  },
+  "paloma": {
+   "emoji": "🕊️",
+   "name": "La paloma de bronce",
+   "tier": 2
+  },
+  "gato": {
+   "emoji": "🐈",
+   "name": "El gato gigante de Barcelona",
+   "tier": 2
+  },
+  "medellin": {
+   "emoji": "🏙️",
+   "name": "Medellín, tu ciudad",
+   "tier": 2
+  }
+ },
+ "start": "salida",
+ "cards": [
+  {
+   "id": "salida",
+   "ch": "tio",
+   "tier": 0,
+   "once": true,
+   "t": "Medellín. Tienes dieciséis años. Vendes tus dibujos en la plaza de toros… ¡y El Colombiano publica uno!",
+   "f": "Medellín. Tu as seize ans. Tu vends tes dessins aux arènes… et le journal El Colombiano en publie un !",
+   "l": {
+    "es": "(Dibujas más toros, bien gordos.)",
+    "fr": "(Tu dessines d'autres taureaux, bien gros.)",
+    "fx": {
+     "estilo": 9,
+     "dinero": 5
+    }
+   },
+   "r": {
+    "es": "(Dibujas lo que pide el periódico.)",
+    "fr": "(Tu dessines ce que demande le journal.)",
+    "fx": {
+     "fama": 7,
+     "estilo": -9
+    }
+   }
+  },
+  {
+   "id": "torero",
+   "ch": "tio",
+   "tier": 0,
+   "once": true,
+   "before": 0.3,
+   "t": "Te mando dos años a la escuela de toreros… ¡y solo dibujas los toros! ¿Qué quieres ser, sobrino?",
+   "f": "Je t'envoie deux ans à l'école de toreros… et tu ne fais que dessiner les taureaux ! Tu veux être quoi, mon neveu ? (authentique)",
+   "l": {
+    "es": "¡Torero, tío! (Tiemblas.)",
+    "fr": "Torero, tonton ! (Tu trembles.)",
+    "fx": {
+     "raices": 9,
+     "estilo": -11
+    }
+   },
+   "r": {
+    "es": "Pintor. Los toros son mis modelos.",
+    "fr": "Peintre. Les taureaux sont mes modèles.",
+    "fx": {
+     "estilo": 11,
+     "dinero": -7
+    }
+   }
+  },
+  {
+   "id": "toro_modelo",
+   "ch": "toro",
+   "tier": 0,
+   "t": "Soy el toro. ¿Me dibujas flaco y rápido, como en los libros… o grande y tranquilo?",
+   "f": "Je suis le taureau. Tu me dessines maigre et rapide, comme dans les livres… ou gros et tranquille ?",
+   "l": {
+    "es": "(Flaco y rápido. Se vende mejor.)",
+    "fr": "(Maigre et rapide. Ça se vend mieux.)",
+    "fx": {
+     "estilo": -11,
+     "dinero": 5
+    }
+   },
+   "r": {
+    "es": "(Grande, redondo y muy tranquilo.)",
+    "fr": "(Gros, rond et très tranquille.)",
+    "fx": {
+     "estilo": 9,
+     "dinero": -4
+    }
+   }
+  },
+  {
+   "id": "picasso",
+   "ch": "mama",
+   "tier": 0,
+   "once": true,
+   "before": 0.3,
+   "t": "¡Fernando! Escribes un artículo sobre Picasso en el periódico… ¡y el colegio te expulsa!",
+   "f": "Fernando ! Tu écris un article sur Picasso dans le journal… et le collège te renvoie ! (authentique : 1949)",
+   "l": {
+    "es": "Mamá, el arte es más importante.",
+    "fr": "Maman, l'art est plus important.",
+    "fx": {
+     "estilo": 9,
+     "raices": -11
+    }
+   },
+   "r": {
+    "es": "(Pides perdón al director.)",
+    "fr": "(Tu demandes pardon au directeur.)",
+    "fx": {
+     "raices": 9,
+     "estilo": -9,
+     "fama": -4
+    }
+   }
+  },
+  {
+   "id": "academia",
+   "ch": "profesor",
+   "tier": 0,
+   "t": "¡Proporciones reales, señor Botero! Esa mano es más grande que la cabeza.",
+   "f": "Des proportions réelles, monsieur Botero ! Cette main est plus grande que la tête.",
+   "l": {
+    "es": "Sí, profesor. (Borras la mano.)",
+    "fr": "Oui, professeur. (Tu effaces la main.)",
+    "fx": {
+     "estilo": -11,
+     "fama": 5
+    }
+   },
+   "r": {
+    "es": "La mano se queda, profesor.",
+    "fr": "La main reste, professeur.",
+    "fx": {
+     "estilo": 11,
+     "fama": -5
+    }
+   }
+  },
+  {
+   "id": "prado",
+   "ch": "profesor",
+   "tier": 0,
+   "once": true,
+   "before": 0.35,
+   "t": "Madrid. Copia a los maestros del Prado: Velázquez, Goya. Los turistas compran copias.",
+   "f": "Madrid. Copie les maîtres du Prado : Velázquez, Goya. Les touristes achètent des copies. (authentique)",
+   "l": {
+    "es": "(Vendes copias a los turistas.)",
+    "fr": "(Tu vends des copies aux touristes.)",
+    "fx": {
+     "dinero": 9,
+     "estilo": -7,
+     "fama": -4
+    }
+   },
+   "r": {
+    "es": "(Miras a Goya y pintas a tu manera.)",
+    "fr": "(Tu regardes Goya et tu peins à ta façon.)",
+    "fx": {
+     "estilo": 9,
+     "dinero": -7
+    }
+   }
+  },
+  {
+   "id": "florencia",
+   "ch": "profesor",
+   "tier": 0,
+   "once": true,
+   "before": 0.35,
+   "t": "Florencia. Mira a Piero della Francesca: figuras redondas, tranquilas, enormes.",
+   "f": "Florence. Regarde Piero della Francesca : des figures rondes, calmes, énormes.",
+   "l": {
+    "es": "(Copias los frescos durante semanas.)",
+    "fr": "(Tu copies les fresques pendant des semaines.)",
+    "fx": {
+     "estilo": 11,
+     "dinero": -7
+    }
+   },
+   "r": {
+    "es": "(Compras una moto y recorres Italia.)",
+    "fr": "(Tu achètes une moto et tu parcours l'Italie. Authentique : il sillonnait l'Italie à moto !)",
+    "fx": {
+     "dinero": -11,
+     "estilo": -5,
+     "raices": -4
+    }
+   }
+  },
+  {
+   "id": "mandolina",
+   "ch": "naranja",
+   "tier": 0,
+   "once": true,
+   "before": 0.35,
+   "t": "Me pintas junto a una mandolina. Dibujas el agujero muy pequeño… ¡y todo parece enorme!",
+   "f": "Tu me peins à côté d'une mandoline. Tu dessines le trou tout petit… et tout paraît énorme ! (authentique : 1956)",
+   "l": {
+    "es": "¡Eso es! Mi estilo: el volumen.",
+    "fr": "C'est ça ! Mon style : le volume.",
+    "fx": {
+     "estilo": 12,
+     "fama": 5
+    },
+    "set": {
+     "mandolina": "si"
+    }
+   },
+   "r": {
+    "es": "(Borras y haces un agujero normal.)",
+    "fr": "(Tu effaces et tu fais un trou normal.)",
+    "fx": {
+     "estilo": -12,
+     "dinero": 4
+    },
+    "set": {
+     "mandolina": "si"
+    }
+   }
+  },
+  {
+   "id": "quiz_mandolina",
+   "ch": "critico",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "mandolina": "si"
+   },
+   "t": "Pregunta rápida, señor Botero: ¿qué instrumento pinta con el agujero pequeñito?",
+   "f": "Question rapide, monsieur Botero : quel instrument peignez-vous avec le tout petit trou ?",
+   "l": {
+    "es": "¡La guitarra!",
+    "fr": "La guitare ! (piège : c'était une mandoline)",
+    "fx": {
+     "estilo": -9,
+     "fama": -4
+    }
+   },
+   "r": {
+    "es": "¡La mandolina!",
+    "fr": "La mandoline ! (exact : en 1956, à Mexico)",
+    "fx": {
+     "estilo": 7,
+     "fama": 5
+    }
+   }
+  },
+  {
+   "id": "gordas",
+   "ch": "critico",
+   "tier": 0,
+   "t": "Sus figuras están gordas, señor Botero. ¡Mi periódico se ríe de usted!",
+   "f": "Vos personnages sont gros, monsieur Botero. Mon journal se moque de vous !",
+   "l": {
+    "es": "Que se rían. Las pinto más gordas.",
+    "fr": "Qu'ils rient. Je les peins encore plus grosses.",
+    "fx": {
+     "estilo": 11,
+     "fama": -9
+    }
+   },
+   "r": {
+    "es": "(Pintas una figura flaca para él.)",
+    "fr": "(Tu peins un personnage maigre pour lui.)",
+    "fx": {
+     "fama": 9,
+     "estilo": -11
+    }
+   }
+  },
+  {
+   "id": "naranja_mesa",
+   "ch": "naranja",
+   "tier": 0,
+   "t": "¡Soy una naranja enorme! En tu cuadro no cabe nada más. ¿Y la mesa? ¿Y el plato?",
+   "f": "Je suis une orange énorme ! Dans ton tableau, rien d'autre ne rentre. Et la table ? Et l'assiette ?",
+   "l": {
+    "es": "(La mesa, pequeña. Tú, gigante.)",
+    "fr": "(La table, petite. Toi, géante.)",
+    "fx": {
+     "estilo": 9,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "(Te comes a tu modelo. Tienes hambre.)",
+    "fr": "(Tu manges ton modèle. Tu as faim.)",
+    "fx": {
+     "dinero": 5,
+     "estilo": -9
+    }
+   }
+  },
+  {
+   "id": "circo_llega",
+   "ch": "circo",
+   "tier": 0,
+   "t": "¡El circo llega a Medellín! Payasos, un elefante, trapecistas. ¿Vienes esta noche?",
+   "f": "Le cirque arrive à Medellín ! Des clowns, un éléphant, des trapézistes. Tu viens ce soir ? (Botero peindra toute une série sur le cirque… bien plus tard.)",
+   "l": {
+    "es": "(Vas y dibujas toda la noche.)",
+    "fr": "(Tu y vas et tu dessines toute la nuit.)",
+    "fx": {
+     "estilo": 9,
+     "raices": 4,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "(No. Terminas un retrato pagado.)",
+    "fr": "(Non. Tu finis un portrait payé.)",
+    "fx": {
+     "dinero": 7,
+     "estilo": -7
+    }
+   }
+  },
+  {
+   "id": "circo_payaso",
+   "ch": "circo",
+   "tier": 0,
+   "t": "El payaso triste quiere un retrato, parce. Paga con… dos entradas y un algodón de azúcar.",
+   "f": "Le clown triste veut un portrait, mon pote. Il paie avec… deux billets et une barbe à papa.",
+   "l": {
+    "es": "(Lo pintas. Redondo y triste.)",
+    "fr": "(Tu le peins. Rond et triste.)",
+    "fx": {
+     "estilo": 5,
+     "dinero": -7
+    }
+   },
+   "r": {
+    "es": "Sin pesos no hay retrato.",
+    "fr": "Pas de pesos, pas de portrait.",
+    "fx": {
+     "dinero": 9,
+     "fama": -5
+    }
+   }
+  },
+  {
+   "id": "montanas_ventana",
+   "ch": "montanas",
+   "tier": 0,
+   "t": "Somos las montañas de Medellín. Nos ves desde tu ventana cada mañana. ¿Nos pintas?",
+   "f": "Nous sommes les montagnes de Medellín. Tu nous vois de ta fenêtre chaque matin. Tu nous peins ?",
+   "l": {
+    "es": "(Verdes, redondas, enormes.)",
+    "fr": "(Vertes, rondes, énormes.)",
+    "fx": {
+     "raices": 9,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "Hoy no. Pinto un retrato que se vende.",
+    "fr": "Pas aujourd'hui. Je peins un portrait qui se vend.",
+    "fx": {
+     "dinero": 9,
+     "raices": -9,
+     "fama": 4
+    }
+   }
+  },
+  {
+   "id": "montanas_olvidar",
+   "ch": "montanas",
+   "tier": 0,
+   "t": "Te vas lejos, muy lejos. ¿Nos vas a olvidar?",
+   "f": "Tu pars loin, très loin. Tu vas nous oublier ?",
+   "l": {
+    "es": "Nunca. Están en todos mis cuadros.",
+    "fr": "Jamais. Vous êtes dans tous mes tableaux.",
+    "fx": {
+     "raices": 11,
+     "fama": -7
+    }
+   },
+   "r": {
+    "es": "El mundo es grande, montañas.",
+    "fr": "Le monde est grand, les montagnes.",
+    "fx": {
+     "fama": 9,
+     "raices": -12
+    }
+   }
+  },
+  {
+   "id": "mama_comer",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Soy costurera, Fernando, y trabajo mucho. ¿Y la pintura? ¿Da dinero para comer?",
+   "f": "Je suis couturière, Fernando, et je travaille beaucoup. Et la peinture ? Ça rapporte de quoi manger ? (authentique : sa mère était couturière)",
+   "l": {
+    "es": "Un día sí, mamá. Te lo prometo.",
+    "fr": "Un jour, oui, maman. Je te le promets.",
+    "fx": {
+     "raices": 7,
+     "dinero": -7
+    }
+   },
+   "r": {
+    "es": "(Vendes dos dibujos para la casa.)",
+    "fr": "(Tu vends deux dessins pour aider à la maison.)",
+    "fx": {
+     "dinero": 9,
+     "estilo": -7
+    }
+   }
+  },
+  {
+   "id": "mama_ajiaco",
+   "ch": "mama",
+   "tier": 0,
+   "t": "Te preparo ajiaco y arepas. ¡Come! Estás muy flaco para pintar gente tan redonda.",
+   "f": "Je te prépare de l'ajiaco et des arepas. Mange ! Tu es trop maigre pour peindre des gens si ronds.",
+   "l": {
+    "es": "(Comes tres platos. Y un jugo.)",
+    "fr": "(Tu manges trois assiettes. Et un jus.)",
+    "fx": {
+     "raices": 9,
+     "fama": -4
+    }
+   },
+   "r": {
+    "es": "(Comes rápido. El cuadro espera.)",
+    "fr": "(Tu manges vite. Le tableau attend.)",
+    "fx": {
+     "fama": 5,
+     "raices": -11
+    }
+   }
+  },
+  {
+   "id": "tio_oficina",
+   "ch": "tio",
+   "tier": 0,
+   "t": "Sobrino, no tienes ni un peso. Ven a trabajar a mi oficina: sueldo fijo cada mes.",
+   "f": "Mon neveu, tu n'as pas un peso. Viens travailler à mon bureau : salaire fixe chaque mois.",
+   "l": {
+    "es": "Gracias, tío. (Pintas solo de noche.)",
+    "fr": "Merci, tonton. (Tu peins seulement la nuit.)",
+    "fx": {
+     "dinero": 12,
+     "estilo": -9,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "No, tío. Un día vendo un cuadro.",
+    "fr": "Non, tonton. Un jour je vends un tableau.",
+    "fx": {
+     "estilo": 9,
+     "dinero": -11,
+     "raices": -5
+    }
+   }
+  },
+  {
+   "id": "salon_nacional",
+   "ch": "critico",
+   "tier": 0,
+   "once": true,
+   "before": 0.45,
+   "t": "¡Primer premio del Salón Nacional de Artistas, en Bogotá! Todo el país habla de usted.",
+   "f": "Premier prix du Salon national des artistes, à Bogotá ! Tout le pays parle de vous. (authentique : 1958)",
+   "l": {
+    "es": "(Compras un pasaje al extranjero.)",
+    "fr": "(Tu achètes un billet pour l'étranger.)",
+    "fx": {
+     "fama": 11,
+     "dinero": -9,
+     "raices": -5
+    }
+   },
+   "r": {
+    "es": "(Celebras con la familia en Medellín.)",
+    "fr": "(Tu fêtes ça en famille à Medellín.)",
+    "fx": {
+     "raices": 9,
+     "dinero": 5
+    }
+   }
+  },
+  {
+   "id": "mercado_frutas",
+   "ch": "naranja",
+   "tier": 0,
+   "t": "En el mercado: mangos, papayas, piñas, plátanos. ¡Todas queremos entrar en tu cuadro!",
+   "f": "Au marché : mangues, papayes, ananas, bananes. Nous voulons toutes entrer dans ton tableau !",
+   "l": {
+    "es": "(Compras diez frutas gigantes.)",
+    "fr": "(Tu achètes dix fruits géants.)",
+    "fx": {
+     "estilo": 7,
+     "dinero": -9
+    }
+   },
+   "r": {
+    "es": "(Pintas de memoria. Gratis.)",
+    "fr": "(Tu peins de mémoire. Gratuit. Authentique : Botero peint sans modèle.)",
+    "fx": {
+     "dinero": 7,
+     "raices": 4
+    }
+   }
+  },
+  {
+   "id": "toro_retrato",
+   "ch": "toro",
+   "tier": 0,
+   "t": "Un torero quiere su retrato: él, alto y valiente; yo, el toro, pequeño y feo.",
+   "f": "Un torero veut son portrait : lui, grand et courageux ; moi, le taureau, petit et laid.",
+   "l": {
+    "es": "(Los pintas redondos a los dos.)",
+    "fr": "(Tu les peins ronds tous les deux.)",
+    "fx": {
+     "estilo": 9,
+     "dinero": -9
+    }
+   },
+   "r": {
+    "es": "(Como él quiere. Paga bien.)",
+    "fr": "(Comme il veut. Il paie bien.)",
+    "fx": {
+     "dinero": 11,
+     "estilo": -11,
+     "fama": 4
+    }
+   }
+  },
+  {
+   "id": "colores",
+   "ch": "profesor",
+   "tier": 0,
+   "t": "Sus colores son demasiado alegres: rosa, verde, amarillo. El arte serio es gris.",
+   "f": "Vos couleurs sont trop gaies : rose, vert, jaune. L'art sérieux est gris.",
+   "l": {
+    "es": "El gris es para los días de lluvia.",
+    "fr": "Le gris, c'est pour les jours de pluie.",
+    "fx": {
+     "estilo": 9,
+     "fama": -7
+    }
+   },
+   "r": {
+    "es": "(Mezclas un poco de gris. Un poco.)",
+    "fr": "(Tu mélanges un peu de gris. Un peu.)",
+    "fx": {
+     "fama": 7,
+     "estilo": -9,
+     "raices": -4
+    }
+   }
+  },
+  {
+   "id": "quiz_gordas",
+   "ch": "critico",
+   "tier": 0,
+   "once": true,
+   "t": "Un periodista pregunta: ¿sus figuras están gordas o tienen volumen?",
+   "f": "Un journaliste demande : vos personnages sont gros ou ont du volume ?",
+   "l": {
+    "es": "Gordas, claro.",
+    "fr": "Grosses, bien sûr. (piège : Botero répond toujours « volume »)",
+    "fx": {
+     "estilo": -9,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "¡No están gordas: tienen volumen!",
+    "fr": "Elles ne sont pas grosses : elles ont du volume ! (sa réponse célèbre)",
+    "fx": {
+     "estilo": 9,
+     "fama": 5
+    }
+   }
+  },
+  {
+   "id": "nyc_llegada",
+   "ch": "galerista",
+   "tier": 1,
+   "once": true,
+   "after": 0.25,
+   "t": "Nueva York. Apartamento pequeño, alquiler caro. ¿Y sus cuadros? Aquí nadie los conoce.",
+   "f": "New York. Petit appartement, loyer cher. Et vos tableaux ? Ici, personne ne les connaît.",
+   "l": {
+    "es": "(Museos de día, pintas de noche.)",
+    "fr": "(Musées le jour, tu peins la nuit.)",
+    "fx": {
+     "estilo": 9,
+     "dinero": -11
+    }
+   },
+   "r": {
+    "es": "(Pintas retratos para ganar dinero.)",
+    "fr": "(Tu peins des portraits pour gagner de l'argent.)",
+    "fx": {
+     "dinero": 11,
+     "estilo": -9
+    }
+   }
+  },
+  {
+   "id": "monalisa_moma",
+   "ch": "monalisa",
+   "tier": 1,
+   "once": true,
+   "after": 0.25,
+   "t": "Soy la Mona Lisa… ¡a los doce años! Redonda y seria. El MoMA de Nueva York quiere comprarme.",
+   "f": "Je suis la Joconde… à douze ans ! Ronde et sérieuse. Le MoMA de New York veut m'acheter. (authentique : 1961)",
+   "l": {
+    "es": "¡Sí! (Firmas. Tu gran momento.)",
+    "fr": "Oui ! (Tu signes. Ton grand moment.)",
+    "fx": {
+     "fama": 12,
+     "dinero": 9
+    }
+   },
+   "r": {
+    "es": "No. Es mi cuadro favorito.",
+    "fr": "Non. C'est mon tableau préféré.",
+    "fx": {
+     "fama": -12,
+     "dinero": -9
+    }
+   }
+  },
+  {
+   "id": "pregunta_eterna",
+   "ch": "critico",
+   "tier": 1,
+   "once": true,
+   "after": 0.25,
+   "t": "La pregunta eterna, señor Botero: ¿por qué pinta gente gorda?",
+   "f": "L'éternelle question, monsieur Botero : pourquoi peignez-vous des gens gros ?",
+   "l": {
+    "es": "(Suspiras y explicas con paciencia.)",
+    "fr": "(Tu soupires et tu expliques avec patience.)",
+    "fx": {
+     "fama": 7,
+     "estilo": -4
+    }
+   },
+   "r": {
+    "es": "Porque los flacos no caben.",
+    "fr": "Parce que les maigres ne rentrent pas.",
+    "fx": {
+     "fama": -7,
+     "estilo": 5
+    }
+   }
+  },
+  {
+   "id": "contrato",
+   "ch": "galerista",
+   "tier": 1,
+   "once": true,
+   "after": 0.25,
+   "t": "Contrato exclusivo: usted vende solo conmigo. Dinero seguro cada mes. ¿Firma?",
+   "f": "Contrat exclusif : vous vendez seulement avec moi. Argent assuré chaque mois. Vous signez ?",
+   "l": {
+    "es": "(Firmas. Seguridad.)",
+    "fr": "(Tu signes. La sécurité.)",
+    "fx": {
+     "dinero": 12,
+     "estilo": -9
+    },
+    "set": {
+     "contrato": "si"
+    }
+   },
+   "r": {
+    "es": "No. Pinto para quien yo quiero.",
+    "fr": "Non. Je peins pour qui je veux.",
+    "fx": {
+     "estilo": 11,
+     "dinero": -11
+    },
+    "set": {
+     "contrato": "no"
+    }
+   }
+  },
+  {
+   "id": "contrato_flores",
+   "ch": "galerista",
+   "tier": 1,
+   "once": true,
+   "cond": {
+    "contrato": "si"
+   },
+   "t": "Sus gordos se venden bien. Ahora quiero veinte cuadros de flores… pequeñas y elegantes.",
+   "f": "Vos gros personnages se vendent bien. Maintenant je veux vingt tableaux de fleurs… petites et élégantes.",
+   "l": {
+    "es": "(Pintas flores. Enormes, claro.)",
+    "fr": "(Tu peins des fleurs. Énormes, bien sûr.)",
+    "fx": {
+     "estilo": 11,
+     "dinero": -7
+    }
+   },
+   "r": {
+    "es": "(Pintas lo que pide. Veinte.)",
+    "fr": "(Tu peins ce qu'il demande. Vingt.)",
+    "fx": {
+     "dinero": 11,
+     "estilo": -11
+    }
+   }
+  },
+  {
+   "id": "contrato_alquiler",
+   "ch": "monalisa",
+   "tier": 1,
+   "once": true,
+   "cond": {
+    "contrato": "no"
+   },
+   "t": "Sin galería estamos solos en el taller, tú y yo. ¿Y el alquiler? ¿Con qué lo pagas?",
+   "f": "Sans galerie, nous sommes seuls dans l'atelier, toi et moi. Et le loyer ? Tu le paies avec quoi ?",
+   "l": {
+    "es": "(Vendes un cuadro barato al vecino.)",
+    "fr": "(Tu vends un tableau pas cher au voisin.)",
+    "fx": {
+     "dinero": 9,
+     "estilo": -5
+    }
+   },
+   "r": {
+    "es": "(Vendes la radio. El cuadro se queda.)",
+    "fr": "(Tu vends la radio. Le tableau reste.)",
+    "fx": {
+     "dinero": -7,
+     "estilo": 7
+    }
+   }
+  },
+  {
+   "id": "nyc_abstracto",
+   "ch": "galerista",
+   "tier": 1,
+   "once": true,
+   "after": 0.25,
+   "t": "Los críticos de Nueva York aman el arte abstracto. Dicen que sus cuadros son «raros».",
+   "f": "Les critiques de New York adorent l'art abstrait. Ils disent que vos tableaux sont « bizarres ».",
+   "l": {
+    "es": "Pues pinto más raro todavía.",
+    "fr": "Alors je peins encore plus bizarre.",
+    "fx": {
+     "estilo": 11,
+     "fama": -7
+    }
+   },
+   "r": {
+    "es": "(Pruebas unas manchas abstractas.)",
+    "fr": "(Tu essaies quelques taches abstraites.)",
+    "fx": {
+     "fama": 7,
+     "estilo": -11
+    }
+   }
+  },
+  {
+   "id": "paris_mudanza",
+   "ch": "galerista",
+   "tier": 1,
+   "once": true,
+   "after": 0.45,
+   "t": "¿París? ¿Me deja por París? ¡Aquí en Nueva York está el dinero, señor Botero!",
+   "f": "Paris ? Vous me quittez pour Paris ? Ici, à New York, il y a l'argent, monsieur Botero !",
+   "l": {
+    "es": "Me voy. París me espera.",
+    "fr": "Je pars. Paris m'attend. (authentique : il s'installe à Paris en 1973)",
+    "fx": {
+     "fama": 9,
+     "dinero": -9,
+     "raices": -7
+    }
+   },
+   "r": {
+    "es": "(Un año más en Nueva York.)",
+    "fr": "(Un an de plus à New York.)",
+    "fx": {
+     "dinero": 9,
+     "fama": -7
+    }
+   }
+  },
+  {
+   "id": "nostalgia_ajiaco",
+   "ch": "montanas",
+   "tier": 1,
+   "once": true,
+   "after": 0.4,
+   "t": "París es bonito, sí. Pero… ¿y el ajiaco? ¿Y nosotras, tus montañas?",
+   "f": "Paris est joli, oui. Mais… et l'ajiaco ? Et nous, tes montagnes ?",
+   "l": {
+    "es": "(Cocinas ajiaco para tus amigos.)",
+    "fr": "(Tu cuisines de l'ajiaco pour tes amis.)",
+    "fx": {
+     "raices": 9,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(Compras un croissant. Es más fácil.)",
+    "fr": "(Tu achètes un croissant. C'est plus facile.)",
+    "fx": {
+     "raices": -11,
+     "fama": 4
+    }
+   }
+  },
+  {
+   "id": "bronce_gigante",
+   "ch": "paloma",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Ahora soy de bronce: redonda, pesada, brillante. ¿Me haces gigante, de verdad gigante?",
+   "f": "Maintenant je suis en bronze : ronde, lourde, brillante. Tu me fais géante, vraiment géante ?",
+   "l": {
+    "es": "(Tres metros. Mínimo.)",
+    "fr": "(Trois mètres. Minimum.)",
+    "fx": {
+     "estilo": 12,
+     "dinero": -12
+    }
+   },
+   "r": {
+    "es": "(Pequeña, para la mesa del salón.)",
+    "fr": "(Petite, pour la table du salon.)",
+    "fx": {
+     "dinero": 9,
+     "estilo": -11,
+     "fama": -5
+    }
+   }
+  },
+  {
+   "id": "gato_barcelona",
+   "ch": "gato",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "¡Miau! Soy tu gato gigante de Barcelona. Los niños suben a mi espalda. ¿Te molesta?",
+   "f": "Miaou ! Je suis ton chat géant de Barcelone. Les enfants grimpent sur mon dos. Ça te dérange ? (authentique : le Chat du Raval)",
+   "l": {
+    "es": "¡Que suban! El arte es para todos.",
+    "fr": "Qu'ils grimpent ! L'art est pour tout le monde.",
+    "fx": {
+     "fama": 9,
+     "dinero": -4
+    }
+   },
+   "r": {
+    "es": "(Pides una barrera. Es una obra.)",
+    "fr": "(Tu demandes une barrière. C'est une œuvre.)",
+    "fx": {
+     "fama": -9,
+     "dinero": 7
+    }
+   }
+  },
+  {
+   "id": "medellin_pide",
+   "ch": "medellin",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy Medellín, tu ciudad. Te necesito: tu arte aquí, en una plaza, gratis, para todos.",
+   "f": "Je suis Medellín, ta ville. J'ai besoin de toi : ton art ici, sur une place, gratuit, pour tous.",
+   "l": {
+    "es": "Te lo prometo: un museo lleno de obras.",
+    "fr": "Je te le promets : un musée plein d'œuvres.",
+    "fx": {
+     "raices": 12,
+     "dinero": -7
+    },
+    "set": {
+     "promesa": "si"
+    }
+   },
+   "r": {
+    "es": "Ahora no. París me necesita.",
+    "fr": "Pas maintenant. Paris a besoin de moi.",
+    "fx": {
+     "fama": 7,
+     "raices": -12
+    },
+    "set": {
+     "promesa": "no"
+    }
+   }
+  },
+  {
+   "id": "promesa_plaza",
+   "ch": "paloma",
+   "tier": 2,
+   "once": true,
+   "cond": {
+    "promesa": "si"
+   },
+   "t": "Años después, en Medellín: una plaza llena de tus esculturas de bronce, de niños y de palomas de verdad.",
+   "f": "Des années plus tard, à Medellín : une place pleine de tes sculptures en bronze, d'enfants et de vraies colombes. (authentique : la Plaza Botero)",
+   "l": {
+    "es": "(Lloras un poco. De alegría.)",
+    "fr": "(Tu pleures un peu. De joie.)",
+    "fx": {
+     "raices": 9
+    }
+   },
+   "r": {
+    "es": "(Regalas cuadros al museo de al lado.)",
+    "fr": "(Tu offres des tableaux au musée d'à côté. Authentique : le Museo de Antioquia !)",
+    "fx": {
+     "dinero": -11,
+     "fama": 4
+    }
+   }
+  },
+  {
+   "id": "promesa_carta",
+   "ch": "medellin",
+   "tier": 2,
+   "once": true,
+   "cond": {
+    "promesa": "no"
+   },
+   "t": "Tus montañas te esperan. El Museo de Antioquia te escribe otra vez. ¿Respondes?",
+   "f": "Tes montagnes t'attendent. Le musée d'Antioquia t'écrit encore une fois. Tu réponds ?",
+   "l": {
+    "es": "(Respondes: sí, voy, con cuadros.)",
+    "fr": "(Tu réponds : oui, je viens, avec des tableaux.)",
+    "fx": {
+     "raices": 11,
+     "fama": -5,
+     "dinero": -5
+    }
+   },
+   "r": {
+    "es": "(No abres la carta. Sigues vendiendo.)",
+    "fr": "(Tu n'ouvres pas la lettre. Tu continues à vendre.)",
+    "fx": {
+     "raices": -11,
+     "dinero": 7
+    }
+   }
+  },
+  {
+   "id": "paloma_paz",
+   "ch": "paloma",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy la paloma de la paz. Grande, gorda… perdón, con volumen. ¿Para quién soy?",
+   "f": "Je suis la colombe de la paix. Grande, grosse… pardon, avec du volume. Je suis pour qui ?",
+   "l": {
+    "es": "Para una plaza de Colombia.",
+    "fr": "Pour une place en Colombie.",
+    "fx": {
+     "raices": 9,
+     "fama": -5
+    }
+   },
+   "r": {
+    "es": "Para un museo de Europa.",
+    "fr": "Pour un musée en Europe.",
+    "fx": {
+     "fama": 7,
+     "dinero": 7,
+     "raices": -9
+    }
+   }
+  },
+  {
+   "id": "campos_eliseos",
+   "ch": "paloma",
+   "tier": 2,
+   "once": true,
+   "after": 0.8,
+   "t": "¡París te invita! Tus esculturas gigantes en los Campos Elíseos. ¡Primera vez para un artista vivo!",
+   "f": "Paris t'invite ! Tes sculptures géantes sur les Champs-Élysées. Une première pour un artiste vivant !",
+   "l": {
+    "es": "(Aceptas. Treinta esculturas enormes.)",
+    "fr": "(Tu acceptes. Trente sculptures énormes.)",
+    "fx": {
+     "fama": 12,
+     "dinero": -7
+    }
+   },
+   "r": {
+    "es": "Solo si después van a Medellín.",
+    "fr": "Seulement si elles vont ensuite à Medellín.",
+    "fx": {
+     "raices": 7,
+     "fama": -9
+    }
+   }
+  }
+ ],
+ "deaths": {
+  "estilo": {
+   "lo": {
+    "m": "🎨",
+    "es": "Pintas «normal», como todos. Bonito, correcto… y nadie recuerda tu nombre.",
+    "fr": "Tu peins « normal », comme tout le monde. Joli, correct… et personne ne se souvient de ton nom."
+   },
+   "hi": {
+    "m": "🚪",
+    "es": "Todo tan redondo que tus cuadros ya no pasan por la puerta del museo. Se quedan en la calle.",
+    "fr": "Tout est si rond que tes tableaux ne passent plus par la porte du musée. Ils restent dans la rue."
+   }
+  },
+  "fama": {
+   "lo": {
+    "m": "✉️",
+    "es": "Ninguna galería responde a tus cartas. Vuelves a dibujar para el periódico.",
+    "fr": "Aucune galerie ne répond à tes lettres. Tu retournes dessiner pour le journal."
+   },
+   "hi": {
+    "m": "📸",
+    "es": "Cien fotos por minuto, cero tiempo para pintar. Te escondes en una isla.",
+    "fr": "Cent photos par minute, zéro temps pour peindre. Tu te caches sur une île."
+   }
+  },
+  "dinero": {
+   "lo": {
+    "m": "🍽️",
+    "es": "Vendes tu última caja de pinturas para comprar la cena. Rica, sí… pero sin pinceles.",
+    "fr": "Tu vends ta dernière boîte de peinture pour acheter le dîner. Délicieux, oui… mais plus de pinceaux."
+   },
+   "hi": {
+    "m": "🏰",
+    "es": "Compras tres castillos y un avión. El pincel se seca solo en el taller.",
+    "fr": "Tu achètes trois châteaux et un avion. Le pinceau sèche tout seul dans l'atelier."
+   }
+  },
+  "raices": {
+   "lo": {
+    "m": "🧭",
+    "es": "Demasiado tiempo lejos: olvidas el sabor del ajiaco y las montañas. Te pierdes.",
+    "fr": "Trop longtemps loin : tu oublies le goût de l'ajiaco et les montagnes. Tu te perds."
+   },
+   "hi": {
+    "m": "🏔️",
+    "es": "Nunca sales de Medellín. El mundo nunca ve tus cuadros redondos. ¡Qué pena!",
+    "fr": "Tu ne quittes jamais Medellín. Le monde ne voit jamais tes tableaux ronds. Quel dommage !"
+   }
+  }
+ },
+ "win": {
+  "m": "🎈",
+  "es": "París, 1992: tus esculturas gigantes llenan los Campos Elíseos. El mundo entero sonríe.",
+  "fr": "Paris, 1992 : tes sculptures géantes remplissent les Champs-Élysées. Le monde entier sourit."
+ }
+}

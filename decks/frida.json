@@ -1,0 +1,1266 @@
+{
+ "id": "frida",
+ "name": "Frida",
+ "emoji": "🌺",
+ "tagline": "Pinto mi propia realidad. ¡Viva la vida!",
+ "sub": "Tu es Frida Kahlo : pinceaux, fleurs et Casa Azul à Mexico",
+ "intro_fr": "Tu es Frida Kahlo. En 1925, un accident de bus te cloue au lit pendant des mois : tu demandes des pinceaux et un miroir. De Coyoacán à Paris, peins ta propre réalité et garde ta santé, ta joie et tes racines jusqu'à ta grande exposition.",
+ "time": {
+  "mode": "year",
+  "start": 1925,
+  "end": 1952,
+  "step": [
+   1,
+   1
+  ]
+ },
+ "places": [
+  [
+   0,
+   "Coyoacán"
+  ],
+  [
+   0.18,
+   "Estados Unidos"
+  ],
+  [
+   0.32,
+   "Coyoacán"
+  ],
+  [
+   0.5,
+   "París"
+  ],
+  [
+   0.56,
+   "Coyoacán"
+  ]
+ ],
+ "gauges": [
+  {
+   "key": "arte",
+   "icon": "🎨",
+   "label": "Arte"
+  },
+  {
+   "key": "salud",
+   "icon": "❤️",
+   "label": "Salud"
+  },
+  {
+   "key": "alegria",
+   "icon": "🦋",
+   "label": "Alegría"
+  },
+  {
+   "key": "mexico",
+   "icon": "🌺",
+   "label": "México"
+  }
+ ],
+ "tiers": [
+  {
+   "id": 1,
+   "cond": {
+    "cards": 12
+   },
+   "es": "Sobrevive 12 cartas",
+   "fr": "Survis à 12 cartes"
+  },
+  {
+   "id": 2,
+   "cond": {
+    "win": 1
+   },
+   "es": "Llega a tu gran exposición",
+   "fr": "Arrive à ta grande exposition"
+  }
+ ],
+ "chars": {
+  "espejo": {
+   "emoji": "🪞",
+   "name": "El espejo",
+   "tier": 0
+  },
+  "diego": {
+   "emoji": "🐸",
+   "name": "Diego Rivera, tu sapo-rana",
+   "tier": 0
+  },
+  "doctor": {
+   "emoji": "🩺",
+   "name": "El doctor",
+   "tier": 0
+  },
+  "mono": {
+   "emoji": "🐒",
+   "name": "Fulang-Chang, el mono",
+   "tier": 0
+  },
+  "perico": {
+   "emoji": "🦜",
+   "name": "Bonito, el perico",
+   "tier": 0
+  },
+  "casa": {
+   "emoji": "🏠",
+   "name": "La Casa Azul",
+   "tier": 0
+  },
+  "mercado": {
+   "emoji": "🥭",
+   "name": "El mercado de Coyoacán",
+   "tier": 0
+  },
+  "calavera": {
+   "emoji": "💀",
+   "name": "Una calavera de azúcar",
+   "tier": 0
+  },
+  "periodista": {
+   "emoji": "📰",
+   "name": "Una periodista",
+   "tier": 1
+  },
+  "breton": {
+   "emoji": "🎩",
+   "name": "André Breton",
+   "tier": 1
+  },
+  "fridos": {
+   "emoji": "🎒",
+   "name": "Los Fridos, tus alumnos",
+   "tier": 1
+  },
+  "cama": {
+   "emoji": "🛏️",
+   "name": "La cama",
+   "tier": 2
+  },
+  "sandia": {
+   "emoji": "🍉",
+   "name": "La sandía",
+   "tier": 2
+  }
+ },
+ "start": "salida",
+ "cards": [
+  {
+   "id": "salida",
+   "ch": "espejo",
+   "tier": 0,
+   "once": true,
+   "t": "1925. Después del accidente del autobús, pasas meses en la cama. Te aburres. ¿Qué pides?",
+   "f": "1925. Après l'accident de bus, tu passes des mois au lit. Tu t'ennuies. Que demandes-tu ?",
+   "l": {
+    "es": "Pinturas y un espejo.",
+    "fr": "Des peintures et un miroir. (authentique : miroir fixé au ciel de lit, chevalet spécial)",
+    "fx": {
+     "arte": 10,
+     "alegria": 3
+    }
+   },
+   "r": {
+    "es": "Chocolate y revistas de París.",
+    "fr": "Du chocolat et des magazines de Paris.",
+    "fx": {
+     "salud": 8,
+     "arte": -10,
+     "mexico": -6
+    }
+   }
+  },
+  {
+   "id": "espejo_yo",
+   "ch": "espejo",
+   "tier": 0,
+   "t": "Me miras todo el día. Dime: ¿por qué te pintas a ti misma?",
+   "f": "Tu me regardes toute la journée. Dis-moi : pourquoi tu te peins toi-même ?",
+   "l": {
+    "es": "Porque soy a quien mejor conozco.",
+    "fr": "Parce que je suis celle que je connais le mieux. (authentique, paraphrasé)",
+    "fx": {
+     "arte": 10,
+     "mexico": 3
+    }
+   },
+   "r": {
+    "es": "Porque estoy sola. (Dejas el pincel.)",
+    "fr": "Parce que je suis seule. (Tu poses le pinceau.)",
+    "fx": {
+     "alegria": -6,
+     "arte": -8,
+     "salud": 6
+    }
+   }
+  },
+  {
+   "id": "espejo_cejas",
+   "ch": "espejo",
+   "tier": 0,
+   "t": "Hoy ves cejas juntas, un poco de bigote y ojos muy serios. ¿Qué pintas?",
+   "f": "Aujourd'hui tu vois des sourcils qui se rejoignent, un peu de moustache et des yeux très sérieux. Que peins-tu ?",
+   "l": {
+    "es": "(Todo, tal cual. Cejas y bigote.)",
+    "fr": "(Tout, tel quel. Sourcils et moustache.)",
+    "fx": {
+     "arte": 10,
+     "mexico": 5,
+     "alegria": -6
+    }
+   },
+   "r": {
+    "es": "(Cejas finas y sonrisa de revista.)",
+    "fr": "(Sourcils fins et sourire de magazine.)",
+    "fx": {
+     "alegria": 6,
+     "arte": -10,
+     "mexico": -6
+    }
+   }
+  },
+  {
+   "id": "tehuana",
+   "ch": "espejo",
+   "tier": 0,
+   "t": "Hoy sales a la calle. Te miras en mí. ¿Qué te pones?",
+   "f": "Aujourd'hui tu sors. Tu te regardes en moi. Qu'est-ce que tu mets ?",
+   "l": {
+    "es": "Vestido de tehuana y flores.",
+    "fr": "Une robe de Tehuana et des fleurs. (robe traditionnelle de l'isthme de Tehuantepec)",
+    "fx": {
+     "mexico": 10,
+     "alegria": 3
+    }
+   },
+   "r": {
+    "es": "Traje de hombre y corbata.",
+    "fr": "Un costume d'homme et une cravate. (authentique : photo de famille de 1926)",
+    "fx": {
+     "mexico": -10,
+     "alegria": 5
+    }
+   }
+  },
+  {
+   "id": "diego_cuadros",
+   "ch": "diego",
+   "tier": 0,
+   "t": "Un pintor enorme y famoso mira tus cuadros. —Son buenos, muchacha. ¡Sigue pintando!",
+   "f": "Un peintre énorme et célèbre regarde tes tableaux. — Ils sont bons, petite. Continue à peindre !",
+   "l": {
+    "es": "¡Gracias, sapo-rana! 🐸",
+    "fr": "Merci, crapaud-grenouille ! 🐸 (son surnom affectueux pour Diego)",
+    "fx": {
+     "alegria": 8,
+     "arte": 6
+    }
+   },
+   "r": {
+    "es": "(No le crees. Guardas los cuadros.)",
+    "fr": "(Tu ne le crois pas. Tu ranges les tableaux.)",
+    "fx": {
+     "arte": -8,
+     "alegria": -6,
+     "salud": 6
+    }
+   }
+  },
+  {
+   "id": "diego_cejas",
+   "ch": "diego",
+   "tier": 0,
+   "t": "—Frida, pinta más. Tú tienes algo que yo no tengo.",
+   "f": "— Frida, peins plus. Tu as quelque chose que je n'ai pas.",
+   "l": {
+    "es": "¿Qué? ¿Cejas?",
+    "fr": "Quoi ? Des sourcils ?",
+    "fx": {
+     "alegria": 8,
+     "arte": -8
+    }
+   },
+   "r": {
+    "es": "(Pintas toda la noche.)",
+    "fr": "(Tu peins toute la nuit.)",
+    "fx": {
+     "arte": 10,
+     "salud": -10,
+     "alegria": -8
+    }
+   }
+  },
+  {
+   "id": "diego_fruta",
+   "ch": "diego",
+   "tier": 0,
+   "t": "Tu sapo-rana se come toda la fruta que quieres pintar.",
+   "f": "Ton crapaud-grenouille mange tous les fruits que tu veux peindre.",
+   "l": {
+    "es": "(Pintas el plato vacío. Arte moderno.)",
+    "fr": "(Tu peins l'assiette vide. Art moderne.)",
+    "fx": {
+     "arte": 8,
+     "alegria": 5,
+     "mexico": -6
+    }
+   },
+   "r": {
+    "es": "(Vuelves al mercado. Te cansas.)",
+    "fr": "(Tu retournes au marché. Tu te fatigues.)",
+    "fx": {
+     "salud": -8,
+     "alegria": -6,
+     "mexico": 5
+    }
+   }
+  },
+  {
+   "id": "diego_canasta",
+   "ch": "diego",
+   "tier": 0,
+   "t": "Diego pinta murales enormes todo el día y olvida comer. ¿Le llevas la comida?",
+   "f": "Diego peint d'énormes fresques toute la journée et oublie de manger. Tu lui apportes à manger ?",
+   "l": {
+    "es": "(Canasta con mole y flores.)",
+    "fr": "(Un panier avec du mole et des fleurs.) (authentique : elle décorait les paniers)",
+    "fx": {
+     "alegria": 8,
+     "mexico": 6,
+     "arte": -10
+    }
+   },
+   "r": {
+    "es": "(Que coma tacos. Tú pintas.)",
+    "fr": "(Qu'il mange des tacos. Toi, tu peins.)",
+    "fx": {
+     "arte": 10,
+     "alegria": -8
+    }
+   }
+  },
+  {
+   "id": "doctor_reposo",
+   "ch": "doctor",
+   "tier": 0,
+   "t": "Reposo total. Nada de pintar, nada de visitas. Órdenes del médico.",
+   "f": "Repos total. Pas de peinture, pas de visites. Ordres du médecin.",
+   "l": {
+    "es": "Sí, doctor. (Duermes.)",
+    "fr": "Oui, docteur. (Tu dors.)",
+    "fx": {
+     "salud": 12,
+     "arte": -11,
+     "alegria": -8
+    }
+   },
+   "r": {
+    "es": "(Pintas en la cama, en secreto.)",
+    "fr": "(Tu peins au lit, en secret.)",
+    "fx": {
+     "arte": 10,
+     "salud": -10,
+     "alegria": 5
+    }
+   }
+  },
+  {
+   "id": "doctor_corse",
+   "ch": "doctor",
+   "tier": 0,
+   "once": true,
+   "t": "Tu nuevo corsé de yeso: blanco, duro y feo. Tres meses.",
+   "f": "Ton nouveau corset de plâtre : blanc, dur et moche. Trois mois.",
+   "l": {
+    "es": "(Lo pintas con flores y pájaros.)",
+    "fr": "(Tu le peins avec des fleurs et des oiseaux.) (authentique)",
+    "fx": {
+     "arte": 8,
+     "alegria": 8
+    },
+    "set": {
+     "corse": "flores"
+    }
+   },
+   "r": {
+    "es": "(Lo escondes bajo el vestido.)",
+    "fr": "(Tu le caches sous ta robe.)",
+    "fx": {
+     "alegria": -8,
+     "salud": 8
+    },
+    "set": {
+     "corse": "blanco"
+    }
+   }
+  },
+  {
+   "id": "doctor_corse2",
+   "ch": "doctor",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "corse": "flores"
+   },
+   "t": "Ahora todos mis pacientes quieren un corsé con flores. ¡Es culpa tuya!",
+   "f": "Maintenant tous mes patients veulent un corset avec des fleurs. C'est ta faute !",
+   "l": {
+    "es": "(Les pintas uno a cada uno. Gratis.)",
+    "fr": "(Tu en peins un à chacun. Gratuit.)",
+    "fx": {
+     "alegria": 8,
+     "salud": -8,
+     "arte": -10
+    }
+   },
+   "r": {
+    "es": "Que pinten ellos. (Tú descansas.)",
+    "fr": "Qu'ils peignent eux-mêmes. (Toi, tu te reposes.)",
+    "fx": {
+     "salud": 8,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "doctor_fiesta",
+   "ch": "doctor",
+   "tier": 0,
+   "t": "Toma tus medicinas y descansa. Y nada de fiestas esta semana.",
+   "f": "Prends tes médicaments et repose-toi. Et pas de fêtes cette semaine.",
+   "l": {
+    "es": "Sí, doctor. (Bostezas.)",
+    "fr": "Oui, docteur. (Tu bâilles.)",
+    "fx": {
+     "salud": 11,
+     "alegria": -10
+    }
+   },
+   "r": {
+    "es": "Una fiesta pequeña… con mariachis.",
+    "fr": "Une petite fête… avec des mariachis.",
+    "fx": {
+     "alegria": 10,
+     "salud": -10,
+     "arte": -8
+    }
+   }
+  },
+  {
+   "id": "mono_roba",
+   "ch": "mono",
+   "tier": 0,
+   "once": true,
+   "t": "Fulang-Chang roba tus pinceles y sube al árbol del patio. Te mira y se ríe.",
+   "f": "Fulang-Chang vole tes pinceaux et grimpe à l'arbre de la cour. Il te regarde et rigole.",
+   "l": {
+    "es": "(Subes al árbol tú también.)",
+    "fr": "(Tu grimpes à l'arbre toi aussi.)",
+    "fx": {
+     "alegria": 5,
+     "salud": -10
+    },
+    "set": {
+     "mono": "rival"
+    }
+   },
+   "r": {
+    "es": "(Un plátano por los pinceles. Trato.)",
+    "fr": "(Une banane contre les pinceaux. Marché conclu.)",
+    "fx": {
+     "arte": 5,
+     "salud": 6,
+     "alegria": -6
+    },
+    "set": {
+     "mono": "amigo"
+    }
+   }
+  },
+  {
+   "id": "mono_hombro",
+   "ch": "mono",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "mono": "amigo"
+   },
+   "t": "Ahora Fulang-Chang te sigue a todas partes. Se sienta en tu hombro: quiere salir en el cuadro.",
+   "f": "Maintenant Fulang-Chang te suit partout. Il s'assoit sur ton épaule : il veut être dans le tableau.",
+   "l": {
+    "es": "(Autorretrato con mono. Perfecto.)",
+    "fr": "(Autoportrait avec singe. Parfait.) (authentique : elle en a peint plusieurs)",
+    "fx": {
+     "arte": 10,
+     "alegria": 5
+    }
+   },
+   "r": {
+    "es": "(Primero, un baño. Huele a plátano.)",
+    "fr": "(D'abord, un bain. Il sent la banane.)",
+    "fx": {
+     "salud": -5,
+     "alegria": -5,
+     "arte": -8
+    }
+   }
+  },
+  {
+   "id": "mono_collar",
+   "ch": "mono",
+   "tier": 0,
+   "once": true,
+   "cond": {
+    "mono": "rival"
+   },
+   "t": "Fulang-Chang esconde tu collar prehispánico. Ahora lo lleva él, en su cuello.",
+   "f": "Fulang-Chang cache ton collier préhispanique. Maintenant c'est lui qui le porte, autour du cou.",
+   "l": {
+    "es": "(Se lo dejas. Le queda bien.)",
+    "fr": "(Tu le lui laisses. Ça lui va bien.)",
+    "fx": {
+     "alegria": 8,
+     "mexico": -8
+    }
+   },
+   "r": {
+    "es": "(Lo persigues por toda la casa.)",
+    "fr": "(Tu le poursuis dans toute la maison.)",
+    "fx": {
+     "salud": -8,
+     "mexico": 5,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "perico_alba",
+   "ch": "perico",
+   "tier": 0,
+   "t": "Bonito, el perico, grita «¡Frida! ¡Frida!» a las seis de la mañana.",
+   "f": "Bonito, le perroquet, crie « Frida ! Frida ! » à six heures du matin.",
+   "l": {
+    "es": "(Pintas con la primera luz del día.)",
+    "fr": "(Tu peins avec la première lumière du jour.)",
+    "fx": {
+     "arte": 10,
+     "salud": -10,
+     "alegria": 3
+    }
+   },
+   "r": {
+    "es": "(Almohada en la cabeza. Duermes.)",
+    "fr": "(L'oreiller sur la tête. Tu dors.)",
+    "fx": {
+     "salud": 10,
+     "arte": -10,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "perico_mantequilla",
+   "ch": "perico",
+   "tier": 0,
+   "t": "Bonito hace trucos por un poco de mantequilla: salta, baila y canta.",
+   "f": "Bonito fait des tours pour un peu de beurre : il saute, danse et chante. (authentique)",
+   "l": {
+    "es": "(Le enseñas a decir «¡Viva México!».)",
+    "fr": "(Tu lui apprends à dire « Viva México ! ».)",
+    "fx": {
+     "mexico": 8,
+     "alegria": 5,
+     "arte": -8
+    }
+   },
+   "r": {
+    "es": "La mantequilla es para el pan. No.",
+    "fr": "Le beurre, c'est pour le pain. Non.",
+    "fx": {
+     "alegria": -6,
+     "salud": 8
+    }
+   }
+  },
+  {
+   "id": "casa_quiz",
+   "ch": "casa",
+   "tier": 0,
+   "t": "Soy tu casa de Coyoacán, tu casa de toda la vida. ¿De qué color son mis paredes?",
+   "f": "Je suis ta maison de Coyoacán, ta maison de toujours. De quelle couleur sont mes murs ?",
+   "l": {
+    "es": "Azul. ¡Azul cobalto! 💙",
+    "fr": "Bleu. Bleu cobalt ! 💙 (c'est la Casa Azul : « la maison bleue »)",
+    "fx": {
+     "mexico": 8,
+     "alegria": 5
+    }
+   },
+   "r": {
+    "es": "Mmm… ¿Rosa mexicano?",
+    "fr": "Mmm… rose mexicain ? (piège : azul = bleu !)",
+    "fx": {
+     "mexico": -6,
+     "alegria": -5
+    }
+   },
+   "once": true
+  },
+  {
+   "id": "casa_idolos",
+   "ch": "casa",
+   "tier": 0,
+   "t": "Diego quiere llenar mi patio de ídolos de piedra prehispánicos. ¿Y tú?",
+   "f": "Diego veut remplir ma cour d'idoles de pierre préhispaniques. Et toi ?",
+   "l": {
+    "es": "¡Sí! Ídolos, plantas y una pirámide.",
+    "fr": "Oui ! Des idoles, des plantes et une pyramide. (authentique : il y a une petite pyramide dans la cour)",
+    "fx": {
+     "mexico": 10,
+     "arte": -10,
+     "alegria": 3
+    }
+   },
+   "r": {
+    "es": "Mejor un cuarto grande para pintar.",
+    "fr": "Plutôt une grande pièce pour peindre.",
+    "fx": {
+     "arte": 10,
+     "mexico": -10,
+     "alegria": -5
+    }
+   }
+  },
+  {
+   "id": "casa_xolos",
+   "ch": "casa",
+   "tier": 0,
+   "t": "Tus perros xolos, sin pelo, duermen sobre tu cuadro fresco. Hay patas en el cielo.",
+   "f": "Tes chiens xolos, sans poils, dorment sur ton tableau encore frais. Il y a des pattes dans le ciel.",
+   "l": {
+    "es": "(Lo dejas así. Nubes con patas.)",
+    "fr": "(Tu le laisses comme ça. Des nuages avec des pattes.)",
+    "fx": {
+     "alegria": 8,
+     "arte": -10,
+     "salud": 5
+    }
+   },
+   "r": {
+    "es": "(Pintas el cielo otra vez. Horas.)",
+    "fr": "(Tu repeins le ciel. Des heures.)",
+    "fx": {
+     "arte": 6,
+     "salud": -8,
+     "alegria": -8
+    }
+   }
+  },
+  {
+   "id": "mercado_fruta",
+   "ch": "mercado",
+   "tier": 0,
+   "t": "¡Mangos, papayas, sandías! Diez pesos el kilo para la pintora de Coyoacán.",
+   "f": "Mangues, papayes, pastèques ! Dix pesos le kilo pour la peintre de Coyoacán.",
+   "l": {
+    "es": "(Compras diez kilos. Para pintar.)",
+    "fr": "(Tu achètes dix kilos. Pour peindre.)",
+    "fx": {
+     "arte": 10,
+     "salud": -6,
+     "alegria": -3
+    }
+   },
+   "r": {
+    "es": "(Compras un mango y te lo comes aquí.)",
+    "fr": "(Tu achètes une mangue et tu la manges ici.)",
+    "fx": {
+     "salud": 8,
+     "alegria": 6,
+     "arte": -10
+    }
+   }
+  },
+  {
+   "id": "mercado_flores",
+   "ch": "mercado",
+   "tier": 0,
+   "t": "Una señora vende flores: cempasúchil, bugambilias, rosas. ¿Para qué las quieres?",
+   "f": "Une dame vend des fleurs : œillets d'Inde, bougainvilliers, roses. Pour quoi les veux-tu ?",
+   "l": {
+    "es": "Para mi pelo. ¡Todas!",
+    "fr": "Pour mes cheveux. Toutes !",
+    "fx": {
+     "mexico": 8,
+     "alegria": 6,
+     "arte": -8
+    }
+   },
+   "r": {
+    "es": "Hoy no, señora. Compro lienzos.",
+    "fr": "Pas aujourd'hui, madame. J'achète des toiles.",
+    "fx": {
+     "arte": 10,
+     "mexico": -8,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "mercado_nino",
+   "ch": "mercado",
+   "tier": 0,
+   "t": "Un niño del mercado: —¿Usted es pintora? ¡Píntame a mí, por favor!",
+   "f": "Un enfant du marché : — Vous êtes peintre ? Peignez-moi, s'il vous plaît !",
+   "l": {
+    "es": "(Lo pintas ahí mismo, entre mangos.)",
+    "fr": "(Tu le peins sur place, entre les mangues.)",
+    "fx": {
+     "arte": 8,
+     "alegria": 8,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "Hoy no, niño. Estoy cansada.",
+    "fr": "Pas aujourd'hui, petit. Je suis fatiguée.",
+    "fx": {
+     "alegria": -6,
+     "salud": 8,
+     "arte": -8
+    }
+   }
+  },
+  {
+   "id": "calavera_nombre",
+   "ch": "calavera",
+   "tier": 0,
+   "t": "¡Día de Muertos! Soy de azúcar y llevo tu nombre en la frente. ¿Me comes?",
+   "f": "Jour des Morts ! Je suis en sucre et je porte ton nom sur le front. Tu me manges ?",
+   "l": {
+    "es": "(De un bocado. ¡Qué rica!)",
+    "fr": "(D'une bouchée. Délicieux !)",
+    "fx": {
+     "alegria": 6,
+     "salud": -6,
+     "mexico": 5
+    }
+   },
+   "r": {
+    "es": "(Al altar, con cempasúchil.)",
+    "fr": "(Sur l'autel, avec des œillets d'Inde.)",
+    "fx": {
+     "mexico": 6,
+     "arte": 3,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "calavera_miedo",
+   "ch": "calavera",
+   "tier": 0,
+   "t": "Hoy la muerte es una fiesta: pan de muerto, velas, papel picado. Y tú, ¿me tienes miedo?",
+   "f": "Aujourd'hui la mort est une fête : pain des morts, bougies, papier découpé. Et toi, tu as peur de moi ?",
+   "l": {
+    "es": "¿Miedo? ¡Me río de ti! (Le cantas.)",
+    "fr": "Peur ? Je me moque de toi ! (Tu lui chantes une chanson.)",
+    "fx": {
+     "alegria": 6,
+     "mexico": 6,
+     "arte": -8
+    }
+   },
+   "r": {
+    "es": "Un poco. (Pintas una calavera.)",
+    "fr": "Un peu. (Tu peins un crâne.)",
+    "fx": {
+     "arte": 10,
+     "alegria": -5,
+     "mexico": -5
+    }
+   }
+  },
+  {
+   "id": "gringolandia",
+   "ch": "diego",
+   "tier": 1,
+   "once": true,
+   "after": 0.15,
+   "before": 0.5,
+   "t": "Gringolandia: rascacielos, fiestas de ricos y nadie come chile. —Otra fiesta esta noche, Frida.",
+   "f": "Gringolandie : gratte-ciel, fêtes de riches et personne ne mange de piment. — Encore une fête ce soir, Frida. (« Gringolandia » : son surnom pour les États-Unis)",
+   "l": {
+    "es": "(No. Pintas la frontera. Nostalgia.)",
+    "fr": "(Non. Tu peins la frontière. Nostalgie du Mexique.) (authentique : tableau de 1932)",
+    "fx": {
+     "arte": 10,
+     "mexico": 6,
+     "alegria": -8
+    }
+   },
+   "r": {
+    "es": "(Vas. Bailas con los millonarios.)",
+    "fr": "(Tu y vas. Tu danses avec les millionnaires.)",
+    "fx": {
+     "alegria": 8,
+     "salud": -6,
+     "mexico": -11
+    }
+   }
+  },
+  {
+   "id": "periodista_esposa",
+   "ch": "periodista",
+   "tier": 1,
+   "once": true,
+   "after": 0.15,
+   "t": "Una periodista de Nueva York: —¿Usted es la esposa del gran pintor Diego Rivera?",
+   "f": "Une journaliste de New York : — Vous êtes l'épouse du grand peintre Diego Rivera ?",
+   "l": {
+    "es": "Soy Frida Kahlo, pintora. Escríbalo.",
+    "fr": "Je suis Frida Kahlo, peintre. Écrivez-le.",
+    "fx": {
+     "arte": 8,
+     "mexico": 6,
+     "alegria": -5
+    }
+   },
+   "r": {
+    "es": "(Sonríes. Sí, la esposa de Diego.)",
+    "fr": "(Tu souris. Oui, l'épouse de Diego.)",
+    "fx": {
+     "alegria": 6,
+     "mexico": -8,
+     "arte": -6
+    }
+   }
+  },
+  {
+   "id": "periodista_foto",
+   "ch": "periodista",
+   "tier": 1,
+   "once": true,
+   "after": 0.15,
+   "t": "—Una foto para la revista. ¿Con el mono, el perico y las calaveras… o con sus cuadros?",
+   "f": "— Une photo pour le magazine. Avec le singe, le perroquet et les crânes… ou avec vos tableaux ?",
+   "l": {
+    "es": "(Posas con Fulang-Chang en el hombro.)",
+    "fr": "(Tu poses avec Fulang-Chang sur l'épaule.)",
+    "fx": {
+     "alegria": 8,
+     "mexico": 5,
+     "arte": -8
+    }
+   },
+   "r": {
+    "es": "Con mis cuadros. Soy pintora.",
+    "fr": "Avec mes tableaux. Je suis peintre.",
+    "fx": {
+     "arte": 10,
+     "alegria": -6,
+     "mexico": -5
+    }
+   }
+  },
+  {
+   "id": "breton_quiz",
+   "ch": "breton",
+   "tier": 1,
+   "once": true,
+   "after": 0.4,
+   "t": "París, 1939. André Breton: —¡Usted es surrealista! ¿Pinta usted sus sueños?",
+   "f": "Paris, 1939. André Breton : — Vous êtes surréaliste ! Vous peignez vos rêves ?",
+   "l": {
+    "es": "No. Pinto mi propia realidad.",
+    "fr": "Non. Je peins ma propre réalité. (authentique : sa phrase célèbre, « nunca pinté sueños, pinté mi propia realidad »)",
+    "fx": {
+     "mexico": 10,
+     "arte": 6
+    }
+   },
+   "r": {
+    "es": "Sí, sí, monsieur. Lo que usted diga.",
+    "fr": "Oui, oui, monsieur. Comme vous voulez. (piège : Frida refusait l'étiquette « surréaliste »)",
+    "fx": {
+     "mexico": -10,
+     "arte": -3
+    }
+   }
+  },
+  {
+   "id": "breton_aduana",
+   "ch": "breton",
+   "tier": 1,
+   "once": true,
+   "after": 0.4,
+   "t": "Llegas a París. Tu exposición no está lista y tus cuadros están en la aduana. Breton: —Oh là là.",
+   "f": "Tu arrives à Paris. Ton exposition n'est pas prête et tes tableaux sont bloqués à la douane. Breton : — Oh là là. (authentique)",
+   "l": {
+    "es": "(Lo organizas tú, con Marcel Duchamp.)",
+    "fr": "(Tu organises tout toi-même, avec Marcel Duchamp.) (authentique)",
+    "fx": {
+     "arte": 8,
+     "alegria": -8,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "(Paseas por París. Que esperen.)",
+    "fr": "(Tu te promènes dans Paris. Qu'ils attendent.)",
+    "fx": {
+     "alegria": 8,
+     "arte": -10,
+     "mexico": -6
+    }
+   }
+  },
+  {
+   "id": "breton_louvre",
+   "ch": "breton",
+   "tier": 1,
+   "once": true,
+   "after": 0.4,
+   "t": "¡Noticia! El Louvre compra tu cuadro «El marco». ¡Primera artista mexicana en el Louvre!",
+   "f": "Nouvelle ! Le Louvre achète ton tableau « Le Cadre ». Première artiste mexicaine au Louvre ! (authentique)",
+   "l": {
+    "es": "¡VIVA MÉXICO! (Lo gritas en la calle.)",
+    "fr": "VIVA MÉXICO ! (Tu le cries dans la rue.)",
+    "fx": {
+     "mexico": 8,
+     "alegria": 6,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "Merci. (Pides un café au lait.)",
+    "fr": "Merci. (Tu commandes un café au lait.)",
+    "fx": {
+     "mexico": -8,
+     "salud": 6
+    }
+   }
+  },
+  {
+   "id": "breton_cafes",
+   "ch": "breton",
+   "tier": 1,
+   "once": true,
+   "after": 0.4,
+   "t": "Los surrealistas hablan de arte en los cafés durante horas y horas. ¿Vienes?",
+   "f": "Les surréalistes parlent d'art dans les cafés pendant des heures et des heures. Tu viens ?",
+   "l": {
+    "es": "(Te aburres. Dibujas en servilletas.)",
+    "fr": "(Tu t'ennuies. Tu dessines sur les serviettes.)",
+    "fx": {
+     "arte": 5,
+     "alegria": -10,
+     "mexico": -8
+    }
+   },
+   "r": {
+    "es": "No. Prefiero el mercado de pulgas.",
+    "fr": "Non. Je préfère le marché aux puces. (elle collectionnait les poupées anciennes)",
+    "fx": {
+     "alegria": 8,
+     "arte": -8
+    }
+   }
+  },
+  {
+   "id": "fridos_clase",
+   "ch": "fridos",
+   "tier": 1,
+   "once": true,
+   "after": 0.65,
+   "t": "La Esmeralda, 1943. Tus nuevos alumnos esperan en el aula. ¿Qué les enseñas?",
+   "f": "La Esmeralda, 1943. Tes nouveaux élèves attendent dans la salle. Que leur apprends-tu ?",
+   "l": {
+    "es": "Pinten lo que aman. ¡Vamos al mercado!",
+    "fr": "Peignez ce que vous aimez. On va au marché ! (authentique : elle faisait cours dehors)",
+    "fx": {
+     "mexico": 6,
+     "alegria": 6,
+     "salud": -6
+    }
+   },
+   "r": {
+    "es": "Autorretratos. ¡Espejos para todos!",
+    "fr": "Des autoportraits. Des miroirs pour tout le monde !",
+    "fx": {
+     "arte": 6,
+     "alegria": -6,
+     "mexico": -5
+    }
+   }
+  },
+  {
+   "id": "fridos_mural",
+   "ch": "fridos",
+   "tier": 1,
+   "once": true,
+   "after": 0.65,
+   "t": "Los Fridos pintan un mural en una pared de Coyoacán. —¡Maestra, suba a la escalera!",
+   "f": "Les Fridos peignent une fresque sur un mur de Coyoacán. — Maîtresse, montez à l'échelle ! (authentique : fresque de 1943)",
+   "l": {
+    "es": "(Subes. Pintas una sandía gigante.)",
+    "fr": "(Tu montes. Tu peins une pastèque géante.)",
+    "fx": {
+     "salud": -10,
+     "alegria": 8,
+     "arte": 3
+    }
+   },
+   "r": {
+    "es": "(Diriges desde una silla. Limonada.)",
+    "fr": "(Tu diriges depuis une chaise. Limonade.)",
+    "fx": {
+     "salud": 6,
+     "arte": -8,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "fridos_lluvia",
+   "ch": "fridos",
+   "tier": 1,
+   "once": true,
+   "after": 0.65,
+   "t": "—Maestra, hoy llueve y a usted le duele la espalda. ¿Hay clase?",
+   "f": "— Maîtresse, aujourd'hui il pleut et vous avez mal au dos. Il y a cours ?",
+   "l": {
+    "es": "Sí. En mi casa, en el patio. ¡Vengan!",
+    "fr": "Oui. Chez moi, dans la cour. Venez ! (authentique : les cours ont continué à la Casa Azul)",
+    "fx": {
+     "salud": -8,
+     "alegria": 6,
+     "mexico": 5
+    }
+   },
+   "r": {
+    "es": "Hoy no. (Les mandas fruta y un abrazo.)",
+    "fr": "Pas aujourd'hui. (Tu leur envoies des fruits et un câlin.)",
+    "fx": {
+     "salud": 10,
+     "arte": -8,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "cama_pinceles",
+   "ch": "cama",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy tu cama. Hoy te duele todo. Pero aquí están tu espejo, tus pinceles, Fulang-Chang y Bonito.",
+   "f": "Je suis ton lit. Aujourd'hui tu as mal partout. Mais ici il y a ton miroir, tes pinceaux, Fulang-Chang et Bonito.",
+   "l": {
+    "es": "(Pintas acostada. Horas y horas.)",
+    "fr": "(Tu peins allongée. Des heures et des heures.)",
+    "fx": {
+     "arte": 10,
+     "salud": -8,
+     "alegria": 3
+    }
+   },
+   "r": {
+    "es": "(Hoy duermes. Mañana pintas.)",
+    "fr": "(Aujourd'hui tu dors. Demain tu peins.)",
+    "fx": {
+     "salud": 10,
+     "arte": -10,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "cama_diario",
+   "ch": "cama",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "De noche no duermes. Hablas conmigo, con el espejo y con el perico.",
+   "f": "La nuit tu ne dors pas. Tu parles avec moi, avec le miroir et avec le perroquet.",
+   "l": {
+    "es": "(Escribes tu diario de colores.)",
+    "fr": "(Tu écris ton journal en couleurs.) (authentique : son journal est plein de dessins)",
+    "fx": {
+     "arte": 8,
+     "alegria": 6,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "(Cuentas las mariposas de tu cama.)",
+    "fr": "(Tu comptes les papillons de ton lit.) (authentique : il y en avait sur le ciel de lit)",
+    "fx": {
+     "salud": 8,
+     "arte": -6,
+     "alegria": -6
+    }
+   }
+  },
+  {
+   "id": "sandia_viva",
+   "ch": "sandia",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Soy una sandía: roja, verde y dulce. Me pintas una y otra vez. ¿Qué escribes en mí?",
+   "f": "Je suis une pastèque : rouge, verte et sucrée. Tu me peins encore et encore. Qu'écris-tu sur moi ?",
+   "l": {
+    "es": "«Viva la vida», en letras grandes.",
+    "fr": "« Vive la vie », en grosses lettres. (authentique : son dernier tableau, 1954)",
+    "fx": {
+     "arte": 10,
+     "alegria": 5,
+     "salud": -5
+    }
+   },
+   "r": {
+    "es": "Nada. Hoy te como. 🍉",
+    "fr": "Rien. Aujourd'hui, je te mange. 🍉",
+    "fx": {
+     "salud": 8,
+     "arte": -10
+    }
+   }
+  },
+  {
+   "id": "sandia_mexico",
+   "ch": "sandia",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Diego se queja: —¿Otra vez sandías? Es verdad: estoy en la mesa, en el patio y en tus cuadros…",
+   "f": "Diego râle : — Encore des pastèques ? C'est vrai : je suis sur la table, dans la cour et dans tes tableaux…",
+   "l": {
+    "es": "Sí. Eres México: verde, blanca y roja.",
+    "fr": "Oui. Tu es le Mexique : vert, blanc et rouge. (les couleurs du drapeau)",
+    "fx": {
+     "mexico": 10,
+     "arte": 3
+    }
+   },
+   "r": {
+    "es": "Bueno. Mañana pinto rascacielos.",
+    "fr": "Bon. Demain je peins des gratte-ciel.",
+    "fx": {
+     "alegria": 3,
+     "mexico": -10,
+     "arte": 3
+    }
+   }
+  },
+  {
+   "id": "expo_doctor",
+   "ch": "doctor",
+   "tier": 2,
+   "once": true,
+   "after": 0.85,
+   "t": "Tu primera gran exposición en México está lista. —Prohibido ir, Frida. Reposo absoluto.",
+   "f": "Ta première grande exposition au Mexique est prête. — Interdit d'y aller, Frida. Repos absolu.",
+   "l": {
+    "es": "(Vas… en tu cama. Con ambulancia.)",
+    "fr": "(Tu y vas… dans ton lit. En ambulance.) (authentique : 1953)",
+    "fx": {
+     "alegria": 12,
+     "mexico": 6,
+     "salud": -10
+    }
+   },
+   "r": {
+    "es": "Está bien, doctor. (Lloras en casa.)",
+    "fr": "D'accord, docteur. (Tu pleures à la maison.)",
+    "fx": {
+     "salud": 10,
+     "alegria": -12,
+     "arte": -6
+    }
+   }
+  },
+  {
+   "id": "fridos_fiesta",
+   "ch": "fridos",
+   "tier": 2,
+   "once": true,
+   "after": 0.6,
+   "t": "Los Fridos llegan a la Casa Azul con guitarras y un pastel enorme. —¡Sorpresa, maestra!",
+   "f": "Les Fridos arrivent à la Casa Azul avec des guitares et un gâteau énorme. — Surprise, maîtresse !",
+   "l": {
+    "es": "¡Qué padre! (Fiesta en el patio.)",
+    "fr": "Trop bien ! (Fête dans la cour.) (« ¡qué padre! » = « trop cool ! » au Mexique)",
+    "fx": {
+     "alegria": 8,
+     "mexico": 5,
+     "salud": -8
+    }
+   },
+   "r": {
+    "es": "Diez minutos. Luego, todos a pintar.",
+    "fr": "Dix minutes. Ensuite, tout le monde peint.",
+    "fx": {
+     "arte": 10,
+     "alegria": -6
+    }
+   }
+  }
+ ],
+ "deaths": {
+  "arte": {
+   "lo": {
+    "m": "🖌️",
+    "es": "El espejo y los pinceles esperan… pero no pintas. El estudio se llena de polvo. Fin de la aventura.",
+    "fr": "Le miroir et les pinceaux attendent… mais tu ne peins pas. L'atelier se remplit de poussière. Fin de l'aventure."
+   },
+   "hi": {
+    "m": "🎨",
+    "es": "Pintas día y noche, sin comer ni dormir. El doctor te confisca los pinceles «por tu bien».",
+    "fr": "Tu peins jour et nuit, sans manger ni dormir. Le docteur te confisque les pinceaux « pour ton bien »."
+   }
+  },
+  "salud": {
+   "lo": {
+    "m": "🛌",
+    "es": "Tu cuerpo dice: ¡BASTA! Reposo total: ni visitas ni pinceles. La aventura termina aquí… por ahora.",
+    "fr": "Ton corps dit : ÇA SUFFIT ! Repos total : ni visites ni pinceaux. L'aventure s'arrête ici… pour l'instant."
+   },
+   "hi": {
+    "m": "💪",
+    "es": "Te sientes tan fuerte que organizas tres fiestas, dos viajes y un desfile. El doctor se desmaya.",
+    "fr": "Tu te sens si forte que tu organises trois fêtes, deux voyages et un défilé. Le docteur s'évanouit."
+   }
+  },
+  "alegria": {
+   "lo": {
+    "m": "🌧️",
+    "es": "Lo pintas todo de gris. Y tú eres de TODOS los colores: así no. Fin de la aventura.",
+    "fr": "Tu peins tout en gris. Et toi, tu es de TOUTES les couleurs : pas comme ça. Fin de l'aventure."
+   },
+   "hi": {
+    "m": "🎺",
+    "es": "Fiesta cada día y mariachis a las tres de la mañana. Los vecinos llaman a la policía.",
+    "fr": "Fête tous les jours et mariachis à trois heures du matin. Les voisins appellent la police."
+   }
+  },
+  "mexico": {
+   "lo": {
+    "m": "🎩",
+    "es": "En París te llaman «surrealista» y dices que sí a todo. Olvidas quién eres. Fin de la aventura.",
+    "fr": "À Paris on t'appelle « surréaliste » et tu dis oui à tout. Tu oublies qui tu es. Fin de l'aventure."
+   },
+   "hi": {
+    "m": "🏠",
+    "es": "No sales nunca de la Casa Azul. Tus cuadros no ven el mundo. ¡Qué pena, Frida!",
+    "fr": "Tu ne sors jamais de la Casa Azul. Tes tableaux ne voient pas le monde. Quel dommage, Frida !"
+   }
+  }
+ },
+ "win": {
+  "m": "👑",
+  "es": "1953: llegas a tu gran exposición en tu propia cama, cantando, como una reina. Todo México aplaude. ¡VIVA LA VIDA!",
+  "fr": "1953 : tu arrives à ta grande exposition dans ton propre lit, en chantant, comme une reine. Tout le Mexique applaudit. VIVA LA VIDA !"
+ }
+}

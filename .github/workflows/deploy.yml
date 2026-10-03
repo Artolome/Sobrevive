@@ -1,7 +1,5 @@
-# Déploiement automatique sur GitHub Pages à chaque push sur main.
-# Prérequis (une seule fois) : GitHub → Settings → Pages → Source : « GitHub Actions ».
-# Le jeu est reconstruit à partir des sources ; la publication est refusée si un deck est invalide.
-
+# Le jeu actuel reste à la racine ; la préversion pédagogique est publiée sous /v2/.
+# La préversion est figée à un commit relu et testé pour éviter les mises en ligne involontaires.
 name: Déployer sur GitHub Pages
 
 on:
@@ -23,12 +21,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node build.js
-      - run: node check.js
-      - run: mkdir site && cp index.html site/ && touch site/.nojekyll
+      - name: Construire et vérifier le jeu actuel
+        run: |
+          node build.js
+          node check.js
+          mkdir -p site
+          cp index.html site/index.html
+          touch site/.nojekyll
+      - name: Récupérer la préversion indépendante
+        uses: actions/checkout@v4
+        with:
+          ref: 97988752bc50fbfb410c4fa01be1f27431736027
+          path: _preview
+          persist-credentials: false
+      - name: Construire et vérifier la préversion
+        working-directory: _preview
+        run: |
+          node build.js
+          node check.js
+          node --check classroom/learning.js
+      - name: Ajouter la préversion sans toucher au jeu actuel
+        run: |
+          mkdir -p site/v2
+          cp _preview/index.html site/v2/index.html
+          cmp index.html site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

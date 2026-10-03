@@ -5,6 +5,7 @@ module.exports = function enhance(source) {
   const read = name => fs.readFileSync(path.join(__dirname, name), 'utf8');
   const safe = text => text.replace(/<\/script/gi, '<\\/script');
   source = source.replace(/<link\b[^>]*fonts\.googleapis\.com[^>]*>\s*/g, '');
+  source = source.replace('const PKEY="sobrevive-progress-v1";', 'const PKEY="sobrevive-preview-progress-v2";');
   if (!source.includes('name="viewport"')) source = '<meta name="viewport" content="width=device-width, initial-scale=1">\n' + source;
   source = '<!doctype html>\n<html lang="fr">\n' + source;
   source = source.replace('</style>', () => '</style>\n<style>' + read('learning.css') + '</style>');

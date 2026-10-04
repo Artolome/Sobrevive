@@ -7,6 +7,14 @@ html,body{height:100%;min-height:100%}#app{height:100dvh;gap:7px;max-width:540px
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* Proposition V2 : lisibilité et composition inspirées des maquettes, SVG conservés. */
+/* Le retour reste lisible après le choix, y compris sur l'écran de fin. */
+.sv-feedback{border-left:3px solid var(--gold);background:#ffffff0e;padding:10px 12px;color:var(--text);font:13px/1.45 system-ui,sans-serif;text-align:left;overflow-wrap:anywhere}
+.sv-feedback-title{display:block;font-weight:600;color:var(--gold)}
+.sv-feedback .sv-feedback-story{margin:6px 0;font-size:14px;line-height:1.45}
+.sv-feedback-detail{font-size:12px}
+.sv-feedback button{border:0;text-decoration:underline;color:var(--gold);background:none;padding:0 0 0 6px;font:inherit;cursor:pointer}
+.sv-feedback button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#sv-end-feedback{margin:18px 0}
 /* Mouvement discret de l'illustration, indépendant du geste et de la sortie de carte. */
 @media (prefers-reduced-motion:no-preference){
   #front .t-ill img{transform:scale(1.035);transform-origin:50% 65%;will-change:transform}

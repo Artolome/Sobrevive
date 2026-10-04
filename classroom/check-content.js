@@ -1,5 +1,5 @@
 // Usage: node classroom/check-content.js [--base <git-ref>]
-// Valide l'échantillon pédagogique ; --base vérifie aussi les règles et effets.
+// Valide les retours de toutes les cartes ; --base vérifie aussi les règles et effets.
 // Ce contrôle ne certifie ni le niveau linguistique ni la causalité narrative.
 'use strict';
 const fs = require('node:fs');
@@ -30,7 +30,7 @@ for (const [id, world] of Object.entries(worlds)) {
   const entries = cfg.feedback?.[id];
   assert(object(entries), id + ' : retours manquants.');
   if (!object(entries)) continue;
-  assert(Object.keys(entries).length >= 3, id + ' : au moins trois cartes doivent être couvertes.');
+  for (const card of world.cards) assert(Object.hasOwn(entries, card.id), id + '/' + card.id + ' : retours manquants.');
   assert(entries[world.start], id + ' : première carte non couverte.');
   for (const [cardId, choices] of Object.entries(entries)) {
     cardCount++;
@@ -48,6 +48,10 @@ for (const [id, world] of Object.entries(worlds)) {
     }
   }
 }
+
+const expectedCards = Object.values(worlds).reduce((total, world) => total + world.cards.length, 0);
+assert(cardCount === expectedCards, 'Toutes les cartes doivent avoir leurs retours (' + expectedCards + ').');
+assert(choiceCount === expectedCards * 2, 'Tous les choix doivent avoir les deux langues (' + expectedCards * 2 + ').');
 
 assert(Array.isArray(cfg.glossary), 'glossary doit être une liste de paires.');
 const terms = new Set();

@@ -207,6 +207,14 @@ html,body{height:100%;min-height:100%}#app{height:100dvh;gap:7px;max-width:540px
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* Proposition V2 : lisibilité et composition inspirées des maquettes, SVG conservés. */
+/* Le retour reste lisible après le choix, y compris sur l'écran de fin. */
+.sv-feedback{border-left:3px solid var(--gold);background:#ffffff0e;padding:10px 12px;color:var(--text);font:13px/1.45 system-ui,sans-serif;text-align:left;overflow-wrap:anywhere}
+.sv-feedback-title{display:block;font-weight:600;color:var(--gold)}
+.sv-feedback .sv-feedback-story{margin:6px 0;font-size:14px;line-height:1.45}
+.sv-feedback-detail{font-size:12px}
+.sv-feedback button{border:0;text-decoration:underline;color:var(--gold);background:none;padding:0 0 0 6px;font:inherit;cursor:pointer}
+.sv-feedback button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#sv-end-feedback{margin:18px 0}
 /* Mouvement discret de l'illustration, indépendant du geste et de la sortie de carte. */
 @media (prefers-reduced-motion:no-preference){
   #front .t-ill img{transform:scale(1.035);transform-origin:50% 65%;will-change:transform}
@@ -968,8 +976,8 @@ try{
 </script>
 
 <script>window.SV_LEARNING={
-  "version": "2-preview-2",
-  "notice": "Préversion pédagogique — retours narratifs sur 15 cartes ; relecture pédagogique intégrale encore à finaliser.",
+  "version": "2-preview-3",
+  "notice": "Mode classe — 225 cartes commentées en espagnol et en français.",
   "glossary": [
     [
       "¿cómo te llamas?",
@@ -1344,76 +1352,1076 @@ try{
     "cole": {
       "intro": {
         "l": {
-          "es": "Hablas muy bajo: la clase oye mal tu nombre. Tu presentación es corta y requiere poca energía.",
-          "fr": "Tu parles très bas : la classe entend mal ton prénom. Ta présentation est courte et te demande peu d’énergie."
+          "es": "Te presentas en voz baja. En el juego, este momento tranquilo sube Energía, pero baja Amigos: el contacto con la clase es menor.",
+          "fr": "Tu te présentes à voix basse. Dans le jeu, ce moment calme fait monter Energía, mais baisser Amigos : le contact avec la classe est plus limité."
         },
         "r": {
-          "es": "Saludas a la clase: tus compañeros conocen tu nombre. Hablar ante todos requiere un poco de energía.",
-          "fr": "Tu salues la classe : tes camarades connaissent ton prénom. Parler devant tout le monde te demande un peu d’énergie."
+          "es": "Saludas y dices tu nombre a la clase. El contacto con tus compañeros sube Amigos; presentarte ante todos cuesta un poco de energía.",
+          "fr": "Tu salues la classe et dis ton prénom. Le contact avec tes camarades fait monter Amigos ; te présenter devant tous demande un peu d’énergie."
         }
       },
       "mama1": {
         "l": {
-          "es": "Duermes un poco más y recuperas energía. Pero llegas tarde: te pierdes el inicio de la clase.",
-          "fr": "Tu dors un peu plus et récupères de l’énergie. Mais tu arrives en retard : tu manques le début du cours."
+          "es": "Pides cinco minutos más en la cama. En el juego, descansar sube Energía, pero dejar el inicio del día para después baja Notas.",
+          "fr": "Tu demandes cinq minutes de plus au lit. Dans le jeu, le repos fait monter Energía, mais repousser le début de la journée fait baisser Notas."
         },
         "r": {
-          "es": "Te levantas y llegas a tiempo para la clase. Sigues la lección, aunque todavía tienes sueño.",
-          "fr": "Tu te lèves et arrives à l’heure au cours. Tu suis la leçon, même si tu as encore sommeil."
+          "es": "Te levantas cuando mamá te llama. En el juego, empezar el día sube Notas, pero dejar el descanso cuesta energía.",
+          "fr": "Tu te lèves quand maman t’appelle. Dans le jeu, commencer la journée fait monter Notas, mais quitter le repos coûte de l’énergie."
+        }
+      },
+      "mama2": {
+        "l": {
+          "es": "Eliges los deberes en vez de poner la mesa. En el juego, ese trabajo sube Notas y cuesta energía.",
+          "fr": "Tu choisis les devoirs au lieu de mettre la table. Dans le jeu, ce travail fait monter Notas et coûte de l’énergie."
+        },
+        "r": {
+          "es": "Aceptas poner la mesa. En el juego, esta pausa de los deberes sube Energía, pero hace bajar Notas.",
+          "fr": "Tu acceptes de mettre la table. Dans le jeu, cette pause des devoirs fait monter Energía, mais fait baisser Notas."
+        }
+      },
+      "hermana": {
+        "l": {
+          "es": "No juegas ahora con Vera. En el juego, evitar el esfuerzo sube Energía, pero compartir menos tiempo con ella baja Amigos.",
+          "fr": "Tu ne joues pas maintenant avec Vera. Dans le jeu, éviter cet effort fait monter Energía, mais moins partager de temps avec elle fait baisser Amigos."
+        },
+        "r": {
+          "es": "Juegas un rato con Vera. Ese momento juntos sube Amigos; construir y jugar te cuesta un poco de energía.",
+          "fr": "Tu joues un moment avec Vera. Ce temps partagé fait monter Amigos ; construire et jouer te coûte un peu d’énergie."
+        }
+      },
+      "mama3": {
+        "l": {
+          "es": "Dejas el orden para mañana. En el juego, evitas el esfuerzo y sube Energía, pero Dinero baja: es el coste de esta opción.",
+          "fr": "Tu remets le rangement à demain. Dans le jeu, éviter cet effort fait monter Energía, mais Dinero baisse : c’est le coût de cette option."
+        },
+        "r": {
+          "es": "Aceptas ordenar tu habitación. El trabajo cuesta energía; en el juego, esta tarea da una recompensa y sube Dinero.",
+          "fr": "Tu acceptes de ranger ta chambre. Ce travail coûte de l’énergie ; dans le jeu, cette tâche apporte une récompense et fait monter Dinero."
+        }
+      },
+      "abuela": {
+        "l": {
+          "es": "Das las gracias por el regalo. El dinero recibido sube Dinero y el momento con la abuela sube Amigos.",
+          "fr": "Tu remercies ta grand-mère pour son cadeau. L’argent reçu fait monter Dinero et ce moment avec elle fait monter Amigos."
+        },
+        "r": {
+          "es": "Pides más que el regalo ofrecido. Dinero sube en el juego, pero tu comentario baja Amigos en esta escena.",
+          "fr": "Tu demandes plus que le cadeau offert. Dinero monte dans le jeu, mais ta remarque fait baisser Amigos dans cette scène."
         }
       },
       "bus": {
         "l": {
-          "es": "Pagas el billete. Pablo va a pie, solo: hoy no vas con él.",
-          "fr": "Tu paies le billet. Pablo y va à pied, seul : aujourd’hui, vous ne faites pas le trajet ensemble."
+          "es": "Pagas el billete y baja Dinero. Pablo va a pie sin ti: no compartís el camino y baja Amigos.",
+          "fr": "Tu paies le billet : Dinero baisse. Pablo part à pied sans toi : vous ne partagez pas le trajet et Amigos baisse."
         },
         "r": {
-          "es": "Caminas y charlas con Pablo. El camino te cansa, pero compartes un rato con tu amigo.",
-          "fr": "Tu marches avec Pablo et vous discutez. Le trajet te fatigue, mais vous passez un moment entre amis."
+          "es": "Vas andando con Pablo. El camino cuesta energía, pero el tiempo juntos sube Amigos.",
+          "fr": "Tu vas à pied avec Pablo. Le trajet coûte de l’énergie, mais ce temps passé ensemble fait monter Amigos."
+        }
+      },
+      "garcia1": {
+        "l": {
+          "es": "Te quedas detrás del libro. En el juego, no participar baja Notas, mientras evitar este esfuerzo sube Energía.",
+          "fr": "Tu restes derrière ton livre. Dans le jeu, ne pas participer fait baisser Notas, tandis qu’éviter cet effort fait monter Energía."
+        },
+        "r": {
+          "es": "Te ofreces para ir a la pizarra. En el juego, participar sube Notas, pero este esfuerzo cuesta energía.",
+          "fr": "Tu te proposes pour aller au tableau. Dans le jeu, participer fait monter Notas, mais cet effort coûte de l’énergie."
+        }
+      },
+      "pons2": {
+        "l": {
+          "es": "Eliges ver el fútbol en vez de estudiar. En el juego, la pausa sube Energía, pero no preparar el examen baja Notas.",
+          "fr": "Tu choisis de regarder le foot plutôt que de réviser. Dans le jeu, cette pause fait monter Energía, mais ne pas préparer le contrôle fait baisser Notas."
+        },
+        "r": {
+          "es": "Dedicas dos horas a estudiar. En el juego, preparar el examen sube Notas, pero el trabajo cuesta energía.",
+          "fr": "Tu consacres deux heures aux révisions. Dans le jeu, préparer le contrôle fait monter Notas, mais ce travail coûte de l’énergie."
+        }
+      },
+      "edfisica": {
+        "l": {
+          "es": "Dices que te duele la pierna. En este juego, señalar ese dolor hace subir Energía y bajar Notas.",
+          "fr": "Tu dis avoir mal à la jambe. Dans ce jeu, signaler cette douleur fait monter Energía et baisser Notas."
+        },
+        "r": {
+          "es": "Participas en el cross. Correr cuesta energía y compartir la actividad sube Amigos; el juego también sube Notas por participar.",
+          "fr": "Tu participes au cross. Courir coûte de l’énergie et partager l’activité fait monter Amigos ; le jeu fait aussi monter Notas pour cette participation."
+        }
+      },
+      "garcia2": {
+        "l": {
+          "es": "Pides repetir el examen. En el juego, buscar otra oportunidad sube Notas, pero supone un nuevo esfuerzo y baja Energía.",
+          "fr": "Tu demandes à repasser le contrôle. Dans le jeu, chercher une autre occasion fait monter Notas, mais représente un nouvel effort et fait baisser Energía."
+        },
+        "r": {
+          "es": "Tu broma no cambia el resultado: 4,5 no llega a 5. En el juego, Notas baja y el lado divertido de la respuesta sube Amigos.",
+          "fr": "Ta blague ne change pas le résultat : 4,5 n’atteint pas 5. Dans le jeu, Notas baisse et le côté amusant de la réponse fait monter Amigos."
+        }
+      },
+      "hugo1": {
+        "l": {
+          "es": "Pasas la respuesta a Hugo. En el juego, responder a su petición sube Amigos, pero compartir la respuesta del examen baja Notas.",
+          "fr": "Tu passes la réponse à Hugo. Dans le jeu, répondre à sa demande fait monter Amigos, mais partager la réponse du contrôle fait baisser Notas."
+        },
+        "r": {
+          "es": "No pasas la respuesta. En el juego, seguir con tu trabajo sube Notas, pero no responder a Hugo baja Amigos.",
+          "fr": "Tu ne passes pas la réponse. Dans le jeu, poursuivre ton travail fait monter Notas, mais ne pas répondre à Hugo fait baisser Amigos."
+        }
+      },
+      "pons3": {
+        "l": {
+          "es": "Lees el poema muy bajo. En este juego, esa forma de leer cuesta menos esfuerzo y sube Energía, pero hace bajar Notas.",
+          "fr": "Tu lis le poème très bas. Dans ce jeu, cette façon de lire demande moins d’effort et fait monter Energía, mais baisser Notas."
+        },
+        "r": {
+          "es": "Lees el poema como en el teatro. En el juego, participar sube Notas y conectar con la clase sube Amigos; la actuación cuesta energía.",
+          "fr": "Tu lis le poème comme au théâtre. Dans le jeu, participer fait monter Notas et le contact avec la classe fait monter Amigos ; jouer coûte de l’énergie."
+        }
+      },
+      "carmen1": {
+        "l": {
+          "es": "Eliges las lentejas del menú. Esta comida hace subir Energía en el juego.",
+          "fr": "Tu choisis les lentilles du menu. Ce repas fait monter Energía dans le jeu."
+        },
+        "r": {
+          "es": "Preguntas por la pizza en vez de elegir el menú. En esta escena, la queja divertida sube Amigos, pero Energía baja.",
+          "fr": "Tu demandes de la pizza au lieu de choisir le menu. Dans cette scène, la plainte amusante fait monter Amigos, mais Energía baisse."
+        }
+      },
+      "pablo1": {
+        "l": {
+          "es": "Eliges la biblioteca en vez del partido con Pablo. En el juego, esta opción sube Notas, pero compartir menos tiempo con tu amigo baja Amigos.",
+          "fr": "Tu choisis la bibliothèque plutôt que le match avec Pablo. Dans le jeu, ce choix fait monter Notas, mais moins partager de temps avec ton ami fait baisser Amigos."
+        },
+        "r": {
+          "es": "Aceptas el partido con Pablo. Jugar juntos sube Amigos y el esfuerzo del fútbol cuesta energía.",
+          "fr": "Tu acceptes de jouer avec Pablo. Jouer ensemble fait monter Amigos et l’effort du football coûte de l’énergie."
+        }
+      },
+      "kiosco": {
+        "l": {
+          "es": "Compras cromos: gastas dinero. En el juego, participar en esta afición compartida sube Amigos.",
+          "fr": "Tu achètes des cartes : tu dépenses de l’argent. Dans le jeu, participer à ce loisir partagé fait monter Amigos."
+        },
+        "r": {
+          "es": "No compras hoy y guardas tu dinero. El ahorro sube Dinero; en este juego, no participar en la compra también baja Amigos.",
+          "fr": "Tu n’achètes rien aujourd’hui et gardes ton argent. L’économie fait monter Dinero ; dans ce jeu, ne pas participer à l’achat fait aussi baisser Amigos."
+        }
+      },
+      "lucia1": {
+        "l": {
+          "es": "Aceptas el cambio con Lucía. Compartir este trato sube Amigos, pero te quedas sin bocadillo y baja Energía en el juego.",
+          "fr": "Tu acceptes l’échange avec Lucía. Ce marché partagé fait monter Amigos, mais tu n’as plus ton sandwich et Energía baisse dans le jeu."
+        },
+        "r": {
+          "es": "Guardas tu bocadillo. En el juego, conservar la comida sube Energía, pero rechazar el cambio con Lucía baja Amigos.",
+          "fr": "Tu gardes ton sandwich. Dans le jeu, conserver le repas fait monter Energía, mais refuser l’achat avec Lucía fait baisser Amigos."
+        }
+      },
+      "gato": {
+        "l": {
+          "es": "Compartes el bocadillo con Garfio. En el juego, el gesto hacia el gato sube Amigos, pero tener menos comida baja Energía.",
+          "fr": "Tu partages ton sandwich avec Garfio. Dans le jeu, le geste envers le chat fait monter Amigos, mais avoir moins à manger fait baisser Energía."
+        },
+        "r": {
+          "es": "No compartes el bocadillo con Garfio. En el juego, guardarlo sube Energía, pero este rechazo baja Amigos.",
+          "fr": "Tu ne partages pas ton sandwich avec Garfio. Dans le jeu, le garder fait monter Energía, mais ce refus fait baisser Amigos."
+        }
+      },
+      "fiesta0": {
+        "l": {
+          "es": "Rechazas la invitación para estudiar. En el juego, preparar el examen sube Notas, pero no compartir la fiesta con Lucía baja Amigos.",
+          "fr": "Tu refuses l’invitation pour réviser. Dans le jeu, préparer le contrôle fait monter Notas, mais ne pas partager la fête avec Lucía fait baisser Amigos."
+        },
+        "r": {
+          "es": "Aceptas la invitación de Lucía. Tu respuesta muestra ganas de compartir su cumpleaños y hace subir Amigos.",
+          "fr": "Tu acceptes l’invitation de Lucía. Ta réponse montre ton envie de partager son anniversaire et fait monter Amigos."
+        }
+      },
+      "fiestaSi": {
+        "l": {
+          "es": "Cantas en el karaoke, aunque no te sale bien. Compartir la diversión sube Amigos, pero cantar y participar cuesta energía.",
+          "fr": "Tu chantes au karaoké, même si ce n’est pas réussi. Partager ce moment amusant fait monter Amigos, mais chanter et participer coûte de l’énergie."
+        },
+        "r": {
+          "es": "Te quedas en el sofá con la tarta. En el juego, la pausa sube Energía, pero no hablar con los demás baja Amigos.",
+          "fr": "Tu restes sur le canapé avec le gâteau. Dans le jeu, cette pause fait monter Energía, mais ne pas parler aux autres fait baisser Amigos."
+        }
+      },
+      "fiestaNo": {
+        "l": {
+          "es": "Pides perdón a Lucía. El gesto hace subir Amigos; en el juego, esta conversación cuesta un poco de energía.",
+          "fr": "Tu t’excuses auprès de Lucía. Ce geste fait monter Amigos ; dans le jeu, cette conversation coûte un peu d’énergie."
+        },
+        "r": {
+          "es": "Regalas un cromo a Lucía. El detalle sube Amigos; el juego cuenta el regalo como un gasto y baja Dinero.",
+          "fr": "Tu offres une carte à Lucía. Cette attention fait monter Amigos ; le jeu compte le cadeau comme une dépense et fait baisser Dinero."
+        }
+      },
+      "pablo2": {
+        "l": {
+          "es": "Te ríes y no ayudas a Pablo. En el juego, evitar el trabajo sube Energía, pero tu respuesta baja Amigos.",
+          "fr": "Tu ris et n’aides pas Pablo. Dans le jeu, éviter ce travail fait monter Energía, mais ta réponse fait baisser Amigos."
+        },
+        "r": {
+          "es": "Haces los deberes con Pablo. Ayudarle sube Amigos y trabajar juntos sube Notas en el juego; ese trabajo cuesta energía.",
+          "fr": "Tu fais les devoirs avec Pablo. L’aider fait monter Amigos et travailler ensemble fait monter Notas dans le jeu ; ce travail coûte de l’énergie."
+        }
+      },
+      "alex1": {
+        "l": {
+          "es": "Dices que la silla está ocupada. Este primer contacto con Alex se cierra y baja Amigos en el juego.",
+          "fr": "Tu dis que la chaise est prise. Ce premier contact avec Alex se ferme et Amigos baisse dans le jeu."
+        },
+        "r": {
+          "es": "Invitas a Alex a sentarse y preguntas de dónde es. Abrir la conversación hace subir Amigos.",
+          "fr": "Tu invites Alex à s’asseoir et lui demandes d’où il vient. Ouvrir la conversation fait monter Amigos."
+        }
+      },
+      "alex2": {
+        "l": {
+          "es": "Quieres saber más sobre el canal de Alex. El interés por su historia sube Amigos, pero la conversación cuesta energía.",
+          "fr": "Tu veux en savoir plus sur la chaîne d’Alex. Ton intérêt pour son histoire fait monter Amigos, mais la conversation coûte de l’énergie."
+        },
+        "r": {
+          "es": "Guardas el secreto de Alex. Ese gesto de confianza sube Amigos; en este juego, esta opción también hace subir Notas.",
+          "fr": "Tu gardes le secret d’Alex. Ce geste de confiance fait monter Amigos ; dans ce jeu, ce choix fait aussi monter Notas."
+        }
+      },
+      "alex3": {
+        "l": {
+          "es": "Aceptas salir en el vídeo. En el juego, el proyecto compartido con Alex sube Amigos y aporta Dinero, pero hace bajar Notas.",
+          "fr": "Tu acceptes d’apparaître dans la vidéo. Dans le jeu, ce projet partagé avec Alex fait monter Amigos et apporte du Dinero, mais fait baisser Notas."
+        },
+        "r": {
+          "es": "Dudas del vídeo y piensas en el director. En el juego, esta reserva sube Notas, pero compartir menos el proyecto de Alex baja Amigos.",
+          "fr": "Tu hésites pour la vidéo et penses au directeur. Dans le jeu, cette réserve fait monter Notas, mais moins partager le projet d’Alex fait baisser Amigos."
+        }
+      },
+      "ruiz1": {
+        "l": {
+          "es": "Dices que no eras tú. En el juego, evitar explicar más sube Energía, pero esta respuesta al director baja Notas.",
+          "fr": "Tu dis que ce n’était pas toi. Dans le jeu, éviter de t’expliquer davantage fait monter Energía, mais cette réponse au directeur fait baisser Notas."
+        },
+        "r": {
+          "es": "Pides perdón al director. En el juego, responder así sube Notas y cuesta un poco de energía.",
+          "fr": "Tu t’excuses auprès du directeur. Dans le jeu, répondre ainsi fait monter Notas et coûte un peu d’énergie."
+        }
+      },
+      "ruiz2": {
+        "l": {
+          "es": "No te ofreces para limpiar el patio. En el juego, evitar esa tarea sube Energía, pero también hace bajar Notas.",
+          "fr": "Tu ne te proposes pas pour nettoyer la cour. Dans le jeu, éviter cette tâche fait monter Energía, mais fait aussi baisser Notas."
+        },
+        "r": {
+          "es": "Te ofreces para limpiar el patio. La tarea compartida sube Amigos y cuesta energía; el juego añade una recompensa en Notas.",
+          "fr": "Tu te proposes pour nettoyer la cour. Cette tâche partagée fait monter Amigos et coûte de l’énergie ; le jeu ajoute une récompense à Notas."
+        }
+      },
+      "musica": {
+        "l": {
+          "es": "Propones tocar el triángulo con una broma. En el juego, la participación sube Notas y el contacto con el grupo sube Amigos.",
+          "fr": "Tu proposes de jouer du triangle avec une plaisanterie. Dans le jeu, participer fait monter Notas et le contact avec le groupe fait monter Amigos."
+        },
+        "r": {
+          "es": "Dices que solo cantas en la ducha. En el juego, evitar la audición sube Energía, pero participar menos con el grupo baja Amigos.",
+          "fr": "Tu dis chanter seulement sous la douche. Dans le jeu, éviter l’audition fait monter Energía, mais moins participer avec le groupe fait baisser Amigos."
+        }
+      },
+      "mama4": {
+        "l": {
+          "es": "Explicas tu nota diciendo que el profesor te odia. En el juego, esta respuesta rápida sube Energía, pero baja Notas.",
+          "fr": "Tu expliques ta note en disant que le professeur te déteste. Dans le jeu, cette réponse rapide fait monter Energía, mais baisser Notas."
+        },
+        "r": {
+          "es": "Dices que vas a estudiar más. En el juego, elegir ese esfuerzo hace subir Notas y cuesta energía.",
+          "fr": "Tu dis vouloir travailler davantage. Dans le jeu, choisir cet effort fait monter Notas et coûte de l’énergie."
+        }
+      },
+      "consola": {
+        "l": {
+          "es": "Juegas hasta muy tarde. En el juego, seguir jugando sube Amigos, pero quita tiempo al descanso y al trabajo: Energía y Notas bajan.",
+          "fr": "Tu joues jusqu’à très tard. Dans le jeu, continuer fait monter Amigos, mais prend du temps sur le repos et le travail : Energía et Notas baissent."
+        },
+        "r": {
+          "es": "Apagas la consola. En el juego, dejar tiempo para descansar y trabajar hace subir Energía y Notas.",
+          "fr": "Tu éteins la console. Dans le jeu, garder du temps pour te reposer et travailler fait monter Energía et Notas."
+        }
+      },
+      "vecino": {
+        "l": {
+          "es": "Aceptas pasear al perro por dinero. El pago sube Dinero, pero el paseo cuesta energía.",
+          "fr": "Tu acceptes de promener le chien contre de l’argent. Le paiement fait monter Dinero, mais la promenade coûte de l’énergie."
+        },
+        "r": {
+          "es": "No puedes pasear al perro hoy. En el juego, evitar el paseo sube Energía, pero rechazar la petición baja Amigos.",
+          "fr": "Tu ne peux pas promener le chien aujourd’hui. Dans le jeu, éviter la promenade fait monter Energía, mais refuser la demande fait baisser Amigos."
+        }
+      },
+      "historia": {
+        "l": {
+          "es": "Copias el texto de internet. En el juego, ahorrar trabajo sube Energía, pero no escribir tu propio texto baja Notas.",
+          "fr": "Tu copies le texte sur internet. Dans le jeu, réduire le travail fait monter Energía, mais ne pas écrire ton propre texte fait baisser Notas."
+        },
+        "r": {
+          "es": "Escribes el trabajo con tus dibujos. En el juego, crear tu propia respuesta sube Notas y cuesta energía.",
+          "fr": "Tu rédiges le travail avec tes dessins. Dans le jeu, créer ta propre réponse fait monter Notas et coûte de l’énergie."
+        }
+      },
+      "mama5": {
+        "l": {
+          "es": "Eliges galletas para merendar. Esta merienda hace subir Energía en el juego.",
+          "fr": "Tu choisis des biscuits pour le goûter. Ce goûter fait monter Energía dans le jeu."
+        },
+        "r": {
+          "es": "Eliges yogur para merendar. En este juego, esa merienda sube Energía y también da una pequeña subida de Notas.",
+          "fr": "Tu choisis un yaourt pour le goûter. Dans ce jeu, ce goûter fait monter Energía et apporte aussi une petite hausse de Notas."
+        }
+      },
+      "paga": {
+        "l": {
+          "es": "Guardas tu paga. En el juego, ahorrar sube Dinero, pero tus amigos esperaban compartir chuches y baja Amigos.",
+          "fr": "Tu gardes ton argent de poche. Dans le jeu, économiser fait monter Dinero, mais tes amis attendaient des bonbons à partager et Amigos baisse."
+        },
+        "r": {
+          "es": "Invitas a tus amigos a chuches. Compartirlas sube Amigos, pero pagarlas baja Dinero.",
+          "fr": "Tu offres des bonbons à tes amis. Les partager fait monter Amigos, mais les payer fait baisser Dinero."
+        }
+      },
+      "quiz1": {
+        "l": {
+          "es": "¡Sí! Siete por ocho son cincuenta y seis. La respuesta correcta hace subir Notas en el juego.",
+          "fr": "Oui ! Sept fois huit font cinquante-six. La bonne réponse fait monter Notas dans le jeu."
+        },
+        "r": {
+          "es": "La respuesta es cincuenta y seis, no sesenta y cinco: Notas baja. El juego da Energía por esta respuesta rápida, aunque sea incorrecta.",
+          "fr": "La réponse est cinquante-six, pas soixante-cinq : Notas baisse. Le jeu donne de l’Energía pour cette réponse rapide, même si elle est incorrecte."
+        }
+      },
+      "quiz2": {
+        "l": {
+          "es": "¡Correcto! «Bibliothèque» se dice «biblioteca». Reconocer la palabra hace subir Notas.",
+          "fr": "Correct ! « Bibliothèque » se dit « biblioteca ». Reconnaître le mot fait monter Notas."
+        },
+        "r": {
+          "es": "«Librería» es una tienda de libros; aquí necesitas «biblioteca». Notas baja por la confusión; el juego añade Amigos a esta respuesta.",
+          "fr": "« Librería » désigne une librairie ; il fallait « biblioteca ». Notas baisse pour cette confusion ; le jeu ajoute des Amigos à cette réponse."
+        }
+      },
+      "quiz3": {
+        "l": {
+          "es": "¡Exacto! «Nosotros somos amigos». «Somos» va con «nosotros»: la respuesta hace subir Notas.",
+          "fr": "Exact ! « Nosotros somos amigos ». « Somos » va avec « nosotros » : cette réponse fait monter Notas."
+        },
+        "r": {
+          "es": "«Sois» va con «vosotros»; con «nosotros» es «somos». Notas baja; el juego sube Energía por esta respuesta rápida.",
+          "fr": "« Sois » va avec « vosotros » ; avec « nosotros », c’est « somos ». Notas baisse ; le jeu fait monter Energía pour cette réponse rapide."
+        }
+      },
+      "pablo3": {
+        "l": {
+          "es": "Aceptas el cine y las palomitas con Pablo. Compartir la salida sube Amigos y cuesta dinero; la pausa sube Energía en el juego.",
+          "fr": "Tu acceptes le cinéma et le pop-corn avec Pablo. Partager la sortie fait monter Amigos et coûte de l’argent ; cette pause fait monter Energía dans le jeu."
+        },
+        "r": {
+          "es": "No vas al cine por el dinero. En el juego, evitar el gasto sube Dinero, pero no compartir la salida con Pablo baja Amigos.",
+          "fr": "Tu ne vas pas au cinéma à cause de l’argent. Dans le jeu, éviter la dépense fait monter Dinero, mais ne pas partager la sortie avec Pablo fait baisser Amigos."
+        }
+      },
+      "lluvia": {
+        "l": {
+          "es": "Duermes durante el recreo. En el juego, descansar sube Energía, pero ese rato sin compartir actividades baja Amigos.",
+          "fr": "Tu dors pendant la récréation. Dans le jeu, te reposer fait monter Energía, mais ce moment sans activité partagée fait baisser Amigos."
+        },
+        "r": {
+          "es": "Organizas un torneo de pulsos. La actividad con la clase sube Amigos, pero organizar y jugar cuesta energía.",
+          "fr": "Tu organises un tournoi de bras de fer. Cette activité avec la classe fait monter Amigos, mais organiser et jouer coûte de l’énergie."
+        }
+      },
+      "movil": {
+        "l": {
+          "es": "Explicas que llama tu abuela. En el juego, el comentario sube Amigos, pero la interrupción de la clase baja Notas.",
+          "fr": "Tu expliques que ta grand-mère appelle. Dans le jeu, cette remarque fait monter Amigos, mais l’interruption du cours fait baisser Notas."
+        },
+        "r": {
+          "es": "Apagas el móvil enseguida. La interrupción sigue bajando Notas en el juego; pasar este momento incómodo cuesta energía.",
+          "fr": "Tu éteins le téléphone aussitôt. L’interruption fait tout de même baisser Notas dans le jeu ; traverser ce moment gênant coûte de l’énergie."
+        }
+      },
+      "biblio": {
+        "l": {
+          "es": "Lees y entiendes casi todo. En el juego, practicar la lectura sube Notas, pero ese esfuerzo cuesta energía.",
+          "fr": "Tu lis et comprends presque tout. Dans le jeu, pratiquer la lecture fait monter Notas, mais cet effort coûte de l’énergie."
+        },
+        "r": {
+          "es": "Pides una versión en vídeo en vez de leer. En el juego, tu comentario sube Amigos, pero dejar esta lectura baja Notas.",
+          "fr": "Tu demandes une version vidéo au lieu de lire. Dans le jeu, ta remarque fait monter Amigos, mais laisser cette lecture fait baisser Notas."
+        }
+      },
+      "hugo2": {
+        "l": {
+          "es": "Compras la colección de Hugo. El gasto baja Dinero y compartir esta afición con él sube Amigos en el juego.",
+          "fr": "Tu achètes la collection d’Hugo. La dépense fait baisser Dinero et partager ce loisir avec lui fait monter Amigos dans le jeu."
+        },
+        "r": {
+          "es": "No compras la colección de Hugo. En el juego, evitar el gasto sube Dinero, pero rechazar el trato hace bajar Amigos.",
+          "fr": "Tu n’achètes pas la collection d’Hugo. Dans le jeu, éviter la dépense fait monter Dinero, mais refuser l’achat fait baisser Amigos."
+        }
+      },
+      "basket": {
+        "l": {
+          "es": "Te apuntas al torneo. Compartir el baloncesto con el equipo sube Amigos, pero participar cuesta energía.",
+          "fr": "Tu t’inscris au tournoi. Partager le basket avec l’équipe fait monter Amigos, mais participer coûte de l’énergie."
+        },
+        "r": {
+          "es": "Prefieres mirar. En el juego, evitar el esfuerzo sube Energía y participar menos con el equipo baja Amigos.",
+          "fr": "Tu préfères regarder. Dans le jeu, éviter l’effort fait monter Energía et moins participer avec l’équipe fait baisser Amigos."
+        }
+      },
+      "carmen2": {
+        "l": {
+          "es": "Eliges una manzana de postre. En este juego, esa elección sube Energía y también hace subir Notas.",
+          "fr": "Tu choisis une pomme en dessert. Dans ce jeu, ce choix fait monter Energía et fait aussi monter Notas."
+        },
+        "r": {
+          "es": "Pides dos natillas de postre. Esta elección hace subir Energía en el juego.",
+          "fr": "Tu demandes deux crèmes dessert. Ce choix fait monter Energía dans le jeu."
+        }
+      },
+      "garcia3": {
+        "l": {
+          "es": "Repasas las tablas en el bus. En el juego, preparar el control sube Notas, pero estudiar cuesta energía.",
+          "fr": "Tu révises les tables dans le bus. Dans le jeu, préparer le contrôle fait monter Notas, mais réviser coûte de l’énergie."
+        },
+        "r": {
+          "es": "Cruzas los dedos sin repasar. En el juego, evitar el trabajo sube Energía, pero dejar la preparación a la suerte baja Notas.",
+          "fr": "Tu croises les doigts sans réviser. Dans le jeu, éviter le travail fait monter Energía, mais laisser la préparation au hasard fait baisser Notas."
+        }
+      },
+      "halloween": {
+        "l": {
+          "es": "Eliges un fantasma con una sábana. Ahorrar en el disfraz sube Dinero; en el juego, esta opción sencilla también hace bajar Amigos.",
+          "fr": "Tu choisis un fantôme avec un drap. Économiser sur le costume fait monter Dinero ; dans le jeu, cette option simple fait aussi baisser Amigos."
+        },
+        "r": {
+          "es": "Eliges un disfraz de vampiro elaborado. En el juego, pagarlo baja Dinero y compartirlo en la fiesta sube Amigos.",
+          "fr": "Tu choisis un costume de vampire élaboré. Dans le jeu, le payer fait baisser Dinero et le partager à la fête fait monter Amigos."
+        }
+      },
+      "navidad": {
+        "l": {
+          "es": "Regalas una calculadora a García. El regalo cuesta dinero y la broma sube Amigos; en este juego, este detalle también hace subir Notas.",
+          "fr": "Tu offres une calculatrice à García. Le cadeau coûte de l’argent et la blague fait monter Amigos ; dans ce jeu, cette attention fait aussi monter Notas."
+        },
+        "r": {
+          "es": "Regalas calcetines de renos. El regalo baja Dinero, pero el detalle divertido hace subir Amigos.",
+          "fr": "Tu offres des chaussettes à rennes. Le cadeau fait baisser Dinero, mais cette attention amusante fait monter Amigos."
+        }
+      },
+      "reyes": {
+        "l": {
+          "es": "Comes el carbón dulce: es una golosina. Esta elección hace subir Energía en el juego.",
+          "fr": "Tu manges le charbon sucré : c’est une friandise. Ce choix fait monter Energía dans le jeu."
+        },
+        "r": {
+          "es": "Preguntas por el carbón dulce. Mostrar curiosidad por esta tradición hace subir Notas en el juego.",
+          "fr": "Tu poses une question sur le charbon sucré. Montrer ta curiosité pour cette tradition fait monter Notas dans le jeu."
+        }
+      },
+      "valentin": {
+        "l": {
+          "es": "Guardas la carta en secreto. En el juego, disfrutar este mensaje en privado sube Energía y Amigos, sin revelar quién lo escribió.",
+          "fr": "Tu gardes la lettre secrète. Dans le jeu, apprécier ce message en privé fait monter Energía et Amigos, sans révéler qui l’a écrit."
+        },
+        "r": {
+          "es": "Enseñas la carta a la clase. En el juego, compartir tu emoción sube Energía, pero hacer público el mensaje baja Amigos.",
+          "fr": "Tu montres la lettre à la classe. Dans le jeu, partager ton émotion fait monter Energía, mais rendre le message public fait baisser Amigos."
+        }
+      },
+      "libro": {
+        "l": {
+          "es": "Lees el cómic durante la tarde. En el juego, practicar español con la lectura sube Notas, pero ese trabajo cuesta energía.",
+          "fr": "Tu lis la bande dessinée pendant l’après-midi. Dans le jeu, pratiquer l’espagnol par la lecture fait monter Notas, mais ce travail coûte de l’énergie."
+        },
+        "r": {
+          "es": "Usas el cómic como posavasos. En el juego, la ocurrencia sube Amigos, pero dejar la lectura baja Notas.",
+          "fr": "Tu utilises la bande dessinée comme dessous de verre. Dans le jeu, cette idée fait monter Amigos, mais laisser la lecture fait baisser Notas."
+        }
+      },
+      "acuatico": {
+        "l": {
+          "es": "Eliges el tobogán gigante. En el juego, compartir la aventura sube Amigos, pero la actividad cuesta energía.",
+          "fr": "Tu choisis le toboggan géant. Dans le jeu, partager l’aventure fait monter Amigos, mais cette activité coûte de l’énergie."
+        },
+        "r": {
+          "es": "Flotas con calma. En el juego, la pausa sube Energía, pero participar menos en la aventura del grupo baja Amigos.",
+          "fr": "Tu flottes tranquillement. Dans le jeu, cette pause fait monter Energía, mais moins participer à l’aventure du groupe fait baisser Amigos."
+        }
+      },
+      "paco1": {
+        "l": {
+          "es": "Pintas la valla y Paco te paga. El dinero recibido sube Dinero, pero pintar cuesta energía.",
+          "fr": "Tu peins la clôture et Paco te paie. L’argent reçu fait monter Dinero, mais peindre coûte de l’énergie."
+        },
+        "r": {
+          "es": "Aceptas ayudar, pero te vas. En el juego, evitar el trabajo sube Energía, mientras no cumplir lo dicho a Paco baja Amigos.",
+          "fr": "Tu acceptes d’aider, puis tu pars. Dans le jeu, éviter le travail fait monter Energía, tandis que ne pas tenir ta parole auprès de Paco fait baisser Amigos."
+        }
+      },
+      "paco2": {
+        "l": {
+          "es": "Usas el aviso de Paco para repasar. Preparar el control sube Notas en el juego, pero este esfuerzo cuesta energía.",
+          "fr": "Tu utilises l’information de Paco pour réviser. Préparer le contrôle fait monter Notas dans le jeu, mais cet effort coûte de l’énergie."
+        },
+        "r": {
+          "es": "Avisas a la clase del control. Compartir la noticia sube Amigos; en el juego, usar ese rato para avisar en vez de repasar baja Notas.",
+          "fr": "Tu préviens la classe du contrôle. Partager la nouvelle fait monter Amigos ; dans le jeu, employer ce temps à prévenir plutôt qu’à réviser fait baisser Notas."
+        }
+      },
+      "paco3": {
+        "l": {
+          "es": "Recuperas tu chaqueta y evitas comprar otra. En esta escena, las burlas de tus compañeros hacen bajar Amigos.",
+          "fr": "Tu récupères ta veste et évites d’en racheter une. Dans cette scène, les moqueries de tes camarades font baisser Amigos."
+        },
+        "r": {
+          "es": "Rechazar tu chaqueta te cuesta comprar otra. La clase se ríe de tu comentario: Amigos sube en esta escena.",
+          "fr": "Refuser ta veste te coûte le prix d’une autre. La classe rit de ta remarque : Amigos monte dans cette scène."
+        }
+      },
+      "lefevre1": {
+        "l": {
+          "es": "«Un sandwich» es correcto: hace subir Notas. En este juego, responder «¡Fácil!» también hace bajar Amigos.",
+          "fr": "« Un sandwich » est correct : Notas monte. Dans ce jeu, répondre « Facile ! » fait aussi baisser Amigos."
+        },
+        "r": {
+          "es": "«Bocadillou» es una palabra inventada; en francés es «un sandwich». Notas baja por el error y la broma sube Amigos en el juego.",
+          "fr": "« Bocadillou » est un mot inventé ; en français, c’est « un sandwich ». Notas baisse pour l’erreur et la blague fait monter Amigos dans le jeu."
+        }
+      },
+      "lefevre2": {
+        "l": {
+          "es": "Cantas en voz alta y practicas francés. Participar sube Notas en el juego, pero cantar cuesta energía.",
+          "fr": "Tu chantes à voix haute et pratiques le français. Participer fait monter Notas dans le jeu, mais chanter coûte de l’énergie."
+        },
+        "r": {
+          "es": "Mueves los labios sin cantar. En el juego, evitar ese esfuerzo sube Energía, pero no practicar en voz alta baja Notas.",
+          "fr": "Tu bouges les lèvres sans chanter. Dans le jeu, éviter cet effort fait monter Energía, mais ne pas pratiquer à voix haute fait baisser Notas."
+        }
+      },
+      "lefevre3": {
+        "l": {
+          "es": "Escribes tres páginas con dibujos. Trabajar el mensaje sube Notas en el juego, pero escribir y dibujar cuesta energía.",
+          "fr": "Tu écris trois pages avec des dessins. Travailler ce message fait monter Notas dans le jeu, mais écrire et dessiner coûte de l’énergie."
+        },
+        "r": {
+          "es": "Escribes un saludo muy corto. En el juego, ahorras esfuerzo y sube Energía, pero practicar y compartir tan poco baja Notas y Amigos.",
+          "fr": "Tu écris une salutation très courte. Dans le jeu, tu économises tes efforts et Energía monte, mais pratiquer et partager si peu fait baisser Notas et Amigos."
+        }
+      },
+      "lab": {
+        "l": {
+          "es": "Tocas el material y sale humo verde. En el juego, el espectáculo sube Amigos, pero no seguir la instrucción del profesor hace bajar Notas.",
+          "fr": "Tu touches le matériel et une fumée verte sort. Dans le jeu, le spectacle fait monter Amigos, mais ne pas suivre la consigne du professeur fait baisser Notas."
+        },
+        "r": {
+          "es": "Observas y tomas notas. En el juego, seguir la actividad sube Notas, pero ese trabajo de atención cuesta energía.",
+          "fr": "Tu observes et prends des notes. Dans le jeu, suivre l’activité fait monter Notas, mais ce travail d’attention coûte de l’énergie."
+        }
+      },
+      "enfermeria": {
+        "l": {
+          "es": "Vas a la enfermería y pasas un rato en la cama. En este juego, esta pausa hace subir Energía y también hace bajar Notas.",
+          "fr": "Tu vas à l’infirmerie et passes un moment au lit. Dans ce jeu, cette pause fait monter Energía et fait aussi baisser Notas."
+        },
+        "r": {
+          "es": "Te quedas en clase aunque te duele la tripa. En este juego, este esfuerzo hace bajar Energía, pero la opción también hace subir Notas.",
+          "fr": "Tu restes en cours malgré ton mal de ventre. Dans ce jeu, cet effort fait baisser Energía, mais ce choix fait aussi monter Notas."
+        }
+      },
+      "viaje1": {
+        "l": {
+          "es": "Llevas gusanitos para compartir en el bus. Comprarlos baja Dinero y el detalle para el grupo sube Amigos.",
+          "fr": "Tu emportes des chips soufflées à partager dans le bus. Les acheter fait baisser Dinero et cette attention envers le groupe fait monter Amigos."
+        },
+        "r": {
+          "es": "Preparas libro, paraguas y mapa. En el juego, llevar ese equipo sube Notas y Energía, pero esta elección también hace bajar Amigos.",
+          "fr": "Tu prépares livre, parapluie et carte. Dans le jeu, emporter cet équipement fait monter Notas et Energía, mais ce choix fait aussi baisser Amigos."
+        }
+      },
+      "viajebus": {
+        "l": {
+          "es": "Cantas con Pablo y con el grupo. Compartir las canciones sube Amigos, pero cantar durante el viaje cuesta energía.",
+          "fr": "Tu chantes avec Pablo et le groupe. Partager les chansons fait monter Amigos, mais chanter pendant le trajet coûte de l’énergie."
+        },
+        "r": {
+          "es": "Te pones los auriculares y duermes. El descanso sube Energía, pero no compartir las canciones baja Amigos en el juego.",
+          "fr": "Tu mets tes écouteurs et dors. Le repos fait monter Energía, mais ne pas partager les chansons fait baisser Amigos dans le jeu."
+        }
+      },
+      "albergue1": {
+        "l": {
+          "es": "Participas en la guerra de almohadas. Jugar juntos sube Amigos, pero la actividad nocturna cuesta energía.",
+          "fr": "Tu participes à la bataille de polochons. Jouer ensemble fait monter Amigos, mais cette activité nocturne coûte de l’énergie."
+        },
+        "r": {
+          "es": "Eliges dormir. El descanso sube Energía; en el juego, no compartir este rato de juego con el grupo hace bajar Amigos.",
+          "fr": "Tu choisis de dormir. Le repos fait monter Energía ; dans le jeu, ne pas partager ce moment de jeu avec le groupe fait baisser Amigos."
+        }
+      },
+      "prado1": {
+        "l": {
+          "es": "¡Correcto! Velázquez pintó el cuadro original de «Las Meninas». Reconocer al pintor hace subir Notas.",
+          "fr": "Correct ! Velázquez a peint le tableau original des « Ménines ». Reconnaître le peintre fait monter Notas."
+        },
+        "r": {
+          "es": "El original es de Velázquez; Picasso hizo otras versiones. Notas baja por la confusión; el juego añade Amigos a esta respuesta.",
+          "fr": "L’original est de Velázquez ; Picasso en a fait d’autres versions. Notas baisse pour la confusion ; le jeu ajoute des Amigos à cette réponse."
+        }
+      },
+      "prado2": {
+        "l": {
+          "es": "Explicas lo que te hace sentir el cuadro. En el juego, observar y comentar sube Notas, pero prestar atención cuesta energía.",
+          "fr": "Tu expliques ce que le tableau te fait ressentir. Dans le jeu, observer et commenter fait monter Notas, mais prêter attention coûte de l’énergie."
+        },
+        "r": {
+          "es": "Dices que tu hermana pinta mejor. En el juego, esta respuesta rápida sube Energía, pero baja Notas y Amigos por cortar el comentario sobre la obra.",
+          "fr": "Tu dis que ta sœur peint mieux. Dans le jeu, cette réponse rapide fait monter Energía, mais baisser Notas et Amigos car elle coupe l’échange sur l’œuvre."
+        }
+      },
+      "sol": {
+        "l": {
+          "es": "Invitas al grupo a churros con chocolate. Compartir el momento sube Amigos, pero pagarlos baja Dinero.",
+          "fr": "Tu offres des churros au chocolat au groupe. Partager ce moment fait monter Amigos, mais les payer fait baisser Dinero."
+        },
+        "r": {
+          "es": "Guardas dinero para un recuerdo para la abuela. En el juego, ahorrar sube Dinero, pero no compartir la merienda del grupo baja Amigos.",
+          "fr": "Tu gardes de l’argent pour un souvenir pour ta grand-mère. Dans le jeu, économiser fait monter Dinero, mais ne pas partager le goûter du groupe fait baisser Amigos."
         }
       }
     },
     "quijote": {
       "salida": {
         "l": {
-          "es": "¡Ya tienes caballo y dama! Te sientes listo para la aventura y ves tu vida como un libro de caballerías.",
-          "fr": "Tu as un cheval et une dame ! Tu te sens prêt pour l’aventure et vois ta vie comme un livre de chevalerie."
+          "es": "¡Caballo y dama tienen nombre! Te sientes listo para salir y ves tu vida como un libro de caballerías.",
+          "fr": "Le cheval et la dame ont un nom ! Tu te sens prêt à partir et vois ta vie comme un livre de chevalerie."
         },
         "r": {
-          "es": "Buscas un nombre perfecto durante cuatro días. Imaginas mucho, descansas poco y dudas antes de salir.",
-          "fr": "Tu cherches un nom parfait pendant quatre jours. Tu imagines beaucoup, te reposes peu et hésites avant de partir."
+          "es": "Buscas el nombre perfecto durante cuatro días. Imaginas mucho, te cansas y dudas antes de salir.",
+          "fr": "Tu cherches le nom parfait pendant quatre jours. Tu imagines beaucoup, te fatigues et hésites avant de partir."
         }
       },
       "molinos": {
         "l": {
-          "es": "Atacas sin miedo: para ti, son gigantes. Pero las aspas te tiran al suelo y pierdes fuerzas.",
-          "fr": "Tu attaques sans peur : pour toi, ce sont des géants. Mais les ailes te jettent au sol et tu perds des forces."
+          "es": "Atacas sin miedo porque crees ver gigantes: crecen tu valor y tu sueño de caballero. Las aspas te tiran al suelo y pierdes fuerzas.",
+          "fr": "Tu attaques sans peur car tu crois voir des géants : ton audace et ton rêve de chevalier grandissent. Les ailes te jettent au sol et tu perds des forces."
         },
         "r": {
-          "es": "Escuchas a Sancho y ves los molinos. Sancho confía más en ti; tus ganas de combatir y tus sueños de gigantes bajan.",
-          "fr": "Tu écoutes Sancho et reconnais les moulins. Sancho te fait davantage confiance ; ton envie de combattre et tes rêves de géants diminuent."
+          "es": "Ves los molinos y escuchas a Sancho: confía más en ti. Tu sueño de gigantes y tus ganas de combatir bajan.",
+          "fr": "Tu reconnais les moulins et écoutes Sancho : il te fait davantage confiance. Ton rêve de géants et ton envie de combattre diminuent."
+        }
+      },
+      "freston": {
+        "l": {
+          "es": "Crees que un mago ha cambiado los gigantes: tu sueño de caballero crece y quieres volver a luchar.",
+          "fr": "Tu crois qu’un magicien a changé les géants : ton rêve de chevalier grandit et tu veux retourner combattre."
+        },
+        "r": {
+          "es": "Dejas la explicación del mago: ves la caída de otra manera y quieres luchar menos. Sancho se siente más escuchado.",
+          "fr": "Tu laisses l’explication du magicien : tu vois la chute autrement et veux moins combattre. Sancho se sent davantage écouté."
+        }
+      },
+      "venta": {
+        "l": {
+          "es": "Tratas la venta como un castillo y pides ser caballero: aumentan tu audacia y tu sueño. Esperar sin comer te quita fuerzas.",
+          "fr": "Tu prends l’auberge pour un château et demandes à devenir chevalier : ton audace et ton rêve grandissent. Attendre sans manger te coûte des forces."
+        },
+        "r": {
+          "es": "Eliges comida y cama: recuperas fuerzas. Dejas un poco el sueño del castillo y las ganas de probar tu valor.",
+          "fr": "Tu choisis un repas et un lit : tu retrouves des forces. Tu délaisses un peu le rêve du château et l’envie de prouver ton audace."
         }
       },
       "velar": {
         "l": {
-          "es": "Pasas la noche de pie, junto a tus armas. Te sientes valiente, pero la larga espera te cansa.",
-          "fr": "Tu passes la nuit debout, près de tes armes. Tu te sens courageux, mais la longue attente te fatigue."
+          "es": "Pasas la noche de pie junto a tus armas. Te sientes más valiente, pero la larga espera te cansa.",
+          "fr": "Tu passes la nuit debout près de tes armes. Tu te sens plus courageux, mais la longue attente te fatigue."
         },
         "r": {
-          "es": "Te sientas y recuperas fuerzas. La prueba parece menos heroica a tus ojos: tu valor baja en esta aventura.",
-          "fr": "Tu t’assieds et récupères des forces. L’épreuve te paraît moins héroïque : ton courage baisse dans cette aventure."
+          "es": "Te sientas y conservas fuerzas. En el juego, esperar así cuenta menos como una prueba de caballero y hace bajar Valor.",
+          "fr": "Tu t’assieds et gardes des forces. Dans le jeu, attendre ainsi compte moins comme une épreuve de chevalier et fait baisser Valor."
+        }
+      },
+      "quizcaballo": {
+        "l": {
+          "es": "Rocinante es el nombre de tu caballo. En el juego, acertar aumenta la confianza de Sancho y tu barra de fuerzas.",
+          "fr": "Rossinante est le nom de ton cheval. Dans le jeu, répondre juste augmente la confiance de Sancho et ta jauge de forces."
+        },
+        "r": {
+          "es": "Babieca es el caballo del Cid; el tuyo es Rocinante. La confusión aumenta tu mundo imaginado y Sancho confía menos en tu respuesta.",
+          "fr": "Babieca est le cheval du Cid ; le tien est Rossinante. La confusion renforce ton monde imaginé et Sancho fait moins confiance à ta réponse."
+        }
+      },
+      "escudero": {
+        "l": {
+          "es": "Prometes pronto una isla: Sancho cree más en ti. Tú también das más fuerza a tu sueño de caballero.",
+          "fr": "Tu promets bientôt une île : Sancho croit davantage en toi. Tu donnes aussi plus de force à ton rêve de chevalier."
+        },
+        "r": {
+          "es": "Hablas de trabajo en vez de una isla cercana. Tu sueño pierde fuerza y Sancho se siente menos apoyado.",
+          "fr": "Tu parles de travail plutôt que d’une île prochaine. Ton rêve perd de sa force et Sancho se sent moins soutenu."
+        }
+      },
+      "cartamal": {
+        "l": {
+          "es": "Te ríes del error de Sancho y os acercáis. Tomas la carta menos en serio: tu sueño de caballero pierde fuerza.",
+          "fr": "Tu ris de l’erreur de Sancho et vous vous rapprochez. Tu prends la lettre moins au sérieux : ton rêve de chevalier perd de sa force."
+        },
+        "r": {
+          "es": "Defiendes el título de tu dama con enfado. Tu sueño crece, pero el reproche aleja a Sancho.",
+          "fr": "Tu défends le titre de ta dame avec colère. Ton rêve grandit, mais le reproche éloigne Sancho."
+        }
+      },
+      "dulcinea": {
+        "l": {
+          "es": "Te presentas como vencedor de gigantes. Aumentan tu sueño de caballero y la audacia que sientes.",
+          "fr": "Tu te présentes comme le vainqueur de géants. Ton rêve de chevalier et l’audace que tu ressens grandissent."
+        },
+        "r": {
+          "es": "Hablas de la comida, no de victorias. En el juego, tienes más fuerzas, pero bajan tu sueño de caballero y tus ganas de combatir.",
+          "fr": "Tu parles du repas, pas de victoires. Dans le jeu, tu as plus de forces, mais ton rêve de chevalier et ton envie de combattre diminuent."
+        }
+      },
+      "ajo": {
+        "l": {
+          "es": "Mantienes la imagen de una dama perfecta. Tu sueño crece, pero rechazas lo que cuenta Sancho y él se aleja.",
+          "fr": "Tu gardes l’image d’une dame parfaite. Ton rêve grandit, mais tu rejettes le récit de Sancho et il s’éloigne."
+        },
+        "r": {
+          "es": "Aceptas lo que cuenta Sancho: os acercáis. Dejas un poco la dama soñada y pierdes ganas de luchar por ella.",
+          "fr": "Tu acceptes le récit de Sancho : vous vous rapprochez. Tu délaisses un peu la dame rêvée et perds l’envie de combattre pour elle."
+        }
+      },
+      "yelmo": {
+        "l": {
+          "es": "Crees ver un casco de leyenda y te atreves a reclamarlo. Tu sueño crece, pero Sancho comparte menos tu decisión.",
+          "fr": "Tu crois voir un casque de légende et oses le réclamer. Ton rêve grandit, mais Sancho partage moins ta décision."
+        },
+        "r": {
+          "es": "Reconoces la bacía del barbero y no lo atacas. Bajan tu sueño de caballero y tus ganas de combatir.",
+          "fr": "Tu reconnais le plat à barbe du barbier et ne l’attaques pas. Ton rêve de chevalier et ton envie de combattre diminuent."
+        }
+      },
+      "ovejas": {
+        "l": {
+          "es": "Atacas las ovejas como si fueran un ejército: aumentan tu audacia y tu sueño. Los golpes de los pastores te quitan fuerzas.",
+          "fr": "Tu attaques les moutons comme une armée : ton audace et ton rêve grandissent. Les coups des bergers te coûtent des forces."
+        },
+        "r": {
+          "es": "Reconoces las ovejas y renuncias al combate. Tu sueño pierde fuerza; Sancho se siente más cerca de ti.",
+          "fr": "Tu reconnais les moutons et renonces au combat. Ton rêve perd de sa force ; Sancho se sent plus proche de toi."
+        }
+      },
+      "balsamo": {
+        "l": {
+          "es": "Bebes el bálsamo y crees en su poder: tu sueño de caballero crece. En el juego, la barra de fuerzas sube pese al vómito.",
+          "fr": "Tu bois le baume et crois à son pouvoir : ton rêve de chevalier grandit. Dans le jeu, la jauge de forces monte malgré les vomissements."
+        },
+        "r": {
+          "es": "Dejas que Sancho pruebe el bálsamo. Él se siente menos apoyado; en el juego, evitar la prueba baja tu Valor.",
+          "fr": "Tu laisses Sancho essayer le baume. Il se sent moins soutenu ; dans le jeu, éviter l’essai fait baisser ton Valor."
+        }
+      },
+      "galeotes": {
+        "l": {
+          "es": "Liberas a los presos como en una aventura de caballerías: crecen tu audacia y tu sueño. Las piedras que te lanzan te quitan fuerzas.",
+          "fr": "Tu libères les prisonniers comme dans une aventure de chevalerie : ton audace et ton rêve grandissent. Les pierres qu’ils lancent te coûtent des forces."
+        },
+        "r": {
+          "es": "No luchas contra los guardias. En el juego, baja tu Valor y Sancho se siente más seguro a tu lado.",
+          "fr": "Tu ne combats pas les gardes. Dans le jeu, ton Valor baisse et Sancho se sent plus en sécurité à tes côtés."
+        }
+      },
+      "libros": {
+        "l": {
+          "es": "Defiendes tus libros y te atreves a enfrentarte a quienes los queman. Tu sueño de caballero se hace más fuerte.",
+          "fr": "Tu défends tes livres et oses affronter ceux qui les brûlent. Ton rêve de chevalier devient plus fort."
+        },
+        "r": {
+          "es": "Aceptas perder libros, pero pides guardar el Amadís. Dejas de discutir: en el juego, recuperas fuerzas y bajan tu audacia y tu sueño de caballero.",
+          "fr": "Tu acceptes de perdre des livres, mais demandes de garder l’Amadis. Tu cesses de discuter : dans le jeu, tes forces remontent, ton audace et ton rêve diminuent."
+        }
+      },
+      "batanes": {
+        "l": {
+          "es": "Insistes en salir pese al miedo de Sancho. Tu audacia sube, pero el esfuerzo te cansa y Sancho se siente menos escuchado.",
+          "fr": "Tu insistes pour sortir malgré la peur de Sancho. Ton audace monte, mais l’effort te fatigue et Sancho se sent moins écouté."
+        },
+        "r": {
+          "es": "Esperas con Sancho y ves los batanes al amanecer. Os acercáis; el monstruo imaginado y tus ganas de luchar pierden fuerza.",
+          "fr": "Tu attends avec Sancho et vois les moulins à foulon au matin. Vous vous rapprochez ; le monstre imaginé et ton envie de combattre perdent leur force."
+        }
+      },
+      "hambre": {
+        "l": {
+          "es": "Quieres vivir como los héroes de tus libros: crecen tu audacia y tu sueño. Sin cenar, pierdes fuerzas.",
+          "fr": "Tu veux vivre comme les héros de tes livres : ton audace et ton rêve grandissent. Sans dîner, tu perds des forces."
+        },
+        "r": {
+          "es": "Comes y recuperas fuerzas. Aceptar el hambre te aleja un poco de la idea del caballero que no necesita comer.",
+          "fr": "Tu manges et retrouves des forces. Accepter la faim t’éloigne un peu de l’idée du chevalier qui n’a pas besoin de manger."
+        }
+      },
+      "cansado": {
+        "l": {
+          "es": "Paras para que Rocinante descanse. En el juego, recuperas fuerzas, pero la pausa baja tus ganas de buscar combates.",
+          "fr": "Tu t’arrêtes pour que Rossinante se repose. Dans le jeu, tu retrouves des forces, mais la pause réduit ton envie de chercher des combats."
+        },
+        "r": {
+          "es": "Insistes en seguir como un héroe: aumenta tu audacia. Continuar sin parar te deja con menos fuerzas.",
+          "fr": "Tu insistes pour continuer comme un héros : ton audace grandit. Poursuivre sans pause te laisse moins de forces."
+        }
+      },
+      "quizmolinos": {
+        "l": {
+          "es": "Las aspas y el trigo señalan molinos de viento. Reconocerlos reduce tu sueño de gigantes y aumenta la confianza de Sancho.",
+          "fr": "Les ailes et le blé indiquent des moulins à vent. Les reconnaître réduit ton rêve de géants et augmente la confiance de Sancho."
+        },
+        "r": {
+          "es": "Son molinos, aunque los llamas gigantes. En el juego, esa confusión aumenta tu sueño de caballero y te cuesta fuerzas.",
+          "fr": "Ce sont des moulins, même si tu les appelles géants. Dans le jeu, cette confusion renforce ton rêve de chevalier et te coûte des forces."
+        }
+      },
+      "vuelve": {
+        "l": {
+          "es": "Defiendes tu nombre de caballero y quieres seguir: crecen tu sueño y tu audacia. Renunciar a la pausa te cuesta fuerzas.",
+          "fr": "Tu défends ton nom de chevalier et veux continuer : ton rêve et ton audace grandissent. Renoncer à la pause te coûte des forces."
+        },
+        "r": {
+          "es": "Aceptas volver para comer y descansar: recuperas fuerzas. Por un tiempo, tu sueño de caballero y tus ganas de combatir bajan.",
+          "fr": "Tu acceptes de rentrer manger et te reposer : tu retrouves des forces. Pour un temps, ton rêve de chevalier et ton envie de combattre diminuent."
+        }
+      },
+      "micomicona": {
+        "l": {
+          "es": "Crees en la princesa y ofreces tu lanza. Su historia alimenta tu sueño y tus ganas de luchar.",
+          "fr": "Tu crois à la princesse et offres ta lance. Son histoire nourrit ton rêve et ton envie de combattre."
+        },
+        "r": {
+          "es": "Dudas de la princesa y no sales a combatir. Tu sueño baja; en el juego, Sancho confía más en ti por esta duda.",
+          "fr": "Tu doutes de la princesse et ne pars pas combattre. Ton rêve diminue ; dans le jeu, Sancho te fait davantage confiance pour ce doute."
+        }
+      },
+      "yeguas": {
+        "l": {
+          "es": "Defiendes a Rocinante y te atreves a luchar. Los golpes que recibes te quitan fuerzas.",
+          "fr": "Tu défends Rossinante et oses combattre. Les coups que tu reçois te coûtent des forces."
+        },
+        "r": {
+          "es": "Te disculpas y te vas: evitas el combate y conservas fuerzas. En el juego, baja tu Valor y aumenta el apoyo de Sancho.",
+          "fr": "Tu t’excuses et pars : tu évites le combat et gardes des forces. Dans le jeu, ton Valor baisse et le soutien de Sancho augmente."
+        }
+      },
+      "pajaro": {
+        "l": {
+          "es": "Rechazas el consejo para seguir buscando aventuras. Tu audacia sube, pero el reproche a Sancho os aleja.",
+          "fr": "Tu rejettes le conseil pour continuer à chercher des aventures. Ton audace monte, mais le reproche à Sancho vous éloigne."
+        },
+        "r": {
+          "es": "Escuchas a Sancho y vais a la venta: os acercáis y recuperas fuerzas. Dejas de lado, por ahora, las ganas de combatir.",
+          "fr": "Tu écoutes Sancho et vous allez à l’auberge : vous vous rapprochez et tu retrouves des forces. Tu laisses de côté, pour l’instant, l’envie de combattre."
+        }
+      },
+      "sanson": {
+        "l": {
+          "es": "Te ves como el héroe de un libro. Tu sueño de caballero crece y te atreves a buscar más aventuras.",
+          "fr": "Tu te vois comme le héros d’un livre. Ton rêve de chevalier grandit et tu oses chercher davantage d’aventures."
+        },
+        "r": {
+          "es": "Preguntas cómo te presenta el libro y dudas de tu imagen de héroe. En el juego, tu sueño baja y esta pausa sube tus fuerzas.",
+          "fr": "Tu demandes comment le livre te présente et doutes de ton image de héros. Dans le jeu, ton rêve diminue et cette pause fait monter tes forces."
+        }
+      },
+      "duques": {
+        "l": {
+          "es": "Aceptas la cena y la promesa de una isla: recuperas fuerzas y Sancho te apoya más. Creer a los duques alimenta tu sueño.",
+          "fr": "Tu acceptes le dîner et la promesse d’une île : tu retrouves des forces et Sancho te soutient davantage. Croire les ducs nourrit ton rêve."
+        },
+        "r": {
+          "es": "Rechazas el palacio y su cena: pierdes fuerzas. Sancho pierde la oportunidad de la isla y se siente menos apoyado.",
+          "fr": "Tu refuses le palais et son dîner : tu perds des forces. Sancho perd l’occasion d’obtenir l’île et se sent moins soutenu."
+        }
+      },
+      "barataria": {
+        "l": {
+          "es": "Felicitas a Sancho y él se siente más apoyado. En el juego, celebrar su gobierno en vez de tus aventuras baja Valor.",
+          "fr": "Tu félicites Sancho et il se sent plus soutenu. Dans le jeu, célébrer son gouvernement plutôt que tes aventures fait baisser Valor."
+        },
+        "r": {
+          "es": "Pides a Sancho que deje su puesto y él se siente menos apoyado. En el juego, buscar su vuelta hace subir tu barra de fuerzas.",
+          "fr": "Tu demandes à Sancho de quitter son poste et il se sent moins soutenu. Dans le jeu, chercher son retour fait monter ta jauge de forces."
+        }
+      },
+      "sininsula": {
+        "l": {
+          "es": "Ofreces un mejor salario y recuperas la confianza de Sancho. En el juego, este acuerdo práctico baja Valor.",
+          "fr": "Tu proposes un meilleur salaire et retrouves la confiance de Sancho. Dans le jeu, cet accord pratique fait baisser Valor."
+        },
+        "r": {
+          "es": "Insistes en ganar la isla luchando: tu audacia sube. Sancho sigue sin isla y se siente menos escuchado.",
+          "fr": "Tu insistes pour gagner l’île en combattant : ton audace monte. Sancho reste sans île et se sent moins écouté."
+        }
+      },
+      "clavileno": {
+        "l": {
+          "es": "Subes al caballo de madera creyendo que vuela: crecen tu audacia y tu sueño. En el juego, la prueba te cuesta fuerzas.",
+          "fr": "Tu montes sur le cheval de bois en croyant qu’il vole : ton audace et ton rêve grandissent. Dans le jeu, l’épreuve te coûte des forces."
+        },
+        "r": {
+          "es": "Dudas del vuelo y no subes al caballo. Bajan tu sueño de caballero y tus ganas de afrontar esta prueba.",
+          "fr": "Tu doutes du vol et ne montes pas sur le cheval. Ton rêve de chevalier et ton envie d’affronter cette épreuve diminuent."
+        }
+      },
+      "retablo": {
+        "l": {
+          "es": "Tomas los títeres por personas y entras en la lucha. Crecen tu sueño y tu audacia, pero golpear el teatro te cansa.",
+          "fr": "Tu prends les marionnettes pour des personnes et entres dans la lutte. Ton rêve et ton audace grandissent, mais frapper le théâtre te fatigue."
+        },
+        "r": {
+          "es": "Miras una obra de títeres sin combatir. Tu sueño de entrar en la historia y tus ganas de luchar bajan.",
+          "fr": "Tu regardes un spectacle de marionnettes sans combattre. Ton rêve d’entrer dans l’histoire et ton envie de lutter diminuent."
+        }
+      },
+      "montesinos": {
+        "l": {
+          "es": "Insistes en que las maravillas de la cueva son reales. Tu sueño crece, pero Sancho cree menos en tu relato.",
+          "fr": "Tu insistes sur la réalité des merveilles de la grotte. Ton rêve grandit, mais Sancho croit moins à ton récit."
+        },
+        "r": {
+          "es": "Aceptas que quizá fue un sueño. Tu mundo imaginado pierde fuerza y Sancho confía más en tus palabras.",
+          "fr": "Tu acceptes que c’était peut-être un rêve. Ton monde imaginé perd de sa force et Sancho fait davantage confiance à tes paroles."
+        }
+      },
+      "barco": {
+        "l": {
+          "es": "Crees que la barca tiene magia y subes: crece tu sueño de caballero. En el juego, navegar sin remos te cuesta fuerzas.",
+          "fr": "Tu crois la barque magique et montes : ton rêve de chevalier grandit. Dans le jeu, naviguer sans rames te coûte des forces."
+        },
+        "r": {
+          "es": "Te quedas en la orilla con Rocinante y conservas fuerzas. Dejas la idea de la barca mágica y tus ganas de afrontar la aventura bajan.",
+          "fr": "Tu restes sur la rive avec Rossinante et gardes des forces. Tu laisses l’idée de la barque magique et ton envie d’affronter l’aventure diminue."
+        }
+      },
+      "leon": {
+        "l": {
+          "es": "Pides abrir la jaula pese al aviso: aumenta tu audacia. Sancho siente que no escuchas su miedo y te apoya menos.",
+          "fr": "Tu demandes d’ouvrir la cage malgré l’avertissement : ton audace grandit. Sancho sent que tu n’écoutes pas sa peur et te soutient moins."
+        },
+        "r": {
+          "es": "Pasas sin desafiar al león. Bajan tu audacia y tu sueño de héroe; escuchar el miedo de Sancho os acerca.",
+          "fr": "Tu passes sans défier le lion. Ton audace et ton rêve de héros diminuent ; écouter la peur de Sancho vous rapproche."
+        }
+      },
+      "encantada": {
+        "l": {
+          "es": "Crees que un hechizo ha cambiado a tu dama y tu sueño crece. Verla así reduce tus ganas de combatir.",
+          "fr": "Tu crois qu’un sort a changé ta dame et ton rêve grandit. La voir ainsi réduit ton envie de combattre."
+        },
+        "r": {
+          "es": "Dudas del hechizo y también de Sancho. Tu mundo imaginado pierde fuerza, pero la confianza entre vosotros baja.",
+          "fr": "Tu doutes du sort et aussi de Sancho. Ton monde imaginé perd de sa force, mais la confiance entre vous diminue."
+        }
+      },
+      "roque": {
+        "l": {
+          "es": "Aceptas la ayuda de Roque sin combatir. En el juego, suben tus fuerzas y el apoyo de Sancho, pero baja Valor.",
+          "fr": "Tu acceptes l’aide de Roque sans combattre. Dans le jeu, tes forces et le soutien de Sancho montent, mais Valor baisse."
+        },
+        "r": {
+          "es": "Rechazas viajar con Roque y afirmas tu audacia. En el juego, Sancho aprecia menos tu decisión.",
+          "fr": "Tu refuses de voyager avec Roque et affirmes ton audace. Dans le jeu, Sancho apprécie moins ta décision."
+        }
+      },
+      "mar": {
+        "l": {
+          "es": "Compartes con Sancho un momento ante el mar real: os acercáis y dejas tus fantasías. En el juego, esta pausa recupera fuerzas.",
+          "fr": "Tu partages avec Sancho un moment devant la mer réelle : vous vous rapprochez et tu laisses tes rêves. Dans le jeu, cette pause rend des forces."
+        },
+        "r": {
+          "es": "Tratas al mar como un rival: crecen tu audacia y tu sueño de caballero. Sancho comprende menos tu decisión.",
+          "fr": "Tu traites la mer comme un rival : ton audace et ton rêve de chevalier grandissent. Sancho comprend moins ta décision."
+        }
+      },
+      "imprenta": {
+        "l": {
+          "es": "Te reconoces en el título y te sientes un héroe famoso. Crecen tu sueño de caballero y tus ganas de actuar.",
+          "fr": "Tu te reconnais dans le titre et te sens un héros célèbre. Ton rêve de chevalier et ton envie d’agir grandissent."
+        },
+        "r": {
+          "es": "Lees y descubres que no es tu historia. En el juego, bajan tu sueño de héroe y tu audacia; la pausa de lectura te devuelve fuerzas.",
+          "fr": "Tu lis et découvres que ce n’est pas ton histoire. Dans le jeu, ton rêve de héros et ton audace diminuent ; la pause de lecture te rend des forces."
+        }
+      },
+      "blancaluna": {
+        "l": {
+          "es": "Te atreves al duelo, pero pierdes. El combate te quita fuerzas y la derrota debilita tu sueño de caballero.",
+          "fr": "Tu oses le duel, mais tu perds. Le combat te coûte des forces et la défaite affaiblit ton rêve de chevalier."
+        },
+        "r": {
+          "es": "No combates, pero mantienes tu fe en Dulcinea. En el juego, baja Valor, crece tu sueño y Sancho se siente más cerca de ti.",
+          "fr": "Tu ne combats pas, mais gardes ta foi en Dulcinée. Dans le jeu, Valor baisse, ton rêve grandit et Sancho se sent plus proche de toi."
+        }
+      },
+      "cerdos": {
+        "l": {
+          "es": "Te ríes con Sancho en vez de buscar pelea. En el juego, os acercáis, recuperas fuerzas y baja tu sueño de héroe.",
+          "fr": "Tu ris avec Sancho au lieu de chercher la bagarre. Dans le jeu, vous vous rapprochez, tu retrouves des forces et ton rêve de héros diminue."
+        },
+        "r": {
+          "es": "Ves un combate de honor donde pasan cerdos: crecen tu sueño y tu audacia. Atacarlos te cuesta fuerzas.",
+          "fr": "Tu vois un combat d’honneur dans le passage des cochons : ton rêve et ton audace grandissent. Les attaquer te coûte des forces."
+        }
+      },
+      "camino": {
+        "l": {
+          "es": "Inventas una vida de pastores con Sancho: él se siente incluido y tu imaginación crece. El nuevo sueño deja menos lugar al combate.",
+          "fr": "Tu inventes une vie de bergers avec Sancho : il se sent inclus et ton imagination grandit. Ce nouveau rêve laisse moins de place au combat."
+        },
+        "r": {
+          "es": "Dejas las fantasías al volver a casa, pero tu silencio aleja a Sancho. En el juego, seguir el regreso hace subir tus fuerzas.",
+          "fr": "Tu laisses tes rêves en rentrant chez toi, mais ton silence éloigne Sancho. Dans le jeu, poursuivre le retour fait monter tes forces."
+        }
+      },
+      "revelacion": {
+        "l": {
+          "es": "Aceptas la explicación de Sansón y dejas de buscar combate. Tu sueño pierde fuerza; en el juego, aceptar la pausa te devuelve fuerzas.",
+          "fr": "Tu acceptes l’explication de Sansón et cesses de chercher le combat. Ton rêve perd de sa force ; dans le jeu, accepter la pause te rend des forces."
+        },
+        "r": {
+          "es": "Ves otro mago en Sansón y quieres enfrentarlo: crecen tu sueño y tu audacia. Sancho confía menos en esa explicación.",
+          "fr": "Tu vois un autre magicien en Sansón et veux l’affronter : ton rêve et ton audace grandissent. Sancho fait moins confiance à cette explication."
         }
       }
     },
     "goya": {
       "salida": {
         "l": {
-          "es": "La merienda gusta a la fábrica: recibes dinero y el apoyo de la corte. Sigues el encargo y pruebas menos ideas propias.",
+          "es": "La merienda gusta a la fábrica: recibes dinero y apoyo de la corte. Sigues el encargo y pruebas menos ideas propias.",
           "fr": "Le goûter plaît à la manufacture : tu reçois de l’argent et l’appui de la cour. Tu suis la commande et explores moins tes propres idées."
         },
         "r": {
-          "es": "El cielo raro deja ver tus ideas. Pero la corte espera una escena alegre y el dibujo le gusta menos.",
-          "fr": "Le ciel étrange laisse voir tes idées. Mais la cour attend une scène joyeuse et apprécie moins ce dessin."
+          "es": "El cielo raro muestra tus ideas. Pero la corte espera una escena alegre y tu dibujo le gusta menos.",
+          "fr": "Le ciel étrange montre tes idées. Mais la cour attend une scène joyeuse et apprécie moins ton dessin."
+        }
+      },
+      "gallina": {
+        "l": {
+          "es": "Jugar te da ideas para pintar, pero chocar con el árbol te quita fuerzas: la salud baja en el juego.",
+          "fr": "Jouer te donne des idées pour peindre, mais le choc contre l’arbre te coûte des forces : la santé baisse dans le jeu."
+        },
+        "r": {
+          "es": "Cobras por dibujar el juego. Sin participar, pruebas menos cosas nuevas y tu inspiración baja.",
+          "fr": "Tu es payé pour dessiner le jeu. Sans participer, tu essaies moins de choses nouvelles et ton inspiration baisse."
         }
       },
       "quitasol": {
@@ -1422,82 +2430,1182 @@ try{
           "fr": "Tu modifies le chien et le client paie. Tu acceptes son goût, mais laisses de côté ta première idée."
         },
         "r": {
-          "es": "El perro se queda: defiendes tu manera de pintar. En esta historia, tu respuesta gusta menos en la corte.",
-          "fr": "Le chien reste : tu défends ta manière de peindre. Dans cette histoire, ta réponse plaît moins à la cour."
+          "es": "El perro se queda: defiendes tu manera de pintar. En el juego, tu respuesta gusta menos en la corte.",
+          "fr": "Le chien reste : tu défends ta manière de peindre. Dans le jeu, ta réponse plaît moins à la cour."
+        }
+      },
+      "cometa": {
+        "l": {
+          "es": "Pintar la cometa te da ideas y dinero. El trabajo te cansa: tu salud baja en el juego.",
+          "fr": "Peindre le cerf-volant t’apporte des idées et de l’argent. Le travail te fatigue : ta santé baisse dans le jeu."
+        },
+        "r": {
+          "es": "Corres tras la cometa en vez de pintar: pierdes dinero e inspiración. En el juego, la carrera sube tu salud.",
+          "fr": "Tu cours après le cerf-volant au lieu de peindre : tu perds de l’argent et de l’inspiration. Dans le jeu, cette course fait monter ta santé."
+        }
+      },
+      "pelele": {
+        "l": {
+          "es": "Volar en la manta te da nuevas ideas. Pero el salto te cuesta fuerzas: la salud baja en el juego.",
+          "fr": "Voler dans la couverture te donne de nouvelles idées. Mais le saut te coûte des forces : la santé baisse dans le jeu."
+        },
+        "r": {
+          "es": "Pintas el muñeco y cobras. En el juego, mirar sin participar te da menos inspiración.",
+          "fr": "Tu peins le pantin et tu es payé. Dans le jeu, regarder sans participer te donne moins d’inspiration."
+        }
+      },
+      "camara": {
+        "l": {
+          "es": "Tu saludo agrada al rey. Trabajar para él deja menos espacio a tus ideas y te cansa: sube la corte, bajan genio y salud.",
+          "fr": "Ton salut plaît au roi. Travailler pour lui laisse moins de place à tes idées et te fatigue : la cour monte, le génie et la santé baissent."
+        },
+        "r": {
+          "es": "Preguntas por el sueldo y ganas dinero. Tu pregunta tan directa gusta menos al rey.",
+          "fr": "Tu demandes le salaire et gagnes de l’argent. Ta question si directe plaît moins au roi."
         }
       },
       "familia": {
         "l": {
-          "es": "Observas cada cara y pintas a tu manera. El retrato avanza, pero tantas horas de trabajo te cansan.",
-          "fr": "Tu observes chaque visage et peins à ta façon. Le portrait avance, mais ces longues heures de travail te fatiguent."
+          "es": "Observas cada cara y pintas a tu manera: crecen tus ideas. El trabajo de este gran retrato te cansa.",
+          "fr": "Tu observes chaque visage et peins à ta façon : tes idées se développent. Le travail sur ce grand portrait te fatigue."
         },
         "r": {
-          "es": "La familia disfruta de su retrato ideal. Ganas su apoyo, pero tus propias ideas tienen menos espacio.",
-          "fr": "La famille apprécie son portrait idéal. Tu gagnes son appui, mais tes propres idées ont moins de place."
+          "es": "En el juego, el retrato ideal agrada a la familia real. Ganas su apoyo, pero tus ideas propias tienen menos espacio.",
+          "fr": "Dans le jeu, le portrait idéal plaît à la famille royale. Tu gagnes son appui, mais tes propres idées ont moins de place."
+        }
+      },
+      "caza": {
+        "l": {
+          "es": "Aceptas el retrato de caza y halagas al perro: ganas dinero y apoyo del rey, pero sigues sus gustos más que tus ideas.",
+          "fr": "Tu acceptes le portrait de chasse et complimentes le chien : tu gagnes de l’argent et l’appui du roi, mais suis ses goûts plus que tes idées."
+        },
+        "r": {
+          "es": "Pintas primero al perro: sigues tu inspiración. El rey espera su turno y te da menos apoyo.",
+          "fr": "Tu peins d’abord le chien : tu suis ton inspiration. Le roi attend son tour et t’accorde moins d’appui."
+        }
+      },
+      "enfermedad": {
+        "l": {
+          "es": "Buscas nuevas ideas en los colores. En el juego, esta decisión hace subir tu genio y bajar Salud.",
+          "fr": "Tu cherches de nouvelles idées dans les couleurs. Dans le jeu, cette décision fait monter ton génie et baisser Salud."
+        },
+        "r": {
+          "es": "Descansas y lees los labios. En el juego, sube Salud; al pintar menos, bajan tu dinero y tu inspiración.",
+          "fr": "Tu te reposes et lis sur les lèvres. Dans le jeu, Salud monte ; en peignant moins, ton argent et ton inspiration baissent."
+        }
+      },
+      "manos": {
+        "l": {
+          "es": "Hablar con las manos permite compartir ideas. En el juego, suben genio y salud; dedicar tiempo a aprender reduce el dinero.",
+          "fr": "Parler avec les mains permet de partager des idées. Dans le jeu, le génie et la santé montent ; consacrer du temps à apprendre réduit l’argent."
+        },
+        "r": {
+          "es": "Pides seguir trabajando en el lienzo: entra dinero. En el juego, mantener el trabajo sin pausa baja tu salud.",
+          "fr": "Tu demandes de continuer à travailler sur la toile : l’argent rentre. Dans le jeu, maintenir le travail sans pause fait baisser ta santé."
+        }
+      },
+      "sueno": {
+        "l": {
+          "es": "Dibujas tus sueños y creas algo propio. En el juego, gastas dinero y estos monstruos reciben menos apoyo de la corte.",
+          "fr": "Tu dessines tes rêves et crées quelque chose de personnel. Dans le jeu, tu dépenses de l’argent et ces monstres reçoivent moins d’appui de la cour."
+        },
+        "r": {
+          "es": "Dejas los monstruos y tomas café. Pierdes una idea para tu dibujo; en el juego, esta pausa hace subir Salud.",
+          "fr": "Tu laisses les monstres et prends un café. Tu perds une idée pour ton dessin ; dans le jeu, cette pause fait monter Salud."
+        }
+      },
+      "caprichos": {
+        "l": {
+          "es": "Vender los grabados trae dinero. En el juego, sus críticas reducen el apoyo de la corte y la tensión baja tu salud.",
+          "fr": "Vendre les gravures rapporte de l’argent. Dans le jeu, leurs critiques réduisent l’appui de la cour et la tension fait baisser ta santé."
+        },
+        "r": {
+          "es": "Retiras los grabados para evitar problemas con la corte. Recuperas su apoyo, pero pierdes ventas y frenas tus ideas.",
+          "fr": "Tu retires les gravures pour éviter des problèmes avec la cour. Tu retrouves son appui, mais perds des ventes et freines tes idées."
+        }
+      },
+      "quiz_sueno": {
+        "l": {
+          "es": "«Monstruos» completa el título de la obra. Reconocerlo hace subir tu genio en el juego.",
+          "fr": "« Monstres » complète le titre de l’œuvre. Le reconnaître fait monter ton génie dans le jeu."
+        },
+        "r": {
+          "es": "El título dice «monstruos», no «mariposas»: tu genio baja. En el juego, elegir la imagen más suave hace subir Corte.",
+          "fr": "Le titre dit « monstres », pas « papillons » : ton génie baisse. Dans le jeu, choisir l’image plus douce fait monter Corte."
+        }
+      },
+      "maja": {
+        "l": {
+          "es": "Defiendes la idea de tu cuadro. En el juego, tu genio sube, pero la corte te apoya menos y la tensión baja tu salud.",
+          "fr": "Tu défends l’idée de ton tableau. Dans le jeu, ton génie monte, mais la cour te soutient moins et la tension fait baisser ta santé."
+        },
+        "r": {
+          "es": "Propones pintar al inquisidor y cambias de tema. En el juego, ganas apoyo y dinero, pero dejas de defender tu idea.",
+          "fr": "Tu proposes de peindre l’inquisiteur et changes de sujet. Dans le jeu, tu gagnes de l’appui et de l’argent, mais cesses de défendre ton idée."
+        }
+      },
+      "brujas": {
+        "l": {
+          "es": "Dices que solo son sueños para calmar al inquisidor. En el juego, ganas apoyo de la corte, pero das menos fuerza a tu mensaje.",
+          "fr": "Tu dis que ce ne sont que des rêves pour calmer l’inquisiteur. Dans le jeu, tu gagnes l’appui de la cour, mais donnes moins de force à ton message."
+        },
+        "r": {
+          "es": "Defiendes tu mirada sobre Madrid. Tu genio sube; en el juego, la corte rechaza esa crítica y la tensión baja tu salud.",
+          "fr": "Tu défends ton regard sur Madrid. Ton génie monte ; dans le jeu, la cour rejette cette critique et la tension fait baisser ta santé."
+        }
+      },
+      "celos": {
+        "l": {
+          "es": "Rejuveneces a la reina en el cuadro y ganas su apoyo. Adaptar tu pintura a su pedido limita tus ideas y te cansa.",
+          "fr": "Tu rajeunis la reine dans le tableau et gagnes son appui. Adapter ta peinture à sa demande limite tes idées et te fatigue."
+        },
+        "r": {
+          "es": "Prefieres el dinero de los retratos de la duquesa. Ganas más, pero tu respuesta reduce el apoyo de la reina.",
+          "fr": "Tu préfères l’argent des portraits de la duchesse. Tu gagnes davantage, mais ta réponse réduit l’appui de la reine."
+        }
+      },
+      "duquesa": {
+        "l": {
+          "es": "Con tu firma afirmas tu arte. En el juego, ese gesto aumenta tu genio, pero reduce el apoyo de la corte.",
+          "fr": "Par ta signature, tu affirmes ton art. Dans le jeu, ce geste augmente ton génie, mais réduit l’appui de la cour."
+        },
+        "r": {
+          "es": "Eliges al rey y ganas su apoyo. Renuncias al dinero de la duquesa y dejas menos espacio a tus ideas.",
+          "fr": "Tu choisis le roi et gagnes son appui. Tu renonces à l’argent de la duchesse et laisses moins de place à tes idées."
+        }
+      },
+      "isidro": {
+        "l": {
+          "es": "La fiesta te da ideas y un descanso del taller. En el juego, tu salud sube, pero salir cuesta dinero.",
+          "fr": "La fête te donne des idées et une pause loin de l’atelier. Dans le jeu, ta santé monte, mais sortir coûte de l’argent."
+        },
+        "r": {
+          "es": "Trabajas y ganas dinero. Sin la fiesta, te cansas y encuentras menos ideas nuevas.",
+          "fr": "Tu travailles et gagnes de l’argent. Sans la fête, tu te fatigues et trouves moins d’idées nouvelles."
+        }
+      },
+      "marques": {
+        "l": {
+          "es": "El marqués paga por verse como un ángel. Ganas dinero, pero pintas su deseo y no tu propia idea.",
+          "fr": "Le marquis paie pour se voir en ange. Tu gagnes de l’argent, mais peins son souhait et non ta propre idée."
+        },
+        "r": {
+          "es": "Conservas su cara tal como la ves y afirmas tu estilo. El cliente no obtiene el retrato que pide: tu dinero baja.",
+          "fr": "Tu gardes son visage tel que tu le vois et affirmes ton style. Le client n’obtient pas le portrait demandé : ton argent baisse."
+        }
+      },
+      "reposo": {
+        "l": {
+          "es": "Una semana sin pintar te permite descansar. En el juego, sube tu salud, pero bajan el dinero y la inspiración.",
+          "fr": "Une semaine sans peindre te permet de te reposer. Dans le jeu, ta santé monte, mais l’argent et l’inspiration baissent."
+        },
+        "r": {
+          "es": "Escondes el pincel para seguir creando. Tus ideas avanzan, pero no descansas: la salud baja en el juego.",
+          "fr": "Tu caches le pinceau pour continuer à créer. Tes idées avancent, mais tu ne te reposes pas : la santé baisse dans le jeu."
+        }
+      },
+      "blanco": {
+        "l": {
+          "es": "Empiezas con algo cercano: tu sombrero. Pintar pone tus ideas en marcha, pero los materiales cuestan dinero.",
+          "fr": "Tu commences par un objet proche : ton chapeau. Peindre met tes idées en mouvement, mais le matériel coûte de l’argent."
+        },
+        "r": {
+          "es": "Esperas sin pintar: tus ideas no avanzan y gastas dinero sin vender. En el juego, esta pausa hace subir tu salud.",
+          "fr": "Tu attends sans peindre : tes idées n’avancent pas et tu dépenses sans vendre. Dans le jeu, cette pause fait monter ta santé."
+        }
+      },
+      "prisa": {
+        "l": {
+          "es": "Terminas pronto y ganas dinero. Pintar sin dormir te agota y deja menos tiempo para tus ideas.",
+          "fr": "Tu termines vite et gagnes de l’argent. Peindre sans dormir t’épuise et laisse moins de temps à tes idées."
+        },
+        "r": {
+          "es": "Pides más tiempo para descansar y crear a tu ritmo. En el juego, suben salud y genio, pero el pedido te da menos dinero.",
+          "fr": "Tu demandes du temps pour te reposer et créer à ton rythme. Dans le jeu, la santé et le génie montent, mais la commande te rapporte moins."
+        }
+      },
+      "caballo": {
+        "l": {
+          "es": "Pintas el caballo enorme que pide la reina: cobras y ganas su apoyo. Tu propia idea tiene menos espacio.",
+          "fr": "Tu peins l’énorme cheval demandé par la reine : tu es payé et gagnes son appui. Ta propre idée a moins de place."
+        },
+        "r": {
+          "es": "Das más atención al caballo y sigues tu inspiración. En el juego, la reina aprecia menos el retrato y recibes menos dinero.",
+          "fr": "Tu accordes plus d’attention au cheval et suis ton inspiration. Dans le jeu, la reine apprécie moins le portrait et tu reçois moins d’argent."
+        }
+      },
+      "aquelarre": {
+        "l": {
+          "es": "Pintar brujas permite crear y cobrar a la duquesa. En el juego, este tema recibe menos apoyo de la corte.",
+          "fr": "Peindre des sorcières permet de créer et d’être payé par la duchesse. Dans le jeu, ce thème reçoit moins d’appui de la cour."
+        },
+        "r": {
+          "es": "Eliges flores en vez de brujas. En el juego, agradan más a la corte, pero pruebas menos tus ideas.",
+          "fr": "Tu choisis des fleurs plutôt que des sorcières. Dans le jeu, elles plaisent davantage à la cour, mais tu explores moins tes idées."
+        }
+      },
+      "quiz_quitasol": {
+        "l": {
+          "es": "Un quitasol es una sombrilla: sirve para proteger del sol. Reconocer el objeto hace subir tu genio en el juego.",
+          "fr": "Un « quitasol » est une ombrelle : elle sert à protéger du soleil. Reconnaître l’objet fait monter ton génie dans le jeu."
+        },
+        "r": {
+          "es": "Un quitasol es una sombrilla, no un sombrero: tu genio baja. En el juego, esta respuesta hace también subir Salud.",
+          "fr": "Un « quitasol » est une ombrelle, pas un chapeau : ton génie baisse. Dans le jeu, cette réponse fait aussi monter Salud."
+        }
+      },
+      "dosmayo": {
+        "l": {
+          "es": "Cierras las ventanas y evitas salir. En el juego, sube tu salud, pero la espera reduce tu dinero y tus ideas para pintar.",
+          "fr": "Tu fermes les fenêtres et évites de sortir. Dans le jeu, ta santé monte, mais l’attente réduit ton argent et tes idées pour peindre."
+        },
+        "r": {
+          "es": "Dibujas lo que pasa y desarrollas tus ideas. En el juego, mirar la calle te cuesta salud y reduce el apoyo de la corte.",
+          "fr": "Tu dessines ce qui se passe et développes tes idées. Dans le jeu, observer la rue te coûte de la santé et réduit l’appui de la cour."
+        }
+      },
+      "puerta_sol": {
+        "l": {
+          "es": "Pintas el miedo y el valor de la escena: afirmas tu mirada. En el juego, este tema reduce el apoyo de la corte.",
+          "fr": "Tu peins la peur et le courage de la scène : tu affirmes ton regard. Dans le jeu, ce thème réduit l’appui de la cour."
+        },
+        "r": {
+          "es": "No pintas la lucha para evitar el peligro. En el juego, conservas más salud, pero dejas pasar una idea para tu arte.",
+          "fr": "Tu ne peins pas la lutte pour éviter le danger. Dans le jeu, tu gardes davantage de santé, mais laisses passer une idée pour ton art."
+        }
+      },
+      "tresmayo": {
+        "l": {
+          "es": "Das luz al hombre de blanco y afirmas tu mirada. En el juego, sube tu genio; este tema recibe menos apoyo y te cuesta salud.",
+          "fr": "Tu éclaires l’homme en blanc et affirmes ton regard. Dans le jeu, ton génie monte ; ce thème reçoit moins d’appui et te coûte de la santé."
+        },
+        "r": {
+          "es": "El retrato del general agrada a la corte y trae dinero. Dejas tu primera idea para pintar una imagen más oficial.",
+          "fr": "Le portrait du général plaît à la cour et rapporte de l’argent. Tu laisses ta première idée pour peindre une image plus officielle."
+        }
+      },
+      "berenjena": {
+        "l": {
+          "es": "Escondes la medalla. En el juego, esa discreción aumenta el apoyo de la corte, pero reduce tu dinero.",
+          "fr": "Tu caches la médaille. Dans le jeu, cette discrétion augmente l’appui de la cour, mais réduit ton argent."
+        },
+        "r": {
+          "es": "Pintas a José y cobras. En el juego, llevar su medalla reduce el apoyo de la corte; el retrato oficial limita tus ideas.",
+          "fr": "Tu peins Joseph et tu es payé. Dans le jeu, porter sa médaille réduit l’appui de la cour ; le portrait officiel limite tes idées."
+        }
+      },
+      "nuevo": {
+        "l": {
+          "es": "Tu respuesta busca tranquilizar a Fernando. Ganas su apoyo, pero adaptarte al rey deja menos espacio a tu libertad de artista.",
+          "fr": "Ta réponse cherche à rassurer Ferdinand. Tu gagnes son appui, mais t’adapter au roi laisse moins de place à ta liberté d’artiste."
+        },
+        "r": {
+          "es": "Guardas silencio ante Fernando. En el juego, evitar la discusión hace subir Salud, pero bajan tu dinero y el apoyo del rey.",
+          "fr": "Tu gardes le silence devant Ferdinand. Dans le jeu, éviter la discussion fait monter Salud, mais ton argent et l’appui du roi baissent."
+        }
+      },
+      "retrato_fernando": {
+        "l": {
+          "es": "Pintas el oro que pide Fernando y cobras. Ganas apoyo del rey, pero sigues su pedido más que tus propias ideas.",
+          "fr": "Tu peins l’or demandé par Ferdinand et tu es payé. Tu gagnes l’appui du roi, mais suis sa demande plus que tes propres idées."
+        },
+        "r": {
+          "es": "Lo pintas como lo ves: afirmas tu arte. En el juego, el rey te apoya menos y la tensión baja tu salud.",
+          "fr": "Tu le peins comme tu le vois : tu affirmes ton art. Dans le jeu, le roi te soutient moins et la tension fait baisser ta santé."
+        }
+      },
+      "desastres": {
+        "l": {
+          "es": "Guardas las imágenes de la guerra: evitas mostrar su crítica. En el juego, ganas apoyo de la corte, pero pierdes ventas y frenas tus ideas.",
+          "fr": "Tu ranges les images de guerre et évites de montrer leur critique. Dans le jeu, tu gagnes l’appui de la cour, mais perds des ventes et freines tes idées."
+        },
+        "r": {
+          "es": "En esta versión del juego, vendes los grabados y afirmas tu mirada sobre la guerra. Ganas dinero y genio, pero pierdes apoyo de la corte.",
+          "fr": "Dans cette version du jeu, tu vends les gravures et affirmes ton regard sur la guerre. Tu gagnes de l’argent et du génie, mais perds l’appui de la cour."
+        }
+      },
+      "policia": {
+        "l": {
+          "es": "Dices que estás en cama para evitar las preguntas. En el juego, la corte te apoya más, pero esconderte frena tus ideas y tus ingresos.",
+          "fr": "Tu dis être au lit pour éviter les questions. Dans le jeu, la cour te soutient davantage, mais te cacher freine tes idées et tes revenus."
+        },
+        "r": {
+          "es": "Sales ante la policía sin ocultarte. En el juego, afirmas tu libertad de artista, pero pierdes apoyo de la corte y salud.",
+          "fr": "Tu sors devant la police sans te cacher. Dans le jeu, tu affirmes ta liberté d’artiste, mais perds l’appui de la cour et de la santé."
+        }
+      },
+      "hambre": {
+        "l": {
+          "es": "Paras para comer sopa y pan. El alimento cuesta dinero; esta pausa hace subir tu salud en el juego.",
+          "fr": "Tu t’arrêtes pour manger de la soupe et du pain. La nourriture coûte de l’argent ; cette pause fait monter ta santé dans le jeu."
+        },
+        "r": {
+          "es": "Dibujar la sopa te da una idea, pero esperas para comer. En el juego, sube tu genio y baja tu salud.",
+          "fr": "Dessiner la soupe te donne une idée, mais tu attends pour manger. Dans le jeu, ton génie monte et ta santé baisse."
+        }
+      },
+      "quinta_paredes": {
+        "l": {
+          "es": "Creas tus propias imágenes en las paredes y gastas pintura. En el juego, sube tu genio, baja tu dinero y la corte te apoya menos.",
+          "fr": "Tu crées tes propres images sur les murs et utilises de la peinture. Dans le jeu, ton génie monte, ton argent baisse et la cour te soutient moins."
+        },
+        "r": {
+          "es": "El paisaje bonito sigue un tema más tranquilo. En el juego, gusta a la corte, pero deja menos espacio a tus ideas nuevas.",
+          "fr": "Le joli paysage suit un thème plus calme. Dans le jeu, il plaît à la cour, mais laisse moins de place à tes nouvelles idées."
+        }
+      },
+      "saturno": {
+        "l": {
+          "es": "Cenas frente a Saturno y sigues pensando en tu pintura. En el juego, mantenerte cerca de tu obra sube el genio y baja Salud.",
+          "fr": "Tu dînes devant Saturne et continues de penser à ta peinture. Dans le jeu, rester près de ton œuvre fait monter le génie et baisser Salud."
+        },
+        "r": {
+          "es": "Cenas lejos de Saturno y dejas la pintura un momento. En el juego, la pausa sube tu salud, pero baja tu inspiración.",
+          "fr": "Tu dînes loin de Saturne et laisses la peinture un moment. Dans le jeu, la pause fait monter ta santé, mais baisser ton inspiration."
+        }
+      },
+      "perro": {
+        "l": {
+          "es": "Pintas una pregunta sin respuesta y desarrollas tus ideas. En el juego, esta búsqueda sube tu genio y te cuesta salud.",
+          "fr": "Tu peins une question sans réponse et développes tes idées. Dans le jeu, cette recherche fait monter ton génie et te coûte de la santé."
+        },
+        "r": {
+          "es": "El hueso da una respuesta simple al misterio del perro. Exploras menos esa pregunta: tu genio baja. En el juego, también sube Salud.",
+          "fr": "L’os donne une réponse simple au mystère du chien. Tu explores moins cette question : ton génie baisse. Dans le jeu, Salud monte aussi."
+        }
+      },
+      "aguas": {
+        "l": {
+          "es": "Preparas el viaje a Burdeos. Cambiar de lugar te da ideas; en el juego, también sube tu salud, pero el viaje cuesta dinero.",
+          "fr": "Tu prépares le voyage à Bordeaux. Changer de lieu te donne des idées ; dans le jeu, ta santé monte aussi, mais le voyage coûte de l’argent."
+        },
+        "r": {
+          "es": "Dudas y sigues cerca del rey en Madrid. En el juego, conservas más apoyo de la corte, pero dejas pasar nuevas ideas.",
+          "fr": "Tu hésites et restes près du roi à Madrid. Dans le jeu, tu gardes davantage d’appui de la cour, mais laisses passer de nouvelles idées."
+        }
+      },
+      "lechera": {
+        "l": {
+          "es": "La lechera te inspira nuevos colores. Pintar desarrolla tus ideas, pero el trabajo te cuesta salud en el juego.",
+          "fr": "La laitière t’inspire de nouvelles couleurs. Peindre développe tes idées, mais le travail te coûte de la santé dans le jeu."
+        },
+        "r": {
+          "es": "Compras leche y haces una pausa. Gastas dinero y pintas menos; en el juego, sube tu salud y baja tu inspiración.",
+          "fr": "Tu achètes du lait et fais une pause. Tu dépenses de l’argent et peins moins ; dans le jeu, ta santé monte et ton inspiration baisse."
+        }
+      },
+      "toros": {
+        "l": {
+          "es": "Pruebas dibujar toros sobre piedra: descubres otra forma de crear. El trabajo de pie te cansa y baja tu salud en el juego.",
+          "fr": "Tu essaies de dessiner des taureaux sur pierre : tu découvres une autre façon de créer. Le travail debout te fatigue et fait baisser ta santé dans le jeu."
+        },
+        "r": {
+          "es": "Te sientas y paras el dibujo. En el juego, el descanso sube tu salud, pero la pausa baja tu inspiración.",
+          "fr": "Tu t’assieds et arrêtes le dessin. Dans le jeu, le repos fait monter ta santé, mais la pause fait baisser ton inspiration."
         }
       }
     },
     "botero": {
       "salida": {
         "l": {
-          "es": "Vendes más dibujos en la plaza. Con esos toros de grandes formas, pruebas tu propia manera de dibujar.",
-          "fr": "Tu vends d’autres dessins aux arènes. Avec ces taureaux aux formes amples, tu explores ta propre manière de dessiner."
+          "es": "Vendes más dibujos de toros. Sus formas grandes te permiten probar tu propio estilo.",
+          "fr": "Tu vends d’autres dessins de taureaux. Leurs formes amples te permettent d’explorer ton propre style."
         },
         "r": {
-          "es": "El periódico muestra tus dibujos a más gente. Sigues sus pedidos y dejas menos espacio a tu propio estilo.",
-          "fr": "Le journal montre tes dessins à davantage de lecteurs. Tu suis ses demandes et laisses moins de place à ton propre style."
+          "es": "El periódico muestra tus dibujos a más lectores. Sigues sus pedidos y pruebas menos tus propias formas.",
+          "fr": "Le journal montre tes dessins à davantage de lecteurs. Tu suis ses demandes et explores moins tes propres formes."
+        }
+      },
+      "torero": {
+        "l": {
+          "es": "Sigues el camino que propone tu tío. En el juego, eso te acerca a tu familia, pero deja menos espacio a tu pintura.",
+          "fr": "Tu suis la voie proposée par ton oncle. Dans le jeu, cela te rapproche de ta famille, mais laisse moins de place à ta peinture."
+        },
+        "r": {
+          "es": "Eliges pintar a tu manera y das más espacio a tu estilo. En esta escena, seguir ese camino cuesta parte de tu dinero.",
+          "fr": "Tu choisis de peindre à ta façon et donnes plus de place à ton style. Dans cette scène, suivre cette voie coûte une partie de ton argent."
         }
       },
       "toro_modelo": {
         "l": {
-          "es": "El toro se parece a los de los libros y se vende bien. Ganas dinero, pero pruebas menos tus formas redondas.",
-          "fr": "Le taureau ressemble à ceux des livres et se vend bien. Tu gagnes de l’argent, mais explores moins tes formes rondes."
+          "es": "Sigues el modelo de los libros y vendes el dibujo. Ganas dinero, pero pruebas menos tus formas redondas.",
+          "fr": "Tu suis le modèle des livres et vends le dessin. Tu gagnes de l’argent, mais explores moins tes formes rondes."
         },
         "r": {
-          "es": "El toro redondo afirma tu estilo. En esta escena, vendes menos dibujos: ganas libertad, pero recibes menos dinero.",
-          "fr": "Le taureau rond affirme ton style. Dans cette scène, tu vends moins de dessins : tu gagnes en liberté, mais reçois moins d’argent."
+          "es": "Pintas un toro redondo y afirmas tu estilo. En esta escena, elegir esas formas cuesta parte de tu dinero en el juego.",
+          "fr": "Tu peins un taureau rond et affirmes ton style. Dans cette scène, choisir ces formes coûte une partie de ton argent dans le jeu."
+        }
+      },
+      "picasso": {
+        "l": {
+          "es": "Defiendes tu camino artístico ante tu madre. El juego refuerza Estilo y baja Raíces por este desacuerdo con tu entorno.",
+          "fr": "Tu défends ta voie artistique devant ta mère. Le jeu renforce Estilo et baisse Raíces pour ce désaccord avec ton entourage."
+        },
+        "r": {
+          "es": "Buscas un acuerdo con el colegio y tu entorno. Dejas de defender tu propuesta artística; en esta escena, el juego baja también Fama.",
+          "fr": "Tu cherches un accord avec le collège et ton entourage. Tu cesses de défendre ta proposition artistique ; dans cette scène, le jeu baisse aussi Fama."
         }
       },
       "academia": {
         "l": {
-          "es": "Borras la mano y sigues el modelo del profesor. Él habla bien de tu trabajo, pero tus formas propias desaparecen.",
-          "fr": "Tu effaces la main et suis le modèle du professeur. Il parle en bien de ton travail, mais tes formes personnelles disparaissent."
+          "es": "Borras la mano y sigues el modelo del profesor. El juego aumenta tu reconocimiento, pero tus formas personales tienen menos espacio.",
+          "fr": "Tu effaces la main et suis le modèle du professeur. Le jeu augmente ta reconnaissance, mais tes formes personnelles ont moins de place."
         },
         "r": {
-          "es": "Conservas la mano grande y afirmas tu estilo. El profesor no está de acuerdo y recomienda menos tu trabajo.",
-          "fr": "Tu conserves la grande main et affirmes ton style. Le professeur n’est pas d’accord et recommande moins ton travail."
+          "es": "Mantienes la mano grande y defiendes tu estilo. En esta escena, el desacuerdo con el profesor reduce tu reconocimiento.",
+          "fr": "Tu gardes la grande main et défends ton style. Dans cette scène, le désaccord avec le professeur réduit ta reconnaissance."
+        }
+      },
+      "prado": {
+        "l": {
+          "es": "Las copias te dan dinero. Trabajas con las formas de otros pintores: tu estilo y tu nombre quedan menos visibles.",
+          "fr": "Les copies te rapportent de l’argent. Tu travailles avec les formes d’autres peintres : ton style et ton nom sont moins visibles."
+        },
+        "r": {
+          "es": "Miras a Goya y buscas tu propia pintura. Dedicas recursos a probar ideas en vez de vender copias.",
+          "fr": "Tu observes Goya et cherches ta propre peinture. Tu consacres des ressources à explorer tes idées plutôt qu’à vendre des copies."
+        }
+      },
+      "florencia": {
+        "l": {
+          "es": "Estudias las formas de los frescos para desarrollar tu estilo. Estas semanas de estudio consumen parte de tu dinero.",
+          "fr": "Tu étudies les formes des fresques pour développer ton style. Ces semaines d’étude consomment une partie de ton argent."
+        },
+        "r": {
+          "es": "La moto y el viaje cuestan dinero. Pintas menos y pasas más tiempo lejos de Medellín: en el juego, tu estilo y tus raíces pierden espacio.",
+          "fr": "La moto et le voyage coûtent de l’argent. Tu peins moins et passes plus de temps loin de Medellín : dans le jeu, ton style et tes racines ont moins de place."
+        }
+      },
+      "mandolina": {
+        "l": {
+          "es": "El agujero pequeño hace destacar el volumen. Encuentras una forma propia y el juego da más reconocimiento a esa idea.",
+          "fr": "Le petit trou fait ressortir le volume. Tu trouves une forme personnelle et le jeu donne davantage de reconnaissance à cette idée."
+        },
+        "r": {
+          "es": "Borras el contraste de tamaños y dejas esa idea de lado. En el juego, ese cambio reduce Estilo y añade un poco de dinero.",
+          "fr": "Tu effaces le contraste des tailles et abandonnes cette idée. Dans le jeu, ce changement réduit Estilo et ajoute un peu d’argent."
+        }
+      },
+      "quiz_mandolina": {
+        "l": {
+          "es": "Era una mandolina, no una guitarra. El juego baja Estilo y Fama por confundir el instrumento que dio lugar a esta idea.",
+          "fr": "C’était une mandoline, pas une guitare. Le jeu baisse Estilo et Fama pour la confusion sur l’instrument à l’origine de cette idée."
+        },
+        "r": {
+          "es": "Recuerdas la mandolina y su pequeño agujero. El juego refuerza tu estilo y tu reconocimiento al recuperar esta idea del relato.",
+          "fr": "Tu te souviens de la mandoline et de son petit trou. Le jeu renforce ton style et ta reconnaissance lorsque tu retrouves cette idée du récit."
+        }
+      },
+      "gordas": {
+        "l": {
+          "es": "Mantienes tus formas grandes pese a la crítica. Tu estilo se afirma, pero este periódico sigue sin apoyarlo.",
+          "fr": "Tu gardes tes formes amples malgré la critique. Ton style s’affirme, mais ce journal continue de ne pas le soutenir."
+        },
+        "r": {
+          "es": "Cambias las formas para responder al crítico. En esta escena ganas su apoyo, pero te alejas de tu propio estilo.",
+          "fr": "Tu modifies les formes pour répondre au critique. Dans cette scène, tu gagnes son soutien, mais t’éloignes de ton propre style."
+        }
+      },
+      "naranja_mesa": {
+        "l": {
+          "es": "La naranja ocupa casi todo el cuadro: afirmas tu juego de tamaños. En esta escena, la fama baja cuando das prioridad a esas formas.",
+          "fr": "L’orange occupe presque tout le tableau : tu affirmes ton jeu de tailles. Dans cette scène, la célébrité baisse lorsque tu donnes la priorité à ces formes."
+        },
+        "r": {
+          "es": "Te comes la naranja y dejas de estudiar su forma. El juego añade dinero por usar el modelo como comida; es una regla de esta escena.",
+          "fr": "Tu manges l’orange et cesses d’étudier sa forme. Le jeu ajoute de l’argent pour avoir utilisé le modèle comme repas ; c’est une règle de cette scène."
+        }
+      },
+      "circo_llega": {
+        "l": {
+          "es": "Dibujas el circo de tu ciudad y exploras nuevas formas. El juego refuerza Estilo y Raíces; Fama baja mientras dedicas la noche a ese trabajo.",
+          "fr": "Tu dessines le cirque de ta ville et explores de nouvelles formes. Le jeu renforce Estilo et Raíces ; Fama baisse pendant que tu consacres la nuit à ce travail."
+        },
+        "r": {
+          "es": "Terminas el encargo y recibes dinero. El retrato ocupa el tiempo que podías dedicar a explorar nuevas formas en el circo.",
+          "fr": "Tu termines la commande et reçois de l’argent. Le portrait occupe le temps que tu pouvais consacrer à explorer de nouvelles formes au cirque."
+        }
+      },
+      "circo_payaso": {
+        "l": {
+          "es": "Pruebas tus formas en el retrato del payaso. Las entradas no pagan tus materiales: en esta escena, tu dinero baja.",
+          "fr": "Tu explores tes formes dans le portrait du clown. Les billets d’entrée ne paient pas ton matériel : dans cette scène, ton argent diminue."
+        },
+        "r": {
+          "es": "Rechazas un retrato que no se paga en pesos. El juego aumenta Dinero por dar prioridad a tus ingresos y reduce Fama por ese rechazo.",
+          "fr": "Tu refuses un portrait qui n’est pas payé en pesos. Le jeu augmente Dinero pour la priorité donnée à tes revenus et réduit Fama pour ce refus."
+        }
+      },
+      "montanas_ventana": {
+        "l": {
+          "es": "Pintas las montañas de tu ciudad y mantienes ese vínculo. En esta escena, el juego aumenta Raíces y reduce Fama por dedicarte al paisaje local.",
+          "fr": "Tu peins les montagnes de ta ville et gardes ce lien. Dans cette scène, le jeu augmente Raíces et réduit Fama parce que tu te consacres au paysage local."
+        },
+        "r": {
+          "es": "El retrato se vende y hace más visible tu trabajo. Las montañas esperan: hoy dedicas menos espacio a los paisajes de tu ciudad.",
+          "fr": "Le portrait se vend et rend ton travail plus visible. Les montagnes attendent : aujourd’hui, tu consacres moins de place aux paysages de ta ville."
+        }
+      },
+      "montanas_olvidar": {
+        "l": {
+          "es": "Decides conservar las montañas en tus cuadros. El juego refuerza ese vínculo y reduce Fama cuando das prioridad a ese tema.",
+          "fr": "Tu décides de garder les montagnes dans tes tableaux. Le jeu renforce ce lien et réduit Fama lorsque tu donnes la priorité à ce sujet."
+        },
+        "r": {
+          "es": "Miras hacia nuevos lugares y públicos. El juego aumenta Fama y baja Raíces al dar menos espacio a las montañas de Medellín.",
+          "fr": "Tu te tournes vers de nouveaux lieux et publics. Le jeu augmente Fama et baisse Raíces parce que tu donnes moins de place aux montagnes de Medellín."
+        }
+      },
+      "mama_comer": {
+        "l": {
+          "es": "Compartes tu proyecto con tu madre y mantienes el vínculo familiar. La promesa no paga la comida de hoy: tus recursos siguen bajando en el juego.",
+          "fr": "Tu partages ton projet avec ta mère et gardes le lien familial. La promesse ne paie pas le repas d’aujourd’hui : tes ressources continuent de baisser dans le jeu."
+        },
+        "r": {
+          "es": "Vendes dos dibujos y obtienes dinero para la casa. El juego reduce Estilo por dedicar este momento a las ventas en vez de explorar formas.",
+          "fr": "Tu vends deux dessins et obtiens de l’argent pour la maison. Le jeu réduit Estilo pour ce temps consacré aux ventes plutôt qu’à l’exploration des formes."
+        }
+      },
+      "mama_ajiaco": {
+        "l": {
+          "es": "Te quedas a compartir la comida familiar. El juego refuerza Raíces y baja Fama por dedicar ese momento a estar en casa.",
+          "fr": "Tu prends le temps de partager le repas familial. Le jeu renforce Raíces et baisse Fama pour ce moment consacré à rester à la maison."
+        },
+        "r": {
+          "es": "Acortas la comida familiar para volver al cuadro. En esta escena, el trabajo gana visibilidad y el tiempo con tu entorno queda en segundo plano.",
+          "fr": "Tu raccourcis le repas familial pour revenir au tableau. Dans cette scène, le travail gagne en visibilité et le temps avec tes proches passe au second plan."
+        }
+      },
+      "tio_oficina": {
+        "l": {
+          "es": "El sueldo aporta dinero. Pintar solo de noche deja menos tiempo para tu estilo y para hacer conocer tus cuadros.",
+          "fr": "Le salaire apporte de l’argent. Peindre seulement la nuit laisse moins de temps pour ton style et pour faire connaître tes tableaux."
+        },
+        "r": {
+          "es": "Mantienes el tiempo para tu pintura, pero renuncias al sueldo. El juego baja también Raíces por rechazar la propuesta de tu tío.",
+          "fr": "Tu gardes du temps pour ta peinture, mais renonces au salaire. Le jeu baisse aussi Raíces pour le refus de la proposition de ton oncle."
+        }
+      },
+      "salon_nacional": {
+        "l": {
+          "es": "Pagas el viaje para dar a conocer tu obra fuera del país. En el juego, esa apertura aumenta Fama y deja Medellín más lejos.",
+          "fr": "Tu paies le voyage pour faire connaître ton œuvre à l’étranger. Dans le jeu, cette ouverture augmente Fama et éloigne Medellín."
+        },
+        "r": {
+          "es": "Compartes el premio con tu familia y refuerzas ese vínculo. En esta escena, celebrar en Medellín aporta también un poco de dinero en el juego.",
+          "fr": "Tu partages le prix avec ta famille et renforces ce lien. Dans cette scène, fêter cela à Medellín apporte aussi un peu d’argent dans le jeu."
+        }
+      },
+      "mercado_frutas": {
+        "l": {
+          "es": "Pagas las frutas para estudiar sus grandes formas. El gasto compra modelos con los que explorar tu estilo.",
+          "fr": "Tu paies les fruits pour étudier leurs formes amples. Cette dépense fournit des modèles avec lesquels explorer ton style."
+        },
+        "r": {
+          "es": "No compras modelos y conservas recursos. Pintas las frutas que recuerdas: en el juego, esa memoria mantiene el vínculo con tu entorno.",
+          "fr": "Tu n’achètes pas de modèles et préserves tes ressources. Tu peins les fruits dont tu te souviens : dans le jeu, cette mémoire garde le lien avec ton environnement."
+        }
+      },
+      "toro_retrato": {
+        "l": {
+          "es": "Mantienes las formas redondas para los dos modelos. No sigues el retrato pedido: en esta escena, eso reduce el dinero que tienes.",
+          "fr": "Tu gardes les formes rondes pour les deux modèles. Tu ne suis pas le portrait demandé : dans cette scène, cela réduit l’argent dont tu disposes."
+        },
+        "r": {
+          "es": "Sigues el pedido y recibes un buen pago. El juego te da más reconocimiento, pero tus formas propias pasan detrás del gusto del cliente.",
+          "fr": "Tu suis la demande et reçois un bon paiement. Le jeu te donne plus de reconnaissance, mais tes formes personnelles passent après le goût du client."
+        }
+      },
+      "colores": {
+        "l": {
+          "es": "Mantienes tus colores y tu manera de pintar. En esta escena, el crítico apoya menos tu trabajo porque no sigues su propuesta.",
+          "fr": "Tu gardes tes couleurs et ta manière de peindre. Dans cette scène, le critique soutient moins ton travail parce que tu ne suis pas sa proposition."
+        },
+        "r": {
+          "es": "Cambias tus colores para acercarte al gusto del crítico. El juego aumenta Fama, reduce tu estilo personal y baja también Raíces por ese cambio.",
+          "fr": "Tu modifies tes couleurs pour te rapprocher du goût du critique. Le jeu augmente Fama, réduit ton style personnel et baisse aussi Raíces pour ce changement."
+        }
+      },
+      "quiz_gordas": {
+        "l": {
+          "es": "La idea del relato es el volumen, no el peso de las personas. El juego reduce Estilo y Fama por confundir esos dos temas.",
+          "fr": "L’idée du récit est le volume, pas le poids des personnes. Le jeu réduit Estilo et Fama pour la confusion entre ces deux sujets."
+        },
+        "r": {
+          "es": "Nombras el volumen: describes cómo construyes las formas. El juego refuerza tu estilo y tu reconocimiento por esta explicación.",
+          "fr": "Tu nommes le volume : tu décris ta façon de construire les formes. Le jeu renforce ton style et ta reconnaissance pour cette explication."
+        }
+      },
+      "nyc_llegada": {
+        "l": {
+          "es": "Miras obras y pruebas tus propias formas. Mientras estudias y pintas, el alquiler sigue gastando tu dinero.",
+          "fr": "Tu observes des œuvres et explores tes propres formes. Pendant que tu étudies et peins, le loyer continue de consommer ton argent."
+        },
+        "r": {
+          "es": "Los retratos te dan dinero para vivir. El juego deja menos espacio a Estilo porque dedicas ese tiempo a los encargos.",
+          "fr": "Les portraits te rapportent de l’argent pour vivre. Le jeu laisse moins de place à Estilo parce que tu consacres ce temps aux commandes."
+        }
+      },
+      "monalisa_moma": {
+        "l": {
+          "es": "Aceptas la compra: recibes dinero y tu cuadro entra en un museo. En esta escena, eso hace más conocido tu trabajo.",
+          "fr": "Tu acceptes l’achat : tu reçois de l’argent et ton tableau entre dans un musée. Dans cette scène, cela fait mieux connaître ton travail."
+        },
+        "r": {
+          "es": "Guardas tu cuadro y renuncias al pago y a mostrarlo en ese museo. El juego descuenta dinero y fama por esa oportunidad rechazada.",
+          "fr": "Tu gardes ton tableau et renonces au paiement et à sa présentation dans ce musée. Le jeu retire de l’argent et de la célébrité pour cette occasion refusée."
+        }
+      },
+      "pregunta_eterna": {
+        "l": {
+          "es": "Explicas tus formas al periodista y haces conocer tu trabajo. El juego baja Estilo por dedicar ese tiempo a hablar de tu pintura.",
+          "fr": "Tu expliques tes formes au journaliste et fais connaître ton travail. Le jeu baisse Estilo pour ce temps consacré à parler de ta peinture."
+        },
+        "r": {
+          "es": "Respondes con una broma y mantienes tu manera de pintar. En esta escena, el juego refuerza Estilo y reduce Fama por esa respuesta.",
+          "fr": "Tu réponds par une plaisanterie et gardes ta manière de peindre. Dans cette scène, le jeu renforce Estilo et réduit Fama pour cette réponse."
+        }
+      },
+      "contrato": {
+        "l": {
+          "es": "El contrato trae ingresos regulares. A cambio, trabajar con una sola galería deja menos libertad a tu estilo en el juego.",
+          "fr": "Le contrat apporte des revenus réguliers. En échange, travailler avec une seule galerie laisse moins de liberté à ton style dans le jeu."
+        },
+        "r": {
+          "es": "Mantienes la libertad de elegir para quién pintas. Sin los ingresos del contrato, tus recursos bajan en esta escena.",
+          "fr": "Tu gardes la liberté de choisir pour qui tu peins. Sans les revenus du contrat, tes ressources baissent dans cette scène."
+        }
+      },
+      "contrato_flores": {
+        "l": {
+          "es": "Pintas flores grandes y mantienes tu estilo. Como el pedido era de flores pequeñas, el juego reduce tus ingresos por este desacuerdo.",
+          "fr": "Tu peins de grandes fleurs et gardes ton style. La commande portait sur de petites fleurs : le jeu réduit tes revenus pour ce désaccord."
+        },
+        "r": {
+          "es": "Terminas las veinte flores según el pedido y cobras. Las formas que quería el cliente ocupan el lugar de las tuyas.",
+          "fr": "Tu termines les vingt fleurs selon la commande et touches le paiement. Les formes voulues par le client prennent la place des tiennes."
+        }
+      },
+      "contrato_alquiler": {
+        "l": {
+          "es": "La venta al vecino aporta dinero para el alquiler. En esta escena, el juego reduce Estilo al dar prioridad a una venta urgente.",
+          "fr": "La vente au voisin apporte de l’argent pour le loyer. Dans cette scène, le jeu réduit Estilo pour la priorité donnée à une vente urgente."
+        },
+        "r": {
+          "es": "Vendes la radio y conservas el cuadro: mantienes tu elección artística. A pesar de esa venta, tu reserva de dinero baja en esta escena del juego.",
+          "fr": "Tu vends la radio et gardes le tableau : tu maintiens ton choix artistique. Malgré cette vente, ta réserve d’argent baisse dans cette scène du jeu."
+        }
+      },
+      "nyc_abstracto": {
+        "l": {
+          "es": "Sigues desarrollando tus formas, aunque los críticos prefieren otra pintura. Tu estilo crece y su apoyo baja en esta escena.",
+          "fr": "Tu continues de développer tes formes, même si les critiques préfèrent une autre peinture. Ton style grandit et leur soutien baisse dans cette scène."
+        },
+        "r": {
+          "es": "Pruebas lo que gusta a los críticos. El juego aumenta tu reconocimiento, pero reduce el espacio de tus formas habituales.",
+          "fr": "Tu essaies ce qui plaît aux critiques. Le jeu augmente ta reconnaissance, mais réduit la place de tes formes habituelles."
+        }
+      },
+      "paris_mudanza": {
+        "l": {
+          "es": "La mudanza a París cuesta dinero y abre tu trabajo a otro público. El juego baja también Raíces por seguir lejos de Medellín.",
+          "fr": "Le déménagement à Paris coûte de l’argent et ouvre ton travail à un autre public. Le jeu baisse aussi Raíces parce que tu restes loin de Medellín."
+        },
+        "r": {
+          "es": "Te quedas donde ya vendes: el juego aumenta tus ingresos. Baja Fama al dejar pasar la nueva etapa en París, sin garantizar éxito allí.",
+          "fr": "Tu restes là où tu vends déjà : le jeu augmente tes revenus. Il baisse Fama pour cette étape à Paris laissée de côté, sans garantir un succès là-bas."
+        }
+      },
+      "nostalgia_ajiaco": {
+        "l": {
+          "es": "Preparas una comida que te recuerda tu entorno y la compartes. Los ingredientes cuestan dinero; el recuerdo refuerza Raíces en el juego.",
+          "fr": "Tu prépares et partages un repas qui te rappelle ton environnement. Les ingrédients coûtent de l’argent ; le souvenir renforce Raíces dans le jeu."
+        },
+        "r": {
+          "es": "Eliges el croissant y dejas el ajiaco de lado. En esta escena de París, el juego aumenta Fama y reduce Raíces por ese cambio de costumbre.",
+          "fr": "Tu choisis le croissant et laisses l’ajiaco de côté. Dans cette scène parisienne, le jeu augmente Fama et réduit Raíces pour ce changement d’habitude."
+        }
+      },
+      "bronce_gigante": {
+        "l": {
+          "es": "Llevas tus grandes formas a una escultura enorme. El tamaño pide más recursos: en esta escena, afirmas tu estilo y gastas dinero.",
+          "fr": "Tu portes tes formes amples dans une sculpture immense. La taille demande plus de ressources : dans cette scène, tu affirmes ton style et dépenses de l’argent."
+        },
+        "r": {
+          "es": "El pequeño formato sigue el gusto de un salón. El juego añade dinero y reduce Estilo y Fama al dejar las grandes formas de lado.",
+          "fr": "Le petit format suit le goût d’un salon. Le jeu ajoute de l’argent et réduit Estilo et Fama parce que tu laisses les grandes formes de côté."
+        }
+      },
+      "gato_barcelona": {
+        "l": {
+          "es": "Dejas que los niños se acerquen al gato y el juego aumenta Fama. En esta escena, abrir así la obra al público también cuesta algo de Dinero.",
+          "fr": "Tu laisses les enfants approcher le chat et le jeu augmente Fama. Dans cette scène, ouvrir ainsi l’œuvre au public coûte aussi un peu de Dinero."
+        },
+        "r": {
+          "es": "La barrera separa al público de la obra. Para esta elección, el juego reduce Fama y aumenta tu reserva de dinero.",
+          "fr": "La barrière sépare le public de l’œuvre. Pour ce choix, le jeu réduit Fama et augmente ta réserve d’argent."
+        }
+      },
+      "medellin_pide": {
+        "l": {
+          "es": "Prometes dedicar obras a tu ciudad. El juego refuerza ese vínculo y reserva parte de tus recursos para el proyecto.",
+          "fr": "Tu promets de consacrer des œuvres à ta ville. Le jeu renforce ce lien et réserve une partie de tes ressources au projet."
+        },
+        "r": {
+          "es": "Das prioridad a tu trabajo en París. El juego aumenta tu visibilidad fuera y reduce el espacio dedicado a Medellín.",
+          "fr": "Tu donnes la priorité à ton travail à Paris. Le jeu augmente ta visibilité ailleurs et réduit la place consacrée à Medellín."
+        }
+      },
+      "promesa_plaza": {
+        "l": {
+          "es": "Ves tus esculturas en la plaza de tu ciudad. Este encuentro con Medellín refuerza el vínculo que representa Raíces.",
+          "fr": "Tu vois tes sculptures sur la place de ta ville. Cette rencontre avec Medellín renforce le lien représenté par Raíces."
+        },
+        "r": {
+          "es": "Regalas cuadros al museo y das a conocer tu obra: sube Fama. En el juego, esta donación también reduce tu reserva de dinero.",
+          "fr": "Tu offres des tableaux au musée et fais connaître ton œuvre : Fama monte. Dans le jeu, ce don réduit aussi ta réserve d’argent."
+        }
+      },
+      "promesa_carta": {
+        "l": {
+          "es": "Dedicas tiempo y obras a Medellín: el vínculo con tu ciudad crece y tus recursos bajan. En esta escena, el juego reduce también tu fama.",
+          "fr": "Tu consacres du temps et des œuvres à Medellín : le lien avec ta ville grandit et tes ressources baissent. Dans cette scène, le jeu réduit aussi ta célébrité."
+        },
+        "r": {
+          "es": "Sigues vendiendo y entra dinero. La carta queda cerrada: hoy dejas de lado el contacto con el museo de tu ciudad.",
+          "fr": "Tu continues de vendre et l’argent rentre. La lettre reste fermée : aujourd’hui, tu laisses de côté le contact avec le musée de ta ville."
+        }
+      },
+      "paloma_paz": {
+        "l": {
+          "es": "Destinas la paloma a una plaza de Colombia. El juego refuerza Raíces y reduce Fama cuando das prioridad a ese vínculo.",
+          "fr": "Tu destines la colombe à une place en Colombie. Le jeu renforce Raíces et réduit Fama lorsque tu donnes la priorité à ce lien."
+        },
+        "r": {
+          "es": "Eliges un museo de Europa y el juego añade ingresos y visibilidad. Raíces baja porque esta obra se aleja de Colombia.",
+          "fr": "Tu choisis un musée en Europe et le jeu ajoute des revenus et de la visibilité. Raíces baisse parce que cette œuvre s’éloigne de la Colombie."
+        }
+      },
+      "campos_eliseos": {
+        "l": {
+          "es": "La exposición muestra tus esculturas a un público amplio. Preparar ese gran proyecto consume dinero y aumenta tu reconocimiento en el juego.",
+          "fr": "L’exposition montre tes sculptures à un large public. Préparer ce grand projet consomme de l’argent et augmente ta reconnaissance dans le jeu."
+        },
+        "r": {
+          "es": "Pides que Medellín forme parte del proyecto y refuerzas ese vínculo. En esta escena, el juego baja Fama por poner esa condición.",
+          "fr": "Tu demandes que Medellín fasse partie du projet et renforces ce lien. Dans cette scène, le jeu baisse Fama pour cette condition."
         }
       }
     },
     "frida": {
       "salida": {
         "l": {
-          "es": "El espejo te sirve de modelo: empiezas a pintar. Crear algo hace más alegre este rato en la cama.",
-          "fr": "Le miroir te sert de modèle : tu commences à peindre. Créer quelque chose rend ce moment au lit plus joyeux."
+          "es": "Pides materiales y usas el espejo como modelo. Empiezas a crear y este momento en la cama se vuelve más alegre.",
+          "fr": "Tu demandes du matériel et utilises le miroir comme modèle. Tu commences à créer et ce moment au lit devient plus joyeux."
         },
         "r": {
-          "es": "Descansas con las revistas: Salud sube en el juego. Hoy no pintas y tus ideas viajan a París, lejos de México.",
-          "fr": "Tu te reposes avec les magazines : Salud remonte dans le jeu. Aujourd’hui, tu ne peins pas et tes pensées vont vers Paris, loin du Mexique."
+          "es": "Dejas los pinceles para leer revistas de París. El juego baja Arte y México por este cambio de actividad y aumenta Salud por la pausa.",
+          "fr": "Tu délaisses les pinceaux pour des magazines de Paris. Le jeu baisse Arte et México pour ce changement d’activité et augmente Salud pour la pause."
+        }
+      },
+      "espejo_yo": {
+        "l": {
+          "es": "Eliges tu propia experiencia como tema del retrato. El juego refuerza Arte y México por ese vínculo entre tu pintura y tu vida.",
+          "fr": "Tu choisis ta propre expérience comme sujet du portrait. Le jeu renforce Arte et México pour ce lien entre ta peinture et ta vie."
+        },
+        "r": {
+          "es": "La soledad te entristece y dejas de pintar. El juego aumenta Salud por la pausa y reduce Arte y Alegría en esta escena.",
+          "fr": "La solitude t’attriste et tu cesses de peindre. Le jeu augmente Salud pour la pause et réduit Arte et Alegría dans cette scène."
+        }
+      },
+      "espejo_cejas": {
+        "l": {
+          "es": "Pintas tus propios rasgos y afirmas tu mirada. El juego refuerza Arte y México; para esta escena seria ante el espejo, hace bajar Alegría.",
+          "fr": "Tu peins tes propres traits et affirmes ton regard. Le jeu renforce Arte et México ; pour cette scène sérieuse devant le miroir, il fait baisser Alegría."
+        },
+        "r": {
+          "es": "El modelo de la revista guía el retrato. El juego aumenta Alegría por ese cambio y baja Arte y México al dejar tus propios rasgos de lado.",
+          "fr": "Le modèle du magazine guide le portrait. Le jeu augmente Alegría pour ce changement et baisse Arte et México parce que tu délaisses tes propres traits."
+        }
+      },
+      "tehuana": {
+        "l": {
+          "es": "Te gusta llevar el vestido y las flores. El juego aumenta Alegría y refuerza México por la relación de esta ropa con el lugar.",
+          "fr": "Tu aimes porter la robe et les fleurs. Le jeu augmente Alegría et renforce México pour le lien de cette tenue avec le lieu."
+        },
+        "r": {
+          "es": "Te gusta llevar el traje y la corbata. En esta escena, el juego aumenta Alegría y baja México por elegir otra forma de vestir.",
+          "fr": "Tu aimes porter le costume et la cravate. Dans cette scène, le jeu augmente Alegría et baisse México pour le choix d’une autre façon de t’habiller."
         }
       },
       "diego_cuadros": {
         "l": {
-          "es": "Las palabras de Diego te animan. Sonríes con tu broma y sigues pintando con ganas.",
+          "es": "Las palabras de Diego te animan. Tu broma te hace sonreír y sigues pintando con ganas.",
           "fr": "Les paroles de Diego t’encouragent. Ta plaisanterie te fait sourire et tu poursuis ta peinture avec envie."
         },
         "r": {
-          "es": "Guardas los cuadros: hoy no pintas. Dudas de tu trabajo y estás triste, pero haces una pausa para descansar.",
-          "fr": "Tu ranges les tableaux : aujourd’hui, tu ne peins pas. Tu doutes de ton travail et ressens de la tristesse, mais fais une pause pour te reposer."
+          "es": "Dudas y guardas los cuadros: pintas menos y estás triste. El juego aumenta Salud por la pausa que sigue a esta decisión.",
+          "fr": "Tu doutes et ranges les tableaux : tu peins moins et ressens de la tristesse. Le jeu augmente Salud pour la pause qui suit cette décision."
         }
       },
       "diego_cejas": {
         "l": {
-          "es": "Tu broma sobre las cejas te hace reír. La charla continúa y los pinceles esperan.",
-          "fr": "Ta plaisanterie sur les sourcils te fait rire. La discussion continue et les pinceaux attendent."
+          "es": "La broma sobre las cejas te hace reír. La charla ocupa este momento y los pinceles esperan.",
+          "fr": "La plaisanterie sur les sourcils te fait rire. La discussion occupe ce moment et les pinceaux attendent."
         },
         "r": {
-          "es": "Pintas toda la noche: tu trabajo avanza. Sin pausa ni sueño, te cansas y pierdes las ganas de sonreír.",
-          "fr": "Tu peins toute la nuit : ton travail avance. Sans pause ni sommeil, tu te fatigues et perds l’envie de sourire."
+          "es": "Tu pintura avanza durante la noche. En esta escena, seguir sin pausa hace bajar Salud y Alegría en el juego.",
+          "fr": "Ta peinture avance pendant la nuit. Dans cette scène, continuer sans pause fait baisser Salud et Alegría dans le jeu."
+        }
+      },
+      "diego_fruta": {
+        "l": {
+          "es": "Conviertes el plato vacío en una idea y te diviertes pintándolo. El juego baja México al cambiar las frutas de tu entorno por ese nuevo tema.",
+          "fr": "Tu fais de l’assiette vide une idée et t’amuses à la peindre. Le jeu baisse México parce que tu remplaces les fruits de ton environnement par ce nouveau sujet."
+        },
+        "r": {
+          "es": "Vuelves al mercado de tu entorno, pero el viaje te cansa y te molesta. El juego refuerza México y baja Salud por esta escena.",
+          "fr": "Tu retournes au marché de ton quartier, mais le trajet te fatigue et t’agace. Le jeu renforce México et baisse Salud dans cette scène."
+        }
+      },
+      "diego_canasta": {
+        "l": {
+          "es": "Preparas una comida decorada y compartes un gesto alegre. El juego refuerza México por el mole; mientras haces la canasta, no pintas.",
+          "fr": "Tu prépares un repas décoré et partages un geste joyeux. Le jeu renforce México pour le mole ; pendant que tu prépares le panier, tu ne peins pas."
+        },
+        "r": {
+          "es": "Das prioridad a tu cuadro y avanzas. El juego reduce Alegría al dejar de lado el momento de llevar y compartir la comida.",
+          "fr": "Tu donnes la priorité à ton tableau et avances. Le jeu réduit Alegría parce que tu laisses de côté le moment d’apporter et de partager le repas."
+        }
+      },
+      "doctor_reposo": {
+        "l": {
+          "es": "Duermes y dejas la pintura y las visitas en pausa. En esta escena, el juego aumenta Salud y baja Arte y Alegría por esa espera.",
+          "fr": "Tu dors et mets peinture et visites en pause. Dans cette scène, le jeu augmente Salud et baisse Arte et Alegría pour cette attente."
+        },
+        "r": {
+          "es": "Pintas en la cama y crear te alegra. El juego aumenta Arte y baja Salud por continuar la actividad en esta escena.",
+          "fr": "Tu peins au lit et créer te réjouit. Le jeu augmente Arte et baisse Salud parce que tu poursuis l’activité dans cette scène."
+        }
+      },
+      "doctor_corse": {
+        "l": {
+          "es": "Conviertes el corsé en un soporte para flores y pájaros. Tu pintura avanza y te gusta crear esta decoración.",
+          "fr": "Tu transformes le corset en support pour des fleurs et des oiseaux. Ta peinture avance et tu prends plaisir à créer cette décoration."
+        },
+        "r": {
+          "es": "Cubres el corsé con tu vestido y no lo decoras. Para esta escena, el juego te da más Salud y menos Alegría.",
+          "fr": "Tu couvres le corset avec ta robe et ne le décores pas. Pour cette scène, le jeu te donne davantage de Salud et moins d’Alegría."
+        }
+      },
+      "doctor_corse2": {
+        "l": {
+          "es": "Decorar para otros te alegra. El juego baja Arte por dejar tus cuadros en pausa y Salud por el esfuerzo; son reglas de esta escena.",
+          "fr": "Décorer pour les autres te réjouit. Le jeu baisse Arte parce que tu mets tes tableaux en pause et Salud pour l’effort ; ce sont les règles de cette scène."
+        },
+        "r": {
+          "es": "Te tomas una pausa y no compartes la actividad de decorar. En esta escena, el juego sube Salud y baja Alegría por ese momento aparte.",
+          "fr": "Tu prends une pause et ne partages pas l’activité de décoration. Dans cette scène, le jeu augmente Salud et baisse Alegría pour ce moment à l’écart."
+        }
+      },
+      "doctor_fiesta": {
+        "l": {
+          "es": "Aceptas la pausa sin fiesta. El juego aumenta Salud por descansar y baja Alegría porque dejas la celebración de lado.",
+          "fr": "Tu acceptes la pause sans fête. Le jeu augmente Salud pour le repos et baisse Alegría parce que tu laisses la célébration de côté."
+        },
+        "r": {
+          "es": "La fiesta te alegra y ocupa el tiempo de pintura. El juego baja Salud por esta actividad en lugar de la pausa prevista.",
+          "fr": "La fête te réjouit et occupe le temps de peinture. Le jeu baisse Salud pour cette activité qui remplace la pause prévue."
+        }
+      },
+      "mono_roba": {
+        "l": {
+          "es": "Sigues al mono en el árbol y la persecución te divierte. En esta escena, el juego descuenta Salud por el esfuerzo de subir.",
+          "fr": "Tu suis le singe dans l’arbre et la poursuite t’amuse. Dans cette scène, le jeu fait baisser Salud pour l’effort de grimper."
+        },
+        "r": {
+          "es": "Recuperas los pinceles con un trato y puedes pintar. El juego aumenta Salud por evitar la subida y reduce Alegría al renunciar a la persecución.",
+          "fr": "Tu récupères les pinceaux grâce à un échange et peux peindre. Le jeu augmente Salud pour la montée évitée et réduit Alegría parce que tu renonces à la poursuite."
+        }
+      },
+      "mono_hombro": {
+        "l": {
+          "es": "El mono entra en tu autorretrato. Trabajas con este nuevo modelo y su compañía te alegra.",
+          "fr": "Le singe entre dans ton autoportrait. Tu travailles avec ce nouveau modèle et sa compagnie te réjouit."
+        },
+        "r": {
+          "es": "El baño ocupa el lugar de la pintura. En esta escena, esa tarea hace bajar Alegría y consume Salud en el juego.",
+          "fr": "Le bain prend la place de la peinture. Dans cette scène, cette tâche fait baisser Alegría et consomme Salud dans le jeu."
+        }
+      },
+      "mono_collar": {
+        "l": {
+          "es": "Te divierte ver al mono con el collar. El juego baja México porque dejas en sus manos este objeto ligado a tu entorno.",
+          "fr": "Voir le singe avec le collier t’amuse. Le jeu baisse México parce que tu laisses entre ses mains cet objet lié à ton environnement."
+        },
+        "r": {
+          "es": "Corres tras el collar y la búsqueda te molesta. El juego aumenta México por querer guardar ese objeto y baja Salud por la carrera.",
+          "fr": "Tu cours après le collier et la recherche t’agace. Le jeu augmente México parce que tu veux garder cet objet et baisse Salud pour la course."
+        }
+      },
+      "perico_alba": {
+        "l": {
+          "es": "Usas la luz de la mañana para pintar y crear te alegra. El juego baja Salud por interrumpir el descanso en esta escena.",
+          "fr": "Tu profites de la lumière du matin pour peindre et créer te réjouit. Le jeu baisse Salud pour le repos interrompu dans cette scène."
+        },
+        "r": {
+          "es": "Sigues durmiendo y los pinceles esperan. El juego aumenta Salud por esa pausa y baja Alegría al dejar la actividad de la mañana de lado.",
+          "fr": "Tu continues de dormir et les pinceaux attendent. Le jeu augmente Salud pour cette pause et baisse Alegría parce que tu délaisses l’activité du matin."
+        }
+      },
+      "perico_mantequilla": {
+        "l": {
+          "es": "Compartes un juego alegre con Bonito y le enseñas una frase sobre México. Mientras juegas con él, tu pintura espera.",
+          "fr": "Tu partages un jeu joyeux avec Bonito et lui apprends une phrase sur le Mexique. Pendant que tu joues avec lui, ta peinture attend."
+        },
+        "r": {
+          "es": "El juego con Bonito se detiene y baja Alegría. Para esta elección de guardar la mantequilla, el juego aumenta también Salud.",
+          "fr": "Le jeu avec Bonito s’arrête et Alegría baisse. Pour ce choix de garder le beurre, le jeu augmente aussi Salud."
+        }
+      },
+      "casa_quiz": {
+        "l": {
+          "es": "Reconoces el azul de tu casa. El juego refuerza el vínculo con ese lugar y la alegría de recordar este detalle.",
+          "fr": "Tu reconnais le bleu de ta maison. Le jeu renforce le lien avec ce lieu et la joie de retrouver ce détail."
+        },
+        "r": {
+          "es": "La casa es azul, no rosa. En esta escena, la confusión hace bajar México y Alegría; ya tienes la palabra para la próxima vez: azul.",
+          "fr": "La maison est bleue, pas rose. Dans cette scène, la confusion fait baisser México et Alegría ; tu as le mot pour la prochaine fois : azul."
+        }
+      },
+      "casa_idolos": {
+        "l": {
+          "es": "Dedicas el patio a objetos y plantas de tu entorno, y eso te alegra. El juego refuerza México y deja menos espacio a la pintura.",
+          "fr": "Tu consacres la cour à des objets et plantes de ton environnement, et cela te réjouit. Le jeu renforce México et laisse moins de place à la peinture."
+        },
+        "r": {
+          "es": "Das más espacio a tu taller y a la pintura. El juego baja México y Alegría al dejar el proyecto del patio de lado.",
+          "fr": "Tu donnes plus de place à ton atelier et à la peinture. Le jeu baisse México et Alegría parce que tu laisses le projet de la cour de côté."
+        }
+      },
+      "casa_xolos": {
+        "l": {
+          "es": "Las huellas te hacen reír y no retocas el cuadro. El juego baja Arte por dejar la pintura como está y aumenta Salud por la pausa.",
+          "fr": "Les traces te font rire et tu ne retouches pas le tableau. Le jeu baisse Arte parce que tu laisses la peinture en l’état et augmente Salud pour la pause."
+        },
+        "r": {
+          "es": "Dedicas horas a reparar el cielo y la pintura avanza. El juego baja Salud y Alegría por esta larga tarea.",
+          "fr": "Tu consacres des heures à refaire le ciel et la peinture avance. Le jeu baisse Salud et Alegría pour cette longue tâche."
+        }
+      },
+      "mercado_fruta": {
+        "l": {
+          "es": "Los diez kilos de fruta ofrecen muchos modelos para pintar. El juego aumenta Arte, pero reduce Salud y Alegría por esta compra tan grande.",
+          "fr": "Les dix kilos de fruits offrent de nombreux modèles à peindre. Le jeu augmente Arte, mais réduit Salud et Alegría pour cet achat très important."
+        },
+        "r": {
+          "es": "Disfrutas del mango y dejas la pintura para otro momento. El juego aumenta Salud por esta pausa y reduce Arte mientras los pinceles esperan.",
+          "fr": "Tu apprécies la mangue et remets la peinture à plus tard. Le jeu augmente Salud pour cette pause et réduit Arte pendant que les pinceaux attendent."
+        }
+      },
+      "mercado_flores": {
+        "l": {
+          "es": "Las flores te alegran y el juego refuerza México por esta forma de vestir. Hoy dedicas tiempo a elegirlas y tus pinceles esperan.",
+          "fr": "Les fleurs te réjouissent et le jeu renforce México pour cette façon de t’habiller. Aujourd’hui, tu prends le temps de les choisir et tes pinceaux attendent."
+        },
+        "r": {
+          "es": "Compras lienzos y preparas nuevos cuadros. Dejas las flores: en esta escena, el juego baja México y Alegría por esa elección.",
+          "fr": "Tu achètes des toiles et prépares de nouveaux tableaux. Tu laisses les fleurs : dans cette scène, le jeu baisse México et Alegría pour ce choix."
+        }
+      },
+      "mercado_nino": {
+        "l": {
+          "es": "Pintas al niño entre las frutas y disfrutas del encuentro. Esta actividad hace bajar Salud en el juego.",
+          "fr": "Tu peins l’enfant au milieu des fruits et apprécies la rencontre. Cette activité fait baisser Salud dans le jeu."
+        },
+        "r": {
+          "es": "Dejas el retrato para otro día y te pierdes ese encuentro. El juego sube Salud por esta pausa y baja Arte y Alegría.",
+          "fr": "Tu remets le portrait à un autre jour et manques cette rencontre. Le jeu augmente Salud pour cette pause et baisse Arte et Alegría."
+        }
+      },
+      "calavera_nombre": {
+        "l": {
+          "es": "Saboreas la calavera y participas en la fiesta. El juego aumenta Alegría y México; en esta escena, también descuenta Salud por comértela.",
+          "fr": "Tu savoures la calavera et participes à la fête. Le jeu augmente Alegría et México ; dans cette scène, il fait aussi baisser Salud parce que tu la manges."
+        },
+        "r": {
+          "es": "Preparas el altar y eliges sus formas y colores: México y Arte suben. Dejar de lado la golosina hace bajar Alegría en esta escena.",
+          "fr": "Tu prépares l’autel et choisis ses formes et couleurs : México et Arte augmentent. Laisser la friandise de côté fait baisser Alegría dans cette scène."
+        }
+      },
+      "calavera_miedo": {
+        "l": {
+          "es": "Cantas y compartes la fiesta con humor. El juego refuerza México por participar; mientras celebras, no pintas.",
+          "fr": "Tu chantes et partages la fête avec humour. Le jeu renforce México pour ta participation ; pendant que tu célèbres, tu ne peins pas."
+        },
+        "r": {
+          "es": "Das una forma pintada a tu miedo. Arte sube; el temor baja Alegría y el juego reduce México al dejar la celebración de lado.",
+          "fr": "Tu donnes une forme peinte à ta peur. Arte augmente ; la peur baisse Alegría et le jeu réduit México parce que tu délaisses la célébration."
+        }
+      },
+      "gringolandia": {
+        "l": {
+          "es": "Pintas lo que echas de menos del país. Tu cuadro avanza y México sube, pero la nostalgia hace bajar Alegría en esta escena.",
+          "fr": "Tu peins ce qui te manque du pays. Ton tableau avance et México augmente, mais la nostalgie fait baisser Alegría dans cette scène."
+        },
+        "r": {
+          "es": "Te diviertes bailando en la fiesta. El juego baja Salud por esta actividad y México por dedicar este momento a otro entorno.",
+          "fr": "Tu t’amuses à danser pendant la fête. Le jeu baisse Salud pour cette activité et México parce que tu consacres ce moment à un autre environnement."
+        }
+      },
+      "periodista_esposa": {
+        "l": {
+          "es": "Pides que hablen de ti y de tu pintura. Arte y México suben por afirmar tu propia voz; la conversación tensa hace bajar Alegría en el juego.",
+          "fr": "Tu demandes que l’on parle de toi et de ta peinture. Arte et México montent parce que tu affirmes ta voix ; l’échange tendu fait baisser Alegría dans le jeu."
+        },
+        "r": {
+          "es": "La respuesta sonriente suaviza el intercambio. Tu nombre y tus cuadros pasan al segundo plano: el juego baja México y Arte.",
+          "fr": "Ta réponse souriante adoucit l’échange. Ton nom et tes tableaux passent au second plan : le jeu baisse México et Arte."
+        }
+      },
+      "periodista_foto": {
+        "l": {
+          "es": "La foto con el mono te divierte y muestra tu entorno. El juego aumenta México; tus cuadros quedan fuera del centro de la foto y Arte baja.",
+          "fr": "La photo avec le singe t’amuse et montre ton environnement. Le jeu augmente México ; tes tableaux quittent le centre de la photo et Arte baisse."
+        },
+        "r": {
+          "es": "Pones tus cuadros en el centro de la foto. El juego aumenta Arte y baja Alegría y México al dejar fuera la escena con tus animales.",
+          "fr": "Tu places tes tableaux au centre de la photo. Le jeu augmente Arte et baisse Alegría et México parce que tu écartes la scène avec tes animaux."
+        }
+      },
+      "breton_quiz": {
+        "l": {
+          "es": "Explicas que pintas tu propia realidad. Tu experiencia guía tus cuadros: el juego refuerza Arte y México por mantener esa voz.",
+          "fr": "Tu expliques que tu peins ta propre réalité. Ton expérience guide tes tableaux : le jeu renforce Arte et México parce que tu gardes cette voix."
+        },
+        "r": {
+          "es": "Aceptas la idea de Breton sin explicar tu propia mirada. En el juego, tu voz y tu experiencia tienen menos espacio: México y Arte bajan.",
+          "fr": "Tu acceptes l’idée de Breton sans expliquer ton propre regard. Dans le jeu, ta voix et ton expérience ont moins de place : México et Arte baissent."
+        }
+      },
+      "breton_aduana": {
+        "l": {
+          "es": "Te ocupas de preparar la exposición y das espacio a tus cuadros. El esfuerzo de organizarlo todo baja Alegría y Salud en el juego.",
+          "fr": "Tu t’occupes de préparer l’exposition et donnes une place à tes tableaux. L’effort d’organisation fait baisser Alegría et Salud dans le jeu."
+        },
+        "r": {
+          "es": "Disfrutas de París mientras la exposición espera. Arte baja y el juego reduce México por dedicar este momento a la ciudad que visitas.",
+          "fr": "Tu profites de Paris pendant que l’exposition attend. Arte baisse et le jeu réduit México parce que tu consacres ce moment à la ville visitée."
+        }
+      },
+      "breton_louvre": {
+        "l": {
+          "es": "Celebras con alegría y nombras a México en voz alta. El juego refuerza ese vínculo y descuenta Salud por esta escena tan animada.",
+          "fr": "Tu fêtes la nouvelle avec joie et nommes le Mexique à voix haute. Le jeu renforce ce lien et fait baisser Salud pour cette scène très animée."
+        },
+        "r": {
+          "es": "Recibes la noticia con una pausa en el café. El juego aumenta Salud por ese momento tranquilo y reduce México porque no nombras al país.",
+          "fr": "Tu accueilles la nouvelle par une pause au café. Le jeu augmente Salud pour ce moment calme et réduit México parce que tu ne nommes pas le pays."
+        }
+      },
+      "breton_cafes": {
+        "l": {
+          "es": "Dibujas durante la charla, pero te aburres. El juego aumenta Arte y baja México por ese tiempo entre los cafés de París.",
+          "fr": "Tu dessines pendant la discussion, mais tu t’ennuies. Le jeu augmente Arte et baisse México pour ce temps passé dans les cafés parisiens."
+        },
+        "r": {
+          "es": "El paseo por el mercado te alegra. Dejas los dibujos en pausa para mirar los puestos.",
+          "fr": "La promenade au marché te réjouit. Tu mets les dessins en pause pour regarder les étals."
+        }
+      },
+      "fridos_clase": {
+        "l": {
+          "es": "Compartes con tus alumnos el mercado y sus colores. El juego refuerza México y Alegría; la salida consume Salud en esta escena.",
+          "fr": "Tu partages avec tes élèves le marché et ses couleurs. Le jeu renforce México et Alegría ; la sortie consomme Salud dans cette scène."
+        },
+        "r": {
+          "es": "Dedicas la clase a estudiar caras y pintar. El juego aumenta Arte y baja Alegría y México al dejar la salida al mercado de lado.",
+          "fr": "Tu consacres le cours à l’étude des visages et à la peinture. Le jeu augmente Arte et baisse Alegría et México parce que tu laisses la sortie au marché de côté."
+        }
+      },
+      "fridos_mural": {
+        "l": {
+          "es": "Subes para añadir tu sandía al mural y disfrutas de pintar con el grupo. En esta escena, el esfuerzo hace bajar Salud.",
+          "fr": "Tu montes pour ajouter ta pastèque à la fresque et apprécies de peindre avec le groupe. Dans cette scène, l’effort fait baisser Salud."
+        },
+        "r": {
+          "es": "Diriges el grupo desde la silla y no pintas el mural tú misma. El juego sube Salud por esta pausa y baja Arte y Alegría por quedarte al margen de la acción.",
+          "fr": "Tu diriges le groupe depuis la chaise et ne peins pas toi-même la fresque. Le jeu augmente Salud pour cette pause et baisse Arte et Alegría parce que tu restes à l’écart de l’action."
+        }
+      },
+      "fridos_lluvia": {
+        "l": {
+          "es": "El encuentro en casa te alegra y mantiene el vínculo con tu entorno. Dar clase pese al dolor hace bajar Salud en esta escena del juego.",
+          "fr": "La rencontre chez toi te réjouit et garde le lien avec ton environnement. Faire cours malgré la douleur fait baisser Salud dans cette scène du jeu."
+        },
+        "r": {
+          "es": "Hoy no hay clase: la pintura y el encuentro esperan. El juego sube Salud por esta pausa y baja Arte y Alegría.",
+          "fr": "Aujourd’hui, pas de cours : la peinture et la rencontre attendent. Le jeu augmente Salud pour cette pause et baisse Arte et Alegría."
+        }
+      },
+      "cama_pinceles": {
+        "l": {
+          "es": "Pintas durante horas y crear te anima. El juego aumenta Arte y baja Salud por la duración de esta actividad.",
+          "fr": "Tu peins pendant des heures et créer t’encourage. Le jeu augmente Arte et baisse Salud pour la durée de cette activité."
+        },
+        "r": {
+          "es": "Dejas la pintura en pausa para dormir. El juego aumenta Salud y baja Arte y Alegría por este tiempo lejos de los pinceles.",
+          "fr": "Tu mets la peinture en pause pour dormir. Le jeu augmente Salud et baisse Arte et Alegría pour ce temps loin des pinceaux."
+        }
+      },
+      "cama_diario": {
+        "l": {
+          "es": "Llenas el diario de colores y disfrutas de crear. El juego aumenta Arte y baja Salud por continuar durante la noche.",
+          "fr": "Tu remplis ton journal de couleurs et prends plaisir à créer. Le jeu augmente Arte et baisse Salud parce que tu continues pendant la nuit."
+        },
+        "r": {
+          "es": "Dejas el diario y cuentas los dibujos del dosel. El juego aumenta Salud por esta pausa y baja Arte y Alegría al dejar la creación de lado.",
+          "fr": "Tu laisses le journal de côté et comptes les dessins du ciel de lit. Le jeu augmente Salud pour cette pause et baisse Arte et Alegría parce que tu délaisses la création."
+        }
+      },
+      "sandia_viva": {
+        "l": {
+          "es": "Las palabras forman parte del cuadro y celebran la vida. Arte y Alegría suben; el juego descuenta Salud por seguir pintando en esta escena.",
+          "fr": "Les mots entrent dans le tableau et célèbrent la vie. Arte et Alegría augmentent ; le jeu fait baisser Salud parce que tu continues de peindre dans cette scène."
+        },
+        "r": {
+          "es": "La sandía se convierte en tu comida y el cuadro espera. El juego baja Arte y aumenta Salud por esta pausa.",
+          "fr": "La pastèque devient ton repas et le tableau attend. Le jeu baisse Arte et augmente Salud pour cette pause."
+        }
+      },
+      "sandia_mexico": {
+        "l": {
+          "es": "Encuentras los colores del país en la sandía. Esa idea alimenta tu pintura y el vínculo que representa México.",
+          "fr": "Tu retrouves les couleurs du pays dans la pastèque. Cette idée nourrit ta peinture et le lien représenté par México."
+        },
+        "r": {
+          "es": "La idea de pintar edificios te anima y abre un nuevo tema. El juego aumenta Arte y baja México al alejar el cuadro de la sandía y sus colores.",
+          "fr": "L’idée de peindre des immeubles t’encourage et ouvre un nouveau sujet. Le jeu augmente Arte et baisse México parce que le tableau s’éloigne de la pastèque et de ses couleurs."
+        }
+      },
+      "expo_doctor": {
+        "l": {
+          "es": "Participar en la exposición de tu país te llena de alegría. El juego refuerza México y baja Salud por este desplazamiento.",
+          "fr": "Participer à l’exposition dans ton pays te remplit de joie. Le jeu renforce México et baisse Salud pour ce déplacement."
+        },
+        "r": {
+          "es": "Quedarte lejos de la exposición te entristece y deja tu actividad artística en pausa. El juego sube Salud por descansar en casa.",
+          "fr": "Rester loin de l’exposition t’attriste et met ton activité artistique en pause. Le jeu augmente Salud pour le repos à la maison."
+        }
+      },
+      "fridos_fiesta": {
+        "l": {
+          "es": "Disfrutas de la fiesta en casa con tus alumnos. El juego aumenta México por ese encuentro cercano y baja Salud por esta actividad.",
+          "fr": "Tu apprécies la fête chez toi avec tes élèves. Le jeu augmente México pour cette rencontre familière et baisse Salud pour cette activité."
+        },
+        "r": {
+          "es": "Acortas la fiesta para volver a crear con tus alumnos. La pintura gana tiempo y la celebración lo pierde: Arte sube y Alegría baja.",
+          "fr": "Tu raccourcis la fête pour créer avec tes élèves. La peinture gagne du temps et la célébration en perd : Arte augmente et Alegría baisse."
         }
       }
     }
@@ -1514,6 +3622,23 @@ try{
   let history=[],notes='',lastFocus=null,readAfterChoice=false;
   function store(){try{localStorage.setItem(KEY,JSON.stringify({history,notes,readAfterChoice}));}catch(_){}}
   try{const data=JSON.parse(localStorage.getItem(KEY)||'{}');history=Array.isArray(data.history)?data.history.slice(-80):[];notes=typeof data.notes==='string'?data.notes:'';readAfterChoice=data.readAfterChoice===true;}catch(_){}
+  // Compléter uniquement les anciens retours absents, avec une correspondance exacte et unique.
+  let restored=false;
+  for(const item of history){
+    if(!item||item.narrative)continue;
+    const matches=[];
+    for(const world of Object.values(WORLDS)){
+      if(item.worldId?item.worldId!==world.id:item.world!==world.name)continue;
+      for(const card of world.cards)for(const side of ['l','r']){
+        if(item.text===card.t&&item.choice===card[side].es&&item.translation===card[side].fr&&
+          (!item.cardId||item.cardId===card.id)&&(!item.side||item.side===side)&&cfg.feedback?.[world.id]?.[card.id]?.[side]){
+          matches.push({worldId:world.id,cardId:card.id,side,narrative:cfg.feedback[world.id][card.id][side]});
+        }
+      }
+    }
+    if(matches.length===1){Object.assign(item,matches[0]);restored=true;}
+  }
+  if(restored)store();
   const dialog=document.createElement('dialog');dialog.id='sv-dialog';dialog.setAttribute('aria-labelledby','sv-title');document.body.appendChild(dialog);
   const button=(text,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',fn);return b;};
   function close(){
@@ -1538,7 +3663,7 @@ try{
     modal('Trois repères pour commencer',
       '<h3>1 · Lis et choisis</h3><p>Lis la situation en espagnol. Choisis une réponse en cliquant, en glissant la carte ou avec les flèches du clavier.</p>'+
       '<h3>2 · Cherche un équilibre</h3><p>Les quatre jauges commencent à <strong>50/100</strong>. À <strong>0 ou 100</strong>, l’aventure s’arrête. Clique sur une jauge pour comprendre ses deux limites.</p>'+
-      '<h3>3 · Utilise les aides</h3><p>« Mots utiles » explique du vocabulaire. « Traduire » affiche le français. Le journal conserve tes décisions pour le bilan.</p>'+
+      '<h3>3 · Comprends les conséquences</h3><p>Après chaque choix, un court commentaire explique ce qui se passe. « Comprendre » donne le retour en espagnol et en français, avec les jauges. « Mots utiles » aide à lire et « Traduire » affiche le français.</p>'+
       '<p class="sv-note">Les jauges décrivent une fiction. Elles ne mesurent ni ton niveau d’espagnol ni ta valeur personnelle.</p>'+
       '<label class="sv-option"><input id="sv-read-after" type="checkbox" '+(readAfterChoice?'checked':'')+'> Lire le retour après chaque choix</label><p class="sv-muted">Une pause de lecture permet de discuter du choix. Tu peux aussi consulter « Comprendre » quand tu le souhaites.</p>'+
       '<p class="sv-muted">Collections et bilan sont partagés sur ce navigateur. La partie en cours ne reprend pas après fermeture.</p>'+
@@ -1565,11 +3690,18 @@ try{
     $s('#sv-translate').onclick=()=>{close();if(!$s('#app').hidden&&!$s('#app').classList.contains('showfr'))$s('#helpBtn').click();};
   }
   function effects(item){return item.effects.map(e=>'<span class="sv-fx">'+esc(e.label)+' : '+e.before+' → '+e.after+' ('+(e.delta>0?'+':'')+e.delta+')</span>').join('')||'<p>Aucune jauge modifiée.</p>';}
-  function narrative(item){return item.narrative?'<div class="sv-note"><p lang="es">'+esc(item.narrative.es)+'</p><p>'+esc(item.narrative.fr)+'</p></div>':'<p class="sv-muted">Le retour narratif de cette carte reste à rédiger. Les variations ci-dessous sont celles du jeu.</p>';}
+  function narrative(item){return item.narrative?'<div class="sv-note"><p lang="es">'+esc(item.narrative.es)+'</p><p lang="fr">'+esc(item.narrative.fr)+'</p></div>':'<p class="sv-muted">Ce commentaire n’a pas été conservé dans cette ancienne décision. Les variations enregistrées restent consultables.</p>';}
   function decision(item){if(!item)return;modal('Ta dernière décision','<p lang="es"><strong>'+esc(item.text)+'</strong></p><p lang="es">'+esc(item.choice)+'</p><p>'+esc(item.translation)+'</p>'+narrative(item)+effects(item)+'<p class="sv-muted">Conséquences dans la fiction et variations réellement appliquées. Ce n’est pas une correction de ta réponse en espagnol.</p><div class="sv-actions"><button class="sv-button" id="sv-continue">Continuer</button></div>');$s('#sv-continue').onclick=close;}
+  function renderFeedback(box,item){
+    box.replaceChildren();
+    if(!item){box.textContent='Première carte · les jauges commencent à 50/100.';return;}
+    const title=document.createElement('strong');title.className='sv-feedback-title';title.textContent='Dernier choix · '+item.translation;box.appendChild(title);
+    if(item.narrative?.fr){const text=document.createElement('p');text.className='sv-feedback-story';text.textContent=item.narrative.fr;box.appendChild(text);}
+    const detail=document.createElement('div');detail.className='sv-feedback-detail';detail.textContent=item.effects.map(e=>e.label+' '+(e.delta>0?'+':'')+e.delta).join(' · ')||'Aucune jauge modifiée.';
+    detail.appendChild(button('Comprendre',()=>decision(item)));box.appendChild(detail);
+  }
   function feedback(item){
-    const box=$s('#sv-feedback');box.textContent=item?'Dernier choix · '+(item.effects.map(e=>e.label+' '+(e.delta>0?'+':'')+e.delta).join(' · ')||'Aucune jauge modifiée.'):'Première carte · les jauges commencent à 50/100.';
-    if(item){const b=button('Comprendre',()=>decision(item));box.appendChild(b);}
+    renderFeedback($s('#sv-feedback'),item);
     $s('#app footer').textContent=(S?.plays||0)+' choix effectué'+(S?.plays===1?'':'s')+' · progression de jeu, pas une note de langue';
   }
   function journal(){
@@ -1590,7 +3722,8 @@ try{
   const menu=document.createElement('div');menu.className='sv-toolbar';menu.append(button('Comment jouer',tutorial),button('Mon bilan',journal));lobby.insertBefore(menu,$s('#worlds'));
   const tools=document.createElement('nav');tools.className='sv-toolbar';tools.id='sv-tools';tools.setAttribute('aria-label','Aides de jeu');tools.append(button('Mots utiles',words),button('Règles et options',tutorial),button('Mon bilan',journal));$s('#gauges').after(tools);
   $s('#lobby .foot').textContent='225 cartes · cinq univers · collections et bilan partagés sur ce navigateur. La partie en cours ne se sauvegarde pas.';
-  const box=document.createElement('div');box.id='sv-feedback';box.setAttribute('role','status');box.setAttribute('aria-live','polite');$s('#choices').after(box);
+  const box=document.createElement('div');box.id='sv-feedback';box.className='sv-feedback';box.setAttribute('lang','fr');box.setAttribute('role','status');box.setAttribute('aria-live','polite');$s('#choices').after(box);
+  const endFeedback=document.createElement('div');endFeedback.id='sv-end-feedback';endFeedback.className='sv-feedback';endFeedback.setAttribute('lang','fr');endFeedback.hidden=true;$s('#endTxtFr').after(endFeedback);
   const speaker=document.createElement('p');speaker.id='sv-speaker';$s('#speechBox').prepend(speaker);
   $s('#speech').setAttribute('lang','es');$s('#speechFr').setAttribute('lang','fr');$s('#btnL .es').setAttribute('lang','es');$s('#btnR .es').setAttribute('lang','es');
   $s('#helpBtn').innerHTML='<i class="flag" aria-hidden="true"></i> Traduire';$s('#helpBtn').setAttribute('aria-pressed','false');
@@ -1610,11 +3743,11 @@ try{
   const baseApply=Core.apply;
   Core.apply=function(world,state,card,side){
     const before={...state.g},result=baseApply.call(this,world,state,card,side);
-    if(state===S){const item={world:world.name,text:card.t,choice:card[side].es,translation:card[side].fr,narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);store();feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
+    if(state===S){const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,choice:card[side].es,translation:card[side].fr,narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);store();feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
     return result;
   };
   const baseEnd=showEnd;
-  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}if(!dialog.open)$s('#againBtn').focus();};
+  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}const last=history.at(-1);endFeedback.hidden=last?.worldId!==U.id;if(!endFeedback.hidden)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus();};
   const baseQuit=askQuit;
   $s('#quitBtn').removeEventListener('click',baseQuit);
   askQuit=function(){

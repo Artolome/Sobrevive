@@ -7,6 +7,23 @@
   let history=[],notes='',lastFocus=null,readAfterChoice=false;
   function store(){try{localStorage.setItem(KEY,JSON.stringify({history,notes,readAfterChoice}));}catch(_){}}
   try{const data=JSON.parse(localStorage.getItem(KEY)||'{}');history=Array.isArray(data.history)?data.history.slice(-80):[];notes=typeof data.notes==='string'?data.notes:'';readAfterChoice=data.readAfterChoice===true;}catch(_){}
+  // Compléter uniquement les anciens retours absents, avec une correspondance exacte et unique.
+  let restored=false;
+  for(const item of history){
+    if(!item||item.narrative)continue;
+    const matches=[];
+    for(const world of Object.values(WORLDS)){
+      if(item.worldId?item.worldId!==world.id:item.world!==world.name)continue;
+      for(const card of world.cards)for(const side of ['l','r']){
+        if(item.text===card.t&&item.choice===card[side].es&&item.translation===card[side].fr&&
+          (!item.cardId||item.cardId===card.id)&&(!item.side||item.side===side)&&cfg.feedback?.[world.id]?.[card.id]?.[side]){
+          matches.push({worldId:world.id,cardId:card.id,side,narrative:cfg.feedback[world.id][card.id][side]});
+        }
+      }
+    }
+    if(matches.length===1){Object.assign(item,matches[0]);restored=true;}
+  }
+  if(restored)store();
   const dialog=document.createElement('dialog');dialog.id='sv-dialog';dialog.setAttribute('aria-labelledby','sv-title');document.body.appendChild(dialog);
   const button=(text,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',fn);return b;};
   function close(){
@@ -31,7 +48,7 @@
     modal('Trois repères pour commencer',
       '<h3>1 · Lis et choisis</h3><p>Lis la situation en espagnol. Choisis une réponse en cliquant, en glissant la carte ou avec les flèches du clavier.</p>'+
       '<h3>2 · Cherche un équilibre</h3><p>Les quatre jauges commencent à <strong>50/100</strong>. À <strong>0 ou 100</strong>, l’aventure s’arrête. Clique sur une jauge pour comprendre ses deux limites.</p>'+
-      '<h3>3 · Utilise les aides</h3><p>« Mots utiles » explique du vocabulaire. « Traduire » affiche le français. Le journal conserve tes décisions pour le bilan.</p>'+
+      '<h3>3 · Comprends les conséquences</h3><p>Après chaque choix, un court commentaire explique ce qui se passe. « Comprendre » donne le retour en espagnol et en français, avec les jauges. « Mots utiles » aide à lire et « Traduire » affiche le français.</p>'+
       '<p class="sv-note">Les jauges décrivent une fiction. Elles ne mesurent ni ton niveau d’espagnol ni ta valeur personnelle.</p>'+
       '<label class="sv-option"><input id="sv-read-after" type="checkbox" '+(readAfterChoice?'checked':'')+'> Lire le retour après chaque choix</label><p class="sv-muted">Une pause de lecture permet de discuter du choix. Tu peux aussi consulter « Comprendre » quand tu le souhaites.</p>'+
       '<p class="sv-muted">Collections et bilan sont partagés sur ce navigateur. La partie en cours ne reprend pas après fermeture.</p>'+
@@ -58,11 +75,18 @@
     $s('#sv-translate').onclick=()=>{close();if(!$s('#app').hidden&&!$s('#app').classList.contains('showfr'))$s('#helpBtn').click();};
   }
   function effects(item){return item.effects.map(e=>'<span class="sv-fx">'+esc(e.label)+' : '+e.before+' → '+e.after+' ('+(e.delta>0?'+':'')+e.delta+')</span>').join('')||'<p>Aucune jauge modifiée.</p>';}
-  function narrative(item){return item.narrative?'<div class="sv-note"><p lang="es">'+esc(item.narrative.es)+'</p><p>'+esc(item.narrative.fr)+'</p></div>':'<p class="sv-muted">Le retour narratif de cette carte reste à rédiger. Les variations ci-dessous sont celles du jeu.</p>';}
+  function narrative(item){return item.narrative?'<div class="sv-note"><p lang="es">'+esc(item.narrative.es)+'</p><p lang="fr">'+esc(item.narrative.fr)+'</p></div>':'<p class="sv-muted">Ce commentaire n’a pas été conservé dans cette ancienne décision. Les variations enregistrées restent consultables.</p>';}
   function decision(item){if(!item)return;modal('Ta dernière décision','<p lang="es"><strong>'+esc(item.text)+'</strong></p><p lang="es">'+esc(item.choice)+'</p><p>'+esc(item.translation)+'</p>'+narrative(item)+effects(item)+'<p class="sv-muted">Conséquences dans la fiction et variations réellement appliquées. Ce n’est pas une correction de ta réponse en espagnol.</p><div class="sv-actions"><button class="sv-button" id="sv-continue">Continuer</button></div>');$s('#sv-continue').onclick=close;}
+  function renderFeedback(box,item){
+    box.replaceChildren();
+    if(!item){box.textContent='Première carte · les jauges commencent à 50/100.';return;}
+    const title=document.createElement('strong');title.className='sv-feedback-title';title.textContent='Dernier choix · '+item.translation;box.appendChild(title);
+    if(item.narrative?.fr){const text=document.createElement('p');text.className='sv-feedback-story';text.textContent=item.narrative.fr;box.appendChild(text);}
+    const detail=document.createElement('div');detail.className='sv-feedback-detail';detail.textContent=item.effects.map(e=>e.label+' '+(e.delta>0?'+':'')+e.delta).join(' · ')||'Aucune jauge modifiée.';
+    detail.appendChild(button('Comprendre',()=>decision(item)));box.appendChild(detail);
+  }
   function feedback(item){
-    const box=$s('#sv-feedback');box.textContent=item?'Dernier choix · '+(item.effects.map(e=>e.label+' '+(e.delta>0?'+':'')+e.delta).join(' · ')||'Aucune jauge modifiée.'):'Première carte · les jauges commencent à 50/100.';
-    if(item){const b=button('Comprendre',()=>decision(item));box.appendChild(b);}
+    renderFeedback($s('#sv-feedback'),item);
     $s('#app footer').textContent=(S?.plays||0)+' choix effectué'+(S?.plays===1?'':'s')+' · progression de jeu, pas une note de langue';
   }
   function journal(){
@@ -83,7 +107,8 @@
   const menu=document.createElement('div');menu.className='sv-toolbar';menu.append(button('Comment jouer',tutorial),button('Mon bilan',journal));lobby.insertBefore(menu,$s('#worlds'));
   const tools=document.createElement('nav');tools.className='sv-toolbar';tools.id='sv-tools';tools.setAttribute('aria-label','Aides de jeu');tools.append(button('Mots utiles',words),button('Règles et options',tutorial),button('Mon bilan',journal));$s('#gauges').after(tools);
   $s('#lobby .foot').textContent='225 cartes · cinq univers · collections et bilan partagés sur ce navigateur. La partie en cours ne se sauvegarde pas.';
-  const box=document.createElement('div');box.id='sv-feedback';box.setAttribute('role','status');box.setAttribute('aria-live','polite');$s('#choices').after(box);
+  const box=document.createElement('div');box.id='sv-feedback';box.className='sv-feedback';box.setAttribute('lang','fr');box.setAttribute('role','status');box.setAttribute('aria-live','polite');$s('#choices').after(box);
+  const endFeedback=document.createElement('div');endFeedback.id='sv-end-feedback';endFeedback.className='sv-feedback';endFeedback.setAttribute('lang','fr');endFeedback.hidden=true;$s('#endTxtFr').after(endFeedback);
   const speaker=document.createElement('p');speaker.id='sv-speaker';$s('#speechBox').prepend(speaker);
   $s('#speech').setAttribute('lang','es');$s('#speechFr').setAttribute('lang','fr');$s('#btnL .es').setAttribute('lang','es');$s('#btnR .es').setAttribute('lang','es');
   $s('#helpBtn').innerHTML='<i class="flag" aria-hidden="true"></i> Traduire';$s('#helpBtn').setAttribute('aria-pressed','false');
@@ -103,11 +128,11 @@
   const baseApply=Core.apply;
   Core.apply=function(world,state,card,side){
     const before={...state.g},result=baseApply.call(this,world,state,card,side);
-    if(state===S){const item={world:world.name,text:card.t,choice:card[side].es,translation:card[side].fr,narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);store();feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
+    if(state===S){const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,choice:card[side].es,translation:card[side].fr,narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);store();feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
     return result;
   };
   const baseEnd=showEnd;
-  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}if(!dialog.open)$s('#againBtn').focus();};
+  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}const last=history.at(-1);endFeedback.hidden=last?.worldId!==U.id;if(!endFeedback.hidden)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus();};
   const baseQuit=askQuit;
   $s('#quitBtn').removeEventListener('click',baseQuit);
   askQuit=function(){

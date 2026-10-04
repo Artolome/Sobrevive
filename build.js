@@ -53,11 +53,12 @@ function loadRasterImages(rasterDir, decks) {
   };
   for (const [id, entry] of Object.entries(manifest)) {
     if (!Object.hasOwn(decks, id)) fail("univers inconnu : " + id);
-    if (!object(entry) || Object.keys(entry).some(key => !["cover", "chars"].includes(key))) {
-      fail(id + " : seules les clés cover et chars sont admises.");
+    if (!object(entry) || Object.keys(entry).some(key => !["cover", "chars", "back"].includes(key))) {
+      fail(id + " : seules les clés cover, chars et back sont admises.");
     }
     const images = { charImages: {} };
     if (Object.hasOwn(entry, "cover")) images.coverImage = readImage(entry.cover);
+    if (Object.hasOwn(entry, "back")) images.backImage = readImage(entry.back);
     if (Object.hasOwn(entry, "chars")) {
       if (!object(entry.chars)) fail(id + " : chars doit être un objet.");
       for (const [key, filename] of Object.entries(entry.chars)) {

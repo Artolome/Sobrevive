@@ -1,3 +1,5 @@
 shots/
 edgeprof-*/
 node_modules/
+# Les PNG de génération sont livrés séparément ; le jeu utilise leurs versions WebP.
+art/raster/*.png

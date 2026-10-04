@@ -1,14 +1,18 @@
 # ¡Sobrevive! — art direction: tarot illustrations
 
-## Essai illustré V2
+## Collection illustrée V2
 
-Sur la branche `codex/v2-interface-pedagogie`, un échantillon demandé par l’utilisateur
-remplace le rendu de la couverture El cole et de Señora Pons par des illustrations
-PNG originales dans un esprit cartoon proche d’Adventure Time. Les SVG ci-dessous
+Sur la branche `codex/v2-interface-pedagogie`, l’extension approuvée par l’utilisateur
+remplace le rendu des 76 personnages, des cinq couvertures et du dos commun par
+82 illustrations originales dans un esprit cartoon proche d’Adventure Time.
+Les 225 situations réutilisent le portrait de leur personnage. Les SVG ci-dessous
 restent conservés en source. Le manifest facultatif `art/raster/manifest.json`
 et son intégration hors ligne sont documentés dans `classroom/README.md`.
-Le cadre, les noms et les textes restent en HTML. L’échantillon attend une validation
-visuelle avant extension ; il ne constitue pas un déploiement du site.
+Le cadre, les noms et les textes restent en HTML. Les images sont livrées en WebP
+sans recadrage ni redimensionnement ; les originaux PNG et les prompts ImageGen
+sont conservés dans les livrables locaux. Les mouvements de carte façon Reigns
+restent actifs, avec une animation discrète au repos qui respecte la préférence
+de réduction des animations. Cette intégration locale ne déploie pas le site.
 
 ## Bibliothèque SVG d’origine
 

@@ -28,6 +28,7 @@
   background-size:calc(var(--w)*.16) calc(var(--w)*.16);background-position:center}
 .tarot.back .t-sun{width:46%;aspect-ratio:1;border-radius:50%;background:#c4432e;border:calc(var(--w)*.014) solid #dfa92c;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 calc(var(--w)*.03) #274f88}
 .tarot.back .t-sun svg{width:78%;height:78%}
+.tarot.back .t-back-image{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
 .tarot.locked .t-ill svg,.tarot.unknown .t-ill svg,.tarot.locked .t-ill img,.tarot.unknown .t-ill img,.tarot.unknown .t-ill .t-emoji{filter:brightness(0);opacity:.2}
 `;
   const SUN = `<svg viewBox="0 0 48 48"><g fill="#dfa92c" stroke="#1f1a17" stroke-width="1.6" stroke-linejoin="round"><path d="M24 2l3 9h-6zM24 46l3-9h-6zM2 24l9-3v6zM46 24l-9-3v6zM8.4 8.4l8.5 4.3-4.2 4.2zM39.6 39.6l-8.5-4.3 4.2-4.2zM39.6 8.4l-4.3 8.5-4.2-4.2zM8.4 39.6l4.3-8.5 4.2 4.2z"/><circle cx="24" cy="24" r="11"/></g><g fill="none" stroke="#1f1a17" stroke-width="1.5" stroke-linecap="round"><path d="M19 28q5 4 10 0"/></g><circle cx="20" cy="22" r="1.5" fill="#1f1a17"/><circle cx="28" cy="22" r="1.5" fill="#1f1a17"/></svg>`;
@@ -40,19 +41,21 @@
     const m = String(name || "").match(/^(.*?)(?:\s·\s|,\s)(.*)$/);
     return m ? { title: m[1], sub: m[2] } : { title: String(name || ""), sub: "" };
   }
+  const isRaster = image => typeof image === "string" && /^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(image);
   /* o: {num (string|number), name, art (svg inner markup 200x260), image (data URI), emoji, cls, w (css length), sub} */
   function cardHTML(o) {
     const nm = o.sub != null ? { title: o.name, sub: o.sub } : splitName(o.name);
     const num = typeof o.num === "number" ? roman(o.num) : (o.num || "");
     // Conserver les silhouettes SVG des personnages encore à découvrir.
     const hidden = /(?:^|\s)(?:unknown|locked)(?:\s|$)/.test(o.cls || "");
-    const raster = !hidden && typeof o.image === "string" && /^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(o.image);
+    const raster = !hidden && isRaster(o.image);
     const ill = raster ? `<img src="${esc(o.image)}" alt="" draggable="false">` : o.art ? `<svg viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${o.art}</svg>` : `<span class="t-emoji">${o.emoji || "❔"}</span>`;
     return `<div class="tarot ${o.cls || ""}"${o.w ? ` style="--w:${o.w}"` : ""}><div class="t-in"><div class="t-num">${esc(num)}</div><div class="t-ill">${ill}</div><div class="t-name"><b>${esc(nm.title)}</b>${nm.sub ? `<i>${esc(nm.sub)}</i>` : ""}</div></div></div>`;
   }
   function backHTML(o) {
     o = o || {};
-    return `<div class="tarot back ${o.cls || ""}"${o.w ? ` style="--w:${o.w}"` : ""}><div class="t-in"><div class="t-sun">${SUN}</div></div></div>`;
+    const content=isRaster(o.image)?`<img class="t-back-image" src="${esc(o.image)}" alt="" draggable="false">`:`<div class="t-sun">${SUN}</div>`;
+    return `<div class="tarot back ${o.cls || ""}"${o.w ? ` style="--w:${o.w}"` : ""}><div class="t-in">${content}</div></div>`;
   }
   const kit = { PAL, CSS, cardHTML, backHTML, roman, splitName, esc };
   if (typeof module !== "undefined" && module.exports) module.exports = kit; else root.TarotKit = kit;

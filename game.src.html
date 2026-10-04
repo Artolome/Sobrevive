@@ -475,7 +475,7 @@ function openFicha(id){
   const chars=Object.entries(d.chars).sort((a,b)=>(a[1].tier||0)-(b[1].tier||0));
   $("#fCharCount").textContent=`${pr.chars.length} / ${chars.length}`;
   $("#fChars").innerHTML=chars.map(([k,c])=>{
-    if(!t.has(c.tier||0))return `<button class="chr" disabled aria-label="Bloqueado">${KIT.backHTML()}</button>`;
+    if(!t.has(c.tier||0))return `<button class="chr" disabled aria-label="Bloqueado">${KIT.backHTML({image:artOf(id).backImage})}</button>`;
     if(!pr.chars.includes(k))return `<button class="chr" disabled aria-label="Por descubrir">${charCard(id,k,{cls:"unknown",name:"¿…?",sub:""})}</button>`;
     return `<button class="chr" data-k="${k}" aria-label="${KIT.esc(c.name)}">${charCard(id,k)}</button>`;
   }).join("");
@@ -502,9 +502,10 @@ $("#zoom").addEventListener("click",()=>{$("#zoom").hidden=true;});
 /* ---------- rendu jeu ---------- */
 function buildGauges(){
   $("#gauges").innerHTML=U.gauges.map(g=>medHTML(U.id,g,true)).join("");
-  $("#under1").innerHTML=KIT.backHTML({w:"var(--cw)"});
-  $("#under2").innerHTML=KIT.backHTML({w:"var(--cw)"});
-  $("#reverse").innerHTML=KIT.backHTML({w:"var(--cw)"});
+  const back={w:"var(--cw)",image:artOf(U.id).backImage};
+  $("#under1").innerHTML=KIT.backHTML(back);
+  $("#under2").innerHTML=KIT.backHTML(back);
+  $("#reverse").innerHTML=KIT.backHTML(back);
 }
 function renderGauges(){
   U.gauges.forEach(g=>{

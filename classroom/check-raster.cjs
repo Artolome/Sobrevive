@@ -26,6 +26,12 @@ try {
     assert.equal(images.coverImage, 'data:image/png;base64,' + png.toString('base64'));
     assert.equal(images.charImages.pons, images.coverImage);
   });
+  check('dos embarqué sans exposer une URL externe', () => {
+    manifest({ cole: { back: 'sample.png' } });
+    const image=load().cole.backImage;
+    assert.match(kit.backHTML({image}), /class="t-back-image" src="data:image\/png;base64,/);
+    assert.doesNotMatch(kit.backHTML({image:'https://example.org/back.png'}), /<img|https:/);
+  });
   check('JSON mal formé rejeté', () => {
     fs.writeFileSync(path.join(dir, 'manifest.json'), '{');
     assert.throws(load, /manifest.json illisible/);

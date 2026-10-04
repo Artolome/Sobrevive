@@ -1,8 +1,108 @@
 {
   "cole": {
-    "cover": "cole-cover-cartoon.png",
+    "cover": "cole-cover-cartoon.webp",
     "chars": {
-      "pons": "cole-pons-cartoon.png"
-    }
+      "mama": "cole-mama-cartoon.webp",
+      "abuela": "cole-abuela-cartoon.webp",
+      "hermana": "cole-hermana-cartoon.webp",
+      "garcia": "cole-garcia-cartoon.webp",
+      "pons": "cole-pons-cartoon.webp",
+      "edfisica": "cole-edfisica-cartoon.webp",
+      "musica": "cole-musica-cartoon.webp",
+      "ruiz": "cole-ruiz-cartoon.webp",
+      "carmen": "cole-carmen-cartoon.webp",
+      "biblio": "cole-biblio-cartoon.webp",
+      "pablo": "cole-pablo-cartoon.webp",
+      "lucia": "cole-lucia-cartoon.webp",
+      "hugo": "cole-hugo-cartoon.webp",
+      "alex": "cole-alex-cartoon.webp",
+      "gato": "cole-gato-cartoon.webp",
+      "bus": "cole-bus-cartoon.webp",
+      "kiosco": "cole-kiosco-cartoon.webp",
+      "consola": "cole-consola-cartoon.webp",
+      "vecino": "cole-vecino-cartoon.webp",
+      "cole": "cole-cole-cartoon.webp",
+      "finde": "cole-finde-cartoon.webp",
+      "paco": "cole-paco-cartoon.webp",
+      "lefevre": "cole-lefevre-cartoon.webp",
+      "guia": "cole-guia-cartoon.webp",
+      "albergue": "cole-albergue-cartoon.webp"
+    },
+    "back": "shared-back-cartoon.webp"
+  },
+  "quijote": {
+    "cover": "quijote-cover-cartoon.webp",
+    "chars": {
+      "sancho": "quijote-sancho-cartoon.webp",
+      "rocinante": "quijote-rocinante-cartoon.webp",
+      "ventero": "quijote-ventero-cartoon.webp",
+      "barbero": "quijote-barbero-cartoon.webp",
+      "cura": "quijote-cura-cartoon.webp",
+      "molinos": "quijote-molinos-cartoon.webp",
+      "dulcinea": "quijote-dulcinea-cartoon.webp",
+      "encantador": "quijote-encantador-cartoon.webp",
+      "duques": "quijote-duques-cartoon.webp",
+      "sanson": "quijote-sanson-cartoon.webp",
+      "blancaluna": "quijote-blancaluna-cartoon.webp",
+      "roque": "quijote-roque-cartoon.webp",
+      "imprenta": "quijote-imprenta-cartoon.webp"
+    },
+    "back": "shared-back-cartoon.webp"
+  },
+  "goya": {
+    "cover": "goya-cover-cartoon.webp",
+    "chars": {
+      "rey": "goya-rey-cartoon.webp",
+      "reina": "goya-reina-cartoon.webp",
+      "inquisidor": "goya-inquisidor-cartoon.webp",
+      "aprendiz": "goya-aprendiz-cartoon.webp",
+      "majos": "goya-majos-cartoon.webp",
+      "medico": "goya-medico-cartoon.webp",
+      "lienzo": "goya-lienzo-cartoon.webp",
+      "buho": "goya-buho-cartoon.webp",
+      "soldado": "goya-soldado-cartoon.webp",
+      "fernando": "goya-fernando-cartoon.webp",
+      "quinta": "goya-quinta-cartoon.webp",
+      "lechera": "goya-lechera-cartoon.webp"
+    },
+    "back": "shared-back-cartoon.webp"
+  },
+  "botero": {
+    "cover": "botero-cover-cartoon.webp",
+    "chars": {
+      "tio": "botero-tio-cartoon.webp",
+      "profesor": "botero-profesor-cartoon.webp",
+      "mama": "botero-mama-cartoon.webp",
+      "critico": "botero-critico-cartoon.webp",
+      "naranja": "botero-naranja-cartoon.webp",
+      "circo": "botero-circo-cartoon.webp",
+      "montanas": "botero-montanas-cartoon.webp",
+      "toro": "botero-toro-cartoon.webp",
+      "galerista": "botero-galerista-cartoon.webp",
+      "monalisa": "botero-monalisa-cartoon.webp",
+      "paloma": "botero-paloma-cartoon.webp",
+      "gato": "botero-gato-cartoon.webp",
+      "medellin": "botero-medellin-cartoon.webp"
+    },
+    "back": "shared-back-cartoon.webp"
+  },
+  "frida": {
+    "cover": "frida-cover-cartoon.webp",
+    "chars": {
+      "espejo": "frida-espejo-cartoon.webp",
+      "diego": "frida-diego-cartoon.webp",
+      "doctor": "frida-doctor-cartoon.webp",
+      "mono": "frida-mono-cartoon.webp",
+      "perico": "frida-perico-cartoon.webp",
+      "casa": "frida-casa-cartoon.webp",
+      "mercado": "frida-mercado-cartoon.webp",
+      "calavera": "frida-calavera-cartoon.webp",
+      "periodista": "frida-periodista-cartoon.webp",
+      "breton": "frida-breton-cartoon.webp",
+      "fridos": "frida-fridos-cartoon.webp",
+      "cama": "frida-cama-cartoon.webp",
+      "sandia": "frida-sandia-cartoon.webp"
+    },
+    "back": "shared-back-cartoon.webp"
   }
 }

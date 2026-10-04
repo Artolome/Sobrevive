@@ -5,3 +5,102 @@ html,body{height:100%;min-height:100%}#app{height:100dvh;gap:7px;max-width:540px
 @media (max-height:700px) and (max-aspect-ratio:11/10){#app{overflow-y:auto;min-height:100dvh;height:auto}#stage{min-height:175px;flex:none}.stack{--cw:94px}#speechBox{font-size:17px}#sv-tools button{min-height:32px}.med{width:36px;height:36px}#choices{flex:none}#app header{flex:none}}
 @media (max-height:560px) and (min-aspect-ratio:11/10){#app{max-width:960px;grid-template-columns:minmax(130px,30%) 1fr;grid-template-rows:auto auto auto minmax(52px,1fr) auto auto;column-gap:15px;overflow-y:auto}#stage{grid-column:1;grid-row:1 / 7}#app header{grid-row:1}#gauges{grid-row:2}#sv-tools{grid-column:2;grid-row:3}#speechBox{grid-row:4;font-size:16px}#choices{grid-row:5}#sv-feedback{grid-column:2;grid-row:6;font-size:11px}.sv-value{font-size:10px}#app footer{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Proposition V2 : lisibilité et composition inspirées des maquettes, SVG conservés. */
+body:not([data-u]){--cloth:#17382d;--cloth2:#0c221a;--muted:#c3cdc5}
+body::before{opacity:.24;background-size:48px 48px;background-position:0 0,24px 24px}
+.overlay{background-image:radial-gradient(ellipse at 50% 20%,var(--cloth),var(--cloth2));padding-block:28px}
+#lobby .brand{font-size:clamp(48px,7vw,88px);margin:6px 0 12px}
+#lobby .rule{font-size:17px;margin-bottom:22px}
+#lobby .sv-preview{border:0;padding:0;font-size:12px;color:var(--muted);margin-bottom:14px}
+#lobby .parch{line-height:1.6}
+#lobby .foot{margin:24px auto 10px;max-width:680px;line-height:1.6}
+.sv-toolbar{gap:9px;margin:14px 0 22px}
+.sv-toolbar button,.sv-button{border-radius:999px;min-height:44px;padding:10px 16px;font-size:14px}
+.sv-toolbar button:hover,.sv-button:hover{background:#e3b85a20}
+#app{padding:16px;gap:10px;overflow-y:auto;overflow-x:hidden}
+#app>*{flex-shrink:0}
+#app #stage{flex:1;min-height:210px}
+#app header{order:1}
+#gauges{order:2;padding:6px 3px 0}
+#stage{order:3}
+#speechBox{order:4;padding:4px 0;gap:7px}
+#choices{order:5}
+#sv-feedback{order:6}
+#sv-tools{order:7;gap:7px;padding:7px 0}
+#app footer{order:8;display:block;line-height:1.4;font-size:12px}
+#sv-tools button{min-height:44px;font-size:12px;padding:8px 12px}
+#quitBtn{width:44px;height:44px}
+#helpBtn{min-height:44px}
+.med{width:50px;height:50px}
+.gauge .glabel{font:14px/1.25 Georgia,serif;letter-spacing:0;color:var(--text)}
+.sv-value{font-size:12px;margin-top:2px}
+.gauge:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:10px}
+#sv-speaker{letter-spacing:.06em;font-size:12px;margin:0 0 2px}
+#speechBox{font-size:21px}
+#speechFr{color:#d1d8d1}
+#choices .choice{min-height:84px;padding:12px 10px;gap:7px;border-radius:14px}
+#choices .choice .es{font-size:18px;line-height:1.35}
+#choices .choice .fr{font-size:13px;line-height:1.4;opacity:.85}
+.sv-choice-action{display:block;font-size:.9em;font-style:italic;font-weight:400}
+#sv-feedback{border-left:2px solid var(--gold);border-radius:0 8px 8px 0;padding:7px 12px;line-height:1.6}
+#sv-feedback button{min-height:32px;padding:4px 8px}
+#sv-dialog{background:var(--cloth2);border-color:var(--gold);padding:28px;line-height:1.65}
+#sv-dialog .sv-option{display:flex;align-items:center;gap:10px;cursor:pointer}
+#sv-read-after{width:20px;height:20px;accent-color:var(--gold);flex:none}
+.sv-muted{color:#c3cddd}
+@media (min-width:1000px) and (min-height:650px){
+  #lobby .panel{max-width:1200px}
+  #lobby .parch{max-width:900px;font-size:18px;padding:18px 24px}
+  #lobby #worlds{gap:28px;align-items:flex-start;margin:24px 0}
+  #lobby .world{max-width:210px;width:100%;gap:12px}
+  #lobby .world .tarot{--w:clamp(165px,15vw,210px)}
+  #lobby .world .wsub{font-size:15px;line-height:1.45}
+  #lobby .world .wprog{font-size:13px;line-height:1.5}
+  #app{max-width:1240px;display:grid;grid-template-columns:minmax(310px,40%) minmax(0,1fr);grid-template-rows:auto auto minmax(140px,1fr) auto auto auto auto;gap:18px 50px;padding:36px 28px;min-height:650px}
+  #app header{grid-column:2;grid-row:1}
+  #app #stage{grid-column:1;grid-row:1 / 8;min-height:0}
+  #gauges{grid-column:2;grid-row:2;padding-top:12px}
+  #speechBox{grid-column:2;grid-row:3;font-size:30px;gap:15px}
+  .showfr #speechFr{font-size:18px;line-height:1.55}
+  #choices{grid-column:2;grid-row:4;gap:16px}
+  #choices .choice{min-height:114px;padding:18px 14px}
+  #choices .choice .es{font-size:23px}
+  #choices .choice .fr{font-size:15px}
+  #sv-feedback{grid-column:2;grid-row:5;font-size:13px}
+  #sv-tools{grid-column:2;grid-row:6}
+  #sv-tools button{font-size:14px;padding:10px 18px}
+  #app footer{grid-column:2;grid-row:7;padding-top:6px}
+  #fecha{font-size:23px}
+  #lugar{font-size:15px;margin-top:5px}
+  .med{width:66px;height:66px}
+  .gauge .glabel{font-size:17px;margin-top:7px}
+  .sv-value{font-size:15px}
+  #app .stack .under.u1{transform:rotate(-8deg) translate(-13px,8px)}
+  #app .stack .under.u2{transform:rotate(7deg) translate(16px,5px)}
+}
+@media (max-width:599px){
+  #app{padding:12px 14px;gap:9px;height:100dvh}
+  #app #stage{min-height:190px;margin:6px 0}
+  #speechBox{font-size:19px}
+  #choices .choice .es{font-size:17px}
+  #fecha{font-size:16px}
+  #sv-tools{gap:5px}
+  #sv-tools button{padding:8px 9px}
+  #sv-dialog{padding:20px}
+}
+@media (max-height:560px) and (min-aspect-ratio:11/10){
+  #app{display:grid;max-width:1000px;grid-template-columns:minmax(140px,28%) minmax(0,1fr);grid-template-rows:repeat(6,max-content);align-content:start;gap:9px 22px;height:100dvh;min-height:0}
+  #app #stage{grid-column:1;grid-row:1 / 7;min-height:250px}
+  #app header{grid-column:2;grid-row:1}
+  #gauges{grid-column:2;grid-row:2;padding:0}
+  #speechBox{grid-column:2;grid-row:3;font-size:18px}
+  #choices{grid-column:2;grid-row:4}
+  #choices .choice{min-height:70px;padding:8px}
+  #choices .choice .es{font-size:16px}
+  #sv-feedback{grid-column:2;grid-row:5}
+  #sv-tools{grid-column:2;grid-row:6}
+  #app footer{display:none}
+  .med{width:38px;height:38px}
+  .gauge .glabel{font-size:12px}
+}

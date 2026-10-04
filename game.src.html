@@ -707,7 +707,12 @@ function endDrag(){
   else{wrap.style.transform="";hideDots();}
 }
 wrap.addEventListener("pointerup",endDrag);
-wrap.addEventListener("pointercancel",endDrag);
+wrap.addEventListener("pointercancel",()=>{
+  x0=null;dx=0;
+  wrap.classList.remove("drag");
+  wrap.style.transform="";
+  hideDots();
+});
 
 $("#btnL").addEventListener("click",()=>applyChoice("l"));
 $("#btnR").addEventListener("click",()=>applyChoice("r"));
@@ -715,7 +720,8 @@ document.addEventListener("keydown",e=>{
   if(!$("#zoom").hidden&&e.key==="Escape"){$("#zoom").hidden=true;return;}
   if(e.key==="Escape"&&!$("#ficha").hidden){showLobby();return;}
   if($("#app").hidden)return;
-  if(e.key==="Escape"){if($("#quitBox").hidden)askQuit();else $("#quitBox").hidden=true;return;}
+  if(e.target.closest?.('input,textarea,select,[contenteditable="true"],dialog[open]'))return;
+  if(e.key==="Escape"){e.preventDefault();if($("#quitBox").hidden)askQuit();else $("#quitBox").hidden=true;return;}
   if(e.key==="ArrowLeft")applyChoice("l");
   if(e.key==="ArrowRight")applyChoice("r");
 });

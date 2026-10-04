@@ -191,8 +191,8 @@
    "t": "Primer día de clase. —¡Hola! Tú eres… ¿cómo te llamas?",
    "f": "Premier jour de classe. — Salut ! Tu es… comment tu t'appelles ?",
    "l": {
-    "es": "(Dices tu nombre muy bajito.)",
-    "fr": "(Tu dis ton prénom tout bas.)",
+    "es": "Me llamo… (En voz baja.)",
+    "fr": "Je m’appelle… (À voix basse.)",
     "fx": {
      "amigos": -8,
      "energia": 4

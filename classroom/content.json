@@ -1,1 +1,536 @@
-{"version":"2-preview-1","notice":"Préversion pédagogique — illustrations et relecture intégrale des cartes encore à finaliser.","glossary":[["¿cómo te llamas?","Comment t’appelles-tu ?"],["me llamo","je m’appelle"],["buenos días","bonjour (le matin)"],["muy bajito","tout bas"],["nombre","prénom / nom"],["deberes","devoirs"],["compañero","camarade"],["dinero","argent"],["amigos","amis"],["energía","énergie"],["descansar","se reposer"],["tengo hambre","j’ai faim"],["quiero","je veux"],["prefiero","je préfère"],["me gusta","j’aime"],["porque","parce que"],["molinos","moulins"],["gigantes","géants"],["caballero","chevalier"],["lanza","lance"],["pintar","peindre"],["pincel","pinceau"],["dibujos","dessins"],["cuadro","tableau"],["retrato","portrait"],["rey","roi"],["salud","santé"],["fama","célébrité"],["raíces","racines"],["alegría","joie"],["dieciséis","seize"],["periódico","journal"],["toros","taureaux"],["vendes","tu vends"]]}
+{
+  "version": "2-preview-2",
+  "notice": "Préversion pédagogique — retours narratifs sur 15 cartes ; illustrations et relecture intégrale encore à finaliser.",
+  "glossary": [
+    [
+      "¿cómo te llamas?",
+      "Comment t’appelles-tu ?"
+    ],
+    [
+      "me llamo",
+      "je m’appelle"
+    ],
+    [
+      "buenos días",
+      "bonjour (le matin)"
+    ],
+    [
+      "en voz baja",
+      "à voix basse"
+    ],
+    [
+      "nombre",
+      "prénom / nom"
+    ],
+    [
+      "deberes",
+      "devoirs"
+    ],
+    [
+      "clase",
+      "classe / cours"
+    ],
+    [
+      "dinero",
+      "argent"
+    ],
+    [
+      "amigos",
+      "amis"
+    ],
+    [
+      "descansas",
+      "tu te reposes"
+    ],
+    [
+      "tienes hambre",
+      "tu as faim"
+    ],
+    [
+      "quiero",
+      "je veux"
+    ],
+    [
+      "prefiero",
+      "je préfère"
+    ],
+    [
+      "me gustan",
+      "j’aime (devant un nom pluriel)"
+    ],
+    [
+      "porque",
+      "parce que"
+    ],
+    [
+      "primer día",
+      "premier jour"
+    ],
+    [
+      "te levantas",
+      "tu te lèves"
+    ],
+    [
+      "ya voy",
+      "j’arrive"
+    ],
+    [
+      "pones la mesa",
+      "tu mets la table"
+    ],
+    [
+      "no puedo",
+      "je ne peux pas"
+    ],
+    [
+      "ahora",
+      "maintenant"
+    ],
+    [
+      "mañana",
+      "demain ; matin (selon le contexte)"
+    ],
+    [
+      "abuela",
+      "grand-mère"
+    ],
+    [
+      "vas andando",
+      "tu y vas à pied"
+    ],
+    [
+      "pizarra",
+      "tableau de la classe"
+    ],
+    [
+      "examen",
+      "contrôle / examen"
+    ],
+    [
+      "biblioteca",
+      "bibliothèque"
+    ],
+    [
+      "librería",
+      "librairie (magasin de livres)"
+    ],
+    [
+      "molinos",
+      "moulins"
+    ],
+    [
+      "gigantes",
+      "géants"
+    ],
+    [
+      "caballero",
+      "chevalier"
+    ],
+    [
+      "caballo",
+      "cheval"
+    ],
+    [
+      "flaco",
+      "maigre"
+    ],
+    [
+      "viento",
+      "vent"
+    ],
+    [
+      "brazos",
+      "bras"
+    ],
+    [
+      "a la carga",
+      "à l’attaque"
+    ],
+    [
+      "piensas",
+      "tu réfléchis"
+    ],
+    [
+      "de pie",
+      "debout"
+    ],
+    [
+      "sentado",
+      "assis"
+    ],
+    [
+      "toda la noche",
+      "toute la nuit"
+    ],
+    [
+      "venta",
+      "auberge, dans Don Quijote"
+    ],
+    [
+      "escudero",
+      "écuyer (compagnon du chevalier)"
+    ],
+    [
+      "ínsula",
+      "île (mot ancien, dans Don Quijote)"
+    ],
+    [
+      "lanza",
+      "lance"
+    ],
+    [
+      "pintar",
+      "peindre"
+    ],
+    [
+      "pintas",
+      "tu peins"
+    ],
+    [
+      "pincel",
+      "pinceau"
+    ],
+    [
+      "dibujos",
+      "dessins"
+    ],
+    [
+      "cuadro",
+      "tableau (peinture)"
+    ],
+    [
+      "retrato",
+      "portrait"
+    ],
+    [
+      "rey",
+      "roi"
+    ],
+    [
+      "alegres",
+      "joyeux / joyeuses"
+    ],
+    [
+      "merienda",
+      "goûter"
+    ],
+    [
+      "cometa",
+      "cerf-volant, dans ces cartes"
+    ],
+    [
+      "cielo",
+      "ciel"
+    ],
+    [
+      "raro",
+      "bizarre"
+    ],
+    [
+      "perrito",
+      "petit chien"
+    ],
+    [
+      "feo",
+      "laid / moche"
+    ],
+    [
+      "se queda",
+      "reste"
+    ],
+    [
+      "cobras",
+      "tu es payé"
+    ],
+    [
+      "sueldo",
+      "salaire"
+    ],
+    [
+      "dieciséis",
+      "seize"
+    ],
+    [
+      "periódico",
+      "journal (presse)"
+    ],
+    [
+      "toros",
+      "taureaux"
+    ],
+    [
+      "vendes",
+      "tu vends"
+    ],
+    [
+      "dibujas",
+      "tu dessines"
+    ],
+    [
+      "gordos",
+      "gros / volumineux (ici, les figures représentées)"
+    ],
+    [
+      "redondo",
+      "rond"
+    ],
+    [
+      "tranquilo",
+      "calme"
+    ],
+    [
+      "se vende",
+      "se vend"
+    ],
+    [
+      "mejor",
+      "mieux / meilleur"
+    ],
+    [
+      "mano",
+      "main"
+    ],
+    [
+      "cabeza",
+      "tête"
+    ],
+    [
+      "borras",
+      "tu effaces"
+    ],
+    [
+      "a tu manera",
+      "à ta façon"
+    ],
+    [
+      "cama",
+      "lit"
+    ],
+    [
+      "te aburres",
+      "tu t’ennuies"
+    ],
+    [
+      "pides",
+      "tu demandes"
+    ],
+    [
+      "pinturas",
+      "peintures / couleurs"
+    ],
+    [
+      "espejo",
+      "miroir"
+    ],
+    [
+      "revistas",
+      "magazines"
+    ],
+    [
+      "sigue pintando",
+      "continue à peindre"
+    ],
+    [
+      "no le crees",
+      "tu ne le crois pas"
+    ],
+    [
+      "guardas",
+      "tu gardes / tu ranges (selon le contexte)"
+    ],
+    [
+      "cejas",
+      "sourcils"
+    ],
+    [
+      "flores",
+      "fleurs"
+    ],
+    [
+      "mercado",
+      "marché"
+    ],
+    [
+      "sandía",
+      "pastèque"
+    ],
+    [
+      "tienes miedo",
+      "tu as peur"
+    ],
+    [
+      "estoy cansada",
+      "je suis fatiguée (Frida parle)"
+    ],
+    [
+      "lienzos",
+      "toiles à peindre"
+    ],
+    [
+      "pelo",
+      "cheveux"
+    ]
+  ],
+  "feedback": {
+    "cole": {
+      "intro": {
+        "l": {
+          "es": "Hablas muy bajo: la clase oye mal tu nombre. Tu presentación es corta y requiere poca energía.",
+          "fr": "Tu parles très bas : la classe entend mal ton prénom. Ta présentation est courte et te demande peu d’énergie."
+        },
+        "r": {
+          "es": "Saludas a la clase: tus compañeros conocen tu nombre. Hablar ante todos requiere un poco de energía.",
+          "fr": "Tu salues la classe : tes camarades connaissent ton prénom. Parler devant tout le monde te demande un peu d’énergie."
+        }
+      },
+      "mama1": {
+        "l": {
+          "es": "Duermes un poco más y recuperas energía. Pero llegas tarde: te pierdes el inicio de la clase.",
+          "fr": "Tu dors un peu plus et récupères de l’énergie. Mais tu arrives en retard : tu manques le début du cours."
+        },
+        "r": {
+          "es": "Te levantas y llegas a tiempo para la clase. Sigues la lección, aunque todavía tienes sueño.",
+          "fr": "Tu te lèves et arrives à l’heure au cours. Tu suis la leçon, même si tu as encore sommeil."
+        }
+      },
+      "bus": {
+        "l": {
+          "es": "Pagas el billete. Pablo va a pie, solo: hoy no vas con él.",
+          "fr": "Tu paies le billet. Pablo y va à pied, seul : aujourd’hui, vous ne faites pas le trajet ensemble."
+        },
+        "r": {
+          "es": "Caminas y charlas con Pablo. El camino te cansa, pero compartes un rato con tu amigo.",
+          "fr": "Tu marches avec Pablo et vous discutez. Le trajet te fatigue, mais vous passez un moment entre amis."
+        }
+      }
+    },
+    "quijote": {
+      "salida": {
+        "l": {
+          "es": "¡Ya tienes caballo y dama! Te sientes listo para la aventura y ves tu vida como un libro de caballerías.",
+          "fr": "Tu as un cheval et une dame ! Tu te sens prêt pour l’aventure et vois ta vie comme un livre de chevalerie."
+        },
+        "r": {
+          "es": "Buscas un nombre perfecto durante cuatro días. Imaginas mucho, descansas poco y dudas antes de salir.",
+          "fr": "Tu cherches un nom parfait pendant quatre jours. Tu imagines beaucoup, te reposes peu et hésites avant de partir."
+        }
+      },
+      "molinos": {
+        "l": {
+          "es": "Atacas sin miedo: para ti, son gigantes. Pero las aspas te tiran al suelo y pierdes fuerzas.",
+          "fr": "Tu attaques sans peur : pour toi, ce sont des géants. Mais les ailes te jettent au sol et tu perds des forces."
+        },
+        "r": {
+          "es": "Escuchas a Sancho y ves los molinos. Sancho confía más en ti; tus ganas de combatir y tus sueños de gigantes bajan.",
+          "fr": "Tu écoutes Sancho et reconnais les moulins. Sancho te fait davantage confiance ; ton envie de combattre et tes rêves de géants diminuent."
+        }
+      },
+      "velar": {
+        "l": {
+          "es": "Pasas la noche de pie, junto a tus armas. Te sientes valiente, pero la larga espera te cansa.",
+          "fr": "Tu passes la nuit debout, près de tes armes. Tu te sens courageux, mais la longue attente te fatigue."
+        },
+        "r": {
+          "es": "Te sientas y recuperas fuerzas. La prueba parece menos heroica a tus ojos: tu valor baja en esta aventura.",
+          "fr": "Tu t’assieds et récupères des forces. L’épreuve te paraît moins héroïque : ton courage baisse dans cette aventure."
+        }
+      }
+    },
+    "goya": {
+      "salida": {
+        "l": {
+          "es": "La merienda gusta a la fábrica: recibes dinero y el apoyo de la corte. Sigues el encargo y pruebas menos ideas propias.",
+          "fr": "Le goûter plaît à la manufacture : tu reçois de l’argent et l’appui de la cour. Tu suis la commande et explores moins tes propres idées."
+        },
+        "r": {
+          "es": "El cielo raro deja ver tus ideas. Pero la corte espera una escena alegre y el dibujo le gusta menos.",
+          "fr": "Le ciel étrange laisse voir tes idées. Mais la cour attend une scène joyeuse et apprécie moins ce dessin."
+        }
+      },
+      "quitasol": {
+        "l": {
+          "es": "Cambias el perro y el cliente paga. Aceptas su gusto, pero dejas de lado tu primera idea.",
+          "fr": "Tu modifies le chien et le client paie. Tu acceptes son goût, mais laisses de côté ta première idée."
+        },
+        "r": {
+          "es": "El perro se queda: defiendes tu manera de pintar. En esta historia, tu respuesta gusta menos en la corte.",
+          "fr": "Le chien reste : tu défends ta manière de peindre. Dans cette histoire, ta réponse plaît moins à la cour."
+        }
+      },
+      "familia": {
+        "l": {
+          "es": "Observas cada cara y pintas a tu manera. El retrato avanza, pero tantas horas de trabajo te cansan.",
+          "fr": "Tu observes chaque visage et peins à ta façon. Le portrait avance, mais ces longues heures de travail te fatiguent."
+        },
+        "r": {
+          "es": "La familia disfruta de su retrato ideal. Ganas su apoyo, pero tus propias ideas tienen menos espacio.",
+          "fr": "La famille apprécie son portrait idéal. Tu gagnes son appui, mais tes propres idées ont moins de place."
+        }
+      }
+    },
+    "botero": {
+      "salida": {
+        "l": {
+          "es": "Vendes más dibujos en la plaza. Con esos toros de grandes formas, pruebas tu propia manera de dibujar.",
+          "fr": "Tu vends d’autres dessins aux arènes. Avec ces taureaux aux formes amples, tu explores ta propre manière de dessiner."
+        },
+        "r": {
+          "es": "El periódico muestra tus dibujos a más gente. Sigues sus pedidos y dejas menos espacio a tu propio estilo.",
+          "fr": "Le journal montre tes dessins à davantage de lecteurs. Tu suis ses demandes et laisses moins de place à ton propre style."
+        }
+      },
+      "toro_modelo": {
+        "l": {
+          "es": "El toro se parece a los de los libros y se vende bien. Ganas dinero, pero pruebas menos tus formas redondas.",
+          "fr": "Le taureau ressemble à ceux des livres et se vend bien. Tu gagnes de l’argent, mais explores moins tes formes rondes."
+        },
+        "r": {
+          "es": "El toro redondo afirma tu estilo. En esta escena, vendes menos dibujos: ganas libertad, pero recibes menos dinero.",
+          "fr": "Le taureau rond affirme ton style. Dans cette scène, tu vends moins de dessins : tu gagnes en liberté, mais reçois moins d’argent."
+        }
+      },
+      "academia": {
+        "l": {
+          "es": "Borras la mano y sigues el modelo del profesor. Él habla bien de tu trabajo, pero tus formas propias desaparecen.",
+          "fr": "Tu effaces la main et suis le modèle du professeur. Il parle en bien de ton travail, mais tes formes personnelles disparaissent."
+        },
+        "r": {
+          "es": "Conservas la mano grande y afirmas tu estilo. El profesor no está de acuerdo y recomienda menos tu trabajo.",
+          "fr": "Tu conserves la grande main et affirmes ton style. Le professeur n’est pas d’accord et recommande moins ton travail."
+        }
+      }
+    },
+    "frida": {
+      "salida": {
+        "l": {
+          "es": "El espejo te sirve de modelo: empiezas a pintar. Crear algo hace más alegre este rato en la cama.",
+          "fr": "Le miroir te sert de modèle : tu commences à peindre. Créer quelque chose rend ce moment au lit plus joyeux."
+        },
+        "r": {
+          "es": "Descansas con las revistas: Salud sube en el juego. Hoy no pintas y tus ideas viajan a París, lejos de México.",
+          "fr": "Tu te reposes avec les magazines : Salud remonte dans le jeu. Aujourd’hui, tu ne peins pas et tes pensées vont vers Paris, loin du Mexique."
+        }
+      },
+      "diego_cuadros": {
+        "l": {
+          "es": "Las palabras de Diego te animan. Sonríes con tu broma y sigues pintando con ganas.",
+          "fr": "Les paroles de Diego t’encouragent. Ta plaisanterie te fait sourire et tu poursuis ta peinture avec envie."
+        },
+        "r": {
+          "es": "Guardas los cuadros: hoy no pintas. Dudas de tu trabajo y estás triste, pero haces una pausa para descansar.",
+          "fr": "Tu ranges les tableaux : aujourd’hui, tu ne peins pas. Tu doutes de ton travail et ressens de la tristesse, mais fais une pause pour te reposer."
+        }
+      },
+      "diego_cejas": {
+        "l": {
+          "es": "Tu broma sobre las cejas te hace reír. La charla continúa y los pinceles esperan.",
+          "fr": "Ta plaisanterie sur les sourcils te fait rire. La discussion continue et les pinceaux attendent."
+        },
+        "r": {
+          "es": "Pintas toda la noche: tu trabajo avanza. Sin pausa ni sueño, te cansas y pierdes las ganas de sonreír.",
+          "fr": "Tu peins toute la nuit : ton travail avance. Sans pause ni sommeil, tu te fatigues et perds l’envie de sourire."
+        }
+      }
+    }
+  }
+}

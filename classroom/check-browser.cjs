@@ -80,7 +80,8 @@ let url;
    assert.equal((await state()).plays,0);await page.locator('#sv-close').focus();await page.keyboard.press('Shift+Tab');
    const summaries=page.locator('#sv-dialog details summary');
    if(await summaries.count())assert.ok(await summaries.last().evaluate(e=>e===document.activeElement));
-   else assert.equal(await page.evaluate(()=>document.activeElement.id),'sv-export');
+   // Les téléchargements précèdent désormais le relevé ; sans choix, les notes ferment le parcours clavier.
+   else assert.equal(await page.evaluate(()=>document.activeElement.id),'sv-notes');
    await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.id),'sv-close');
    await page.keyboard.press('Escape');assert.equal((await state()).dialog,false);assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Mon bilan');
   });

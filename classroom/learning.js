@@ -4,9 +4,11 @@
   if (!window.__SV || typeof Core === 'undefined') return;
   const cfg=window.SV_LEARNING||{}, $s=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const KEY='sobrevive-v2-learning';
-  let history=[],notes='',lastFocus=null,readAfterChoice=false;
-  function store(){try{localStorage.setItem(KEY,JSON.stringify({history,notes,readAfterChoice}));}catch(_){}}
-  try{const data=JSON.parse(localStorage.getItem(KEY)||'{}');history=Array.isArray(data.history)?data.history.slice(-80):[];notes=typeof data.notes==='string'?data.notes:'';readAfterChoice=data.readAfterChoice===true;}catch(_){}
+  const REPORT_KEY='sobrevive-v2-reports';
+  let history=[],notes='',lastFocus=null,readAfterChoice=false,reportState=null;
+  function store(){let ok=true;try{localStorage.setItem(KEY,JSON.stringify({history,notes,readAfterChoice}));}catch(_){ok=false;}try{if(reportState)localStorage.setItem(REPORT_KEY,JSON.stringify(reportState));}catch(_){ok=false;}return ok;}
+  try{const data=JSON.parse(localStorage.getItem(KEY)||'{}');history=Array.isArray(data.history)?data.history.slice(-80):[];notes=typeof data.notes==='string'?data.notes:'';readAfterChoice=data.readAfterChoice===true;reportState=data.reports||null;}catch(_){}
+  try{const separate=localStorage.getItem(REPORT_KEY);if(separate)reportState=JSON.parse(separate);}catch(_){}
   // Compléter uniquement les anciens retours absents, avec une correspondance exacte et unique.
   let restored=false;
   for(const item of history){
@@ -24,6 +26,8 @@
     if(matches.length===1){Object.assign(item,matches[0]);restored=true;}
   }
   if(restored)store();
+  const reports=window.SVReport.create({saved:reportState,legacyEntries:history,legacyNotes:notes,persist:data=>{reportState=data;return store();}});
+  reports.save();
   const dialog=document.createElement('dialog');dialog.id='sv-dialog';dialog.setAttribute('aria-labelledby','sv-title');document.body.appendChild(dialog);
   const button=(text,fn)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',fn);return b;};
   function close(){
@@ -89,20 +93,7 @@
     renderFeedback($s('#sv-feedback'),item);
     $s('#app footer').textContent=(S?.plays||0)+' choix effectué'+(S?.plays===1?'':'s')+' · progression de jeu, pas une note de langue';
   }
-  function journal(){
-    modal('Mon bilan de partie', '<p class="sv-note">En binôme : une personne lit, l’autre choisit et explique. Inversez les rôles à la carte suivante.</p>'+
-      '<p lang="es"><strong>Elijo esta respuesta porque…</strong><br>He descubierto la palabra…</p>'+
-      '<label for="sv-notes">Une décision retenue, un mot découvert, une justification</label><textarea id="sv-notes" maxlength="10000" placeholder="Elijo… porque…">'+esc(notes)+'</textarea>'+
-      '<p class="sv-muted">Journal et notes partagés sur ce navigateur, sans compte élève. Les 80 dernières décisions sont conservées et exportées ; les 30 dernières sont affichées ici. Aucun envoi automatique.</p>'+
-      '<div class="sv-actions"><button class="sv-button" id="sv-export">Exporter mon bilan (.txt)</button></div><h3>Décisions enregistrées : '+history.length+'</h3>'+
-      history.slice(-30).reverse().map((item,i)=>'<details><summary>'+esc(item.world)+' · '+esc(item.choice)+'</summary><p lang="es">'+esc(item.text)+'</p><p>'+esc(item.translation)+'</p>'+narrative(item)+effects(item)+'</details>').join('')+
-      (!history.length?'<p>Ton journal se remplira après tes premiers choix.</p>':''));
-    $s('#sv-notes').oninput=e=>{notes=e.target.value;store();};
-    $s('#sv-export').onclick=()=>{
-      const text=['¡Sobrevive! — Bilan personnel','Ce bilan n’est pas une certification de niveau.','',notes,'','DÉCISIONS — 80 dernières au maximum',...history.map((item,i)=>'\n'+(i+1)+'. '+item.world+'\n'+item.text+'\nMon choix : '+item.choice+'\nTraduction : '+item.translation+(item.narrative?'\nDans la fiction : '+item.narrative.es+'\n'+item.narrative.fr:'')+'\n'+item.effects.map(e=>e.label+' : '+e.before+' → '+e.after).join(' · '))].join('\n');
-      const url=URL.createObjectURL(new Blob(['\uFEFF'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='sobrevive-mon-bilan.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    };
-  }
+  function journal(){reports.show(modal);}
   const lobby=$s('#lobby .panel'),banner=document.createElement('p');banner.className='sv-preview';banner.textContent='V2 · '+(cfg.notice||'Préversion pédagogique');lobby.insertBefore(banner,$s('#lobby .rule'));
   const menu=document.createElement('div');menu.className='sv-toolbar';menu.append(button('Comment jouer',tutorial),button('Mon bilan',journal));lobby.insertBefore(menu,$s('#worlds'));
   const tools=document.createElement('nav');tools.className='sv-toolbar';tools.id='sv-tools';tools.setAttribute('aria-label','Aides de jeu');tools.append(button('Mots utiles',words),button('Règles et options',tutorial),button('Mon bilan',journal));$s('#gauges').after(tools);
@@ -124,25 +115,27 @@
     for(const id of ['btnL','btnR']){const el=$s('#'+id+' .es');const match=el.textContent.match(/^(.*?)\s*(\([^()]+\))$/);if(match){el.textContent=match[1];const action=document.createElement('span');action.className='sv-choice-action';action.textContent=match[2];el.appendChild(action);}}
   };
   const baseStart=startGame;
-  startGame=function(id){baseStart(id);feedback(null);$s('#btnL').focus();let seen=false;try{seen=localStorage.getItem('sobrevive-v2-tutorial')==='1';}catch(_){}if(!seen)tutorial();};
+  startGame=function(id){baseStart(id);if(U?.id!==id||!S)return;reports.start(U,S);feedback(null);$s('#btnL').focus();let seen=false;try{seen=localStorage.getItem('sobrevive-v2-tutorial')==='1';}catch(_){}if(!seen)tutorial();};
   const baseApply=Core.apply;
   Core.apply=function(world,state,card,side){
-    const before={...state.g},result=baseApply.call(this,world,state,card,side);
-    if(state===S){const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,choice:card[side].es,translation:card[side].fr,narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);store();feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
+    const tracked=state===S,before={...state.g},gameTime=tracked?Core.timeLabel(world,state):'',place=tracked?Core.place(world,state):'';
+    if(tracked&&!reports.hasActive())reports.start(world,state,{partial:state.plays>0});
+    const result=baseApply.call(this,world,state,card,side);
+    if(tracked){const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,textFr:card.f,choice:card[side].es,translation:card[side].fr,turn:state.plays,recordedAt:new Date().toISOString(),gameTime,place,character:world.chars[card.ch]?.name||'',narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({key:g.key,label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);reports.record(world,state,item);if(result.dead||result.win)reports.finish(result.dead?'lost':'won',world,state,result.dead?world.deaths?.[result.dead.g]?.[result.dead.dir]:world.win);feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
     return result;
   };
   const baseEnd=showEnd;
-  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}const last=history.at(-1);endFeedback.hidden=last?.worldId!==U.id;if(!endFeedback.hidden)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus();};
+  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}reports.finish(dead?'lost':'won',U,S,dead?U.deaths?.[dead.g]?.[dead.dir]:U.win);const last=reports.lastChoice(U.id);endFeedback.hidden=!last;if(last)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus();};
   const baseQuit=askQuit;
   $s('#quitBtn').removeEventListener('click',baseQuit);
   askQuit=function(){
     if(busy||!U)return;
     modal('Quitter cette partie ?', '<p>Les collections, tes décisions et tes notes restent sur ce navigateur. Cette partie ne pourra pas être reprise.</p><div class="sv-actions"><button class="sv-button" id="sv-stay">Continuer à jouer</button><button class="sv-button" id="sv-quit-confirm">Quitter la partie</button></div>');
     $s('#sv-stay').onclick=close;
-    $s('#sv-quit-confirm').onclick=()=>{close();leaveGame();$s('#startBtn').focus();};
+    $s('#sv-quit-confirm').onclick=()=>{reports.finish('quit',U,S,null,'La partie a été quittée depuis le jeu.');close();leaveGame();$s('#startBtn').focus();};
   };
   $s('#quitBtn').addEventListener('click',askQuit);
   const endButton=button('Mon bilan · Exporter',journal);endButton.className='sv-button';$s('#end .panel').appendChild(endButton);
-  if(U&&S){renderGauges();speaker.textContent=cur?U.chars[cur.ch]?.name||'':'';feedback(history.at(-1));}
+  if(U&&S){if(!$s('#app').hidden)reports.start(U,S,{partial:S.plays>0});renderGauges();speaker.textContent=cur?U.chars[cur.ch]?.name||'':'';feedback(reports.lastChoice(U.id));}
   requestAnimationFrame(()=>fit());
 })();

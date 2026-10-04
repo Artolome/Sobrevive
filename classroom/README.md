@@ -5,7 +5,8 @@ Travail isolé sur `codex/v2-interface-pedagogie`. Aucun changement de workflow,
 
 ## Changements proposés
 
-- Accueil agrandi, palette verte et disposition de partie sur deux colonnes sur ordinateur. Les SVG existants sont conservés en source. Sur téléphone, les textes longs restent accessibles par défilement.
+- Menus redessinés comme un carnet d'aventures : papier clair, vert profond, touches corail, cinq couvertures à explorer et progression lisible. La fiche d'univers présente le bouton Jouer avant la collection dépliable. Les fenêtres d'aide, le bilan et la fin reprennent cette présentation.
+- Polices Fraunces et Nunito Sans intégrées localement, avec leurs licences : aucun téléchargement pendant le jeu. Le tapis de partie garde ses couleurs et sa disposition sur deux colonnes sur ordinateur. Sur téléphone, les textes longs restent accessibles par défilement.
 - Collection cartoon étendue, après accord, aux 76 personnages utilisés par les 225 situations, aux cinq couvertures et à un dos commun : 82 illustrations originales. Les noms et les cadres restent en HTML.
 - Arrivée, inclinaison au glissement et sortie des cartes conservées. Un léger mouvement de l’illustration accompagne l’attente ; il s’arrête pendant un glissement ou l’ouverture d’une aide. Il est désactivé si le système demande de réduire les animations.
 - Retours bilingues explicitement rédigés pour les 225 cartes et leurs 450 choix. Chaque commentaire relie l’action aux conséquences de la scène et aux jauges concernées. Aucun récit n’est fabriqué automatiquement à partir des signes des effets.
@@ -13,7 +14,9 @@ Travail isolé sur `codex/v2-interface-pedagogie`. Aucun changement de workflow,
 - Lexique de 92 entrées attestées dans les situations et réponses. La recherche respecte les limites de mots.
 - Paroles et indication d’action distinguées sur la première carte de Señora Pons.
 - Option « Lire le retour après chaque choix » : dialogue de lecture qui bloque l’interaction avec la carte suivante, déjà rendue derrière lui.
-- Conséquences et traduction reprises dans l’export du bilan. Affichage explicite des limites : 80 dernières décisions conservées/exportées, 30 affichées.
+- Compte rendu par partie dans « Mon bilan » : dates, univers, issue, jauges de départ et de fin, décisions chronologiques, commentaires bilingues et réflexion personnelle. Téléchargement HTML autonome et imprimable (PDF via le navigateur), ou texte brut.
+- Conservation locale des 20 dernières parties, dans la limite de 1 500 décisions au total et 300 par partie. Les suppressions liées à ces limites sont signalées. L'ancien journal de 80 décisions et ses notes restent séparés, sans reconstituer de parties dont les dates et limites sont inconnues. Une partie en cours lors d'une fermeture est signalée comme interrompue au prochain chargement.
+- Guide de parcours autonome généré depuis les decks : écrans, cinq univers, paliers, onze chaînes conditionnelles, 45 fins narratives et catalogue filtrable des 225 cartes / 450 choix. Il distingue les suites liées aux décisions de la pioche aléatoire.
 - Annulation d’un glissement interrompu, sortie de partie modale, focus restitué vers une commande visible. Aucune sauvegarde complète d’une partie n’est promise.
 
 ## Contenu
@@ -32,6 +35,8 @@ Le jeu n’a aucune nouvelle dépendance de fonctionnement. Depuis la racine :
 node build.js
 node check.js
 node --check classroom/learning.js
+node --check classroom/report.js
+node --check classroom/menus.js
 node classroom/check-content.js --base ec55ebe
 node classroom/check-raster.cjs
 node classroom/check-illustrations.cjs
@@ -45,6 +50,14 @@ Le test navigateur facultatif `classroom/check-browser.cjs` utilise Playwright e
 `node classroom/check-motion.cjs` vérifie aussi le mouvement au repos, sa suspension dans les aides, un véritable glissement avec sortie/arrivée de carte et le réglage de réduction des animations. Il utilise les mêmes variables de configuration que le test navigateur. Un chemin JSON facultatif en argument permet de conserver son rapport.
 
 `node classroom/check-feedback.cjs [rapport.json] [dossier-captures]` vérifie les 450 choix avec des états moteur de test : commentaire affiché, journal, variations réelles et identifiants. Il contrôle aussi la restauration d’anciens commentaires absents, un vrai clic avec consultation bilingue et téléchargement du bilan, le dernier choix d’une défaite, le plafonnement des valeurs et 15 mises en page longues sur ordinateur, téléphone et écran en paysage. Ces contrôles utilisent aussi Playwright et Edge ; les assertions de structure ne remplacent pas une relecture du sens.
+
+`node classroom/check-menus.cjs [dossier-captures]` contrôle les cinq fiches d'univers, la collection dépliable, les dialogues et le chargement des polices sans réseau, dans quatre formats (1440, 844, 390 et 320 pixels de large).
+
+`node classroom/check-report.cjs [rapport.json] [dossier-captures]` vérifie la migration, la séparation des parties et des notes, les exports réels HTML/TXT, l'échappement du texte, l'impression, la fin avant l'animation, la fermeture, les limites de conservation et le message en cas de sauvegarde refusée. Les rapports utilisent la clé locale distincte `sobrevive-v2-reports`, pour qu'une ancienne version du jeu ne les efface pas en écrivant son journal historique. Les parties simultanées dans plusieurs onglets de la nouvelle version ne sont pas synchronisées.
+
+`node classroom/build-walkthrough.cjs [guide.html]` régénère le guide des parcours. Il ne modifie ni le jeu ni les decks.
+
+`node classroom/check-walkthrough.cjs` vérifie la couverture du guide, ses liens internes et les mécanismes documentés directement contre le moteur : temps, paliers, conditions, priorité de tirage et priorité de la fin de jauge sur la victoire. Les onze arcs narratifs emploient douze conditions mémorisées (l'arc Alex en possède deux).
 
 ## Limites et suite à valider
 
@@ -70,6 +83,6 @@ Les fichiers doivent être dans `art/raster/`, avec un nom simple en minuscules 
 
 Les images sont embarquées en base64 dans les données `coverImage`, `charImages` et `backImage`. Le jeu reste autonome et utilisable hors ligne, au prix d’un HTML plus lourd (le base64 ajoute environ un tiers au poids des fichiers). Les WebP sont encodés à qualité 90, sans redimensionnement ni recadrage, depuis les originaux PNG conservés dans les livrables locaux. Sans manifest ou sans image pour une carte, le gabarit conserve le SVG existant. Les personnages non découverts gardent leur silhouette SVG masquée dans la collection ; leur nouvelle image n’est pas affichée. `check-raster.cjs` vérifie les contrôles d’entrée et ces replis avec des fixtures temporaires, sans toucher aux illustrations du jeu. `check-illustrations.cjs` contrôle l’exhaustivité des 82 visuels et la couverture des 225 situations.
 
-Tests de cette itération effectués sous Node 24 et Edge sur Windows. Node 22, Safari, Firefox, lecteur d’écran et appareil tactile physique restent à vérifier. Le contrôle de fenêtre réduite ne remplace pas un essai du zoom natif à 200 %.
+Tests de cette itération effectués sous Node 24 et Edge sur Windows. Sur cette machine, le compilateur JIT de Node 24 a rencontré une erreur native pendant `check.js` ; le contrôle complet a réussi avec `node --jitless check.js` (15 000 simulations). Node 22, Safari, Firefox, lecteur d’écran et appareil tactile physique restent à vérifier. Le contrôle de fenêtre réduite ne remplace pas un essai du zoom natif à 200 %.
 
 Collections, notes et journal sont partagés sur le navigateur, sans compte élève. La partie en cours ne reprend pas après fermeture. Aucune fusion ou mise en ligne avant accord explicite.

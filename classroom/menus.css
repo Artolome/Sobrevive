@@ -1,0 +1,188 @@
+/* Carnet d'aventures. Polices intégrées au fichier autonome, licences dans fonts/. */
+:root{--f-display:'Fraunces',Georgia,serif;--f-text:'Nunito Sans',system-ui,sans-serif;--sv-forest:#204b3e;--sv-coral:#ab4334;--sv-paper:#fcf8ef;--sv-line:#ddd8c9;--sv-soft:#edeadd;--sv-ink:#263e35;--sv-muted:#596a5e}
+body,button,input,textarea,select{font-family:var(--f-text)}
+body .tarot .t-num,body .tarot .t-name b{font-family:var(--f-display);letter-spacing:0;font-weight:500}
+body .tarot .t-name i{font-family:var(--f-text);font-size:calc(var(--w)*.058);line-height:1.2}
+.gauge .glabel{font-family:var(--f-text);font-weight:600}
+#speech,#choices .choice .es{font-family:var(--f-display);font-weight:500;line-height:1.4}
+#speechFr,#choices .choice .fr,#app footer,#sv-speaker,.sv-value,.sv-feedback,.sv-toolbar button,.sv-button{font-family:var(--f-text)}
+#speech{font-size:.94em}
+#fecha{font-family:var(--f-display);font-weight:500;font-variant:normal;letter-spacing:.015em}
+#lugar{font-family:var(--f-text)}
+#choices .choice{box-shadow:0 4px 0 #0005}
+#sv-tools button{font-weight:650}
+
+/* Une lumière de papier accueille le joueur ; le tapis de jeu conserve ses couleurs. */
+#lobby,#ficha,#end{color:var(--sv-ink);background:radial-gradient(ellipse at 0 0,#dae7d4aa,transparent 45%),radial-gradient(ellipse at 100% 90%,#efd9bb66,transparent 50%),var(--sv-paper);padding:28px 32px 36px}
+#lobby::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#204b3e 0 20%,#c2914a 20% 40%,#9f6056 40% 60%,#577a87 60% 80%,#b67181 80% 100%)}
+#lobby .panel{max-width:1260px}
+.sv-menu-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--sv-line);margin-bottom:26px;text-align:left}
+.sv-edition{font-size:11px;font-weight:800;letter-spacing:.17em;display:flex;align-items:center;gap:10px}
+.sv-edition>span{font-size:25px;color:var(--sv-coral)}
+.sv-menu-top .sv-toolbar{margin:0;gap:8px}
+.sv-menu-top .sv-toolbar button{font-size:13px;padding:9px 16px;min-height:42px;color:var(--sv-forest);border-color:#b8c7b8;font-weight:700;background:#fff7}
+.sv-menu-top .sv-toolbar button:last-child{color:#fffdf5;background:var(--sv-forest);border-color:var(--sv-forest)}
+.sv-menu-top .sv-toolbar button:hover{background:#e3eadc;color:var(--sv-ink)}
+#lobby .brand{font-family:var(--f-display);font-size:clamp(50px,6.5vw,86px);font-weight:650;letter-spacing:-.045em;text-shadow:none;color:var(--sv-forest);margin:0 0 8px;line-height:1.12}
+#lobby .sv-preview{border:0;color:var(--sv-coral);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;margin:10px auto;padding:0}
+#lobby .rule{display:block;color:var(--sv-muted);font-family:var(--f-display);font-size:clamp(18px,2vw,23px);letter-spacing:-.015em;margin:10px 0 32px;max-width:none}
+#lobby .rule::before,#lobby .rule::after{display:none}
+.sv-world-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;text-align:left;border-bottom:1px solid var(--sv-line);padding-bottom:14px;margin-bottom:22px}
+.sv-world-heading h2{font:500 clamp(22px,2.3vw,29px)/1.2 var(--f-display);letter-spacing:-.02em;margin:0}
+.sv-world-heading>span{font-size:12px;color:var(--sv-muted);white-space:nowrap}
+#lobby #worlds{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch;gap:18px;margin:0 0 28px}
+#lobby .world{--sv-world:#496b54;position:relative;display:flex;align-items:stretch;gap:0;width:100%;max-width:none;background:#fffdf6;border:1px solid #dcd7c6;border-radius:16px;padding:15px 13px 0;box-shadow:0 4px 0 #ddd5c550,0 7px 20px #43563c09;text-align:left;color:var(--sv-ink);transition:transform .2s,box-shadow .2s,border-color .2s}
+#lobby .world[data-u="quijote"]{--sv-world:#8b5c24}
+#lobby .world[data-u="goya"]{--sv-world:#7c5265}
+#lobby .world[data-u="botero"]{--sv-world:#486d80}
+#lobby .world[data-u="frida"]{--sv-world:#9e5d61}
+#lobby .world:hover{transform:translateY(-6px);box-shadow:0 10px 24px #43563c22;border-color:var(--sv-world)}
+#lobby .world:active{transform:translateY(-1px)}
+#lobby .world .tarot{--w:clamp(125px,13.4vw,179px);margin:0 auto 17px;box-shadow:0 5px 9px #283b342b,inset 0 0 12px #b3a6804d;transform:rotate(-2deg)}
+#lobby .world:nth-child(even) .tarot{transform:rotate(2deg)}
+#lobby .world .wsub{font-family:var(--f-text);font-style:normal;font-size:13px;line-height:1.5;letter-spacing:0;color:var(--sv-muted);text-wrap:pretty;margin-bottom:15px;flex:1}
+#lobby .world .wprog{font:700 11px/1.5 var(--f-text);color:var(--sv-world);letter-spacing:0}
+.sv-discovery-meter{height:3px;background:#e8e7db;border-radius:3px;margin:7px 0 14px;overflow:hidden}
+.sv-discovery-meter i{display:block;height:100%;background:var(--sv-world)}
+.sv-world-enter{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e8e3d7;padding:12px 0;font-size:13px;font-weight:800;color:var(--sv-world)}
+.sv-world-enter>span{font-size:21px;line-height:1}
+.sv-howto{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;border-top:1px solid var(--sv-line);padding:24px 4px 4px;text-align:left}
+.sv-howto>div{display:flex;gap:12px;align-items:baseline}
+.sv-step{color:var(--sv-coral);font:500 20px/1 var(--f-display)}
+.sv-howto p{margin:0;font-size:12px;line-height:1.6;color:var(--sv-muted)}
+.sv-howto strong{display:block;color:var(--sv-ink);font-size:14px;margin-bottom:3px}
+#lobby .foot{max-width:800px;margin:25px auto 0;font-family:var(--f-text);font-size:11px;font-style:normal;line-height:1.6;color:var(--sv-muted)}
+
+/* Fiche d'univers : l'entrée dans le jeu précède les détails de collection. */
+#ficha .panel{max-width:820px;background:#fffdf7;border:1px solid var(--sv-line);border-radius:24px;padding:32px;box-shadow:0 15px 70px #284d3310}
+#ficha .fhead{gap:32px;margin:0 0 28px}
+#fCover .tarot{--w:175px;transform:rotate(-3deg);box-shadow:0 8px 15px #253c3529}
+.sv-overline{font-family:var(--f-text);font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--sv-coral);margin:0 0 12px}
+#fName{font-family:var(--f-display);font-size:clamp(32px,5vw,52px);font-weight:600;letter-spacing:-.025em;line-height:1.1;color:var(--sv-forest);margin:0 0 14px}
+#fTag{color:var(--sv-coral);font:500 20px/1.4 var(--f-display);margin-bottom:14px}
+#fIntro{color:var(--sv-muted);font:15px/1.65 var(--f-text)}
+#ficha .row{margin:0 0 28px;justify-content:space-between;border-bottom:1px solid var(--sv-line);padding-bottom:26px}
+#ficha .btn-go,#end .btn-go{background:var(--sv-coral);border:1px solid #943829;box-shadow:0 4px 0 #78362822;padding:13px 25px;font:800 16px/1.4 var(--f-text);letter-spacing:0;min-height:48px}
+#ficha .btn-go:hover,#end .btn-go:hover{background:#913527}
+#ficha .btn-ghost,#end .btn-ghost{color:var(--sv-forest);border:1px solid #b8c7b8;padding:12px 18px;font:700 14px/1.4 var(--f-text);letter-spacing:0;min-height:46px}
+#ficha .btn-ghost:hover,#end .btn-ghost:hover{background:#e5ecdf}
+.sv-menu-section{font:500 22px/1.3 var(--f-display);color:var(--sv-ink);text-align:left;margin:22px 0 16px}
+#fLegend{gap:10px;margin-bottom:20px}
+#fLegend .gauge{background:#eef1e7;border:1px solid #dfe5d7;border-radius:14px;flex:1;padding:12px 5px;cursor:default}
+#fLegend .med{height:42px;width:42px;border-color:#bd9853;box-shadow:none}
+#fLegend .glabel{color:var(--sv-forest);font:700 13px/1.3 var(--f-text);margin-top:9px}
+#fUnlock{background:#f7efd9;border:1px solid #e9dab4;border-radius:12px;padding:14px 16px;color:#655235;font:13px/1.6 var(--f-text);margin:0 0 18px}
+#fUnlock b{color:#564324}
+.sv-collection{border-top:1px solid var(--sv-line);text-align:left;padding-top:18px}
+.sv-collection summary{font:600 18px/1.5 var(--f-display);cursor:pointer;padding:8px 0;color:var(--sv-forest)}
+#fCharCount{font:700 12px/1.5 var(--f-text);background:var(--sv-soft);padding:4px 8px;border-radius:20px;margin-left:8px;white-space:nowrap}
+#fChars{margin:16px 0 0;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:16px 10px}
+#ficha .record,#end .record{font-family:var(--f-text);font-style:normal;color:var(--sv-muted);font-size:12px}
+
+/* Fin de partie et fenêtres d'aide utilisent le même carnet. */
+#end{align-items:flex-start}
+#end .panel{max-width:660px;padding:26px 32px;background:#fffdf7;border:1px solid var(--sv-line);border-radius:24px;box-shadow:0 12px 50px #2b453914}
+#endCard .tarot{--w:140px;transform:rotate(-3deg);box-shadow:0 5px 10px #283b342b;margin-bottom:24px}
+#end .endTitle{color:var(--sv-forest);font-weight:550;letter-spacing:-.02em;font-size:36px}
+#endTxtEs{font-family:var(--f-display);font-weight:500;font-size:21px;line-height:1.5;margin-top:14px}
+#endTxtFr{font:14px/1.65 var(--f-text);color:var(--sv-muted);margin-top:10px}
+#end .stats{margin:18px 0;gap:10px}
+#end .stats div{flex:1;background:#eef1e7;color:var(--sv-forest);border:1px solid #dbe2d4;font-size:12px;padding:12px}
+#end .stats b{font:550 28px/1.2 var(--f-display)}
+#end .unlocks div{background:#fff4d8;color:#655235;border:1px solid #e5d19c;font:13px/1.5 var(--f-text)}
+#end .sv-button{color:var(--sv-forest);border-color:#b8c7b8;margin-top:20px;font-weight:700}
+#end .sv-feedback{background:#f2eee1;border-color:var(--sv-coral);color:var(--sv-ink);border-radius:0 12px 12px 0;padding:14px}
+#end .sv-feedback-title,#end .sv-feedback button{color:var(--sv-forest)}
+#sv-dialog{color:var(--sv-ink);background:var(--sv-paper);border:1px solid #d7ceba;border-radius:22px;padding:32px;font-family:var(--f-text);box-shadow:0 25px 100px #001c2455}
+#sv-dialog::backdrop{background:#0a221dba;backdrop-filter:blur(5px)}
+#sv-dialog h2{font:550 30px/1.2 var(--f-display);color:var(--sv-forest);letter-spacing:-.025em;margin-bottom:22px}
+#sv-dialog h3{font-family:var(--f-display);font-size:19px;font-weight:550;color:var(--sv-forest);margin:25px 0 10px}
+#sv-dialog dt,#sv-dialog summary{color:var(--sv-forest)}
+#sv-dialog .sv-muted{color:var(--sv-muted);font-size:12px;line-height:1.65}
+#sv-dialog .sv-button{background:#e9eedf;color:var(--sv-forest);border-color:#b9c9b1;font-weight:750;font-size:14px}
+#sv-dialog .sv-button:hover{background:#dce8d1}
+#sv-dialog .sv-actions .sv-button:first-child{background:var(--sv-forest);color:#fffdf5;border-color:var(--sv-forest)}
+#sv-dialog .sv-actions .sv-button:first-child:hover{background:#163d31}
+#sv-dialog #sv-close{background:transparent;border-color:#d8dbc9;right:15px;top:14px;min-width:38px;min-height:38px;font-size:23px;line-height:1;padding:5px}
+#sv-dialog .sv-note{background:#f0eedf;border-left:3px solid #9b793e;border-radius:0 10px 10px 0;padding:12px 16px}
+#sv-dialog textarea,#sv-dialog select{font:15px/1.5 var(--f-text);background:#fffef9;border:1px solid #aabdac;border-radius:12px;color:var(--sv-ink);padding:12px;width:100%;box-sizing:border-box}
+#sv-dialog textarea{min-height:115px}
+#sv-dialog label{font-size:14px;font-weight:700}
+#sv-read-after{accent-color:var(--sv-forest)}
+#sv-dialog .sv-option{background:#e9eedf;border-radius:12px;padding:12px}
+#sv-dialog details{border-color:#d8ddcf;padding:13px 0}
+#sv-dialog summary{font-size:14px;font-weight:750;line-height:1.6}
+#sv-dialog details p{font-size:14px}
+#sv-dialog .sv-fx{background:#eaf0e3;border-color:#d5dfcb;color:#35503b}
+.sv-report-summary{background:#eef1e5;border:1px solid #dbe1d0;border-radius:14px;padding:14px 16px;margin:18px 0}
+.sv-report-gauges{margin:18px 0;overflow-x:auto}
+.sv-report-gauges table{width:100%;border-collapse:collapse;background:#fffdf8;font-size:13px}
+.sv-report-gauges caption{text-align:left;font-weight:750;color:var(--sv-forest);padding:0 0 9px}
+.sv-report-gauges th,.sv-report-gauges td{padding:9px 10px;text-align:left;border-bottom:1px solid #dbe1d0}
+.sv-report-gauges thead{background:#eaf0e2}
+.sv-report-status{font-weight:800}
+#lobby button:focus-visible,#ficha button:focus-visible,#end button:focus-visible,#sv-dialog :focus-visible,.sv-collection summary:focus-visible{outline:3px solid #ad4e31;outline-offset:4px}
+
+@media(max-width:1050px){
+  #lobby,#ficha,#end{padding:22px}
+  #lobby #worlds{gap:12px}
+  #lobby .world{padding:12px 10px 0}
+  #lobby .world .tarot{--w:clamp(103px,13vw,155px)}
+  #lobby .world .wsub{font-size:12px}
+}
+@media(max-width:760px){
+  #lobby .sv-menu-top{gap:12px;margin-bottom:22px}
+  .sv-edition{font-size:9px;letter-spacing:.12em;max-width:160px}
+  .sv-menu-top .sv-toolbar{gap:6px;flex-wrap:nowrap}
+  .sv-menu-top .sv-toolbar button{font-size:12px;padding:8px 12px;min-height:44px}
+  #lobby #worlds{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  #lobby .world .tarot{--w:clamp(110px,24vw,165px)}
+  #lobby .world{padding:16px 14px 0}
+  #lobby .world .wsub{font-size:13px}
+  #lobby .world:last-child{grid-column:1 / -1;width:calc(50% - 9px);justify-self:center}
+  .sv-world-heading{align-items:flex-start}
+  .sv-world-heading h2{font-size:24px;max-width:260px}
+  .sv-world-heading>span{font-size:11px}
+  .sv-howto{grid-template-columns:1fr;gap:20px;padding-top:24px}
+  .sv-howto strong{display:inline;margin-right:6px}
+  .sv-howto p{font-size:13px}
+  #ficha .panel{padding:24px}
+  #ficha .fhead{gap:24px}
+  #fCover .tarot{--w:145px}
+  #fIntro{font-size:14px;line-height:1.6}
+  #fTag{font-size:18px}
+}
+@media(max-width:480px){
+  #lobby,#ficha,#end{padding:18px 14px 24px}
+  .sv-menu-top{flex-wrap:wrap;justify-content:center;padding-top:5px;text-align:center}
+  .sv-edition{max-width:none}
+  #lobby .brand{font-size:55px}
+  #lobby .rule{font-size:18px;max-width:260px;margin:10px auto 28px;line-height:1.5}
+  #lobby .sv-preview{font-size:9px;letter-spacing:.14em}
+  .sv-world-heading{gap:8px}
+  .sv-world-heading h2{font-size:22px;max-width:205px}
+  .sv-world-heading>span{max-width:72px;white-space:normal;text-align:right}
+  #lobby #worlds{gap:12px}
+  #lobby .world{padding:13px 9px 0;border-radius:13px}
+  #lobby .world .tarot{--w:clamp(104px,29vw,135px);margin-bottom:14px}
+  #lobby .world .wsub{font-size:12px;line-height:1.45;margin-bottom:12px}
+  #lobby .world .wprog{font-size:10px}
+  #lobby .world:last-child{width:calc(50% - 6px)}
+  .sv-world-enter{padding:11px 0;font-size:12px}
+  #ficha .panel,#end .panel{padding:22px 18px;border-radius:18px}
+  #ficha .fhead{gap:18px;align-items:flex-start;flex-direction:column}
+  #fCover{align-self:center}
+  #fCover .tarot{--w:130px}
+  #fName{font-size:40px}
+  .sv-overline{font-size:9px}
+  #ficha .row{gap:10px;flex-wrap:nowrap}
+  #ficha .btn-go,#end .btn-go{padding:12px 16px;font-size:14px}
+  #ficha .btn-ghost,#end .btn-ghost{padding:12px;font-size:12px}
+  #fLegend{gap:6px}
+  #fLegend .glabel{font-size:11px}
+  #fLegend .med{width:34px;height:34px}
+  #fCharCount{display:inline-block;margin-left:0}
+  #sv-dialog{padding:24px 20px}
+  #sv-dialog h2{font-size:27px}
+  #end .endTitle{font-size:31px}
+}

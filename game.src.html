@@ -432,11 +432,11 @@ function artOf(uid){return ART[uid]||{chars:{},gauges:{},cover:null};}
 function charCard(uid,key,o){
   o=o||{};const d=WORLDS[uid];const c=d.chars[key]||{emoji:"❔",name:key};
   const idx=Object.keys(d.chars).indexOf(key)+1;
-  return KIT.cardHTML({num:idx||"",name:o.name!=null?o.name:c.name,sub:o.sub,art:artOf(uid).chars[key],emoji:c.emoji,w:o.w,cls:o.cls});
+  return KIT.cardHTML({num:idx||"",name:o.name!=null?o.name:c.name,sub:o.sub,art:artOf(uid).chars[key],image:artOf(uid).charImages?.[key],emoji:c.emoji,w:o.w,cls:o.cls});
 }
 function coverCard(uid,o){
   o=o||{};const d=WORLDS[uid];
-  return KIT.cardHTML({num:o.num!=null?o.num:"✶",name:d.name,sub:o.sub!=null?o.sub:(d.tagline||""),art:artOf(uid).cover,emoji:d.emoji,w:o.w,cls:o.cls});
+  return KIT.cardHTML({num:o.num!=null?o.num:"✶",name:d.name,sub:o.sub!=null?o.sub:(d.tagline||""),art:artOf(uid).cover,image:artOf(uid).coverImage,emoji:d.emoji,w:o.w,cls:o.cls});
 }
 function glyph(uid,g){
   const a=artOf(uid).gauges[g.key];

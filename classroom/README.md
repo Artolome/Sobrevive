@@ -5,7 +5,7 @@ Travail isolé sur `codex/v2-interface-pedagogie`. Aucun changement de workflow,
 
 ## Changements proposés
 
-- Accueil agrandi, palette verte et disposition de partie sur deux colonnes sur ordinateur. Les SVG existants sont conservés. Sur téléphone, les textes longs restent accessibles par défilement.
+- Accueil agrandi, palette verte et disposition de partie sur deux colonnes sur ordinateur. Les SVG existants sont conservés en source. Sur téléphone, les textes longs restent accessibles par défilement.
 - Retours bilingues explicitement rédigés pour 15 cartes (30 choix), dont les cinq entrées de partie. Les autres cartes annoncent que leur retour narratif reste à rédiger ; aucun récit n’est déduit automatiquement des signes des effets.
 - Lexique de 92 entrées attestées dans les situations et réponses. La recherche respecte les limites de mots.
 - Paroles et indication d’action distinguées sur la première carte de Señora Pons.
@@ -28,6 +28,7 @@ node build.js
 node check.js
 node --check classroom/learning.js
 node classroom/check-content.js --base ec55ebe
+node classroom/check-raster.cjs
 git diff --check
 ```
 
@@ -39,7 +40,24 @@ Le test navigateur facultatif `classroom/check-browser.cjs` utilise Playwright e
 
 La relecture des 225 cartes reste partielle. Certaines associations héritées entre choix et jauges méritent une discussion pédagogique ; l’équilibrage n’a pas été modifié. Les retours ajoutés décrivent la fiction, sans apporter de nouveaux faits historiques.
 
-Les propositions d’illustrations sont livrées séparément pour avis. Elles n’ont remplacé aucun SVG ; une adoption d’images matricielles demanderait une adaptation distincte du constructeur pour conserver l’usage hors ligne et maîtriser la taille du fichier.
+L’échantillon illustré est limité à la couverture d’El cole et à Señora Pons. Il est destiné à la prévisualisation locale sur la branche de travail ; aucun site n’est publié. Les autres illustrations et les dos restent ceux du jeu. Les textes, les noms et les cadres sont toujours générés en HTML.
+
+### Illustrations matricielles facultatives
+
+Le constructeur accepte `art/raster/manifest.json`, par exemple :
+
+```json
+{
+  "cole": {
+    "cover": "cole-cover-cartoon.png",
+    "chars": { "pons": "cole-pons-cartoon.png" }
+  }
+}
+```
+
+Les fichiers doivent être dans `art/raster/`, avec un nom simple en minuscules (lettres, chiffres, tirets et underscores). Les formats PNG, JPEG et WebP sont reconnus par leur signature et leur extension ; chaque fichier est limité à 4 Mio. Le constructeur refuse les chemins externes, les traversées de répertoire, les liens symboliques, les mondes/personnages inconnus, les fichiers absents et les manifests invalides. Un échec arrête la construction avant l’écriture d’`index.html`. Le contrôle de signature ne remplace pas la vérification du décodage et du rendu dans un navigateur.
+
+Les images sont embarquées en base64 dans les données `coverImage` et `charImages`. Le jeu reste autonome et utilisable hors ligne, au prix d’un HTML plus lourd (le base64 ajoute environ un tiers au poids des fichiers). Sans manifest ou sans image pour une carte, le gabarit conserve le SVG existant. Les personnages non découverts gardent leur silhouette SVG masquée dans la collection ; leur nouvelle image n’est pas affichée. `check-raster.cjs` vérifie les contrôles d’entrée et ces replis avec des fixtures temporaires, sans toucher aux illustrations du jeu.
 
 Tests de cette itération effectués sous Node 24 et Edge sur Windows. Node 22, Safari, Firefox, lecteur d’écran et appareil tactile physique restent à vérifier. Le contrôle de fenêtre réduite ne remplace pas un essai du zoom natif à 200 %.
 

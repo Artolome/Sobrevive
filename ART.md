@@ -1,5 +1,17 @@
 # ¡Sobrevive! — art direction: tarot illustrations
 
+## Essai illustré V2
+
+Sur la branche `codex/v2-interface-pedagogie`, un échantillon demandé par l’utilisateur
+remplace le rendu de la couverture El cole et de Señora Pons par des illustrations
+PNG originales dans un esprit cartoon proche d’Adventure Time. Les SVG ci-dessous
+restent conservés en source. Le manifest facultatif `art/raster/manifest.json`
+et son intégration hors ligne sont documentés dans `classroom/README.md`.
+Le cadre, les noms et les textes restent en HTML. L’échantillon attend une validation
+visuelle avant extension ; il ne constitue pas un déploiement du site.
+
+## Bibliothèque SVG d’origine
+
 The game is a Reigns-style card game in Spanish for 12–13-year-olds. Every character is shown on a **tarot card**
 (roman numeral on top, illustration in the middle, name cartouche at the bottom — the frame is drawn by the engine).
 You draw **only the illustration**: inline SVG markup for a `viewBox="0 0 200 260"` window.

@@ -38,6 +38,8 @@ L’identifiant d’occurrence est `stage.id + '/' + slot.id`. Un même moment, 
 
 `story-runtime.js` installe cet adaptateur avant les aides et le rapport. `story-ui.js` ajoute le contexte, le bouton « Mon parcours » et les étapes sur les fiches d’univers. Les anciennes ancres de débogage ne donnent pas de victoire : seules les ancres de navigation `#ficha-cole` et `#juego-cole` (et les autres mondes, avec suffixe `-fr` facultatif) sont actives.
 
+`story-motion.js` et `story-motion.css` accompagnent la sélection : inclinaison vers la réponse survolée ou parcourue au clavier, bouton qui réagit au clic, léger mouvement des jauges concernées, écartement de la pile et arrivée de la nouvelle carte. Le choix reste appliqué immédiatement ; les délais du moteur ne changent pas. L’arrivée utilise un seul minuteur pour éviter que le mouvement d’une ancienne carte interrompe le suivant. Le geste de glissement garde son propre déplacement, les aides suspendent les animations et le réglage système de réduction du mouvement est respecté.
+
 ## Construction et contrôles
 
 Depuis la racine du dépôt :

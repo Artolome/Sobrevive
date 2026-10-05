@@ -1,0 +1,27 @@
+/* Intent, flick and settling: transforms use separate layers from the drag gesture. */
+.sv-story-mode #front>.tarot{transform-origin:50% 85%;transition:transform 220ms cubic-bezier(.2,.85,.25,1.2),box-shadow 220ms ease}
+.sv-story-mode #choices .choice{transition:transform 180ms cubic-bezier(.2,.8,.2,1.3),box-shadow 180ms ease,border-color 180ms ease}
+.sv-story-mode #choices .choice.hot{border-color:var(--gold);box-shadow:0 7px 0 #0005,0 0 0 2px #e3b85a70;transform:translateY(-5px) rotate(-.6deg)}
+.sv-story-mode #choices #btnR.hot{transform:translateY(-5px) rotate(.6deg)}
+.sv-story-mode #cardWrap{transition:transform 230ms cubic-bezier(.18,.75,.25,1.2),opacity 230ms ease}
+.sv-story-mode #cardWrap.drag{transition:none;animation:none}
+.sv-story-mode .stack .under{transition:transform 220ms cubic-bezier(.2,.8,.3,1.15)}
+@media(prefers-reduced-motion:no-preference){
+  .sv-story-mode #app[data-sv-preview=l] #cardWrap:not(.drag):not(.deal):not(.outL):not(.outR) #front>.tarot{transform:translate(-13px,-6px) rotate(-5deg);box-shadow:10px 14px 20px #0006}
+  .sv-story-mode #app[data-sv-preview=r] #cardWrap:not(.drag):not(.deal):not(.outL):not(.outR) #front>.tarot{transform:translate(13px,-6px) rotate(5deg);box-shadow:-10px 14px 20px #0006}
+  .sv-story-mode #app[data-sv-preview=l] .under.u1,.sv-story-mode #app[data-sv-picking=l] .under.u1{transform:rotate(-11deg) translate(-13px,7px)}
+  .sv-story-mode #app[data-sv-preview=r] .under.u2,.sv-story-mode #app[data-sv-picking=r] .under.u2{transform:rotate(10deg) translate(15px,6px)}
+  .sv-story-mode #cardWrap.outL{animation:none;transform:translate(-145%,-12px) rotate(-23deg)!important;transition:transform 280ms cubic-bezier(.4,.02,.85,.55),opacity 250ms ease-out}
+  .sv-story-mode #cardWrap.outR{animation:none;transform:translate(145%,-12px) rotate(23deg)!important;transition:transform 280ms cubic-bezier(.4,.02,.85,.55),opacity 250ms ease-out}
+  .sv-story-mode #cardWrap.deal:not(.drag):not(.outL):not(.outR){animation:sv-story-arrive 320ms cubic-bezier(.2,.85,.28,1) both}
+  .sv-story-mode #choices .choice.sv-picked{animation:sv-choice-press 300ms ease-out both}
+  .sv-story-mode .sv-gauge-picked .med{animation:sv-gauge-answer 380ms ease-out}
+  @keyframes sv-story-arrive{0%{opacity:0;transform:translateY(27px) rotate(7deg) scale(.96)}70%{opacity:1;transform:translateY(-5px) rotate(-1.5deg) scale(1.01)}100%{opacity:1;transform:none}}
+  @keyframes sv-choice-press{0%{transform:translateY(0) scale(1)}28%{transform:translateY(3px) scale(.97)}65%{transform:translateY(-4px) scale(1.025)}100%{transform:none}}
+  @keyframes sv-gauge-answer{0%,100%{transform:scale(1)}40%{transform:scale(1.12)}
+}
+.sv-story-mode:has(#sv-dialog[open]) #cardWrap,.sv-story-mode:has(#sv-dialog[open]) .sv-picked,.sv-story-mode:has(#sv-dialog[open]) .sv-gauge-picked .med{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+  .sv-story-mode #front>.tarot,.sv-story-mode #choices .choice,.sv-story-mode .sv-gauge-picked .med{transform:none!important}
+  .sv-story-mode #cardWrap:not(.drag){transform:none!important}
+}

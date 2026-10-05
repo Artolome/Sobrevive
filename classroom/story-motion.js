@@ -2,6 +2,18 @@
 (() => {
   'use strict';
   const app=document.querySelector('#app'),card=document.querySelector('#cardWrap');
+  // Keep the response outside the artwork. Invisible alternatives reserve the
+  // tallest response so hovering never moves the card or the answer buttons.
+  const preview=document.createElement('div');preview.id='sv-choice-preview';
+  preview.setAttribute('aria-hidden','true');
+  const tag=document.querySelector('#swipeTag');
+  tag.classList.add('sv-choice-preview-text');tag.lang='es';
+  const previewSizes=['l','r'].map(side=>{
+    const text=document.createElement('div');
+    text.className='sv-choice-preview-text sv-choice-preview-size';text.lang='es';
+    preview.append(text);return {side,text};
+  });
+  preview.append(tag);document.querySelector('#speechBox').append(preview);
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   let keyboard=false,dealTimer,pickTimer;
   const allowed=()=>!app.hidden&&!busy&&cur&&!document.querySelector('dialog[open]')&&document.querySelector('#quitBox').hidden;
@@ -36,7 +48,12 @@
   new MutationObserver(()=>{if(app.hidden)reset();}).observe(app,{attributes:true,attributeFilter:['hidden']});
   reduced.addEventListener('change',reset);
   const originalRender=renderCard;
-  renderCard=function(){clearPreview();originalRender();};
+  renderCard=function(){
+    clearPreview();originalRender();
+    for(const {side,text} of previewSizes)text.textContent=cur?.[side]?.es||'';
+    // Clear the last card's hidden response, which could otherwise size the dock.
+    tag.textContent='';
+  };
   // A single timer prevents an earlier deal from cutting short a later arrival.
   deal=function(){
     clearTimeout(dealTimer);

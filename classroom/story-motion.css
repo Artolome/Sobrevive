@@ -6,6 +6,25 @@
 .sv-story-mode #cardWrap{transition:transform 230ms cubic-bezier(.18,.75,.25,1.2),opacity 230ms ease}
 .sv-story-mode #cardWrap.drag{transition:none;animation:none}
 .sv-story-mode .stack .under{transition:transform 220ms cubic-bezier(.2,.8,.3,1.15)}
+/* A speech bubble beside the illustration on wide screens, below it on mobile. */
+.sv-story-mode #app #stage{position:relative;z-index:2}
+.sv-story-mode #sv-choice-preview{display:grid;grid-template-columns:minmax(0,1fr);width:100%;max-width:380px;align-self:center;order:-1;margin:14px 0 2px;pointer-events:none}
+.sv-story-mode .sv-choice-preview-text{grid-area:1 / 1;margin:0;padding:12px 17px;border:2px solid var(--ink);border-radius:14px;background:#f7eedb;color:var(--ink);font:500 18px/1.4 var(--f-display);text-align:left;overflow-wrap:anywhere;text-wrap:pretty}
+.sv-story-mode .sv-choice-preview-text::before{content:'Ta réponse';display:block;margin-bottom:5px;color:#796449;font:750 10px/1.4 var(--f-text);letter-spacing:.1em;text-transform:uppercase}
+.sv-story-mode .sv-choice-preview-size{visibility:hidden}
+.sv-story-mode #swipeTag{position:relative;inset:auto;z-index:1;font:500 18px/1.4 var(--f-display);padding:12px 17px;border-radius:14px;background:#f7eedb;text-align:left;box-shadow:0 4px 0 #0003;transform:translateY(7px);transition:opacity 160ms ease,transform 200ms cubic-bezier(.2,.8,.3,1.15)}
+.sv-story-mode #swipeTag::after{content:'';position:absolute;width:13px;height:13px;top:-8px;left:calc(50% - 7px);background:#f7eedb;border-left:2px solid var(--ink);border-top:2px solid var(--ink);transform:rotate(45deg)}
+.sv-story-mode #app[data-sv-preview] #swipeTag{transform:none}
+.sv-story-mode #app[data-sv-preview=l] #swipeTag::before{content:'← Ta réponse'}
+.sv-story-mode #app[data-sv-preview=r] #swipeTag::before{content:'Ta réponse →'}
+@media (min-width:1000px) and (min-height:650px), (max-height:560px) and (min-aspect-ratio:11/10){
+  .sv-story-mode #sv-choice-preview{order:0;align-self:flex-start;margin:10px 0 2px 12px;width:calc(100% - 12px)}
+  .sv-story-mode #swipeTag{transform:translateX(-7px)}
+  .sv-story-mode #swipeTag::after{top:calc(50% - 7px);left:-8px;transform:rotate(-45deg)}
+}
+@media (min-width:1000px) and (min-height:650px){
+  .sv-story-mode #app{grid-template-rows:auto auto minmax(min-content,1fr) auto auto auto auto}
+}
 @media(prefers-reduced-motion:no-preference){
   .sv-story-mode #app[data-sv-preview=l] #cardWrap:not(.drag):not(.deal):not(.outL):not(.outR) #front>.tarot{transform:translate(-13px,-6px) rotate(-5deg);box-shadow:10px 14px 20px #0006}
   .sv-story-mode #app[data-sv-preview=r] #cardWrap:not(.drag):not(.deal):not(.outL):not(.outR) #front>.tarot{transform:translate(13px,-6px) rotate(5deg);box-shadow:-10px 14px 20px #0006}

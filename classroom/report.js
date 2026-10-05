@@ -84,7 +84,8 @@
           (session.ending.evidence?'<p><strong>Pourquoi cette fin ?</strong></p><p lang="es">'+esc(session.ending.evidence.es)+'</p><p lang="fr">'+esc(session.ending.evidence.fr)+'</p>':'')+'</div>':'')+'</div>'+gaugeTable(session);
     }
     function stepBody(item){
-      return (item.character||item.place?'<p class="sv-muted">'+(item.character?'Rencontre : '+esc(item.character):'')+(item.character&&item.place?' · ':'')+(item.place?'Lieu : '+esc(item.place):'')+'</p>':'')+'<p lang="es"><strong>'+esc(item.text)+'</strong></p>'+(item.textFr?'<p lang="fr">'+esc(item.textFr)+'</p>':'')+
+      return (item.journey?'<div class="sv-note"><p><strong>'+esc(item.journey.period.fr)+' · '+esc(item.journey.stageTitle.fr)+'</strong></p><p lang="es">'+esc(item.journey.context.es)+'</p><p lang="fr">'+esc(item.journey.context.fr)+'</p></div>':'')+
+        (item.character||item.place?'<p class="sv-muted">'+(item.character?'Rencontre : '+esc(item.character):'')+(item.character&&item.place?' · ':'')+(item.place?'Lieu : '+esc(item.place):'')+'</p>':'')+'<p lang="es"><strong>'+esc(item.text)+'</strong></p>'+(item.textFr?'<p lang="fr">'+esc(item.textFr)+'</p>':'')+
         '<p lang="es">Mi elección : '+esc(item.choice)+'</p><p lang="fr">Mon choix : '+esc(item.translation)+'</p>'+
         (item.narrative?'<div class="sv-note"><p lang="es">'+esc(item.narrative.es)+'</p><p lang="fr">'+esc(item.narrative.fr)+'</p></div>':'<p>Commentaire non conservé dans cette ancienne décision.</p>')+
         '<p class="sv-report-effects">'+esc(effectText(item))+'</p>';
@@ -113,7 +114,7 @@
         if(session.omittedChoices)lines.push(session.omittedChoices+' décision(s) antérieure(s) non conservée(s) dans ce relevé.');
       }
       lines.push('','MA RÉFLEXION',session.notes||'Aucune note personnelle ajoutée.','','DÉCISIONS — ordre chronologique');
-      session.choices.forEach((item,i)=>lines.push('',stepTitle(item,i,session),[item.character?'Rencontre : '+item.character:'',item.place?'Lieu : '+item.place:''].filter(Boolean).join(' · '),item.text,item.textFr||'','Mon choix : '+item.choice,'Traduction : '+item.translation,...(item.narrative?['Dans la fiction : '+item.narrative.es,item.narrative.fr]:[]),effectText(item)));
+      session.choices.forEach((item,i)=>lines.push('',stepTitle(item,i,session),...(item.journey?['Étape : '+item.journey.period.fr+' · '+item.journey.stageTitle.fr,item.journey.context.es,item.journey.context.fr]:[]),[item.character?'Rencontre : '+item.character:'',item.place?'Lieu : '+item.place:''].filter(Boolean).join(' · '),item.text,item.textFr||'','Mon choix : '+item.choice,'Traduction : '+item.translation,...(item.narrative?['Dans la fiction : '+item.narrative.es,item.narrative.fr]:[]),effectText(item)));
       return lines.join('\n');
     }
     function show(modal){

@@ -1,0 +1,565 @@
+{
+  "id": "botero",
+  "intro_fr": "Pars des premiers dessins de Medellín, découvre les maîtres européens, affirme ton style et retrouve les places où tes sculptures rencontrent le public. Tes choix ouvrent différentes scènes d’un récit inspiré de Botero.",
+  "sub": "De Medellín al mundo, del taller a la plaza",
+  "tagline": "Inventer un style, puis choisir comment le partager.",
+  "sources": [
+    {
+      "title": "Museo Botero — Ligne du temps",
+      "url": "https://www.banrepcultural.org/bogota/museo-botero/linea-tiempo/",
+      "note": "Repères : formation européenne en 1952, Mexique au milieu des années 1950, Salon de 1958, installation à New York en 1960, acquisition de Monalisa par le MoMA en 1961, exposition des Champs-Élysées en 1992. Cette dernière comptait 32 sculptures. La variante reprend ce nombre dans le choix proposé."
+    },
+    {
+      "title": "Banco de la República — Fernando Botero",
+      "url": "https://enciclopedia.banrepcultural.org/index.php/Fernando_Botero",
+      "note": "Installation à Paris en 1973. Les premières publications dans El Colombiano sont situées en 1948 ou 1949 selon les ressources de cette institution : le parcours emploie les années 1940."
+    },
+    {
+      "title": "Medellín.Travel — Plaza Botero, guide officiel",
+      "url": "https://www.medellin.travel/plaza-botero/",
+      "note": "La place et ses 23 sculptures sont rattachées à 2002, au-delà de l’ancienne horloge du jeu."
+    },
+    {
+      "title": "Turisme de Barcelona — Le Chat de Botero",
+      "url": "https://bid.barcelonaturisme.com/wv3/es/page/1226/gato-fernando-botero.html",
+      "note": "Acquisition en 1987, installation définitive sur la Rambla del Raval en 2003. Cette scène est donc placée dans la dernière période."
+    }
+  ],
+  "stages": [
+    {
+      "id": "aprender",
+      "title": {
+        "es": "Elegir la pintura",
+        "fr": "Choisir la peinture"
+      },
+      "period": {
+        "es": "Años 1940–1955",
+        "fr": "Années 1940–1955"
+      },
+      "place": "Medellín → Madrid → Italia",
+      "slots": [
+        {
+          "id": "primeros-dibujos",
+          "card": "salida",
+          "label": {
+            "es": "Los primeros dibujos",
+            "fr": "Les premiers dessins"
+          },
+          "context": {
+            "es": "Empiezas en Medellín, entre dibujos de toros y páginas de periódico. La pintura todavía no te asegura un sueldo.",
+            "fr": "Tu commences à Medellín, entre dessins de taureaux et pages de journal. La peinture ne t’assure pas encore un salaire."
+          }
+        },
+        {
+          "id": "tio-toros",
+          "card": "torero",
+          "label": {
+            "es": "La pregunta de tu tío",
+            "fr": "La question de ton oncle"
+          },
+          "context": {
+            "es": "Tu tío vuelve sobre tu paso por la escuela de toreros. ¿Qué quieres hacer con los toros: torearlos o dibujarlos?",
+            "fr": "Ton oncle revient sur ton passage à l’école de toreros. Que veux-tu faire avec les taureaux : les affronter ou les dessiner ?"
+          }
+        },
+        {
+          "id": "primer-camino",
+          "card": "tio_oficina",
+          "label": {
+            "es": "Buscar un oficio",
+            "fr": "Chercher un métier"
+          },
+          "context": {
+            "es": "Tu respuesta de torero salió con miedo. Tu tío propone ahora otra forma de ganarte la vida.",
+            "fr": "Ta réponse de torero était hésitante. Ton oncle propose maintenant une autre façon de gagner ta vie."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "torero",
+                  "side": "r"
+                }
+              ],
+              "card": "toro_modelo",
+              "context": {
+                "es": "Elegiste ser pintor y hacer de los toros tus modelos. Uno de ellos quiere saber cómo lo vas a dibujar.",
+                "fr": "Tu as choisi d’être peintre et de prendre les taureaux pour modèles. L’un d’eux veut savoir comment tu vas le dessiner."
+              }
+            }
+          ]
+        },
+        {
+          "id": "picasso",
+          "card": "picasso",
+          "label": {
+            "es": "Defender una idea",
+            "fr": "Défendre une idée"
+          },
+          "context": {
+            "es": "Un artículo sobre Picasso enfrenta tu interés por el arte con las reglas del colegio.",
+            "fr": "Un article sur Picasso oppose ton intérêt pour l’art aux règles du collège."
+          }
+        },
+        {
+          "id": "prado",
+          "card": "prado",
+          "label": {
+            "es": "Aprender de los maestros",
+            "fr": "Apprendre des maîtres"
+          },
+          "context": {
+            "es": "En 1952 viajas a Europa. Madrid te permite estudiar las pinturas del Prado y vender copias.",
+            "fr": "En 1952, tu voyages en Europe. Madrid te permet d’étudier les tableaux du Prado et de vendre des copies."
+          }
+        },
+        {
+          "id": "leccion",
+          "card": "academia",
+          "label": {
+            "es": "Otra lección",
+            "fr": "Une autre leçon"
+          },
+          "context": {
+            "es": "Elegiste vender copias. Una nueva escena pone a prueba tu relación con las proporciones que te enseñan.",
+            "fr": "Tu as choisi de vendre des copies. Une nouvelle scène met à l’épreuve ton rapport aux proportions qu’on t’enseigne."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "prado",
+                  "side": "r"
+                }
+              ],
+              "card": "florencia",
+              "context": {
+                "es": "Elegiste buscar tu propia manera de pintar. El viaje continúa hacia los maestros de Florencia.",
+                "fr": "Tu as choisi de chercher ta propre manière de peindre. Le voyage continue vers les maîtres de Florence."
+              }
+            }
+          ]
+        },
+        {
+          "id": "montanas",
+          "card": "montanas_olvidar",
+          "label": {
+            "es": "Lo que llevas contigo",
+            "fr": "Ce que tu emportes"
+          },
+          "context": {
+            "es": "El viaje te ha alejado de Medellín. Tus montañas te preguntan qué lugar tendrán en tus cuadros.",
+            "fr": "Le voyage t’a éloigné de Medellín. Tes montagnes te demandent quelle place elles auront dans tes tableaux."
+          }
+        }
+      ]
+    },
+    {
+      "id": "volumen",
+      "title": {
+        "es": "Encontrar tu volumen",
+        "fr": "Trouver ton volume"
+      },
+      "period": {
+        "es": "1956–1972",
+        "fr": "1956–1972"
+      },
+      "place": "México → Bogotá → Nueva York",
+      "slots": [
+        {
+          "id": "mandolina",
+          "card": "mandolina",
+          "label": {
+            "es": "Un pequeño agujero",
+            "fr": "Un petit trou"
+          },
+          "context": {
+            "es": "En México, a mediados de los años cincuenta, el dibujo de una mandolina abre una pregunta sobre el volumen.",
+            "fr": "Au Mexique, au milieu des années cinquante, le dessin d’une mandoline ouvre une question sur le volume."
+          }
+        },
+        {
+          "id": "recordar-instrumento",
+          "card": "quiz_gordas",
+          "label": {
+            "es": "Nombrar lo que pintas",
+            "fr": "Nommer ce que tu peins"
+          },
+          "context": {
+            "es": "Después de dibujar, toca poner palabras a tu trabajo.",
+            "fr": "Après avoir dessiné, il faut mettre des mots sur ton travail."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "mandolina",
+                  "side": "l"
+                }
+              ],
+              "card": "quiz_mandolina",
+              "context": {
+                "es": "Reconociste algo nuevo en el pequeño agujero. ¿Recuerdas el nombre del instrumento?",
+                "fr": "Tu as reconnu quelque chose de nouveau dans le petit trou. Te souviens-tu du nom de l’instrument ?"
+              }
+            },
+            {
+              "when": [
+                {
+                  "cardId": "mandolina",
+                  "side": "r"
+                }
+              ],
+              "card": "quiz_mandolina",
+              "context": {
+                "es": "Borraste el pequeño agujero. Antes de seguir, vuelve al nombre del instrumento que estabas pintando.",
+                "fr": "Tu as effacé le petit trou. Avant de continuer, retrouve le nom de l’instrument que tu peignais."
+              }
+            }
+          ]
+        },
+        {
+          "id": "premio",
+          "card": "salon_nacional",
+          "label": {
+            "es": "Un premio en Bogotá",
+            "fr": "Un prix à Bogotá"
+          },
+          "context": {
+            "es": "En 1958 llega el primer premio del Salón Nacional. La noticia te propone otro paso en el viaje.",
+            "fr": "En 1958 arrive le premier prix du Salon national. La nouvelle te propose une autre étape du voyage."
+          }
+        },
+        {
+          "id": "nueva-york",
+          "card": "nyc_llegada",
+          "label": {
+            "es": "Empezar en Nueva York",
+            "fr": "Recommencer à New York"
+          },
+          "context": {
+            "es": "Más tarde, en 1960, te instalas en Nueva York. Debes encontrar cómo vivir y seguir pintando.",
+            "fr": "Plus tard, en 1960, tu t’installes à New York. Tu dois trouver comment vivre et continuer de peindre."
+          }
+        },
+        {
+          "id": "moma",
+          "card": "monalisa_moma",
+          "label": {
+            "es": "Una mirada del museo",
+            "fr": "Le regard du musée"
+          },
+          "context": {
+            "es": "La Monalisa a los doce años atrae la atención del MoMA. En esta aventura, tú respondes a la propuesta.",
+            "fr": "La Joconde à douze ans attire l’attention du MoMA. Dans cette aventure, tu réponds à la proposition."
+          }
+        },
+        {
+          "id": "contrato",
+          "card": "contrato",
+          "label": {
+            "es": "Firmar o seguir solo",
+            "fr": "Signer ou rester indépendant"
+          },
+          "context": {
+            "es": "Una galería te ofrece seguridad a cambio de la exclusividad. Tu decisión cambia la escena siguiente.",
+            "fr": "Une galerie t’offre une sécurité en échange de l’exclusivité. Ta décision change la scène suivante."
+          }
+        },
+        {
+          "id": "consecuencia-contrato",
+          "card": "naranja_mesa",
+          "label": {
+            "es": "La consecuencia del contrato",
+            "fr": "La conséquence du contrat"
+          },
+          "context": {
+            "es": "En el taller, tus decisiones tienen una continuación.",
+            "fr": "Dans l’atelier, tes décisions ont une suite."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "contrato",
+                  "side": "l"
+                }
+              ],
+              "card": "contrato_flores",
+              "context": {
+                "es": "Firmaste el contrato. El galerista llega con una petición muy concreta para tus próximos cuadros.",
+                "fr": "Tu as signé le contrat. Le galeriste arrive avec une demande très précise pour tes prochains tableaux."
+              }
+            },
+            {
+              "when": [
+                {
+                  "cardId": "contrato",
+                  "side": "r"
+                }
+              ],
+              "card": "contrato_alquiler",
+              "context": {
+                "es": "Rechazaste la exclusividad. Conservas tus decisiones de pintura, pero llega la cuenta del alquiler.",
+                "fr": "Tu as refusé l’exclusivité. Tu gardes tes choix de peinture, mais le loyer arrive."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "esculturas",
+      "title": {
+        "es": "Salir del lienzo",
+        "fr": "Sortir de la toile"
+      },
+      "period": {
+        "es": "1973–1992",
+        "fr": "1973–1992"
+      },
+      "place": "Nueva York → París",
+      "slots": [
+        {
+          "id": "paris",
+          "card": "paris_mudanza",
+          "label": {
+            "es": "Cambiar de ciudad",
+            "fr": "Changer de ville"
+          },
+          "context": {
+            "es": "La etapa de París comienza en los años setenta. Aquí puedes preparar la salida o alargar tu paso por Nueva York.",
+            "fr": "La période parisienne commence dans les années soixante-dix. Ici, tu peux préparer le départ ou prolonger ton passage à New York."
+          }
+        },
+        {
+          "id": "despues-viaje",
+          "card": "nostalgia_ajiaco",
+          "label": {
+            "es": "La ciudad y el recuerdo",
+            "fr": "La ville et le souvenir"
+          },
+          "context": {
+            "es": "Elegiste ir a París. Una vez allí, los sabores de Colombia vuelven a tu memoria.",
+            "fr": "Tu as choisi de partir à Paris. Une fois sur place, les saveurs de Colombie reviennent à ta mémoire."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "paris_mudanza",
+                  "side": "r"
+                }
+              ],
+              "card": "nyc_abstracto",
+              "context": {
+                "es": "Elegiste un año más en Nueva York. Antes de partir, vuelves a escuchar a sus críticos.",
+                "fr": "Tu as choisi une année de plus à New York. Avant de partir, tu retrouves ses critiques."
+              }
+            }
+          ]
+        },
+        {
+          "id": "bronce",
+          "card": "bronce_gigante",
+          "label": {
+            "es": "Dar cuerpo al volumen",
+            "fr": "Donner corps au volume"
+          },
+          "context": {
+            "es": "Más adelante, el trabajo de escultura abre otra posibilidad: salir de la superficie del cuadro.",
+            "fr": "Plus tard, le travail de sculpture ouvre une autre possibilité : sortir de la surface du tableau."
+          }
+        },
+        {
+          "id": "mirada-critica",
+          "card": "colores",
+          "label": {
+            "es": "Responder a las miradas",
+            "fr": "Répondre aux regards"
+          },
+          "context": {
+            "es": "Elegiste una escultura pequeña. En el taller, otra discusión se abre sobre tu manera de pintar.",
+            "fr": "Tu as choisi une petite sculpture. Dans l’atelier, une autre discussion s’ouvre sur ta manière de peindre."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "bronce_gigante",
+                  "side": "l"
+                }
+              ],
+              "card": "gordas",
+              "context": {
+                "es": "Elegiste un gran tamaño. Un crítico vuelve a preguntar por el volumen de tus figuras.",
+                "fr": "Tu as choisi une grande taille. Un critique revient sur le volume de tes personnages."
+              }
+            }
+          ]
+        },
+        {
+          "id": "toros-regreso",
+          "card": "toro_retrato",
+          "label": {
+            "es": "Volver a un motivo",
+            "fr": "Revenir à un motif"
+          },
+          "context": {
+            "es": "En los años ochenta, los toros vuelven a ocupar tu pintura. El modelo y su dueño no quieren el mismo retrato.",
+            "fr": "Dans les années quatre-vingt, les taureaux retrouvent ta peinture. Le modèle et son propriétaire ne veulent pas le même portrait."
+          }
+        },
+        {
+          "id": "campos",
+          "card": "campos_eliseos",
+          "label": {
+            "es": "Las esculturas en la calle",
+            "fr": "Les sculptures dans la rue"
+          },
+          "context": {
+            "es": "La exposición de 1992 en París inspira esta escena: el volumen sale del taller y encuentra a los paseantes.",
+            "fr": "L’exposition de 1992 à Paris inspire cette scène : le volume sort de l’atelier et rencontre les passants."
+          },
+          "override": {
+            "t": "¡París te invita! Tus esculturas monumentales pueden ocupar los Campos Elíseos. ¿Qué respondes?",
+            "f": "Paris t’invite ! Tes sculptures monumentales peuvent occuper les Champs-Élysées. Que réponds-tu ?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "compartir",
+      "title": {
+        "es": "Compartir el arte",
+        "fr": "Partager l’art"
+      },
+      "period": {
+        "es": "2000–2003",
+        "fr": "2000–2003"
+      },
+      "place": "Medellín · Barcelona · el taller",
+      "slots": [
+        {
+          "id": "medellin",
+          "card": "medellin_pide",
+          "label": {
+            "es": "La llamada de Medellín",
+            "fr": "L’appel de Medellín"
+          },
+          "context": {
+            "es": "La última etapa pregunta qué relación quieres mantener con tu ciudad. Medellín te propone compartir tu obra.",
+            "fr": "La dernière période interroge le lien que tu veux garder avec ta ville. Medellín te propose de partager ton œuvre."
+          }
+        },
+        {
+          "id": "promesa",
+          "card": "mercado_frutas",
+          "label": {
+            "es": "Responder a la ciudad",
+            "fr": "Répondre à la ville"
+          },
+          "context": {
+            "es": "La respuesta que diste a Medellín abre una nueva escena.",
+            "fr": "La réponse donnée à Medellín ouvre une nouvelle scène."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "medellin_pide",
+                  "side": "l"
+                }
+              ],
+              "card": "promesa_plaza",
+              "context": {
+                "es": "Prometiste llevar obras a tu ciudad. La escena salta a la plaza inaugurada en 2002: ahora estás entre las esculturas.",
+                "fr": "Tu as promis d’apporter des œuvres à ta ville. La scène rejoint la place inaugurée en 2002 : tu es maintenant parmi les sculptures."
+              }
+            },
+            {
+              "when": [
+                {
+                  "cardId": "medellin_pide",
+                  "side": "r"
+                }
+              ],
+              "card": "promesa_carta",
+              "context": {
+                "es": "Aplazaste tu respuesta a Medellín. El museo vuelve a escribirte; todavía puedes responder.",
+                "fr": "Tu as différé ta réponse à Medellín. Le musée t’écrit encore ; tu peux toujours répondre."
+              }
+            }
+          ]
+        },
+        {
+          "id": "taller",
+          "card": "naranja_mesa",
+          "label": {
+            "es": "Volver a la mesa",
+            "fr": "Revenir à la table"
+          },
+          "context": {
+            "es": "Después de las propuestas públicas, el relato vuelve a una mesa de trabajo. El volumen también vive en una fruta.",
+            "fr": "Après les propositions publiques, le récit revient à une table de travail. Le volume existe aussi dans un fruit."
+          }
+        },
+        {
+          "id": "gato",
+          "card": "gato_barcelona",
+          "label": {
+            "es": "Un gato para la ciudad",
+            "fr": "Un chat pour la ville"
+          },
+          "context": {
+            "es": "En 2003, el gato de Barcelona encuentra su lugar en la Rambla del Raval. Los paseantes hacen suya la escultura.",
+            "fr": "En 2003, le chat de Barcelone trouve sa place sur la Rambla del Raval. Les passants s’approprient la sculpture."
+          }
+        },
+        {
+          "id": "paloma",
+          "card": "paloma_paz",
+          "label": {
+            "es": "Elegir un destino",
+            "fr": "Choisir une destination"
+          },
+          "context": {
+            "es": "Una paloma de bronce toma la palabra en este cuento. Te pregunta dónde quieres que la gente la encuentre.",
+            "fr": "Une colombe de bronze prend la parole dans ce conte. Elle demande où tu veux que les gens la rencontrent."
+          },
+          "override": {
+            "t": "Soy una paloma de bronce. Grande, con mucho volumen. ¿Dónde quieres que viva?",
+            "f": "Je suis une colombe de bronze. Grande, avec beaucoup de volume. Où veux-tu que je vive ?"
+          }
+        },
+        {
+          "id": "ultima-pregunta",
+          "card": "pregunta_eterna",
+          "label": {
+            "es": "La pregunta que sigue",
+            "fr": "La question qui reste"
+          },
+          "context": {
+            "es": "Elegiste el museo de Europa. Ante otro público, vuelve la pregunta que te acompaña desde hace años.",
+            "fr": "Tu as choisi le musée d’Europe. Devant un autre public, la question qui t’accompagne depuis des années revient."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "paloma_paz",
+                  "side": "l"
+                }
+              ],
+              "card": "quiz_gordas",
+              "context": {
+                "es": "Elegiste una plaza de Colombia. Para hablar con sus visitantes, buscas las palabras que describen tu trabajo.",
+                "fr": "Tu as choisi une place de Colombie. Pour parler avec ses visiteurs, tu cherches les mots qui décrivent ton travail."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

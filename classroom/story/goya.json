@@ -1,0 +1,553 @@
+{
+  "id": "goya",
+  "intro_fr": "De tes premiers cartons pour les tapisseries aux dernières images de Bordeaux, traverse quatre périodes de la vie de Goya. Tes décisions changent les rencontres et les scènes de cette aventure inspirée de sa vie.",
+  "sub": "Tapices, palacio, guerra y nuevos caminos",
+  "tagline": "Entre la cour et l’atelier, quelle voie suivras-tu ?",
+  "sources": [
+    {
+      "title": "Museo del Prado — Goya, biographie et chronologie",
+      "url": "https://www.museodelprado.es/coleccion/artista/goya-y-lucientes-francisco-de/39568a17-81b5-4d6f-84fa-12db60780812",
+      "note": "Repères : peintre de la Chambre en 1789, maladie et surdité en 1793, Caprices en 1799, portraits royaux, départ pour Bordeaux en 1824. Les dialogues sont ceux de la fiction."
+    },
+    {
+      "title": "Museo del Prado — El quitasol",
+      "url": "https://www.museodelprado.es/coleccion/obra-de-arte/el-quitasol/a230a80f-a899-4535-9e90-ad883bd096c5",
+      "note": "L’Ombrelle date de 1777 : la première période commence donc dans les années 1770, avant l’ancienne horloge de 1786."
+    },
+    {
+      "title": "Museo del Prado — Le 3 mai 1808",
+      "url": "https://www.museodelprado.es/aprende/enciclopedia/voz/3-de-mayo-de-1808-en-madrid-los-fusilamientos-de/f0f52ca5-546a-44c4-8da0-f3c2603340b5",
+      "note": "Le tableau est peint en 1814 et représente les événements de 1808. La scène de création vient après les scènes de guerre."
+    },
+    {
+      "title": "Museo del Prado — Les Majas",
+      "url": "https://www.museodelprado.es/aprende/enciclopedia/voz/majas-las-goya/6b55bee7-d059-43b9-9896-42b06efb8944",
+      "note": "L’interrogation par l’Inquisition appartient à 1815. L’identité du modèle n’est pas présentée comme résolue."
+    },
+    {
+      "title": "Museo del Prado — La Quinta del Sordo",
+      "url": "https://www.museodelprado.es/actualidad/exposicion/la-quinta-del-sordo-philippe-parreno/3e1bb872-21af-d18f-9b09-a91e406b3505",
+      "note": "Maison acquise en 1819 ; les Peintures noires appartiennent à la période suivante, avant le départ en France."
+    },
+    {
+      "title": "Museo del Prado — La Laitière de Bordeaux",
+      "url": "https://www.museodelprado.es/coleccion/obra-de-arte/la-lechera-de-burdeos/b531f836-85c4-4cf3-b76a-70f3106d9e41",
+      "note": "Œuvre datée vers 1827, placée en fin de parcours."
+    }
+  ],
+  "stages": [
+    {
+      "id": "tapices",
+      "title": {
+        "es": "Tapices y palacio",
+        "fr": "Tapisseries et palais"
+      },
+      "period": {
+        "es": "Años 1770–1792",
+        "fr": "Années 1770–1792"
+      },
+      "place": "Madrid",
+      "slots": [
+        {
+          "id": "primer-encargo",
+          "card": "salida",
+          "label": {
+            "es": "El primer encargo",
+            "fr": "La première commande"
+          },
+          "context": {
+            "es": "Tus primeros encargos en Madrid convierten escenas de la vida diaria en cartones para tapices.",
+            "fr": "Tes premières commandes à Madrid transforment des scènes du quotidien en cartons de tapisserie."
+          }
+        },
+        {
+          "id": "sombrilla",
+          "card": "quitasol",
+          "label": {
+            "es": "Un detalle del cuadro",
+            "fr": "Un détail du tableau"
+          },
+          "context": {
+            "es": "En uno de estos primeros cartones, una joven está bajo una sombrilla. El pequeño perro también cuenta.",
+            "fr": "Dans l’un de ces premiers cartons, une jeune femme est sous une ombrelle. Le petit chien compte aussi."
+          }
+        },
+        {
+          "id": "motivo",
+          "card": "gallina",
+          "label": {
+            "es": "Una escena al aire libre",
+            "fr": "Une scène en plein air"
+          },
+          "context": {
+            "es": "Elegiste pintar una merienda al sol. Sigues buscando escenas de juegos y fiestas al aire libre.",
+            "fr": "Tu as choisi de peindre un goûter au soleil. Tu cherches encore des scènes de jeux et de fêtes en plein air."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "salida",
+                  "side": "r"
+                }
+              ],
+              "card": "cometa",
+              "context": {
+                "es": "Elegiste una cometa y un cielo raro. Ahora sigues ese motivo sobre Madrid.",
+                "fr": "Tu as choisi un cerf-volant et un ciel étrange. Tu retrouves ce motif au-dessus de Madrid."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pradera",
+          "card": "isidro",
+          "label": {
+            "es": "Madrid de fiesta",
+            "fr": "Madrid en fête"
+          },
+          "context": {
+            "es": "Las fiestas de Madrid te ofrecen otro tema: la pradera de San Isidro.",
+            "fr": "Les fêtes de Madrid t’offrent un autre sujet : la prairie de San Isidro."
+          }
+        },
+        {
+          "id": "nombramiento",
+          "card": "camara",
+          "label": {
+            "es": "Ante el rey",
+            "fr": "Devant le roi"
+          },
+          "context": {
+            "es": "Tu trabajo llega al palacio. En 1789 recibes el nombramiento de pintor de cámara.",
+            "fr": "Ton travail arrive au palais. En 1789, tu es nommé peintre de la Chambre."
+          }
+        },
+        {
+          "id": "cliente",
+          "card": "caza",
+          "label": {
+            "es": "El siguiente retrato",
+            "fr": "Le portrait suivant"
+          },
+          "context": {
+            "es": "Aceptaste el nombramiento con una reverencia. El rey te propone ahora otro retrato.",
+            "fr": "Tu as accepté la nomination avec une révérence. Le roi te propose maintenant un autre portrait."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "camara",
+                  "side": "r"
+                }
+              ],
+              "card": "marques",
+              "context": {
+                "es": "Preguntaste por el sueldo. Otra propuesta te enfrenta al precio de complacer a un cliente.",
+                "fr": "Tu as demandé le salaire. Une autre proposition te confronte au prix d’un portrait qui plaît au client."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pelele",
+          "card": "pelele",
+          "label": {
+            "es": "El último juego",
+            "fr": "Le dernier jeu"
+          },
+          "context": {
+            "es": "Antes de dejar esta etapa, vuelves a los juegos de los cartones. Las majas tienen una invitación.",
+            "fr": "Avant de quitter cette période, tu retrouves les jeux des cartons. Les majas ont une invitation."
+          }
+        }
+      ]
+    },
+    {
+      "id": "voz-propia",
+      "title": {
+        "es": "Otra forma de mirar",
+        "fr": "Une autre façon de regarder"
+      },
+      "period": {
+        "es": "1793–1807",
+        "fr": "1793–1807"
+      },
+      "place": "Madrid",
+      "slots": [
+        {
+          "id": "enfermedad",
+          "card": "enfermedad",
+          "label": {
+            "es": "El mundo cambia",
+            "fr": "Le monde change"
+          },
+          "context": {
+            "es": "Una grave enfermedad en 1793 te deja sin oído. Tu trabajo y tus relaciones continúan de otra manera.",
+            "fr": "Une grave maladie en 1793 te laisse sans audition. Ton travail et tes relations continuent autrement."
+          }
+        },
+        {
+          "id": "comunicacion",
+          "card": "reposo",
+          "label": {
+            "es": "Hablar en el taller",
+            "fr": "Parler dans l’atelier"
+          },
+          "context": {
+            "es": "El taller necesita tiempo para adaptarse a esta nueva etapa.",
+            "fr": "L’atelier a besoin de temps pour s’adapter à cette nouvelle période."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "enfermedad",
+                  "side": "l"
+                }
+              ],
+              "card": "manos",
+              "context": {
+                "es": "Dijiste que los colores gritan. Tu aprendiz busca ahora una forma de hablar contigo.",
+                "fr": "Tu as dit que les couleurs crient. Ton apprenti cherche maintenant une façon de parler avec toi."
+              }
+            },
+            {
+              "when": [
+                {
+                  "cardId": "enfermedad",
+                  "side": "r"
+                }
+              ],
+              "card": "manos",
+              "context": {
+                "es": "Elegiste descansar y leer los labios. Tu aprendiz pregunta cómo podéis comunicaros.",
+                "fr": "Tu as choisi de te reposer et de lire sur les lèvres. Ton apprenti demande comment vous pouvez communiquer."
+              }
+            }
+          ]
+        },
+        {
+          "id": "duquesa",
+          "card": "duquesa",
+          "label": {
+            "es": "Un retrato particular",
+            "fr": "Un portrait particulier"
+          },
+          "context": {
+            "es": "Los retratos siguen ocupando tu taller. La duquesa de Alba vuelve a ser un tema de pintura.",
+            "fr": "Les portraits occupent toujours ton atelier. La duchesse d’Albe devient à nouveau un sujet de peinture."
+          }
+        },
+        {
+          "id": "encargo-distinto",
+          "card": "caballo",
+          "label": {
+            "es": "Dos tipos de encargo",
+            "fr": "Deux sortes de commandes"
+          },
+          "context": {
+            "es": "Elegiste pintar para el rey. La reina también quiere ocupar el centro de un retrato.",
+            "fr": "Tu as choisi de peindre pour le roi. La reine veut aussi être au centre d’un portrait."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "duquesa",
+                  "side": "l"
+                }
+              ],
+              "card": "aquelarre",
+              "context": {
+                "es": "Firmaste el retrato de la duquesa. Otro encargo particular te lleva hacia las escenas de brujas.",
+                "fr": "Tu as signé le portrait de la duchesse. Une autre commande privée t’amène vers des scènes de sorcières."
+              }
+            }
+          ]
+        },
+        {
+          "id": "sueno",
+          "card": "sueno",
+          "label": {
+            "es": "La razón y los monstruos",
+            "fr": "La raison et les monstres"
+          },
+          "context": {
+            "es": "También trabajas en imágenes que preguntan y critican. Un hombre dormido recibe una visita extraña.",
+            "fr": "Tu travailles aussi sur des images qui interrogent et critiquent. Un homme endormi reçoit une visite étrange."
+          }
+        },
+        {
+          "id": "caprichos",
+          "card": "caprichos",
+          "label": {
+            "es": "Vender o retirar",
+            "fr": "Vendre ou retirer"
+          },
+          "context": {
+            "es": "En 1799, los ochenta Caprichos salen a la venta. Ahora decides qué hacer con tus grabados.",
+            "fr": "En 1799, les quatre-vingts Caprices sont mis en vente. Tu décides maintenant du sort de tes gravures."
+          }
+        },
+        {
+          "id": "despues-grabados",
+          "card": "familia",
+          "label": {
+            "es": "Otra mirada",
+            "fr": "Un autre regard"
+          },
+          "context": {
+            "es": "Dejaste tus grabados a la venta en esta aventura. El trabajo de retratista continúa con la familia real.",
+            "fr": "Tu as laissé tes gravures en vente dans cette aventure. Ton travail de portraitiste continue avec la famille royale."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "caprichos",
+                  "side": "r"
+                }
+              ],
+              "card": "quiz_sueno",
+              "context": {
+                "es": "Retiraste los grabados. Pero la imagen del sueño de la razón sigue provocando preguntas.",
+                "fr": "Tu as retiré les gravures. Mais l’image du sommeil de la raison continue de susciter des questions."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guerra",
+      "title": {
+        "es": "Pintar en tiempos de guerra",
+        "fr": "Peindre en temps de guerre"
+      },
+      "period": {
+        "es": "1808–1818",
+        "fr": "1808–1818"
+      },
+      "place": "Madrid",
+      "slots": [
+        {
+          "id": "ocupacion",
+          "card": "dosmayo",
+          "label": {
+            "es": "Madrid ocupado",
+            "fr": "Madrid occupé"
+          },
+          "context": {
+            "es": "En 1808, la guerra cambia Madrid. Tu siguiente decisión ocurre dentro de este conflicto.",
+            "fr": "En 1808, la guerre transforme Madrid. Ta prochaine décision se déroule dans ce conflit."
+          }
+        },
+        {
+          "id": "medalla",
+          "card": "berenjena",
+          "label": {
+            "es": "Una medalla difícil",
+            "fr": "Une médaille difficile"
+          },
+          "context": {
+            "es": "Durante la ocupación, trabajar cerca del poder crea nuevos dilemas.",
+            "fr": "Pendant l’occupation, travailler près du pouvoir crée de nouveaux dilemmes."
+          }
+        },
+        {
+          "id": "grabados-guerra",
+          "card": "desastres",
+          "label": {
+            "es": "Guardar la memoria",
+            "fr": "Garder la mémoire"
+          },
+          "context": {
+            "es": "La guerra entra en tus grabados. Su publicación histórica será mucho más tarde; aquí eliges qué hacer en el relato.",
+            "fr": "La guerre entre dans tes gravures. Leur publication historique aura lieu bien plus tard ; ici, tu choisis quoi faire dans le récit."
+          }
+        },
+        {
+          "id": "recuerdo-mayo",
+          "card": "tresmayo",
+          "label": {
+            "es": "Recordar 1808",
+            "fr": "Se souvenir de 1808"
+          },
+          "context": {
+            "es": "En 1814 pintas los sucesos de mayo de 1808. Es una imagen de memoria, no un cuadro pintado aquella misma noche.",
+            "fr": "En 1814, tu peins les événements de mai 1808. C’est une image de mémoire, pas un tableau peint cette nuit-là."
+          }
+        },
+        {
+          "id": "nuevo-rey",
+          "card": "nuevo",
+          "label": {
+            "es": "Cambia el poder",
+            "fr": "Le pouvoir change"
+          },
+          "context": {
+            "es": "La vuelta de Fernando VII abre otra etapa. El nuevo rey también mira tu pasado.",
+            "fr": "Le retour de Ferdinand VII ouvre une autre période. Le nouveau roi regarde aussi ton passé."
+          }
+        },
+        {
+          "id": "respuesta-poder",
+          "card": "retrato_fernando",
+          "label": {
+            "es": "Seguir frente al poder",
+            "fr": "Encore face au pouvoir"
+          },
+          "context": {
+            "es": "Dijiste que pintas España. Ahora debes responder a un encargo del nuevo rey.",
+            "fr": "Tu as dit que tu peins l’Espagne. Tu dois maintenant répondre à une commande du nouveau roi."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "nuevo",
+                  "side": "r"
+                }
+              ],
+              "card": "policia",
+              "context": {
+                "es": "Elegiste guardar silencio ante el rey. En esta escena, tu aprendiz te avisa de otra visita del poder.",
+                "fr": "Tu as choisi de garder le silence devant le roi. Dans cette scène, ton apprenti t’annonce une autre visite du pouvoir."
+              }
+            }
+          ]
+        },
+        {
+          "id": "maja",
+          "card": "maja",
+          "label": {
+            "es": "Una pregunta incómoda",
+            "fr": "Une question gênante"
+          },
+          "context": {
+            "es": "En 1815, la Inquisición pide explicaciones sobre las Majas. La identidad de la modelo sigue sin certeza.",
+            "fr": "En 1815, l’Inquisition demande des explications sur les Majas. L’identité du modèle reste incertaine."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ultimos-caminos",
+      "title": {
+        "es": "Muros y nuevos horizontes",
+        "fr": "Des murs et de nouveaux horizons"
+      },
+      "period": {
+        "es": "1819–1828",
+        "fr": "1819–1828"
+      },
+      "place": "Quinta del Sordo → Burdeos",
+      "slots": [
+        {
+          "id": "quinta",
+          "card": "quinta_paredes",
+          "label": {
+            "es": "Una casa para pintar",
+            "fr": "Une maison à peindre"
+          },
+          "context": {
+            "es": "En 1819 compras la Quinta del Sordo. Sus paredes abren un nuevo espacio para tus imágenes.",
+            "fr": "En 1819, tu achètes la Quinta del Sordo. Ses murs ouvrent un nouvel espace pour tes images."
+          }
+        },
+        {
+          "id": "imagen-muro",
+          "card": "saturno",
+          "label": {
+            "es": "La imagen en el muro",
+            "fr": "L’image sur le mur"
+          },
+          "context": {
+            "es": "Elegiste llenar los muros de negro. Una de las imágenes de esta etapa ocupa ahora toda tu atención.",
+            "fr": "Tu as choisi de remplir les murs de noir. Une des images de cette période retient maintenant ton attention."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "quinta_paredes",
+                  "side": "r"
+                }
+              ],
+              "card": "perro",
+              "context": {
+                "es": "Elegiste un paisaje. En otro muro, un perro mira un espacio abierto y te deja una pregunta.",
+                "fr": "Tu as choisi un paysage. Sur un autre mur, un chien regarde un espace ouvert et te laisse une question."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pausa",
+          "card": "reposo",
+          "label": {
+            "es": "Una pausa en el trabajo",
+            "fr": "Une pause dans le travail"
+          },
+          "context": {
+            "es": "Entre paredes y lienzos, el trabajo continúa. El médico te propone una pausa.",
+            "fr": "Entre murs et toiles, le travail continue. Le médecin te propose une pause."
+          }
+        },
+        {
+          "id": "permiso",
+          "card": "aguas",
+          "label": {
+            "es": "La posibilidad de partir",
+            "fr": "La possibilité de partir"
+          },
+          "context": {
+            "es": "En 1824 llega el permiso para viajar a Francia. Preparar la salida o dudar cambia tu próxima escena.",
+            "fr": "En 1824 arrive la permission de voyager en France. Préparer le départ ou hésiter change ta prochaine scène."
+          }
+        },
+        {
+          "id": "antes-final",
+          "card": "toros",
+          "label": {
+            "es": "El camino elegido",
+            "fr": "Le chemin choisi"
+          },
+          "context": {
+            "es": "Preparaste la maleta. En Burdeos, una técnica nueva te permite seguir dibujando: la litografía.",
+            "fr": "Tu as préparé ta valise. À Bordeaux, une nouvelle technique te permet de continuer à dessiner : la lithographie."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "aguas",
+                  "side": "r"
+                }
+              ],
+              "card": "blanco",
+              "context": {
+                "es": "Dudaste antes de partir. El relato se queda un momento más en Madrid, frente a un lienzo vacío.",
+                "fr": "Tu as hésité avant de partir. Le récit reste encore un moment à Madrid, face à une toile vide."
+              }
+            }
+          ]
+        },
+        {
+          "id": "burdeos",
+          "card": "lechera",
+          "label": {
+            "es": "La última luz",
+            "fr": "La dernière lumière"
+          },
+          "context": {
+            "es": "Más tarde, instalado en Burdeos, sigues pintando. Hacia 1827, una figura con leche cierra este recorrido.",
+            "fr": "Plus tard, installé à Bordeaux, tu continues de peindre. Vers 1827, une figure portant du lait clôt ce parcours."
+          }
+        }
+      ]
+    }
+  ]
+}

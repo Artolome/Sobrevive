@@ -70,7 +70,7 @@ function loadRasterImages(rasterDir, decks) {
   }
   return loaded;
 }
-function build() {
+function build(options = {}) {
 const decks = {}, art = {};
 const report = [];
 for (const id of IDS) {
@@ -103,10 +103,11 @@ const LS = new RegExp("[" + String.fromCharCode(0x2028) + String.fromCharCode(0x
 const data = JSON.stringify({ decks, art }).split("</").join("<" + String.fromCharCode(92) + "/").replace(LS, "");
 src = src.replace("<!--KIT-->", () => "<script>\n" + kitSrc + "\n</script>").replace("<!--DATA-->", () => "<script>window.__SV=" + data + ";</script>");
 src = require("./classroom/build-extra.js")(src);
-const out = path.join(__dirname, "index.html");
+if (options.transform) src = options.transform(src);
+const out = options.out || path.join(__dirname, "index.html");
 fs.writeFileSync(out, src, "utf8");
 console.log(report.join("\n"));
 console.log(`→ ${out} (${Math.round(fs.statSync(out).size / 1024)} Ko)`);
 }
 if (require.main === module) build();
-module.exports = { loadRasterImages };
+module.exports = { loadRasterImages, build };

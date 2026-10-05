@@ -1,0 +1,78 @@
+{
+  "id": "quijote",
+  "intro_fr": "Quatre chapitres suivent la route de Don Quichotte : le départ, les aventures de la Manche, une nouvelle sortie, puis Barcelone. Tes choix décident de certaines rencontres et de leurs suites. C’est une adaptation interactive, pas une reproduction exacte du roman.",
+  "sub": "Des moulins à Barcelone : quatre chapitres et des chemins liés à tes choix.",
+  "tagline": "Cada elección abre un camino.",
+  "sources": [
+    { "title": "Instituto Cervantes · Don Quijote, première partie", "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/parte1/tabla/default.htm", "note": "Repères d’ordre : première sortie et adoubement avant les livres, Sancho et les moulins ; yangüeses, baume, moutons, batans, heaume, galériens, Sierra Morena et Micomicona. Le parcours condense ces épisodes et propose des alternatives fictives." },
+    { "title": "Instituto Cervantes · Don Quijote, deuxième partie", "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/parte2/tabla/default.htm", "note": "Repères d’ordre : Sansón, Dulcinée enchantée, lions, Montesinos, retable, barque, ducs ; Clavileño précède le gouvernement de Barataria ; Barcelone précède le duel et le retour." },
+    { "title": "Instituto Cervantes · Deuxième partie, chapitre65", "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/parte2/cap65/default.htm", "note": "Dans le roman, Sansón révèle son identité à don Antonio Moreno et lui demande de la cacher à Don Quichotte. La carte revelacion fait parler Sansón directement au joueur : son contexte signale cette adaptation." }
+  ],
+  "stages": [
+    {
+      "id": "salida", "title": { "es": "I · Un nombre y un camino", "fr": "I · Un nom et un chemin" },
+      "period": { "es": "Primera salida y comienzo del viaje con Sancho", "fr": "Première sortie, puis début du voyage avec Sancho" }, "place": "La Mancha · El pueblo y los molinos",
+      "slots": [
+        { "id": "nombre", "card": "salida", "label": { "es": "Antes de partir", "fr": "Avant le départ" }, "context": { "es": "La aventura empieza en tu casa. Antes de salir, un caballero necesita un nombre para su caballo.", "fr": "L’aventure commence chez toi. Avant de partir, un chevalier a besoin d’un nom pour son cheval." } },
+        { "id": "venta", "card": "venta", "label": { "es": "La primera venta", "fr": "La première auberge" }, "context": { "es": "En tu primera salida llegas a una venta. Tú ves un castillo; el ventero tiene otros planes.", "fr": "Lors de ta première sortie, tu arrives à une auberge. Tu y vois un château ; l’aubergiste a d’autres projets." } },
+        { "id": "noche", "card": "quizcaballo", "label": { "es": "La noche en la venta", "fr": "La nuit à l’auberge" }, "context": { "es": "Has pedido cena y cama. Antes de darte habitación, el ventero pregunta por el caballo.", "fr": "Tu as demandé un dîner et un lit. Avant de te donner une chambre, l’aubergiste te questionne sur le cheval." }, "variants": [
+          { "when": [{ "cardId": "venta", "side": "l" }], "card": "velar", "context": { "es": "Has pedido ser armado caballero. El ventero te lleva al pozo para velar las armas.", "fr": "Tu as demandé à être armé chevalier. L’aubergiste te conduit au puits pour veiller les armes." } }
+        ] },
+        { "id": "biblioteca", "card": "libros", "label": { "es": "Una vuelta al pueblo", "fr": "Un retour au village" }, "context": { "es": "La primera salida termina con una vuelta al pueblo. El cura y el barbero revisan tus libros.", "fr": "La première sortie s’achève par un retour au village. Le curé et le barbier examinent tes livres." } },
+        { "id": "companero", "card": "escudero", "label": { "es": "La segunda salida", "fr": "La deuxième sortie" }, "context": { "es": "Sales otra vez. Sancho te acompaña como escudero y recuerda la promesa de una ínsula.", "fr": "Tu repars. Sancho t’accompagne comme écuyer et se souvient de la promesse d’une île." } },
+        { "id": "molinos", "card": "molinos", "label": { "es": "En la llanura", "fr": "Dans la plaine" }, "context": { "es": "En el camino aparecen unas figuras enormes. Sancho y tú no veis lo mismo.", "fr": "Sur le chemin apparaissent d’immenses silhouettes. Sancho et toi ne voyez pas la même chose." } },
+        { "id": "despues-molinos", "card": "quizmolinos", "label": { "es": "Después de los molinos", "fr": "Après les moulins" }, "context": { "es": "Has mirado antes de atacar. Los molinos te hacen una última pregunta sobre lo que ves.", "fr": "Tu as regardé avant d’attaquer. Les moulins te posent une dernière question sur ce que tu vois." }, "variants": [
+          { "when": [{ "cardId": "molinos", "side": "l" }], "card": "freston", "context": { "es": "Has cargado contra los molinos. Desde el suelo, imaginas la explicación de Frestón.", "fr": "Tu as chargé les moulins. Depuis le sol, tu imagines l’explication de Frestón." } }
+        ] }
+      ]
+    },
+    {
+      "id": "caminos", "title": { "es": "II · Polvo, ruido y promesas", "fr": "II · Poussière, bruit et promesses" },
+      "period": { "es": "Los caminos de la Mancha", "fr": "Les chemins de la Manche" }, "place": "La Mancha · Camino de Sierra Morena",
+      "slots": [
+        { "id": "yeguas", "card": "yeguas", "label": { "es": "Una parada en el prado", "fr": "Une halte dans le pré" }, "context": { "es": "El viaje continúa. Rocinante se acerca a unas yeguas que no viajan solas.", "fr": "Le voyage continue. Rossinante s’approche de juments qui ne voyagent pas seules." } },
+        { "id": "descanso", "card": "hambre", "label": { "es": "Un alto en el camino", "fr": "Une pause en chemin" }, "context": { "es": "Te has alejado con Rocinante sin pelear. Sancho propone parar y compartir la comida.", "fr": "Tu t’es éloigné avec Rossinante sans te battre. Sancho propose une pause pour partager le repas." }, "variants": [
+          { "when": [{ "cardId": "yeguas", "side": "l" }], "card": "balsamo", "context": { "es": "Defendiste a Rocinante y recibiste golpes. En la siguiente parada, Sancho pregunta por tu extraño bálsamo.", "fr": "Tu as défendu Rossinante et reçu des coups. À la halte suivante, Sancho te questionne sur ton étrange baume." } }
+        ] },
+        { "id": "polvo", "card": "ovejas", "label": { "es": "Dos nubes de polvo", "fr": "Deux nuages de poussière" }, "context": { "es": "A lo lejos se levantan dos nubes de polvo. Tu imaginación les da nombres de ejércitos.", "fr": "Au loin se lèvent deux nuages de poussière. Ton imagination leur donne des noms d’armées." } },
+        { "id": "noche", "card": "batanes", "label": { "es": "Una noche de ruido", "fr": "Une nuit bruyante" }, "context": { "es": "Cae la noche. Unos golpes que no podéis ver detienen el viaje.", "fr": "La nuit tombe. Des coups dont vous ne voyez pas l’origine arrêtent le voyage." } },
+        { "id": "lluvia", "card": "yelmo", "label": { "es": "Bajo la lluvia", "fr": "Sous la pluie" }, "context": { "es": "Después de aquella noche, seguís el camino. La lluvia trae otro encuentro extraño.", "fr": "Après cette nuit, vous reprenez la route. La pluie amène une autre étrange rencontre." } },
+        { "id": "cadenas", "card": "galeotes", "label": { "es": "Los hombres encadenados", "fr": "Les hommes enchaînés" }, "context": { "es": "Más adelante, un grupo de hombres encadenados cruza vuestro camino.", "fr": "Plus loin, un groupe d’hommes enchaînés croise votre route." } },
+        { "id": "sierra", "card": "micomicona", "label": { "es": "En Sierra Morena", "fr": "Dans la Sierra Morena" }, "context": { "es": "El camino llega a Sierra Morena. El cura aparece con una supuesta princesa y otra promesa de aventura.", "fr": "Le chemin mène à la Sierra Morena. Le curé apparaît avec une prétendue princesse et une nouvelle promesse d’aventure." } }
+      ]
+    },
+    {
+      "id": "otra-salida", "title": { "es": "III · Dentro de tu propia historia", "fr": "III · Dans ta propre histoire" },
+      "period": { "es": "Una nueva salida", "fr": "Une nouvelle sortie" }, "place": "Del pueblo al Ebro",
+      "slots": [
+        { "id": "libro", "card": "sanson", "label": { "es": "Otra vez en el pueblo", "fr": "De nouveau au village" }, "context": { "es": "Tras volver al pueblo, preparas una nueva salida. Sansón trae noticias de un libro sobre ti.", "fr": "Après le retour au village, tu prépares un nouveau départ. Sansón apporte des nouvelles d’un livre qui parle de toi." } },
+        { "id": "dulcinea", "card": "encantada", "label": { "es": "Cerca del Toboso", "fr": "Près du Toboso" }, "context": { "es": "Buscas a Dulcinea. Sancho señala a una campesina que pasa en un burro.", "fr": "Tu cherches Dulcinée. Sancho montre une paysanne qui passe sur un âne." } },
+        { "id": "leones", "card": "leon", "label": { "es": "El carro del rey", "fr": "Le chariot du roi" }, "context": { "es": "En la siguiente etapa os cruzáis con un carro que lleva leones.", "fr": "À l’étape suivante, vous croisez un chariot qui transporte des lions." } },
+        { "id": "cueva", "card": "montesinos", "label": { "es": "La cueva de Montesinos", "fr": "La grotte de Montesinos" }, "context": { "es": "El viaje os lleva a la cueva de Montesinos. Al salir, cuentas a Sancho lo que crees haber visto.", "fr": "Le voyage vous mène à la grotte de Montesinos. En sortant, tu racontes à Sancho ce que tu crois avoir vu." } },
+        { "id": "titeres", "card": "retablo", "label": { "es": "El teatro de maese Pedro", "fr": "Le théâtre de maître Pierre" }, "context": { "es": "En una venta encontráis un teatro de títeres. La historia empieza delante de vosotros.", "fr": "Dans une auberge, vous trouvez un théâtre de marionnettes. L’histoire commence devant vous." } },
+        { "id": "rio", "card": "barco", "label": { "es": "A orillas del Ebro", "fr": "Sur les rives de l’Èbre" }, "context": { "es": "Más adelante llegáis al Ebro. En la orilla hay una barca sin remos.", "fr": "Plus loin, vous arrivez à l’Èbre. Sur la rive se trouve une barque sans rames." } },
+        { "id": "invitacion", "card": "duques", "label": { "es": "La invitación de los duques", "fr": "L’invitation des ducs" }, "context": { "es": "Unos duques reconocen a los viajeros del libro. Su invitación puede cambiar vuestra ruta.", "fr": "Des ducs reconnaissent les voyageurs du livre. Leur invitation peut changer votre route." } }
+      ]
+    },
+    {
+      "id": "barcelona", "title": { "es": "IV · Del palacio al mar", "fr": "IV · Du palais à la mer" },
+      "period": { "es": "La última parte del viaje", "fr": "La dernière partie du voyage" }, "place": "El palacio, el camino y Barcelona",
+      "slots": [
+        { "id": "despues-duques", "card": "cansado", "label": { "es": "La decisión tiene una continuación", "fr": "Le choix a une suite" }, "context": { "es": "Antes de seguir, Rocinante pide una parada.", "fr": "Avant de poursuivre, Rossinante demande une pause." }, "variants": [
+          { "when": [{ "cardId": "duques", "side": "l" }], "card": "clavileno", "context": { "es": "Has aceptado la invitación. En el palacio, los duques preparan una aventura con un caballo de madera.", "fr": "Tu as accepté l’invitation. Au palais, les ducs préparent une aventure avec un cheval de bois." } },
+          { "when": [{ "cardId": "duques", "side": "r" }], "card": "sininsula", "context": { "es": "Has rechazado el palacio. Tras tres días de camino, Sancho vuelve a hablar de la ínsula perdida.", "fr": "Tu as refusé le palais. Après trois jours de route, Sancho revient sur l’île qu’il n’a pas obtenue." } }
+        ] },
+        { "id": "insula-o-camino", "card": "hambre", "label": { "es": "La ínsula o el camino", "fr": "L’île ou le chemin" }, "context": { "es": "Seguís viajando sin entrar en el palacio. Sancho abre las alforjas para comer.", "fr": "Vous continuez à voyager sans entrer au palais. Sancho ouvre les sacoches pour manger." }, "variants": [
+          { "when": [{ "cardId": "duques", "side": "l" }], "card": "barataria", "context": { "es": "Después de la aventura de Clavileño, la promesa de los duques tiene una continuación: Sancho gobierna Barataria.", "fr": "Après l’aventure de Clavileño, la promesse des ducs a une suite : Sancho gouverne Barataria." } }
+        ] },
+        { "id": "cataluna", "card": "roque", "label": { "es": "Camino de Barcelona", "fr": "En route pour Barcelone" }, "context": { "es": "La ruta os lleva a Cataluña. Roque propone acompañaros hasta Barcelona.", "fr": "La route vous mène en Catalogne. Roque propose de vous accompagner jusqu’à Barcelone." } },
+        { "id": "mar", "card": "mar", "label": { "es": "Ante el mar", "fr": "Devant la mer" }, "context": { "es": "Llegáis a Barcelona por vuestro camino. Ante vosotros aparece el mar.", "fr": "Vous arrivez à Barcelone par votre chemin. Devant vous apparaît la mer." } },
+        { "id": "imprenta", "card": "imprenta", "label": { "es": "Dentro de la ciudad", "fr": "Dans la ville" }, "context": { "es": "Durante la visita a Barcelona, entráis en una imprenta. El título de un libro llama tu atención.", "fr": "Pendant la visite de Barcelone, vous entrez dans une imprimerie. Le titre d’un livre attire ton attention." } },
+        { "id": "duelo", "card": "blancaluna", "label": { "es": "El desafío de la playa", "fr": "Le défi sur la plage" }, "context": { "es": "En la playa aparece otro caballero. Pone una condición a su desafío: volver a casa si pierdes.", "fr": "Sur la plage apparaît un autre chevalier. Il pose une condition à son défi : rentrer chez toi si tu perds." } },
+        { "id": "regreso", "card": "camino", "label": { "es": "La despedida", "fr": "L’au revoir" }, "context": { "es": "Has rechazado el duelo. En esta versión, decides cerrar el viaje y tomar el camino de casa con Sancho.", "fr": "Tu as refusé le duel. Dans cette version, tu décides de terminer le voyage et de prendre le chemin de la maison avec Sancho." }, "variants": [
+          { "when": [{ "cardId": "blancaluna", "side": "l" }], "card": "revelacion", "context": { "es": "Has perdido el duelo y debes volver a casa. En esta adaptación, Sansón te revela su identidad directamente.", "fr": "Tu as perdu le duel et dois rentrer chez toi. Dans cette adaptation, Sansón te révèle directement son identité." } }
+        ] }
+      ]
+    }
+  ]
+}

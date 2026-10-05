@@ -1,0 +1,515 @@
+{
+  "id": "frida",
+  "intro_fr": "Du premier miroir aux dernières pastèques, découvre quatre périodes de la vie de Frida. Peindre, voyager, enseigner et vivre avec ses proches ouvrent des chemins différents dans cette aventure inspirée de sa vie.",
+  "sub": "Un espejo, muchos mundos, una voz propia",
+  "tagline": "Comment donneras-tu une place à ta propre réalité ?",
+  "sources": [
+    {
+      "title": "Museo Frida Kahlo — Vie et œuvre",
+      "url": "https://www.museofridakahlo.org.mx/frida/",
+      "note": "Repères : accident en 1925, premier autoportrait en 1926, relation avec Rivera en 1928, mariage en 1929, départ aux États-Unis en 1930, exposition new-yorkaise en 1938, Paris en 1939, Fridos dans les années 1940, journal à partir de 1944, exposition mexicaine en 1953 et Viva la vida en 1954."
+    },
+    {
+      "title": "MoMA — Fulang-Chang and I",
+      "url": "https://www.moma.org/collection/works/79374",
+      "note": "Le tableau date de 1937 ; l’assemblage avec le miroir est postérieur à 1939. La troisième période commence donc en 1937. Les aventures du singe sont des scènes de jeu, pas des anecdotes attestées."
+    },
+    {
+      "title": "Centre Pompidou — Le Cadre",
+      "url": "https://www.centrepompidou.fr/fr/ressources/oeuvre/EaZN1kV",
+      "note": "Œuvre de 1938, achetée par l’État en 1939. La carte clarifie l’acquéreur et évite la formulation héritée « première artiste mexicaine au Louvre »."
+    }
+  ],
+  "stages": [
+    {
+      "id": "empezar",
+      "title": {
+        "es": "Empezar con un espejo",
+        "fr": "Commencer avec un miroir"
+      },
+      "period": {
+        "es": "1925–1928",
+        "fr": "1925–1928"
+      },
+      "place": "Coyoacán",
+      "slots": [
+        {
+          "id": "accidente",
+          "card": "salida",
+          "label": {
+            "es": "Después del accidente",
+            "fr": "Après l’accident"
+          },
+          "context": {
+            "es": "Después del accidente de 1925, pasas meses en casa. Esta historia comienza con lo que pides para acompañar esos días.",
+            "fr": "Après l’accident de 1925, tu passes des mois chez toi. Cette histoire commence par ce que tu demandes pour accompagner ces journées."
+          }
+        },
+        {
+          "id": "primera-compania",
+          "card": "espejo_yo",
+          "label": {
+            "es": "La primera compañía",
+            "fr": "La première compagnie"
+          },
+          "context": {
+            "es": "Pediste pinturas y un espejo. Ahora el espejo te devuelve una pregunta sobre tus autorretratos.",
+            "fr": "Tu as demandé des couleurs et un miroir. Le miroir te renvoie maintenant une question sur tes autoportraits."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "salida",
+                  "side": "r"
+                }
+              ],
+              "card": "doctor_reposo",
+              "context": {
+                "es": "Pediste chocolate y revistas. El médico también tiene algo que decir sobre el ritmo de estos días.",
+                "fr": "Tu as demandé du chocolat et des revues. Le médecin a aussi quelque chose à dire sur le rythme de ces journées."
+              }
+            }
+          ]
+        },
+        {
+          "id": "propia-cara",
+          "card": "espejo_cejas",
+          "label": {
+            "es": "Mirarte de cerca",
+            "fr": "Te regarder de près"
+          },
+          "context": {
+            "es": "Con el tiempo, el espejo y las pinturas entran en tu vida diaria. Tu propia cara se convierte en un tema.",
+            "fr": "Avec le temps, le miroir et les couleurs entrent dans ton quotidien. Ton propre visage devient un sujet."
+          }
+        },
+        {
+          "id": "vestirse",
+          "card": "tehuana",
+          "label": {
+            "es": "Elegir tu imagen",
+            "fr": "Choisir ton image"
+          },
+          "context": {
+            "es": "También puedes decidir cómo presentarte ante los demás. Hoy el espejo acompaña una salida.",
+            "fr": "Tu peux aussi décider comment te présenter aux autres. Aujourd’hui, le miroir accompagne une sortie."
+          }
+        },
+        {
+          "id": "diego",
+          "card": "diego_cuadros",
+          "label": {
+            "es": "Mostrar tus cuadros",
+            "fr": "Montrer tes tableaux"
+          },
+          "context": {
+            "es": "Al final de esta etapa, tus cuadros encuentran la mirada de Diego Rivera. Tú decides cómo recibir sus palabras.",
+            "fr": "À la fin de cette période, tes tableaux rencontrent le regard de Diego Rivera. Tu décides comment accueillir ses paroles."
+          }
+        },
+        {
+          "id": "despues-diego",
+          "card": "diego_cejas",
+          "label": {
+            "es": "Continuar a tu manera",
+            "fr": "Continuer à ta façon"
+          },
+          "context": {
+            "es": "Respondiste al pintor con humor. Él vuelve a animarte a pintar y a buscar lo que tienes de propio.",
+            "fr": "Tu as répondu au peintre avec humour. Il t’encourage encore à peindre et à chercher ce qui t’est propre."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "diego_cuadros",
+                  "side": "r"
+                }
+              ],
+              "card": "casa_quiz",
+              "context": {
+                "es": "Guardaste tus cuadros. El relato regresa contigo a la casa donde empezó esta etapa.",
+                "fr": "Tu as rangé tes tableaux. Le récit revient avec toi dans la maison où cette période a commencé."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viajar",
+      "title": {
+        "es": "Vivir y viajar",
+        "fr": "Vivre et voyager"
+      },
+      "period": {
+        "es": "1929–1933",
+        "fr": "1929–1933"
+      },
+      "place": "México → Estados Unidos",
+      "slots": [
+        {
+          "id": "vida-diego",
+          "card": "diego_canasta",
+          "label": {
+            "es": "Dos trabajos en casa",
+            "fr": "Deux artistes au quotidien"
+          },
+          "context": {
+            "es": "Desde 1929 compartes otra etapa con Diego. Sus murales y tus cuadros no siempre dejan tiempo para comer.",
+            "fr": "À partir de 1929, tu partages une autre période avec Diego. Ses fresques et tes tableaux ne laissent pas toujours le temps de manger."
+          }
+        },
+        {
+          "id": "mesa",
+          "card": "diego_fruta",
+          "label": {
+            "es": "La mesa del taller",
+            "fr": "La table de l’atelier"
+          },
+          "context": {
+            "es": "Elegiste llevarle una canasta. En otra escena doméstica, la comida vuelve a cruzarse con la pintura.",
+            "fr": "Tu as choisi de lui apporter un panier. Dans une autre scène du quotidien, la nourriture croise à nouveau la peinture."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "diego_canasta",
+                  "side": "r"
+                }
+              ],
+              "card": "mercado_fruta",
+              "context": {
+                "es": "Elegiste dedicarte a tus cuadros. En el mercado, las frutas pueden ser comida o modelos.",
+                "fr": "Tu as choisi de te consacrer à tes tableaux. Au marché, les fruits peuvent servir de repas ou de modèles."
+              }
+            }
+          ]
+        },
+        {
+          "id": "mercado",
+          "card": "mercado_flores",
+          "label": {
+            "es": "Antes de partir",
+            "fr": "Avant de partir"
+          },
+          "context": {
+            "es": "Antes del viaje, los colores del mercado te plantean una pequeña elección para tu día.",
+            "fr": "Avant le voyage, les couleurs du marché te proposent un petit choix pour ta journée."
+          }
+        },
+        {
+          "id": "estados-unidos",
+          "card": "gringolandia",
+          "label": {
+            "es": "Lejos de México",
+            "fr": "Loin du Mexique"
+          },
+          "context": {
+            "es": "En los primeros años treinta viajas por Estados Unidos. La gran ciudad te ofrece fiestas y también preguntas sobre México.",
+            "fr": "Au début des années trente, tu voyages aux États-Unis. La grande ville t’offre des fêtes et aussi des questions sur le Mexique."
+          }
+        },
+        {
+          "id": "periodista",
+          "card": "periodista_esposa",
+          "label": {
+            "es": "Decir quién eres",
+            "fr": "Dire qui tu es"
+          },
+          "context": {
+            "es": "En Nueva York, una periodista te presenta a través de Diego. Puedes elegir tus propias palabras.",
+            "fr": "À New York, une journaliste te présente à travers Diego. Tu peux choisir tes propres mots."
+          }
+        },
+        {
+          "id": "ritmo",
+          "card": "doctor_fiesta",
+          "label": {
+            "es": "Buscar tu ritmo",
+            "fr": "Chercher ton rythme"
+          },
+          "context": {
+            "es": "Entre visitas, trabajo y viajes, el relato se detiene en una decisión cotidiana: descansar o salir.",
+            "fr": "Entre visites, travail et voyages, le récit s’arrête sur une décision du quotidien : se reposer ou sortir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "propia-realidad",
+      "title": {
+        "es": "Mostrar tu realidad",
+        "fr": "Montrer ta réalité"
+      },
+      "period": {
+        "es": "1937–1940",
+        "fr": "1937–1940"
+      },
+      "place": "Coyoacán → París → México",
+      "slots": [
+        {
+          "id": "mono",
+          "card": "mono_roba",
+          "label": {
+            "es": "Un invitado en el taller",
+            "fr": "Un invité dans l’atelier"
+          },
+          "context": {
+            "es": "Los animales entran en tus autorretratos. En este cuento, Fulang-Chang también entra en tus asuntos de pintura.",
+            "fr": "Les animaux entrent dans tes autoportraits. Dans ce conte, Fulang-Chang entre aussi dans tes affaires de peinture."
+          }
+        },
+        {
+          "id": "trato-mono",
+          "card": "perico_alba",
+          "label": {
+            "es": "La respuesta del compañero",
+            "fr": "La réponse du compagnon"
+          },
+          "context": {
+            "es": "Tu relación con el pequeño visitante decide la próxima escena del taller.",
+            "fr": "Ta relation avec le petit visiteur détermine la prochaine scène de l’atelier."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "mono_roba",
+                  "side": "r"
+                }
+              ],
+              "card": "mono_hombro",
+              "context": {
+                "es": "Cambiaste un plátano por tus pinceles. Fulang-Chang se acerca ahora como compañero del cuadro.",
+                "fr": "Tu as échangé une banane contre tes pinceaux. Fulang-Chang s’approche maintenant comme compagnon du tableau."
+              }
+            },
+            {
+              "when": [
+                {
+                  "cardId": "mono_roba",
+                  "side": "l"
+                }
+              ],
+              "card": "mono_collar",
+              "context": {
+                "es": "Subiste al árbol para perseguirlo. Vuestro juego de rivalidad continúa con un collar.",
+                "fr": "Tu es montée dans l’arbre pour le poursuivre. Votre jeu de rivalité continue avec un collier."
+              }
+            }
+          ]
+        },
+        {
+          "id": "imagen-publica",
+          "card": "periodista_foto",
+          "label": {
+            "es": "La imagen que muestras",
+            "fr": "L’image que tu montres"
+          },
+          "context": {
+            "es": "Tu trabajo encuentra más público. Para una fotografía, puedes elegir lo que quieres poner en primer plano.",
+            "fr": "Ton travail rencontre davantage de public. Pour une photographie, tu peux choisir ce que tu veux mettre au premier plan."
+          }
+        },
+        {
+          "id": "aduana",
+          "card": "breton_aduana",
+          "label": {
+            "es": "Llegar a París",
+            "fr": "Arriver à Paris"
+          },
+          "context": {
+            "es": "En 1939 llegas a París para exponer. El viaje abre una nueva dificultad: preparar la muestra.",
+            "fr": "En 1939, tu arrives à Paris pour exposer. Le voyage ouvre une nouvelle difficulté : préparer la présentation."
+          }
+        },
+        {
+          "id": "paris-encuentro",
+          "card": "breton_cafes",
+          "label": {
+            "es": "Encontrarte con los surrealistas",
+            "fr": "Rencontrer les surréalistes"
+          },
+          "context": {
+            "es": "Elegiste pasear mientras la exposición espera. Los cafés te proponen otra forma de pasar el tiempo.",
+            "fr": "Tu as choisi de te promener pendant que l’exposition attend. Les cafés te proposent une autre façon de passer le temps."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "breton_aduana",
+                  "side": "l"
+                }
+              ],
+              "card": "breton_quiz",
+              "context": {
+                "es": "Elegiste organizar la exposición con Duchamp. Al hablar de tus cuadros, surge la pregunta de Breton.",
+                "fr": "Tu as choisi d’organiser l’exposition avec Duchamp. En parlant de tes tableaux, la question de Breton surgit."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cadre",
+          "card": "breton_louvre",
+          "label": {
+            "es": "Un cuadro adquirido",
+            "fr": "Un tableau acquis"
+          },
+          "context": {
+            "es": "En 1939, el Estado francés compra El marco. En esta escena, eliges cómo recibir la noticia.",
+            "fr": "En 1939, l’État français achète Le Cadre. Dans cette scène, tu choisis comment accueillir la nouvelle."
+          },
+          "override": {
+            "t": "¡Noticia! El Estado francés compra tu cuadro «El marco». ¿Cómo recibes la noticia?",
+            "f": "Nouvelle ! L’État français achète ton tableau « Le Cadre ». Comment accueilles-tu la nouvelle ?"
+          }
+        },
+        {
+          "id": "volver",
+          "card": "casa_xolos",
+          "label": {
+            "es": "Volver al taller",
+            "fr": "Revenir à l’atelier"
+          },
+          "context": {
+            "es": "Después del viaje, el relato vuelve a México. En el taller, los perros tienen su propia idea de la pintura.",
+            "fr": "Après le voyage, le récit revient au Mexique. Dans l’atelier, les chiens ont leur propre idée de la peinture."
+          }
+        }
+      ]
+    },
+    {
+      "id": "transmitir",
+      "title": {
+        "es": "Pintar y compartir",
+        "fr": "Peindre et transmettre"
+      },
+      "period": {
+        "es": "Años 1940–1954",
+        "fr": "Années 1940–1954"
+      },
+      "place": "México · Casa Azul",
+      "slots": [
+        {
+          "id": "clase",
+          "card": "fridos_clase",
+          "label": {
+            "es": "Abrir la clase",
+            "fr": "Ouvrir la classe"
+          },
+          "context": {
+            "es": "En los años cuarenta enseñas a un grupo de jóvenes. ¿Qué lugar das a su propia mirada?",
+            "fr": "Dans les années quarante, tu enseignes à un groupe de jeunes. Quelle place donnes-tu à leur propre regard ?"
+          }
+        },
+        {
+          "id": "seguir-clase",
+          "card": "fridos_mural",
+          "label": {
+            "es": "La clase continúa",
+            "fr": "Le cours continue"
+          },
+          "context": {
+            "es": "Elegiste salir al mercado y pintar lo que aman. El grupo trabaja ahora sobre un muro de Coyoacán.",
+            "fr": "Tu as choisi de sortir au marché et de peindre ce qu’ils aiment. Le groupe travaille maintenant sur un mur de Coyoacán."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "fridos_clase",
+                  "side": "r"
+                }
+              ],
+              "card": "fridos_lluvia",
+              "context": {
+                "es": "Elegiste los autorretratos y los espejos. Otro día, la lluvia os obliga a repensar el lugar de la clase.",
+                "fr": "Tu as choisi les autoportraits et les miroirs. Un autre jour, la pluie vous oblige à repenser le lieu du cours."
+              }
+            }
+          ]
+        },
+        {
+          "id": "corse",
+          "card": "doctor_corse",
+          "label": {
+            "es": "Otro soporte para pintar",
+            "fr": "Un autre support à peindre"
+          },
+          "context": {
+            "es": "En esta etapa convives con tratamientos y corsés. El relato te propone qué hacer con uno de ellos.",
+            "fr": "Dans cette période, tu vis avec des traitements et des corsets. Le récit te propose quoi faire de l’un d’eux."
+          }
+        },
+        {
+          "id": "seguir-corse",
+          "card": "cama_diario",
+          "label": {
+            "es": "Después de decidir",
+            "fr": "Après ta décision"
+          },
+          "context": {
+            "es": "Elegiste esconder el corsé bajo el vestido. En una noche de esta etapa, tu diario ofrece otro espacio para los colores.",
+            "fr": "Tu as choisi de cacher le corset sous ta robe. Lors d’une nuit de cette période, ton journal offre un autre espace aux couleurs."
+          },
+          "variants": [
+            {
+              "when": [
+                {
+                  "cardId": "doctor_corse",
+                  "side": "l"
+                }
+              ],
+              "card": "doctor_corse2",
+              "context": {
+                "es": "Pintaste flores y pájaros en el corsé. En esta escena imaginada, otras personas también quieren probar.",
+                "fr": "Tu as peint des fleurs et des oiseaux sur le corset. Dans cette scène imaginée, d’autres personnes veulent aussi essayer."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cama",
+          "card": "cama_pinceles",
+          "label": {
+            "es": "El taller junto a la cama",
+            "fr": "L’atelier près du lit"
+          },
+          "context": {
+            "es": "En los últimos años, el espacio de trabajo se acerca a la cama. Pintar y descansar forman parte de tus días.",
+            "fr": "Dans les dernières années, l’espace de travail se rapproche du lit. Peindre et se reposer font partie de tes journées."
+          }
+        },
+        {
+          "id": "exposicion",
+          "card": "expo_doctor",
+          "label": {
+            "es": "La exposición en México",
+            "fr": "L’exposition au Mexique"
+          },
+          "context": {
+            "es": "En 1953 llega tu exposición individual en México. La última salida del relato depende de tu respuesta al médico.",
+            "fr": "En 1953 arrive ton exposition personnelle au Mexique. La dernière sortie du récit dépend de ta réponse au médecin."
+          }
+        },
+        {
+          "id": "viva",
+          "card": "sandia_viva",
+          "label": {
+            "es": "El color de la última página",
+            "fr": "La couleur de la dernière page"
+          },
+          "context": {
+            "es": "La última escena se inspira en las sandías de Viva la vida, de 1954. Tú decides cómo cerrar esta página del juego.",
+            "fr": "La dernière scène s’inspire des pastèques de Viva la vida, de 1954. Tu décides comment clore cette page du jeu."
+          }
+        }
+      ]
+    }
+  ]
+}

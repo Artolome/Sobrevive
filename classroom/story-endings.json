@@ -1,0 +1,27 @@
+{
+  "cole-rencontre": {
+    "epilogue": {
+      "es": "Llega el viernes. Alex tiene un lugar a tu lado: guardaste su secreto y respondiste a su propuesta de vídeo. La semana termina con una historia que compartís.",
+      "fr": "Le vendredi arrive. Alex a une place à côté de toi : tu as gardé son secret et répondu à sa proposition de vidéo. La semaine se termine avec une histoire que vous partagez."
+    }
+  },
+  "cole-equilibre": {
+    "epilogue": {
+      "es": "Guardas los cuadernos en la mochila. Esta semana tiene un poco de todo: clases, conversaciones y tiempo para respirar. ¡Ahora empieza el fin de semana!",
+      "fr": "Tu ranges les cahiers dans ton sac. Cette semaine a un peu de tout : des cours, des conversations et du temps pour souffler. Le week-end peut commencer !"
+    }
+  },
+  "cole-defi": {
+    "epilogue": {
+      "es": "Suena el último timbre del viernes. En tu cuaderno queda una pregunta para el lunes. Cierras la mochila y sales: la próxima semana tendrá otra página.",
+      "fr": "La dernière sonnerie du vendredi retentit. Dans ton cahier reste une question pour le lundi. Tu fermes ton sac et sors : la semaine prochaine aura une autre page."
+    }
+  },
+  "cole-amitie": {
+    "title": {"es": "Una semana de amistad", "fr": "Une semaine d’amitié"},
+    "epilogue": {
+      "es": "El viernes, la despedida dura un poco más que el timbre. Una voz dice «¡Hasta el lunes!» y levantas la mano. Te llevas las conversaciones de la semana.",
+      "fr": "Le vendredi, l’au revoir dure un peu plus longtemps que la sonnerie. Une voix dit « À lundi ! » et tu lèves la main. Tu emportes les conversations de la semaine."
+    }
+  }
+}

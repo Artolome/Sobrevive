@@ -133,6 +133,7 @@
     if(tracked){
       window.SVEndings.record(state,card,side);
       const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,textFr:card.f,choice:card[side].es,translation:card[side].fr,turn:state.plays,recordedAt:new Date().toISOString(),gameTime,place,character:world.chars[card.ch]?.name||'',narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({key:g.key,label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};
+      if(window.SVStory)item.journey=window.SVStory.snapshot(world,state);
       history.push(item);history=history.slice(-80);reports.record(world,state,item);
       if(result.dead||result.win)reports.finish(result.dead?'lost':'won',world,state,result.dead?world.deaths?.[result.dead.g]?.[result.dead.dir]:endingForReport(victoryEnding(world,state)));
       feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));
@@ -161,4 +162,5 @@
   const endButton=button('Mon bilan · Exporter',journal);endButton.className='sv-button';$s('#end .panel').appendChild(endButton);
   if(U&&S){if(!$s('#app').hidden)reports.start(U,S,{partial:S.plays>0});renderGauges();speaker.textContent=cur?U.chars[cur.ch]?.name||'':'';feedback(reports.lastChoice(U.id));}
   requestAnimationFrame(()=>fit());
+  if(window.SVStory)window.SVStoryModal=modal;
 })();

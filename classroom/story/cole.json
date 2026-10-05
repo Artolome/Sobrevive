@@ -1,0 +1,87 @@
+{
+  "id": "cole",
+  "intro_fr": "Une semaine au Colegio Cervantes, du lundi au vendredi. Les mêmes moments reviennent, mais tes décisions ouvrent d’autres rencontres, parfois dès le lendemain.",
+  "sub": "Cinq journées de cours, des rencontres et des choix qui ont une suite.",
+  "tagline": "Una semana, muchas historias.",
+  "stages": [
+    {
+      "id": "lunes", "title": { "es": "Lunes · Los primeros encuentros", "fr": "Lundi · Les premières rencontres" },
+      "period": { "es": "Lunes", "fr": "Lundi" }, "place": "Colegio Cervantes",
+      "slots": [
+        { "id": "entrada", "card": "intro", "label": { "es": "Entrada", "fr": "Entrée" }, "context": { "es": "Empieza tu primera semana. La señora Pons te recibe en la puerta de clase.", "fr": "Ta première semaine commence. Madame Pons t’accueille à la porte de la classe." } },
+        { "id": "clase", "card": "garcia1", "label": { "es": "En clase", "fr": "En cours" }, "context": { "es": "Después de las presentaciones, empieza la clase de matemáticas.", "fr": "Après les présentations, le cours de mathématiques commence." } },
+        { "id": "recreo", "card": "alex1", "label": { "es": "Recreo", "fr": "Récréation" }, "context": { "es": "En el recreo, te sientas cerca del patio. Un alumno nuevo busca una silla.", "fr": "À la récréation, tu t’assieds près de la cour. Un nouvel élève cherche une chaise." } },
+        { "id": "comedor", "card": "carmen1", "label": { "es": "Comedor", "fr": "Cantine" }, "context": { "es": "Llega la hora de comer. Doña Carmen espera tu pedido.", "fr": "L’heure du déjeuner arrive. Doña Carmen attend ta commande." } },
+        { "id": "tarde", "card": "pablo1", "label": { "es": "Por la tarde", "fr": "L’après-midi" }, "context": { "es": "Antes de volver a casa, tienes un rato libre. Pablo te propone un partido.", "fr": "Avant de rentrer chez toi, tu as un moment libre. Pablo te propose une partie de football." } },
+        { "id": "despues", "card": "hugo2", "label": { "es": "Después de clase", "fr": "Après les cours" }, "context": { "es": "Has elegido jugar con Pablo. Al terminar el partido, Hugo se acerca con su colección de cromos.", "fr": "Tu as choisi de jouer avec Pablo. Après le match, Hugo s’approche avec sa collection de cartes." }, "variants": [
+          { "when": [{ "cardId": "pablo1", "side": "l" }], "card": "biblio", "context": { "es": "Has elegido ir a la biblioteca. La bibliotecaria tiene un libro para ti.", "fr": "Tu as choisi d’aller à la bibliothèque. La bibliothécaire a un livre pour toi." } }
+        ] }
+      ]
+    },
+    {
+      "id": "martes", "title": { "es": "Martes · Lo de ayer continúa", "fr": "Mardi · Hier a une suite" },
+      "period": { "es": "Martes", "fr": "Mardi" }, "place": "Colegio Cervantes",
+      "slots": [
+        { "id": "entrada", "card": "bus", "label": { "es": "Camino al cole", "fr": "Sur le chemin du collège" }, "context": { "es": "Es martes por la mañana. El autobús está en la parada y Pablo pasa por allí.", "fr": "C’est mardi matin. Le bus est à l’arrêt et Pablo passe par là." } },
+        { "id": "clase", "card": "quiz1", "label": { "es": "En clase", "fr": "En cours" }, "context": { "es": "Ayer te escondiste detrás del libro. Hoy el señor García te hace una pregunta corta desde tu sitio.", "fr": "Hier, tu t’es caché derrière ton livre. Aujourd’hui, monsieur García te pose une petite question depuis ta place." }, "variants": [
+          { "when": [{ "cardId": "garcia1", "side": "r" }], "card": "pons3", "context": { "es": "Ayer levantaste la mano. Hoy la señora Pons te invita a leer ante la clase.", "fr": "Hier, tu as levé la main. Aujourd’hui, madame Pons t’invite à lire devant la classe." } }
+        ] },
+        { "id": "recreo", "card": "fiesta0", "label": { "es": "Recreo", "fr": "Récréation" }, "context": { "es": "Ayer no dejaste la silla a Alex. En este recreo te encuentras con Lucía, que prepara su cumpleaños.", "fr": "Hier, tu n’as pas laissé la chaise à Alex. À cette récréation, tu retrouves Lucía, qui prépare son anniversaire." }, "variants": [
+          { "when": [{ "cardId": "alex1", "side": "r" }], "card": "alex2", "context": { "es": "Ayer dejaste sitio a Alex. Hoy vuelve a buscarte y quiere contarte algo en secreto.", "fr": "Hier, tu as fait une place à Alex. Aujourd’hui, il revient te voir et veut te confier un secret." } }
+        ] },
+        { "id": "comedor", "card": "carmen2", "label": { "es": "Comedor", "fr": "Cantine" }, "context": { "es": "El almuerzo termina. Pasas a elegir el postre con Doña Carmen.", "fr": "Le déjeuner se termine. Tu passes choisir le dessert auprès de Doña Carmen." } },
+        { "id": "tarde", "card": "edfisica", "label": { "es": "Por la tarde", "fr": "L’après-midi" }, "context": { "es": "Después de comer, toca Educación Física. La profesora anuncia la actividad.", "fr": "Après le déjeuner, c’est l’heure de l’EPS. La professeure annonce l’activité." } },
+        { "id": "casa", "card": "consola", "label": { "es": "Por la noche · En casa", "fr": "Le soir · À la maison" }, "context": { "es": "La jornada escolar ha terminado. Ya estás en casa y la consola sigue encendida.", "fr": "La journée de cours est terminée. Tu es chez toi et la console est encore allumée." } }
+      ]
+    },
+    {
+      "id": "miercoles", "title": { "es": "Miércoles · Secretos y pequeños tratos", "fr": "Mercredi · Secrets et petits marchés" },
+      "period": { "es": "Miércoles", "fr": "Mercredi" }, "place": "Colegio Cervantes",
+      "slots": [
+        { "id": "entrada", "card": "paco3", "label": { "es": "Antes de clase", "fr": "Avant les cours" }, "context": { "es": "Anoche apagaste la consola. Esta mañana pasas por los objetos perdidos al entrar en el colegio.", "fr": "Hier soir, tu as éteint la console. Ce matin, tu passes aux objets trouvés en entrant au collège." }, "variants": [
+          { "when": [{ "cardId": "consola", "side": "l" }], "card": "mama1", "context": { "es": "Anoche jugaste hasta las dos. Ahora son las siete: tu madre te llama antes de salir hacia el colegio.", "fr": "Hier soir, tu as joué jusqu’à deux heures. Il est maintenant sept heures : ta mère t’appelle avant le départ pour le collège." } }
+        ] },
+        { "id": "clase", "card": "pons2", "label": { "es": "En clase", "fr": "En cours" }, "context": { "es": "Ya estás en clase. La señora Pons anuncia el examen del viernes.", "fr": "Tu es maintenant en classe. Madame Pons annonce le contrôle de vendredi." } },
+        { "id": "recreo", "card": "pablo2", "label": { "es": "Recreo", "fr": "Récréation" }, "context": { "es": "En el patio, Pablo tiene un problema con sus deberes. Te pide ayuda.", "fr": "Dans la cour, Pablo a un problème avec ses devoirs. Il te demande de l’aide." }, "variants": [
+          { "when": [{ "cardId": "alex2", "side": "r" }], "card": "alex3", "context": { "es": "Ayer guardaste el secreto de Alex. Hoy te propone participar en su próximo vídeo.", "fr": "Hier, tu as gardé le secret d’Alex. Aujourd’hui, il te propose de participer à sa prochaine vidéo." } }
+        ] },
+        { "id": "comedor", "card": "carmen1", "label": { "es": "Comedor", "fr": "Cantine" }, "context": { "es": "Otra vez la fila del comedor. Doña Carmen repite dos platos del menú de la semana.", "fr": "Tu retrouves la file de la cantine. Doña Carmen propose à nouveau deux plats du menu de la semaine." } },
+        { "id": "tarde", "card": "lucia1", "label": { "es": "Después de clase", "fr": "Après les cours" }, "context": { "es": "A la salida, sacas tu bocadillo para merendar. Lucía te propone un cambio.", "fr": "À la sortie, tu sors ton sandwich pour le goûter. Lucía te propose un échange." } },
+        { "id": "despues", "card": "gato", "label": { "es": "La merienda", "fr": "Le goûter" }, "context": { "es": "Has guardado tu bocadillo. Garfio aparece y lo mira con mucha atención.", "fr": "Tu as gardé ton sandwich. Garfio arrive et le regarde avec beaucoup d’attention." }, "variants": [
+          { "when": [{ "cardId": "lucia1", "side": "l" }], "card": "kiosco", "context": { "es": "Has cambiado tu bocadillo por cromos. De camino a casa, ves más cromos en el kiosco.", "fr": "Tu as échangé ton sandwich contre des cartes. Sur le chemin de la maison, tu en vois d’autres au kiosque." } }
+        ] }
+      ]
+    },
+    {
+      "id": "jueves", "title": { "es": "Jueves · Una palabra para mañana", "fr": "Jeudi · Un mot pour demain" },
+      "period": { "es": "Jueves", "fr": "Jeudi" }, "place": "Colegio Cervantes",
+      "slots": [
+        { "id": "entrada", "card": "ruiz1", "label": { "es": "Entrada", "fr": "Entrée" }, "context": { "es": "Es jueves. En el pasillo, el director pide calma antes de entrar en clase.", "fr": "C’est jeudi. Dans le couloir, le directeur demande du calme avant l’entrée en classe." } },
+        { "id": "clase", "card": "lefevre1", "label": { "es": "En clase", "fr": "En cours" }, "context": { "es": "Hoy toca jugar con palabras francesas y españolas. Monsieur Lefèvre tiene una pregunta.", "fr": "Aujourd’hui, on joue avec les mots français et espagnols. Monsieur Lefèvre a une question." }, "variants": [
+          { "when": [{ "cardId": "biblio", "side": "l" }], "card": "quiz2", "context": { "es": "El lunes elegiste leer en la biblioteca. Hoy vuelve esa palabra en una pregunta de vocabulario.", "fr": "Lundi, tu as choisi de lire à la bibliothèque. Aujourd’hui, ce mot revient dans une question de vocabulaire." } }
+        ] },
+        { "id": "recreo", "card": "fiesta0", "label": { "es": "Recreo", "fr": "Récréation" }, "context": { "es": "Todavía no has hablado del sábado con Lucía. Hoy te encuentra en el recreo.", "fr": "Tu n’as pas encore parlé de samedi avec Lucía. Aujourd’hui, elle te retrouve à la récréation." }, "variants": [
+          { "when": [{ "cardId": "fiesta0", "side": "l" }], "card": "lluvia", "context": { "es": "Ya respondiste a la invitación de Lucía. Hoy la lluvia cambia el lugar del recreo: os quedáis dentro.", "fr": "Tu as déjà répondu à l’invitation de Lucía. Aujourd’hui, la pluie change le lieu de la récréation : vous restez à l’intérieur." } },
+          { "when": [{ "cardId": "fiesta0", "side": "r" }], "card": "lluvia", "context": { "es": "Ya respondiste a la invitación de Lucía. Hoy la lluvia cambia el lugar del recreo: os quedáis dentro.", "fr": "Tu as déjà répondu à l’invitation de Lucía. Aujourd’hui, la pluie change le lieu de la récréation : vous restez à l’intérieur." } }
+        ] },
+        { "id": "comedor", "card": "carmen2", "label": { "es": "Comedor", "fr": "Cantine" }, "context": { "es": "Después del almuerzo, vuelves a la mesa de los postres.", "fr": "Après le déjeuner, tu retrouves la table des desserts." } },
+        { "id": "casa", "card": "mama2", "label": { "es": "Por la noche · En casa", "fr": "Le soir · À la maison" }, "context": { "es": "Las clases de la tarde han terminado. En casa, tu madre prepara la cena.", "fr": "Les cours de l’après-midi sont terminés. À la maison, ta mère prépare le dîner." } },
+        { "id": "despues", "card": "hermana", "label": { "es": "Después de cenar", "fr": "Après le dîner" }, "context": { "es": "Has puesto la mesa. Después de cenar, Vera te llama para jugar.", "fr": "Tu as mis la table. Après le dîner, Vera t’appelle pour jouer." }, "variants": [
+          { "when": [{ "cardId": "mama2", "side": "l" }], "card": "historia", "context": { "es": "Has dicho que tienes deberes. Abres la mochila: el trabajo de historia es para mañana.", "fr": "Tu as dit que tu avais des devoirs. Tu ouvres ton sac : le travail d’histoire est pour demain." } }
+        ] }
+      ]
+    },
+    {
+      "id": "viernes", "title": { "es": "Viernes · La última campana", "fr": "Vendredi · La dernière sonnerie" },
+      "period": { "es": "Viernes", "fr": "Vendredi" }, "place": "Colegio Cervantes",
+      "slots": [
+        { "id": "entrada", "card": "paco2", "label": { "es": "Entrada", "fr": "Entrée" }, "context": { "es": "Es viernes. El examen anunciado por la señora Pons es esta mañana; Paco te lo recuerda en el pasillo.", "fr": "C’est vendredi. Le contrôle annoncé par madame Pons a lieu ce matin ; Paco te le rappelle dans le couloir." }, "override": { "t": "Paco lo sabe TODO. —Psst… recuerda: hoy hay control de lengua. 🤫", "f": "Paco sait TOUT. — Psst… rappelle-toi : aujourd’hui, il y a le contrôle de langue. 🤫" } },
+        { "id": "clase", "card": "quiz3", "label": { "es": "El control", "fr": "Le contrôle" }, "context": { "es": "En el control del viernes aparece una frase corta. Lee bien el sujeto antes de responder.", "fr": "Au contrôle de vendredi apparaît une courte phrase. Lis bien le sujet avant de répondre." } },
+        { "id": "recreo", "card": "pablo3", "label": { "es": "Recreo", "fr": "Récréation" }, "context": { "es": "El control ha terminado. En el recreo, Pablo habla de sus planes para el domingo.", "fr": "Le contrôle est terminé. À la récréation, Pablo parle de ses projets pour dimanche." } },
+        { "id": "comedor", "card": "carmen1", "label": { "es": "Comedor", "fr": "Cantine" }, "context": { "es": "Es el último almuerzo de la semana en el colegio. Doña Carmen sirve los platos.", "fr": "C’est le dernier déjeuner de la semaine au collège. Doña Carmen sert les plats." } },
+        { "id": "tarde", "card": "musica", "label": { "es": "Por la tarde", "fr": "L’après-midi" }, "context": { "es": "Para cerrar la semana, la clase de música prepara el festival.", "fr": "Pour terminer la semaine, le cours de musique prépare le festival." } },
+        { "id": "casa", "card": "paga", "label": { "es": "De vuelta en casa", "fr": "De retour à la maison" }, "context": { "es": "Suena el último timbre y vuelves a casa. El fin de semana empieza con tu paga.", "fr": "La dernière sonnerie retentit et tu rentres chez toi. Le week-end commence avec ton argent de poche." } }
+      ]
+    }
+  ]
+}

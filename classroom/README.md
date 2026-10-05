@@ -3,6 +3,8 @@
 Base : `ameliorations/mode-classe-v2`, commit `ec55ebe779d80e39c3e047e473930bbd04ef9d64`.
 Travail isolé sur `codex/v2-interface-pedagogie`. Aucun changement de workflow, aucune publication.
 
+Une variante ultérieure, sur `codex/parcours-narratifs`, organise les cartes en journées et chapitres avec des suites déterminées par les choix. Elle conserve le HTML classique et se construit séparément : voir [STORY.md](STORY.md).
+
 ## Changements proposés
 
 - Menus redessinés comme un carnet d'aventures : papier clair, vert profond, touches corail, cinq couvertures à explorer et progression lisible. La fiche d'univers présente le bouton Jouer avant la collection dépliable. Les fenêtres d'aide, le bilan et la fin reprennent cette présentation.

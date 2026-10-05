@@ -78,7 +78,10 @@
         (session.endReason?'<p>'+esc(session.endReason)+'</p>':'')+
         (session.partialStart?'<p>Le relevé a commencé en cours de partie. Les jauges initiales et les décisions précédentes ne sont pas connues.</p>':'')+
         (session.omittedChoices?'<p class="sv-report-limit">'+esc(session.omittedChoices)+' décision(s) antérieure(s) ne figurent pas dans ce relevé. Les dernières décisions sont présentées dans leur ordre réel.</p>':'')+
-        (session.ending?'<div class="sv-report-ending"><p lang="es">'+esc(session.ending.es)+'</p><p lang="fr">'+esc(session.ending.fr)+'</p></div>':'')+'</div>'+gaugeTable(session);
+        (session.ending?'<div class="sv-report-ending">'+
+          (session.ending.title?'<h3 lang="fr">'+esc(session.ending.title.fr)+'</h3><p lang="es"><strong>'+esc(session.ending.title.es)+'</strong></p>':'')+
+          '<p lang="es">'+esc(session.ending.es)+'</p><p lang="fr">'+esc(session.ending.fr)+'</p>'+
+          (session.ending.evidence?'<p><strong>Pourquoi cette fin ?</strong></p><p lang="es">'+esc(session.ending.evidence.es)+'</p><p lang="fr">'+esc(session.ending.evidence.fr)+'</p>':'')+'</div>':'')+'</div>'+gaugeTable(session);
     }
     function stepBody(item){
       return (item.character||item.place?'<p class="sv-muted">'+(item.character?'Rencontre : '+esc(item.character):'')+(item.character&&item.place?' · ':'')+(item.place?'Lieu : '+esc(item.place):'')+'</p>':'')+'<p lang="es"><strong>'+esc(item.text)+'</strong></p>'+(item.textFr?'<p lang="fr">'+esc(item.textFr)+'</p>':'')+
@@ -102,7 +105,11 @@
         if(session.endReason)lines.push(session.endReason);
         const initial=new Map((session.initialGauges||[]).map(g=>[g.key,g.value]));
         for(const g of session.finalGauges)lines.push(g.label+' : '+(initial.has(g.key)?initial.get(g.key):'Non connu')+' → '+g.value);
-        if(session.ending)lines.push(session.ending.es,session.ending.fr);
+        if(session.ending){
+          if(session.ending.title)lines.push('DÉNOUEMENT',session.ending.title.es,session.ending.title.fr);
+          lines.push(session.ending.es,session.ending.fr);
+          if(session.ending.evidence)lines.push('Pourquoi cette fin ?',session.ending.evidence.es,session.ending.evidence.fr);
+        }
         if(session.omittedChoices)lines.push(session.omittedChoices+' décision(s) antérieure(s) non conservée(s) dans ce relevé.');
       }
       lines.push('','MA RÉFLEXION',session.notes||'Aucune note personnelle ajoutée.','','DÉCISIONS — ordre chronologique');

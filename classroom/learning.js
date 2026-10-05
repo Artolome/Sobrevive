@@ -34,9 +34,9 @@
     dialog.close();
     const target=lastFocus?.isConnected&&lastFocus.getClientRects().length?lastFocus:
       (!$s('#app').hidden?$s('#btnL'):!$s('#end').hidden?$s('#againBtn'):!$s('#ficha').hidden?$s('#startBtn'):$s('#worlds button'));
-    target?.focus();
+    target?.focus({preventScroll:true});
   }
-  function modal(title,html){if(!dialog.open)lastFocus=document.activeElement;dialog.innerHTML='<button id="sv-close" class="sv-button" aria-label="Fermer">×</button><h2 id="sv-title">'+esc(title)+'</h2><div id="sv-modal-body">'+html+'</div>';$s('#sv-close').onclick=close;if(!dialog.open)dialog.showModal();$s('#sv-close').focus();}
+  function modal(title,html){if(!dialog.open)lastFocus=document.activeElement;dialog.classList.remove('sv-ending-collection-dialog');dialog.innerHTML='<button id="sv-close" class="sv-button" aria-label="Fermer">×</button><h2 id="sv-title">'+esc(title)+'</h2><div id="sv-modal-body">'+html+'</div>';$s('#sv-close').onclick=close;if(!dialog.open)dialog.showModal();$s('#sv-close').focus();}
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
   document.addEventListener('keydown',e=>{
     if(!dialog.open)return;
@@ -55,7 +55,7 @@
       '<h3>3 · Comprends les conséquences</h3><p>Après chaque choix, un court commentaire explique ce qui se passe. « Comprendre » donne le retour en espagnol et en français, avec les jauges. « Mots utiles » aide à lire et « Traduire » affiche le français.</p>'+
       '<p class="sv-note">Les jauges décrivent une fiction. Elles ne mesurent ni ton niveau d’espagnol ni ta valeur personnelle.</p>'+
       '<label class="sv-option"><input id="sv-read-after" type="checkbox" '+(readAfterChoice?'checked':'')+'> Lire le retour après chaque choix</label><p class="sv-muted">Une pause de lecture permet de discuter du choix. Tu peux aussi consulter « Comprendre » quand tu le souhaites.</p>'+
-      '<p class="sv-muted">Collections et bilan sont partagés sur ce navigateur. La partie en cours ne reprend pas après fermeture.</p>'+
+      '<p>Au terme de l’aventure, découvre l’un des quatre dénouements de ton univers. « Mes fins » garde les histoires que tu as déjà ouvertes.</p><p class="sv-muted">Collections et bilan sont partagés sur ce navigateur. La partie en cours ne reprend pas après fermeture.</p>'+
       '<div class="sv-actions"><button class="sv-button" id="sv-ready">¡Vamos! · J’ai compris</button></div>');
     $s('#sv-ready').onclick=()=>{try{localStorage.setItem('sobrevive-v2-tutorial','1');}catch(_){}close();};
     $s('#sv-read-after').onchange=e=>{readAfterChoice=e.target.checked;store();};
@@ -104,6 +104,15 @@
   $s('#speech').setAttribute('lang','es');$s('#speechFr').setAttribute('lang','fr');$s('#btnL .es').setAttribute('lang','es');$s('#btnR .es').setAttribute('lang','es');
   $s('#helpBtn').innerHTML='<i class="flag" aria-hidden="true"></i> Traduire';$s('#helpBtn').setAttribute('aria-pressed','false');
   $s('#helpBtn').addEventListener('click',()=>{$s('#helpBtn').setAttribute('aria-pressed',String($s('#app').classList.contains('showfr')));});
+  const endingView=window.SVEndingView.create({modal});
+  function victoryEnding(world,state){
+    if(!state.narrativeEnding){
+      state.narrativeEnding=window.SVEndings.select(world,state,window.SV_ENDINGS);
+      state.endingIsNew=endingView.remember(world,state,state.narrativeEnding);
+    }
+    return state.narrativeEnding;
+  }
+  function endingForReport(ending){return {version:1,id:ending.id,worldId:ending.worldId,title:ending.title,es:ending.epilogue.es,fr:ending.epilogue.fr,evidence:ending.evidence,artCharacter:ending.artCharacter};}
   const baseGauges=renderGauges;
   renderGauges=function(){baseGauges();if(!U||!S)return;U.gauges.forEach(g=>{
     const el=$s('#gauges .gauge[data-g="'+g.key+'"]');if(!el)return;
@@ -121,11 +130,25 @@
     const tracked=state===S,before={...state.g},gameTime=tracked?Core.timeLabel(world,state):'',place=tracked?Core.place(world,state):'';
     if(tracked&&!reports.hasActive())reports.start(world,state,{partial:state.plays>0});
     const result=baseApply.call(this,world,state,card,side);
-    if(tracked){const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,textFr:card.f,choice:card[side].es,translation:card[side].fr,turn:state.plays,recordedAt:new Date().toISOString(),gameTime,place,character:world.chars[card.ch]?.name||'',narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({key:g.key,label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};history.push(item);history=history.slice(-80);reports.record(world,state,item);if(result.dead||result.win)reports.finish(result.dead?'lost':'won',world,state,result.dead?world.deaths?.[result.dead.g]?.[result.dead.dir]:world.win);feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));}
+    if(tracked){
+      window.SVEndings.record(state,card,side);
+      const item={worldId:world.id,cardId:card.id,side,world:world.name,text:card.t,textFr:card.f,choice:card[side].es,translation:card[side].fr,turn:state.plays,recordedAt:new Date().toISOString(),gameTime,place,character:world.chars[card.ch]?.name||'',narrative:cfg.feedback?.[world.id]?.[card.id]?.[side]||null,effects:world.gauges.filter(g=>before[g.key]!==state.g[g.key]).map(g=>({key:g.key,label:g.label,before:before[g.key],after:state.g[g.key],delta:state.g[g.key]-before[g.key]}))};
+      history.push(item);history=history.slice(-80);reports.record(world,state,item);
+      if(result.dead||result.win)reports.finish(result.dead?'lost':'won',world,state,result.dead?world.deaths?.[result.dead.g]?.[result.dead.dir]:endingForReport(victoryEnding(world,state)));
+      feedback(item);if(readAfterChoice)queueMicrotask(()=>decision(item));
+    }
     return result;
   };
   const baseEnd=showEnd;
-  showEnd=function(dead){baseEnd(dead);if(!dead){$s('#endTxtEs').textContent=U.win?.es||'¡Has ganado!';$s('#endTxtFr').textContent=(U.win?.fr||'Tu as gagné !')+' La réussite du jeu n’est pas une note d’espagnol.';}reports.finish(dead?'lost':'won',U,S,dead?U.deaths?.[dead.g]?.[dead.dir]:U.win);const last=reports.lastChoice(U.id);endFeedback.hidden=!last;if(last)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus();};
+  showEnd=function(dead){
+    if(!U||!S||S.endingShown)return;
+    dead=dead||Core.checkDeath(U,S);S.endingShown=true;
+    const ending=dead?null:victoryEnding(U,S);
+    baseEnd(dead);endingView.render(U,S,ending);
+    reports.finish(dead?'lost':'won',U,S,dead?U.deaths?.[dead.g]?.[dead.dir]:endingForReport(ending));
+    const last=reports.lastChoice(U.id);endFeedback.hidden=!last;if(last)renderFeedback(endFeedback,last);if(!dialog.open)$s('#againBtn').focus({preventScroll:true});
+    $s('#end').scrollTop=0;
+  };
   const baseQuit=askQuit;
   $s('#quitBtn').removeEventListener('click',baseQuit);
   askQuit=function(){

@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "worlds": {
+    "cole": [
+      {
+        "id": "cole-rencontre",
+        "title": { "es": "Un encuentro decisivo", "fr": "Une rencontre décisive" },
+        "epilogue": { "es": "¡Llegas a junio! Alex encontró una silla a tu lado. Guardaste su secreto y respondiste a su propuesta de vídeo. Este encuentro da un color especial a tu año.", "fr": "Tu arrives en juin ! Alex a trouvé une chaise à côté de toi. Tu as gardé son secret et répondu à sa proposition de vidéo. Cette rencontre donne une couleur particulière à ton année." },
+        "artCharacter": "alex",
+        "rule": { "type": "choices", "all": [{ "cardId": "alex1", "side": "r" }, { "cardId": "alex2", "side": "r" }, { "cardId": "alex3" }] }
+      },
+      {
+        "id": "cole-equilibre",
+        "title": { "es": "Un equilibrio encontrado", "fr": "Un équilibre trouvé" },
+        "epilogue": { "es": "Cierras el cuaderno y guardas la mochila. En el bolsillo quedan unas monedas; en la cabeza, palabras y caras del colegio. ¡El verano puede empezar!", "fr": "Tu fermes le cahier et ranges ton sac. Dans ta poche restent quelques pièces ; dans ta tête, des mots et des visages du collège. L’été peut commencer !" },
+        "artCharacter": null,
+        "rule": { "type": "balance", "min": 35, "max": 65 }
+      },
+      {
+        "id": "cole-defi",
+        "title": { "es": "El reto escolar", "fr": "Le défi scolaire" },
+        "epilogue": { "es": "Suena el último timbre. Cierras el cuaderno: todavía hay una pregunta en el margen. Puede esperar a septiembre; hoy sales de clase con las vacaciones por delante.", "fr": "La dernière sonnerie retentit. Tu fermes le cahier : il reste une question dans la marge. Elle peut attendre septembre ; aujourd’hui, tu sors de classe avec les vacances devant toi." },
+        "artCharacter": "pons",
+        "rule": { "type": "compare", "left": "notas", "op": ">=", "right": "amigos" }
+      },
+      {
+        "id": "cole-amitie",
+        "title": { "es": "Un año de amistad", "fr": "Une année d’amitié" },
+        "epilogue": { "es": "En la puerta del colegio, la despedida dura un poco más que el timbre. Una voz dice «¡Hasta pronto!» y tú levantas la mano. El curso termina entre nombres, caras y una última charla.", "fr": "À la porte du collège, l’au revoir dure un peu plus longtemps que la sonnerie. Une voix dit « À bientôt ! » et tu lèves la main. L’année se termine entre noms, visages et une dernière conversation." },
+        "artCharacter": "pablo",
+        "rule": { "type": "fallback" }
+      }
+    ],
+    "quijote": [
+      {
+        "id": "quijote-barataria",
+        "title": { "es": "¡Gobernador Panza!", "fr": "Gouverneur Panza !" },
+        "epilogue": { "es": "La aventura termina con un recuerdo especial: aceptaste la propuesta de los duques y felicitaste a Sancho cuando gobernaba Barataria. En este viaje, su sueño tuvo su propia escena.", "fr": "L’aventure se termine sur un souvenir particulier : tu as accepté la proposition des ducs et félicité Sancho lorsqu’il gouvernait Barataria. Dans ce voyage, son rêve a eu sa propre scène." },
+        "artCharacter": "sancho",
+        "rule": { "type": "choices", "all": [{ "cardId": "duques", "side": "l" }, { "cardId": "barataria", "side": "l" }] }
+      },
+      {
+        "id": "quijote-equilibre",
+        "title": { "es": "Un paso tranquilo", "fr": "Un pas tranquille" },
+        "epilogue": { "es": "Rocinante avanza despacio y el polvo cae sobre el camino. Hay tiempo para una historia y una pausa a la sombra. El último capítulo termina sin prisa.", "fr": "Rossinante avance lentement et la poussière retombe sur le chemin. Il reste du temps pour une histoire et une pause à l’ombre. Le dernier chapitre se termine sans hâte." },
+        "artCharacter": "rocinante",
+        "rule": { "type": "balance", "min": 35, "max": 65 }
+      },
+      {
+        "id": "quijote-chevalier",
+        "title": { "es": "El camino del caballero", "fr": "Le chemin du chevalier" },
+        "epilogue": { "es": "Miras el camino una última vez, con la lanza en la mano. Ya no queda otro capítulo, pero sí una historia que contar. Hasta las manchas de polvo parecen parte de tu escudo.", "fr": "Tu regardes le chemin une dernière fois, la lance à la main. Il ne reste plus de chapitre, mais une histoire à raconter. Même les taches de poussière semblent faire partie de ton blason." },
+        "artCharacter": null,
+        "rule": { "type": "compare", "left": "valor", "op": ">=", "right": "sancho" }
+      },
+      {
+        "id": "quijote-compagnons",
+        "title": { "es": "Dos viajeros", "fr": "Deux voyageurs" },
+        "epilogue": { "es": "Sancho tiene una última cosa que decir. Tú escuchas mientras las dos sombras se alargan sobre el camino. El libro se cierra, pero la conversación todavía tiene unas palabras.", "fr": "Sancho a encore une chose à dire. Tu écoutes tandis que vos deux ombres s’allongent sur le chemin. Le livre se ferme, mais il reste quelques mots à la conversation." },
+        "artCharacter": "sancho",
+        "rule": { "type": "fallback" }
+      }
+    ],
+    "goya": [
+      {
+        "id": "goya-dialogue",
+        "title": { "es": "Las manos hablan", "fr": "Les mains parlent" },
+        "epilogue": { "es": "Al cerrar esta aventura, recuerdas una conversación diferente. Después de perder el oído en el relato, hablaste con las manos y tu aprendiz aprendió. Entre vosotros, el diálogo encontró otra forma.", "fr": "Au terme de cette aventure, tu te souviens d’une conversation différente. Après la perte de l’audition dans le récit, tu as parlé avec les mains et ton apprenti a appris. Entre vous, le dialogue a trouvé une autre forme." },
+        "artCharacter": "aprendiz",
+        "rule": { "type": "choices", "all": [{ "cardId": "enfermedad" }, { "cardId": "manos", "side": "l" }] }
+      },
+      {
+        "id": "goya-equilibre",
+        "title": { "es": "Cuatro colores en equilibrio", "fr": "Quatre couleurs en équilibre" },
+        "epilogue": { "es": "Colocas los pinceles junto a la paleta. Hay colores claros y oscuros, un poco de cada uno. Antes de cerrar el taller, miras cómo comparten el mismo cuadro.", "fr": "Tu poses les pinceaux près de la palette. Il y a des couleurs claires et sombres, un peu de chaque. Avant de fermer l’atelier, tu regardes comment elles partagent le même tableau." },
+        "artCharacter": null,
+        "rule": { "type": "balance", "min": 35, "max": 65 }
+      },
+      {
+        "id": "goya-atelier",
+        "title": { "es": "La voz del taller", "fr": "La voix de l’atelier" },
+        "epilogue": { "es": "El taller queda en silencio. Das un paso atrás y miras la última mancha de color sobre el lienzo. Tu aventura termina aquí, frente a una imagen que no necesita hablar.", "fr": "L’atelier devient silencieux. Tu recules d’un pas et regardes la dernière tache de couleur sur la toile. Ton aventure se termine ici, devant une image qui n’a pas besoin de parler." },
+        "artCharacter": "lienzo",
+        "rule": { "type": "compare", "left": "genio", "op": ">=", "right": "corte" }
+      },
+      {
+        "id": "goya-cour",
+        "title": { "es": "Entre palacio y pinceles", "fr": "Entre palais et pinceaux" },
+        "epilogue": { "es": "Las puertas del palacio se cierran al fondo. Guardas los pinceles y miras una última vez las ventanas. Entre esos dos mundos, el palacio y el taller, termina tu historia.", "fr": "Les portes du palais se ferment au loin. Tu ranges les pinceaux et regardes les fenêtres une dernière fois. Entre ces deux mondes, le palais et l’atelier, ton histoire s’achève." },
+        "artCharacter": "rey",
+        "rule": { "type": "fallback" }
+      }
+    ],
+    "botero": [
+      {
+        "id": "botero-place",
+        "title": { "es": "Una plaza para compartir", "fr": "Une place à partager" },
+        "epilogue": { "es": "En esta aventura, la promesa tomó forma: llegaste a la plaza de Medellín, entre esculturas, niños y palomas. Tu recorrido termina con el arte en un espacio compartido. Las figuras de bronce ya no están solas.", "fr": "Dans cette aventure, la promesse a pris forme : tu es arrivé sur la place de Medellín, parmi les sculptures, les enfants et les colombes. Ton parcours se termine avec l’art dans un espace partagé. Les figures de bronze ne sont plus seules." },
+        "artCharacter": "paloma",
+        "rule": { "type": "choices", "all": [{ "cardId": "medellin_pide", "side": "l" }, { "cardId": "promesa_plaza" }] }
+      },
+      {
+        "id": "botero-equilibre",
+        "title": { "es": "Un mundo bien repartido", "fr": "Un monde bien réparti" },
+        "epilogue": { "es": "Miras el cuadro antes de cerrar el taller. Cada forma tiene su lugar: una fruta, una figura y un pedazo de cielo. La última página cabe entera entre los bordes del lienzo.", "fr": "Tu regardes le tableau avant de fermer l’atelier. Chaque forme a sa place : un fruit, une silhouette et un morceau de ciel. La dernière page tient tout entière entre les bords de la toile." },
+        "artCharacter": null,
+        "rule": { "type": "balance", "min": 35, "max": 65 }
+      },
+      {
+        "id": "botero-style",
+        "title": { "es": "El sello del taller", "fr": "La signature de l’atelier" },
+        "epilogue": { "es": "Sobre la mesa quedan una naranja, un pincel y una mancha de color. En el cuadro, la fruta parece ocupar todo el espacio. Sonríes ante esa forma: el viaje termina dentro del taller.", "fr": "Sur la table restent une orange, un pinceau et une tache de couleur. Dans le tableau, le fruit semble prendre toute la place. Tu souris devant cette forme : le voyage se termine dans l’atelier." },
+        "artCharacter": "naranja",
+        "rule": { "type": "compare", "left": "estilo", "op": ">=", "right": "fama" }
+      },
+      {
+        "id": "botero-public",
+        "title": { "es": "La mirada del público", "fr": "Le regard du public" },
+        "epilogue": { "es": "Alguien se detiene delante de un cuadro. Mira las formas, se acerca y hace una pregunta. Tu recorrido termina con ese pequeño encuentro entre una obra y una mirada.", "fr": "Quelqu’un s’arrête devant un tableau. Cette personne regarde les formes, s’approche et pose une question. Ton parcours se termine par cette petite rencontre entre une œuvre et un regard." },
+        "artCharacter": "galerista",
+        "rule": { "type": "fallback" }
+      }
+    ],
+    "frida": [
+      {
+        "id": "frida-autoportrait",
+        "title": { "es": "Un compañero en el cuadro", "fr": "Un compagnon dans le tableau" },
+        "epilogue": { "es": "Un plátano devolvió los pinceles al taller. Después pintaste tu autorretrato con Fulang-Chang en el hombro. Esta aventura termina con el recuerdo de un pequeño trato convertido en un cuadro.", "fr": "Une banane a ramené les pinceaux à l’atelier. Tu as ensuite peint ton autoportrait avec Fulang-Chang sur l’épaule. Cette aventure se termine sur le souvenir d’un petit marché devenu tableau." },
+        "artCharacter": "mono",
+        "rule": { "type": "choices", "all": [{ "cardId": "mono_roba", "side": "r" }, { "cardId": "mono_hombro", "side": "l" }] }
+      },
+      {
+        "id": "frida-equilibre",
+        "title": { "es": "Cuatro colores juntos", "fr": "Quatre couleurs ensemble" },
+        "epilogue": { "es": "La luz del patio entra en la Casa Azul. Dejas los pinceles sobre la mesa y miras las plantas junto a los colores. Por un momento, todo cabe en la misma imagen.", "fr": "La lumière de la cour entre dans la Casa Azul. Tu poses les pinceaux sur la table et regardes les plantes près des couleurs. Un instant, tout tient dans la même image." },
+        "artCharacter": null,
+        "rule": { "type": "balance", "min": 35, "max": 65 }
+      },
+      {
+        "id": "frida-peinture",
+        "title": { "es": "El hilo de la pintura", "fr": "Le fil de la peinture" },
+        "epilogue": { "es": "El espejo sigue frente a ti. Miras el cuadro, luego tu cara, y añades una última línea. Tu historia termina entre esas dos imágenes: la que ves y la que pintas.", "fr": "Le miroir est toujours devant toi. Tu regardes le tableau, puis ton visage, et ajoutes une dernière ligne. Ton histoire se termine entre ces deux images : celle que tu vois et celle que tu peins." },
+        "artCharacter": "espejo",
+        "rule": { "type": "compare", "left": "arte", "op": ">=", "right": "alegria" }
+      },
+      {
+        "id": "frida-quotidien",
+        "title": { "es": "El color de los días", "fr": "La couleur des jours" },
+        "epilogue": { "es": "En el patio suenan hojas, pasos y la voz de un perico. El cuadro puede esperar un momento: miras esa pequeña escena de todos los días. Tu aventura termina con los colores de la casa alrededor.", "fr": "Dans la cour résonnent les feuilles, les pas et la voix d’un perroquet. Le tableau peut attendre un instant : tu regardes cette petite scène de tous les jours. Ton aventure se termine, entourée des couleurs de la maison." },
+        "artCharacter": "perico",
+        "rule": { "type": "fallback" }
+      }
+    ]
+  }
+}

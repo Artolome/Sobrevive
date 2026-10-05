@@ -15,8 +15,9 @@ Travail isolé sur `codex/v2-interface-pedagogie`. Aucun changement de workflow,
 - Paroles et indication d’action distinguées sur la première carte de Señora Pons.
 - Option « Lire le retour après chaque choix » : dialogue de lecture qui bloque l’interaction avec la carte suivante, déjà rendue derrière lui.
 - Compte rendu par partie dans « Mon bilan » : dates, univers, issue, jauges de départ et de fin, décisions chronologiques, commentaires bilingues et réflexion personnelle. Téléchargement HTML autonome et imprimable (PDF via le navigateur), ou texte brut.
+- Quatre réussites narratives par univers : 20 épilogues bilingues et illustrés, attribués selon les choix réellement joués ou les jauges finales. Les 40 fins de jauge restent inchangées et prioritaires. « Mes fins » permet de relire les réussites découvertes ; le bilan et ses exports conservent aussi leur épilogue et l’explication « Pourquoi cette fin ? ».
 - Conservation locale des 20 dernières parties, dans la limite de 1 500 décisions au total et 300 par partie. Les suppressions liées à ces limites sont signalées. L'ancien journal de 80 décisions et ses notes restent séparés, sans reconstituer de parties dont les dates et limites sont inconnues. Une partie en cours lors d'une fermeture est signalée comme interrompue au prochain chargement.
-- Guide de parcours autonome généré depuis les decks : écrans, cinq univers, paliers, onze chaînes conditionnelles, 45 fins narratives et catalogue filtrable des 225 cartes / 450 choix. Il distingue les suites liées aux décisions de la pioche aléatoire.
+- Guide de parcours autonome généré depuis les decks et les critères de réussite : écrans, cinq univers, paliers, onze arcs conditionnels, 60 fins (40 fins de jauge et 20 réussites) et catalogue filtrable des 225 cartes / 450 choix. Il distingue les suites liées aux décisions de la pioche aléatoire et relie chaque critère de réussite aux cartes concernées.
 - Annulation d’un glissement interrompu, sortie de partie modale, focus restitué vers une commande visible. Aucune sauvegarde complète d’une partie n’est promise.
 
 ## Contenu
@@ -26,6 +27,40 @@ Les retours sont dans `content.json`, sous `feedback[worldId][cardId][side]`, av
 Couverture : El cole 65 cartes / 130 choix ; Don Quijote 40 / 80 ; Goya 40 / 80 ; Botero 39 / 78 ; Frida 41 / 82.
 
 Les anciens journaux sans commentaire sont complétés lorsqu’un univers, une situation et une réponse correspondent exactement à une unique décision du contenu actuel. Les commentaires déjà enregistrés, les notes et les valeurs des jauges sont conservés. Une décision ancienne non identifiable conserve ses variations sans recevoir de récit supposé.
+
+## Réussites et collection « Mes fins »
+
+Le moteur détermine toujours d’abord si la partie est perdue ou gagnée. Une jauge à 0 ou 100 produit une fin de jauge, même si le même choix franchit l’échéance temporelle. Lors d’une victoire, le sélecteur retient exactement une réussite, la première dont le critère est satisfait dans cet ordre :
+
+1. **Un arc effectivement vécu.** Tous les choix définis dans `rule.all` ont été effectués dans cette partie, avec le côté demandé lorsqu’il est précisé. Une carte seulement affichée, un flag annonciateur ou un choix d’une ancienne partie ne suffit pas. La trace inclut le choix terminal ; pour une condition sans côté, les deux réponses sont acceptées et la preuve cite celle qui a été jouée.
+2. **L’équilibre final.** Les quatre jauges finissent entre 35 et 65, bornes incluses.
+3. **Une orientation par comparaison.** La première jauge du tableau ci-dessous est supérieure ou égale à la seconde. L’égalité va à cette réussite seulement si les deux critères précédents ne conviennent pas.
+4. **L’autre orientation.** Aucun critère précédent ne convient ; la seconde jauge est donc strictement supérieure à la première.
+
+| Univers | Choix nécessaires à la réussite d’arc | Comparaison de la troisième réussite |
+| --- | --- | --- |
+| El cole | `alex1` droite, `alex2` droite, puis réponse à `alex3` | Notas ≥ Amigos |
+| Don Quijote | `duques` gauche, puis `barataria` gauche | Valor ≥ Sancho |
+| Goya | Réponse à `enfermedad`, puis `manos` gauche | Genio ≥ Corte |
+| Botero | `medellin_pide` gauche, puis réponse à `promesa_plaza` | Estilo ≥ Fama |
+| Frida | `mono_roba` droite, puis `mono_hombro` gauche | Arte ≥ Alegría |
+
+Le sélecteur teste la présence des choix, sans imposer lui-même leur ordre ; en jeu, les conditions des cartes ordonnent ces arcs. Les règles normales d’accès restent applicables : Barataria exige le palier 1 ; la promesse de Medellín exige le palier 2, ouvert par une victoire antérieure. Aucune réussite ne modifie les effets, la pioche, les échéances ou les paliers.
+
+Ces priorités servent à départager les critères ; elles ne classent pas les fins de la meilleure à la moins bonne. Une comparaison reste relative : 2 peut être supérieur à 1 sans être une valeur élevée. Le récit reste une petite scène ; les chiffres, réponses attestées et comparaisons apparaissent dans « Pourquoi cette fin ? ». Il ne s’agit ni d’une note d’espagnol, ni d’une mesure de santé, de talent ou de relations réelles.
+
+La collection utilise la clé locale distincte `sobrevive-v2-endings`, au format `{version:1, worlds:{…}}`. Elle conserve la première découverte de chaque réussite, avec son titre, son épilogue, ses preuves, son illustration et sa date. Les vingt emplacements sont visibles, mais seuls les récits découverts peuvent être ouverts. Retrouver une réussite ne crée pas de doublon et ne remplace pas la première preuve. Relire une fin ne rejoue pas une victoire. Les anciennes valeurs `wins` et les anciens rapports ne permettent aucune déduction rétroactive : les données antérieures restent intactes.
+
+Chaque nouvelle partie gagnée conserve également un instantané de sa réussite dans `session.ending` du rapport : identifiant, titre bilingue, épilogue, preuve et référence d’illustration. Le rapport et les exports HTML/TXT reprennent cet instantané, sans recalculer l’issue depuis des règles qui pourraient changer ensuite. La collection et les rapports restent deux ensembles distincts, partagés sur le navigateur sans compte élève.
+
+Fichiers dédiés :
+
+- `endings.json` : les 20 titres, épilogues, références d’illustration et critères ordonnés, sous `worlds[worldId]`.
+- `endings.js` : API pure `select(world, state, data)` et `list(worldId, data)` ; `record(state, card, side)` mémorise au plus 300 choix de la partie dans `endingTrail`. La décision de victoire appartient toujours au moteur.
+- `ending-view.js` et `endings.css` : écran de fin, preuves, collection et conservation locale.
+- `learning.js` et `report.js` : enregistrement du choix terminal, attribution unique de la réussite et instantané dans le bilan et ses exports.
+- `check-endings.cjs` et `check-endings-browser.cjs` : contrôles des règles, de leur accessibilité réelle et de l’intégration à l’interface.
+- `build-walkthrough.cjs` et `check-walkthrough.cjs` : guide autonome des 60 fins et contrôle de sa correspondance aux sources.
 
 ## Vérification reproductible
 
@@ -37,9 +72,12 @@ node check.js
 node --check classroom/learning.js
 node --check classroom/report.js
 node --check classroom/menus.js
+node --check classroom/endings.js
+node --check classroom/ending-view.js
 node classroom/check-content.js --base ec55ebe
 node classroom/check-raster.cjs
 node classroom/check-illustrations.cjs
+node classroom/check-endings.cjs
 git diff --check
 ```
 
@@ -55,9 +93,13 @@ Le test navigateur facultatif `classroom/check-browser.cjs` utilise Playwright e
 
 `node classroom/check-report.cjs [rapport.json] [dossier-captures]` vérifie la migration, la séparation des parties et des notes, les exports réels HTML/TXT, l'échappement du texte, l'impression, la fin avant l'animation, la fermeture, les limites de conservation et le message en cas de sauvegarde refusée. Les rapports utilisent la clé locale distincte `sobrevive-v2-reports`, pour qu'une ancienne version du jeu ne les efface pas en écrivant son journal historique. Les parties simultanées dans plusieurs onglets de la nouvelle version ne sont pas synchronisées.
 
+`node classroom/check-endings.cjs [rapport.json]` valide les 20 définitions bilingues, les références et les illustrations, les priorités, les bornes 35/65, les égalités et les comparaisons à faibles valeurs. Il cherche puis rejoue avec leurs graines aléatoires vingt témoins gagnants, un par réussite, avec la vraie pioche et les vrais effets du moteur, en débloquant les paliers normalement depuis zéro. Il ne construit pas le jeu.
+
+`node classroom/check-endings-browser.cjs [rapport.json] [dossier-captures]` contrôle le jeu déjà construit avec Playwright et Edge : vingt fins exactes après un vrai clic terminal sur des états préparés, preuve du dernier choix, images, collection persistante sans doublon, absence de découverte déduite des anciennes victoires, priorité des fins de jauge, bilan et exports bilingues, mises en page mobiles. Les états préparés ne sont pas des parcours complets ; leur atteignabilité relève du contrôle Node précédent. Les quarante fins de jauge restent couvertes par `check-browser.cjs`.
+
 `node classroom/build-walkthrough.cjs [guide.html]` régénère le guide des parcours. Il ne modifie ni le jeu ni les decks.
 
-`node classroom/check-walkthrough.cjs` vérifie la couverture du guide, ses liens internes et les mécanismes documentés directement contre le moteur : temps, paliers, conditions, priorité de tirage et priorité de la fin de jauge sur la victoire. Les onze arcs narratifs emploient douze conditions mémorisées (l'arc Alex en possède deux).
+`node classroom/check-walkthrough.cjs` vérifie les 225 cartes, 450 choix et 60 fins du guide, ses liens internes et les mécanismes documentés directement contre le moteur : temps, paliers, conditions, priorité de tirage et priorité de la fin de jauge sur la victoire. Les critères et les quatre priorités sont également confrontés au véritable sélecteur de réussite. Les onze arcs narratifs emploient douze conditions mémorisées (l'arc Alex en possède deux).
 
 ## Limites et suite à valider
 

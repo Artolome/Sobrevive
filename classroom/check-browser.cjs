@@ -122,7 +122,7 @@ let url;
     await start(world);
     await page.evaluate(()=>{S.t=U.time.mode==='date'?+new Date(2027,5,25):U.time.mode==='year'?U.time.end:U.time.total;});
     await page.locator('#btnL').click();await page.locator('#end').waitFor({state:'visible'});
-    assert.equal(await page.locator('#endTitle').innerText(),'¡Victoria!');const text=await page.locator('#end').innerText();assert.ok(!/nota final|note finale|\d[,.]\d\s*\/10/i.test(text));assert.ok(text.includes('La réussite du jeu n’est pas une note d’espagnol.'));
+    assert.equal(await page.locator('#end').getAttribute('data-ending-kind'),'success');assert.ok((await page.locator('#end').getAttribute('data-ending-id')).startsWith(world+'-'));assert.ok((await page.locator('#endTitle').innerText()).length>0);const text=await page.locator('#end').innerText();assert.ok(!/nota final|note finale|\d[,.]\d\s*\/10/i.test(text));assert.ok(text.includes('La réussite du jeu n’est pas une note d’espagnol.'));
    }
   });
   await test('Pause lecture lors de la dernière décision : fin puis focus Rejouer [fixture]',async()=>{

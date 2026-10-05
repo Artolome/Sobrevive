@@ -14,7 +14,7 @@ module.exports = function enhance(source) {
     if (bytes.subarray(0, 4).toString() !== 'wOF2') throw new Error('Police WOFF2 invalide : ' + name);
     return 'url(data:font/woff2;base64,' + bytes.toString('base64') + ')';
   });
-  source = source.replace('</style>', () => '</style>\n<style>' + fonts + '\n' + read('learning.css') + '\n' + read('menus.css') + '</style>');
-  return source + '\n<script type="text/plain" id="sv-font-licenses">' + safe((read('fonts/fraunces-OFL.txt') + '\n\n' + read('fonts/nunitosans-OFL.txt')).replace(/[ \t]+$/gm, '')) + '</script>\n<script>window.SV_LEARNING=' + safe(read('content.json')) + ';</script>\n' +
-    ['report.js', 'learning.js', 'menus.js'].map(name => '<script>\n' + safe(read(name)) + '\n</script>').join('\n') + '\n</html>\n';
+  source = source.replace('</style>', () => '</style>\n<style>' + fonts + '\n' + read('learning.css') + '\n' + read('menus.css') + '\n' + read('endings.css') + '</style>');
+  return source + '\n<script type="text/plain" id="sv-font-licenses">' + safe((read('fonts/fraunces-OFL.txt') + '\n\n' + read('fonts/nunitosans-OFL.txt')).replace(/[ \t]+$/gm, '')) + '</script>\n<script>window.SV_LEARNING=' + safe(read('content.json')) + ';window.SV_ENDINGS=' + safe(read('endings.json')) + ';</script>\n' +
+    ['endings.js', 'ending-view.js', 'report.js', 'learning.js', 'menus.js'].map(name => '<script>\n' + safe(read(name)) + '\n</script>').join('\n') + '\n</html>\n';
 };

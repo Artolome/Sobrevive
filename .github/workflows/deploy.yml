@@ -1,4 +1,5 @@
 # Le jeu actuel reste à la racine ; la préversion pédagogique est publiée sous /v2/.
+# Les parcours narratifs validés sont disponibles sous /parcours/.
 # La préversion est figée à un commit relu et testé pour éviter les mises en ligne involontaires.
 name: Déployer sur GitHub Pages
 
@@ -50,6 +51,24 @@ jobs:
           mkdir -p site/v2
           cp _preview/index.html site/v2/index.html
           cmp index.html site/index.html
+      - name: Récupérer les parcours narratifs validés
+        uses: actions/checkout@v4
+        with:
+          ref: e6716a1d74a6b0f8ad41e90fe974639a22ebef3f
+          path: _story
+          persist-credentials: false
+      - name: Vérifier et construire les parcours narratifs
+        working-directory: _story
+        run: |
+          node --check classroom/story-motion.js
+          node classroom/check-story.cjs
+          mkdir -p ../site/parcours
+          node classroom/build-story.cjs ../site/parcours/index.html
+          node -e "const fs=require('node:fs'),crypto=require('node:crypto');const html=fs.readFileSync('../site/parcours/index.html','utf8').replace(/\r\n/g,'\n');const sha=crypto.createHash('sha256').update(html).digest('hex');if(sha!=='42efd4e181d8a5621ecafe6e5ff5b43d737c46aa6271a8c64c59b0f7edfabc28')throw new Error('Le HTML ne correspond pas à la version validée');console.log('HTML validé : '+sha);"
+      - name: Confirmer la conservation des versions existantes
+        run: |
+          cmp index.html site/index.html
+          cmp _preview/index.html site/v2/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

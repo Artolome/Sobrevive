@@ -1,0 +1,11 @@
+.sv-authorship{margin:12px auto 22px;text-align:center;font:500 13px/1.55 var(--f-text);color:var(--sv-muted);max-width:620px}
+.sv-authorship p{margin:0}
+.sv-credits-link{font:650 12px/1.5 var(--f-text);color:inherit;text-decoration:underline;text-underline-offset:3px;background:transparent;border:0;padding:9px 8px;min-height:44px;cursor:pointer;white-space:normal}
+.sv-credits-link:focus-visible{outline:3px solid var(--sv-coral);outline-offset:3px;border-radius:6px}
+#ficha .sv-authorship,#end .sv-authorship{margin:28px auto 4px;border-top:1px solid var(--sv-line);padding-top:16px}
+#sv-dialog a{color:var(--sv-forest);text-underline-offset:3px}
+/* Keep the full consequence above the toolbar when its buttons wrap. */
+.sv-story-mode #sv-feedback{min-height:min-content}
+@media(min-width:1000px) and (min-height:650px){.sv-story-mode #app{grid-template-rows:max-content max-content minmax(min-content,1fr) max-content max-content max-content max-content}}
+.sv-font-license{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.6 var(--f-text)}
+@media(max-width:599px){.sv-authorship{font-size:12px;margin-bottom:16px}}

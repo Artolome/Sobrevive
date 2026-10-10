@@ -54,20 +54,23 @@ jobs:
       - name: Récupérer les parcours narratifs validés
         uses: actions/checkout@v4
         with:
-          ref: e6716a1d74a6b0f8ad41e90fe974639a22ebef3f
+          ref: 08cb033f0a278e1776cb186cadac2276beb19ee9
           path: _story
           persist-credentials: false
       - name: Vérifier et construire les parcours narratifs
         working-directory: _story
         run: |
           node --check classroom/story-motion.js
+          node --check classroom/rights.js
+          node --check classroom/report.js
           node classroom/check-story.cjs
           mkdir -p ../site/parcours
           node classroom/build-story.cjs ../site/parcours/index.html
-          node -e "const fs=require('node:fs'),crypto=require('node:crypto');const html=fs.readFileSync('../site/parcours/index.html','utf8').replace(/\r\n/g,'\n');const sha=crypto.createHash('sha256').update(html).digest('hex');if(sha!=='42efd4e181d8a5621ecafe6e5ff5b43d737c46aa6271a8c64c59b0f7edfabc28')throw new Error('Le HTML ne correspond pas à la version validée');console.log('HTML validé : '+sha);"
+          node -e "const fs=require('node:fs'),crypto=require('node:crypto');const html=fs.readFileSync('../site/parcours/index.html','utf8').replace(/\r\n/g,'\n');const sha=crypto.createHash('sha256').update(html).digest('hex');if(sha!=='b3de1c424242288d55ba0cf010cc2e5dbd8d8b60785934b0881f6eab844e7d19')throw new Error('Le HTML ne correspond pas à la version validée');console.log('HTML validé : '+sha);"
       - name: Publier les parcours à l’adresse principale
         run: |
           cp site/parcours/index.html site/index.html
+          cp _story/LICENSE.txt site/conditions-utilisation.txt
           cmp site/parcours/index.html site/index.html
           cmp index.html site/classique/index.html
           cmp _preview/index.html site/v2/index.html

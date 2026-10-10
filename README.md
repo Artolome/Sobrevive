@@ -8,6 +8,14 @@ ni vides ni pleines pour survivre jusqu'au bout — et débloquer de nouvelles c
 
 La même version reste accessible sous [/parcours/](https://artolome.github.io/Sobrevive/parcours/). L’ancien jeu est archivé sous [/classique/](https://artolome.github.io/Sobrevive/classique/) ; la première préversion pédagogique reste sous [/v2/](https://artolome.github.io/Sobrevive/v2/).
 
+## Crédits et réutilisation
+
+**Conception pédagogique et direction créative : Arthur Méligne.** Réalisation assistée par IA ; les crédits détaillés et les licences des polices sont accessibles dans le jeu, y compris hors ligne.
+
+Vous pouvez jouer, partager le lien et utiliser le jeu et ses bilans en classe. Les autres réutilisations des éléments protégés relevant d’Arthur Méligne nécessitent son accord, sous réserve des exceptions légales et des droits des tiers. Les contributions personnelles des joueurs restent les leurs.
+
+Consulter les [crédits et conditions](https://artolome.github.io/Sobrevive/#credits) ou [LICENSE.txt](LICENSE.txt). Ces conditions concernent les parcours narratifs et ne remplacent aucune licence antérieure ou tierce.
+
 ## Les cinq mondes
 
 | Monde | On incarne | Jauges |
@@ -24,7 +32,7 @@ Les collections et les bilans sont conservés dans ce navigateur ; une partie in
 ## Sources et publication de la version principale
 
 Les sources narratives se trouvent sur [`codex/parcours-narratifs`](https://github.com/Artolome/Sobrevive/tree/codex/parcours-narratifs), avec les instructions dans [`classroom/STORY.md`](https://github.com/Artolome/Sobrevive/blob/codex/parcours-narratifs/classroom/STORY.md).
-Le workflow de `main` construit le commit validé `e6716a1d74a6b0f8ad41e90fe974639a22ebef3f` avec `node classroom/build-story.cjs`, contrôle son empreinte puis publie le même HTML à la racine et sous `/parcours/`. Un changement de la branche narrative ne publie rien tant que cette référence et l’empreinte attendue ne sont pas actualisées.
+Le workflow de `main` construit le commit validé `08cb033f0a278e1776cb186cadac2276beb19ee9` avec `node classroom/build-story.cjs`, contrôle son empreinte puis publie le même HTML à la racine et sous `/parcours/`. Un changement de la branche narrative ne publie rien tant que cette référence et l’empreinte attendue ne sont pas actualisées.
 
 ## Modifier le jeu classique archivé
 

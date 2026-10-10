@@ -1,0 +1,73 @@
+¡SOBREVIVE! — CRÉDITS ET CONDITIONS DE RÉUTILISATION
+Version du 10 octobre 2026
+
+Ces conditions accompagnent la version « Parcours narratifs » publiée à
+l’adresse ci-dessous et ses sources correspondantes. Elles ne remplacent
+aucune licence antérieure ou tierce et ne retirent aucun droit déjà accordé.
+
+Conception pédagogique et direction créative : Arthur Méligne.
+Réalisation assistée par intelligence artificielle : Claude pour la version
+de base ; ChatGPT et Codex pour les évolutions, le code et les illustrations.
+Cette mention ne garantit pas une exclusivité sur les contenus générés.
+
+Site : https://artolome.github.io/Sobrevive/
+Contact pour les autorisations : https://github.com/Artolome
+
+1. USAGES AUTORISÉS
+
+Vous pouvez jouer gratuitement, partager le lien du site, projeter le jeu et
+l’utiliser en classe. Les enseignants et les élèves peuvent conserver une
+copie pour jouer hors ligne et la transmettre au sein de leur groupe
+pédagogique pour cet usage non commercial, sans vendre le jeu ni ses contenus.
+
+Conservez la signature, les crédits, ces conditions et les licences des tiers
+avec les copies du jeu. Ces autorisations portent uniquement sur les droits
+qu’Arthur Méligne est en mesure d’accorder.
+
+2. BILANS ET CONTRIBUTIONS PERSONNELLES
+
+Vous pouvez télécharger, imprimer et partager les bilans entre élèves et
+enseignants sans autorisation supplémentaire. Les contributions personnelles
+des élèves et des enseignants restent les leurs : ces conditions n’en
+transfèrent aucun droit à Arthur Méligne.
+
+3. USAGES SOUMIS À AUTORISATION
+
+En dehors des usages autorisés ici, republier le jeu, le revendre, diffuser
+une adaptation ou extraire des éléments protégés pour les réutiliser nécessite
+l’accord préalable d’Arthur Méligne, uniquement pour les éléments sur lesquels
+il détient des droits. Les exceptions légales et les licences applicables aux
+éléments de tiers restent réservées.
+
+Pour demander une autorisation, utilisez le profil GitHub Artolome :
+https://github.com/Artolome
+
+4. PORTÉE ET LIMITES
+
+Les droits réservés concernent les apports humains originaux protégeables
+relevant d’Arthur Méligne. Aucun monopole n’est revendiqué sur les idées,
+les règles de jeu, les faits historiques, les styles, le domaine public
+ou les éléments générés par IA qui ne sont pas protégeables.
+
+Ces conditions ne limitent ni les exceptions prévues par la loi, ni les droits
+accordés par les licences des tiers, ni les droits de consultation et de fork
+sur GitHub prévus par les conditions de la plateforme. Elles ne constituent
+pas une certification de titularité ni un audit juridique de chaque élément.
+
+5. POLICES ET ÉLÉMENTS DE TIERS
+
+Les polices suivantes restent sous SIL Open Font License 1.1. Les restrictions
+de réutilisation du jeu ne s’appliquent pas à ces polices. Leurs notices et
+licences complètes sont conservées dans le dépôt et intégrées au jeu autonome.
+
+Fraunces
+Copyright 2018 The Fraunces Project Authors
+Projet : https://github.com/undercasetype/Fraunces
+Licence : classroom/fonts/fraunces-OFL.txt
+
+Nunito Sans
+Copyright 2016 The Nunito Sans Project Authors
+Projet : https://github.com/Fonthausen/NunitoSans
+Licence : classroom/fonts/nunitosans-OFL.txt
+
+Tout autre élément de tiers reste soumis à ses droits propres.

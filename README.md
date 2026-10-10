@@ -4,7 +4,9 @@ Un jeu de cartes en espagnol pour le collège (niveau A1), dans l'esprit de *Rei
 Chaque carte parle en espagnol ; on la glisse à gauche ou à droite pour répondre. Il faut garder quatre jauges
 ni vides ni pleines pour survivre jusqu'au bout — et débloquer de nouvelles cartes et de nouveaux personnages.
 
-**Jouer : https://artolome.github.io/Sobrevive/**
+**Jouer à la version illustrée avec parcours narratifs : https://artolome.github.io/Sobrevive/**
+
+La même version reste accessible sous [/parcours/](https://artolome.github.io/Sobrevive/parcours/). L’ancien jeu est archivé sous [/classique/](https://artolome.github.io/Sobrevive/classique/) ; la première préversion pédagogique reste sous [/v2/](https://artolome.github.io/Sobrevive/v2/).
 
 ## Les cinq mondes
 
@@ -16,13 +18,18 @@ ni vides ni pleines pour survivre jusqu'au bout — et débloquer de nouvelles c
 | Botero | Fernando Botero, de Medellín à Paris | Estilo · Fama · Dinero · Raíces |
 | Frida | Frida Kahlo, à Coyoacán | Arte · Salud · Alegría · México |
 
-Dans chaque monde, survivre à 12 cartes débloque un deuxième palier de cartes et de personnages ; gagner débloque le troisième.
-Le bouton « traduire » affiche la traduction française de la carte. La progression est gardée sur l'appareil du joueur.
+La version principale propose une semaine de cours pour El cole, l’aventure de Don Quijote et les parcours de vie de Goya, Botero et Frida. Les décisions influencent les rencontres et les fins. Les illustrations, les aides, les retours après chaque choix, les animations et l’export du bilan sont inclus.
+Les collections et les bilans sont conservés dans ce navigateur ; une partie interrompue ne se reprend pas après fermeture.
 
-## Modifier le jeu
+## Sources et publication de la version principale
 
-Le jeu publié est un seul fichier, `index.html`, fabriqué à partir des sources par `node build.js` (Node.js suffit, aucune dépendance).
-À chaque envoi sur la branche `main`, GitHub reconstruit et republie le jeu — et refuse de publier si un deck contient une erreur.
+Les sources narratives se trouvent sur [`codex/parcours-narratifs`](https://github.com/Artolome/Sobrevive/tree/codex/parcours-narratifs), avec les instructions dans [`classroom/STORY.md`](https://github.com/Artolome/Sobrevive/blob/codex/parcours-narratifs/classroom/STORY.md).
+Le workflow de `main` construit le commit validé `e6716a1d74a6b0f8ad41e90fe974639a22ebef3f` avec `node classroom/build-story.cjs`, contrôle son empreinte puis publie le même HTML à la racine et sous `/parcours/`. Un changement de la branche narrative ne publie rien tant que cette référence et l’empreinte attendue ne sont pas actualisées.
+
+## Modifier le jeu classique archivé
+
+Les fichiers de `main` décrits ci-dessous restent ceux de l’ancienne version. Le jeu classique est un seul fichier, `index.html`, fabriqué à partir des sources par `node build.js` (Node.js suffit, aucune dépendance).
+À chaque envoi sur la branche `main`, GitHub reconstruit les trois versions et refuse de publier si un contrôle échoue.
 
 - **Changer ou ajouter une carte** : modifier `decks/<monde>.json` (format décrit dans `FORMAT.md`).
 - **Vérifier** : `node check.js` contrôle la structure des decks et simule des milliers de parties (taux de victoire, cartes jamais tirées…).
@@ -32,7 +39,7 @@ Le jeu publié est un seul fichier, `index.html`, fabriqué à partir des source
 - **Ajouter un monde** : un nouveau fichier `decks/<id>.json`, ses illustrations `art/<id>.json`, puis l'ajouter à la liste `IDS`
   dans `game.src.html` et dans `build.js`.
 
-## Fichiers
+## Fichiers du jeu classique
 
 | Fichier | Rôle |
 |---|---|
@@ -45,5 +52,5 @@ Le jeu publié est un seul fichier, `index.html`, fabriqué à partir des source
 
 ## À savoir
 
-Les textes et les illustrations ont été écrits et dessinés avec Claude, puis relus automatiquement (langue, niveau A1, exactitude culturelle).
+Les textes et les illustrations du jeu classique ont été écrits et dessinés avec Claude, puis relus automatiquement (langue, niveau A1, exactitude culturelle).
 Une relecture par l'enseignant·e reste recommandée avant usage en classe.

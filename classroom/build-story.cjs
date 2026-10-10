@@ -17,7 +17,7 @@ function buildStory(out){
     const needle='<script>\n/* Aides de classe';assert.ok(source.includes(needle),'Point d’intégration des aides manquant');
     const runtime='<script>window.SV_STORY='+safe(JSON.stringify(config))+';</script>\n'+['story-engine.js','story-runtime.js'].map(name=>'<script>'+safe(read(name))+'</script>').join('\n');
     source=source.replace(needle,()=>runtime+'\n'+needle);
-    return source.replace(/<\/html>\s*$/,()=>'<style>'+read('story.css')+'\n'+read('story-motion.css')+'</style>\n<script>'+safe(read('story-motion.js'))+'</script>\n<script>'+safe(read('story-ui.js'))+'</script>\n</html>');
+    return source.replace(/<\/html>\s*$/,()=>'<style>'+read('story.css')+'\n'+read('story-motion.css')+'\n'+read('rights.css')+'</style>\n<script>'+safe(read('story-motion.js'))+'</script>\n<script>'+safe(read('story-ui.js'))+'</script>\n<script>window.SV_RIGHTS='+safe(JSON.stringify(JSON.parse(read('rights.json'))))+';</script>\n<script>'+safe(read('rights.js'))+'</script>\n</html>');
   }});
 }
 if(require.main===module)buildStory(path.resolve(process.argv[2]||path.join(__dirname,'../story-preview.html')));

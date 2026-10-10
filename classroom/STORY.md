@@ -1,6 +1,12 @@
-# Parcours narratifs — variante locale
+# Parcours narratifs
 
-Cette variante prolonge le jeu illustré et les vingt réussites du commit `aa7226c`. Elle vit sur `codex/parcours-narratifs`. Le fichier classique `index.html`, les cinq decks et la préversion livrée précédemment restent conservés. Aucun déploiement n’est associé à ce travail.
+Cette variante prolonge le jeu illustré et les vingt réussites du commit `aa7226c`. Elle vit sur `codex/parcours-narratifs` et constitue le jeu publié à la racine du site ainsi que sous `/parcours/`. Le workflow de `main` utilise un commit source précis et vérifie l’empreinte du HTML avant publication. Le fichier classique `index.html`, les cinq decks et la préversion livrée précédemment restent conservés.
+
+## Signature, crédits et réutilisation
+
+`rights.json` contient la signature « Arthur Méligne », les crédits et les conditions affichés par `rights.js`, uniquement dans la construction narrative. Les mentions restent disponibles hors ligne depuis l’accueil, les fiches d’univers, le jeu et les fins. L’ancre `#credits` ouvre directement les conditions. Les notices intégrales des polices restent incorporées au fichier autonome.
+
+Les exports HTML et TXT ajoutent la signature du jeu et un lien vers les conditions ; les contributions personnelles des joueurs restent les leurs. Le module de rapport reste compatible avec les autres variantes sans module de crédits. `LICENSE.txt` décrit les autorisations pédagogiques et la portée des droits réservés. Ces mentions n’empêchent pas matériellement la copie et ne certifient pas la titularité de chaque élément.
 
 ## Déroulement
 
